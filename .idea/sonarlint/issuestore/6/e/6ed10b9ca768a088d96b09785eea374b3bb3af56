@@ -1,0 +1,27 @@
+
+e
+java:S2095L"JUse try-with-resources or close this "XSSFWorkbook" in a "finally" clause.(˜„°ÿÿÿÿÿ
+r
+java:S1450!"WRemove the "entityId" field and declare it as a local variable in the relevant methods.(¥Ê©ƒüÿÿÿÿ
+v
+java:S1450"[Remove the "excelColumns" field and declare it as a local variable in the relevant methods.(ÃÈ–şÿÿÿÿ
+q
+java:S1450#"VRemove the "maxDate" field and declare it as a local variable in the relevant methods.(ñßÔúúÿÿÿÿ
+l
+java:S1450""VRemove the "minDate" field and declare it as a local variable in the relevant methods.(Üì¯à
+H
+java:S1135"2Complete the task associated to this TODO comment.(üÔ¥ä
+N	java:S106|"9Replace this use of System.out or System.err by a logger.(ÛĞÜÔ
+C
+java:S1172€",Remove this unused method parameter "sheet".(æğÃ¸
+G
+java:S1068!",Remove this unused "entityId" private field.(¥Ê©ƒüÿÿÿÿ
+A
+java:S1068""+Remove this unused "minDate" private field.(Üì¯à
+F
+java:S1068#"+Remove this unused "maxDate" private field.(ñßÔúúÿÿÿÿ
+R	java:S125"<This block of commented-out lines of code should be removed.(¹÷çÆ
+R	java:S125„"<This block of commented-out lines of code should be removed.(š…¯Ñ
+R	java:S125‡"<This block of commented-out lines of code should be removed.(”ïåå
+W	java:S125“"<This block of commented-out lines of code should be removed.(ıÜÀˆûÿÿÿÿ
+R	java:S125–"<This block of commented-out lines of code should be removed.(‚İÅ¿

@@ -1,0 +1,42 @@
+:host {
+  display: flex;
+}
+
+.header {
+  padding: 10px;
+  background: #F2F2F2;
+  background: linear-gradient(180deg, #A7C4E6 0%, #A7C4E6 15%, #F2F2F2 22%);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  box-shadow: 0 0 5px 0 grey;
+  margin-right: 2px;
+}
+
+.logo {
+  color: white;
+  font-size: 26px;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  background: purple;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  > * {
+    margin-top: 10px;
+    cursor: pointer;
+  }
+}

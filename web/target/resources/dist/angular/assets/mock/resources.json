@@ -1,0 +1,146 @@
+[{
+  "id": "gbd_database",
+  "name": "Database",
+  "description": "",
+  "optional": false,
+  "optionalSelected": true,
+  "properties": {
+    "icon": "assets/images/database.png"
+  },
+  "uiConfig": {
+    "type": "IFRAME",
+    "value": "#/logs"
+  },
+  "configs": ["hello world"]
+}, {
+  "id": "jms",
+  "name": "JMS",
+  "description": "",
+  "optional": false,
+  "optionalSelected": true,
+  "properties": {
+    "icon": "assets/images/database.png"
+  },
+  "uiConfig": {
+    "type": "IFRAME",
+    "value": "#/logs"
+  },
+  "configs": ["jms hello world"]
+}, {
+  "id": "email_server",
+  "name": "Email Server",
+  "description": "",
+  "optional": false,
+  "optionalSelected": true,
+  "properties": {
+    "icon": "assets/images/database.png"
+  },
+  "uiConfig": {
+    "type": "IFRAME",
+    "value": "#/logs"
+  }
+}, {
+  "id": "content_packs",
+  "name": "Content Packs",
+  "description": "",
+  "optional": false,
+  "optionalSelected": true,
+  "properties": {
+    "icon": "assets/images/database.png"
+  },
+  "uiConfig": {
+    "type": "IFRAME",
+    "value": "#/logs"
+  }
+}, {
+  "id": "codesets",
+  "name": "TM Codesets",
+  "description": "",
+  "optional": false,
+  "optionalSelected": true,
+  "properties": {
+    "icon": "assets/images/database.png"
+  },
+  "uiConfig": {
+    "type": "IFRAME",
+    "value": "#/logs"
+  }
+}, {
+  "id": "licenses",
+  "name": "Licenses",
+  "description": "",
+  "optional": false,
+  "optionalSelected": true,
+  "properties": {
+    "icon": "assets/images/database.png"
+  },
+  "uiConfig": {
+    "type": "IFRAME",
+    "value": "#/logs"
+  }
+}, {
+  "id": "file_domains",
+  "name": "File Domains",
+  "description": "",
+  "optional": false,
+  "optionalSelected": true,
+  "properties": {
+    "icon": "assets/images/database.png"
+  },
+  "uiConfig": {
+    "type": "IFRAME",
+    "value": "#/logs"
+  }
+}, {
+  "id": "cloud-repo",
+  "name": "Cloud Repository",
+  "description": "This is cloud repository description. Please read with caution. :D",
+  "optional": true,
+  "optionalSelected": false,
+  "properties": {
+    "icon": "assets/images/database.png"
+  },
+  "uiConfig": {
+    "type": "IFRAME",
+    "value": "#/logs"
+  }
+}, {
+  "id": "tablea-server",
+  "name": "Tableau Server",
+  "description": "Here we go again. Tableau Server description, bla bla bla.",
+  "optional": true,
+  "optionalSelected": false,
+  "properties": {
+    "icon": "assets/images/database.png"
+  },
+  "uiConfig": {
+    "type": "IFRAME",
+    "value": "#/logs"
+  }
+}, {
+  "name": "Web App (Generic EAR)",
+  "id": "web-app",
+  "description": "And last but not least, Web App. Also nothing interesting here, but at least one item here should have more words.",
+  "optional": true,
+  "optionalSelected": false,
+  "properties": {
+    "icon": "assets/images/database.png"
+  },
+  "uiConfig": {
+    "type": "IFRAME",
+    "value": "#/logs"
+  }
+}, {
+  "name": "Config Config",
+  "id": "config-config",
+  "description": "Config, Config, like in the song New york, New York by Frank Sinatra. The words of the Frank's song, can be found below. \n\nStart spreadin' the news, I'm leavin' today\nI want to be a part of it\nNew York, New York\nThese vagabond shoes, are longing to stray\nRight through the very heart of it\nNew York, New York\nI wanna to wake up, in a city that doesn't sleep\nAnd find I'm king of the hill\nTop of the heap\nThese little town blues\nAre melting away\nI'll make a brand new start of it\nIn old New York\nIf I can make it there, I'll make it anywhere\nIt's up to you, New York, New York\nNew York, New York\nI want to wake up in a city that never sleeps\nAnd find I'm a number one, top of the list\nKing of the hill, a number one\nThese little town blues, are melting away\nI'm gonna make a brand new start of it\nIn old New York\nAnd\nIf I can make it there\nI'm gonna make it anywhere\nIt's up to you, New York\nNew York\nNew York",
+  "optional": true,
+  "optionalSelected": false,
+  "properties": {
+    "icon": "assets/images/database.png"
+  },
+  "uiConfig": {
+    "type": "IFRAME",
+    "value": "#/logs"
+  }
+}]

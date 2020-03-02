@@ -1,0 +1,31 @@
+{
+  "type": "SPLIT",
+  "direction": "VERTICAL",
+  "resizable": true,
+  "sizes": [80, 20],
+  "components": [{
+    "type": "SPLIT",
+    "direction": "HORIZONTAL",
+    "resizable": true,
+    "sizes": [80, 20],
+    "components": [{
+      "type": "SPLIT",
+      "direction": "VERTICAL",
+      "resizable": true,
+      "sizes": [50, 50],
+      "components": [{
+        "type": "WEB_COMPONENT",
+        "value": "eim-servers"
+      }, {
+        "type": "WEB_COMPONENT",
+        "value": "eim-resources"
+      }]
+    }, {
+      "type": "WEB_COMPONENT",
+      "value": "eim-sidebar"
+    }]
+  }, {
+    "type": "IFRAME",
+    "value": "#/logs"
+  }]
+}

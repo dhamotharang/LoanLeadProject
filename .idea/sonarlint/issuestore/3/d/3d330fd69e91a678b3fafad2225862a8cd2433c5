@@ -1,0 +1,17 @@
+
+e
+java:S20955"JUse try-with-resources or close this "XSSFWorkbook" in a "finally" clause.(˜„°ÿÿÿÿÿ
+v
+java:S1450"[Remove the "excelColumns" field and declare it as a local variable in the relevant methods.(ÃÈ–şÿÿÿÿ
+r
+java:S1450"WRemove the "loanCode" field and declare it as a local variable in the relevant methods.(ÇìÊÊûÿÿÿÿ
+H
+java:S1135"2Complete the task associated to this TODO comment.(üÔ¥ä
+N	java:S106M"9Replace this use of System.out or System.err by a logger.(Œ¹Ñõ
+B
+java:S1172Q",Remove this unused method parameter "sheet".(æğÃ¸
+G
+java:S1068",Remove this unused "loanCode" private field.(ÇìÊÊûÿÿÿÿ
+V	java:S125R"<This block of commented-out lines of code should be removed.(æñî‡ıÿÿÿÿ
+Q	java:S125T"<This block of commented-out lines of code should be removed.(âëÅ
+V	java:S125Y"<This block of commented-out lines of code should be removed.(¨¹¥²ÿÿÿÿÿ

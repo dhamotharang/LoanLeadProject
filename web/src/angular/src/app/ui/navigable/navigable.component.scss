@@ -1,0 +1,14 @@
+:host {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-areas: "navbar content";
+  overflow: hidden;
+}
+
+.navbar {
+  grid-area: navbar;
+}
+
+::ng-deep router-outlet + * {
+  overflow: auto;
+}

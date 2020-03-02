@@ -1,0 +1,119 @@
+<!--<div class="header">{{_headerConfig?.caption}}</div>-->
+<!--<div (click)="headerClick()"-->
+     <!--*ngIf="_headerConfig?.closeIcon" class="pointer">-->
+  <!--<i class="{{_headerConfig.closeIcon}}"></i>-->
+<!--</div>-->
+<nav id="header" class="navbar navbar-default navbar-expand-md navbar-fixed-top animated fadeInDown">
+  <div class="container-fluid">
+    <h2><a href="/home" class="text-yellow d-flex align-items-center no-decoration">Loanlead</a></h2>
+    <button class="navbar-toggler text-yellow" data-toggle="collapse" data-target=".navbar-collapse">
+      <i class="material-icons">menu</i>
+    </button>
+    <div class="navbar-collapse collapse justify-content-end">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a href="/home" class="nav-link text-yellow d-flex align-items-center no-decoration">
+            <i class="material-icons">home</i>&nbsp;Home
+          </a>
+        </li>
+        <li *ngIf="" class="nav-item dropdown"><!--*ngIf="${#authentication.principal.user.roleId < 13}"-->
+          <a href="#" class="nav-link text-yellow d-flex align-items-center dropdown-toggle no-decoration nav-menu-header"
+             data-toggle="dropdown" role="button" id="userEntitiesMenuLink" aria-haspopup="true"
+             aria-expanded="false">
+            <i class="material-icons">menu</i>&nbsp;Entities
+          </a>
+
+          <div class="dropdown-menu fade" aria-labelledby="userEntitiesMenuLink">
+            <a th:href="@{/user_dashboard}" class="dropdown-item text-secondary d-flex align-items-center no-decoration">
+              <i class="material-icons">dashboard</i>User Dashboard
+            </a>
+            <a th:href="@{'/edit_profile/' + ${#authentication.principal.user.id}}"
+               class="dropdown-item text-secondary d-flex align-items-center no-decoration enabled">
+              <i class="material-icons">person</i>Edit Profile
+            </a>
+            <a th:href="@{/reports}" class="dropdown-item text-secondary d-flex align-items-center no-decoration">
+              <i class="material-icons">report</i>Reports
+            </a>
+            <a th:href="@{/customers}" class="dropdown-item text-secondary d-flex align-items-center no-decoration">
+              <i class="material-icons">settings</i>Customers
+            </a>
+          </div>
+        </li>
+        <li th:if="${#authentication.principal.user.roleId == 13}" class="nav-item dropdown">
+          <a href="#" class="nav-link text-yellow d-flex align-items-center dropdown-toggle no-decoration"
+             data-toggle="dropdown" role="button" id="entitiesMenuLink" aria-haspopup="true"
+             aria-expanded="false">
+            <i class="material-icons">menu</i>&nbsp;Entities
+          </a>
+
+          <div class="dropdown-menu fade" aria-labelledby="entitiesMenuLink">
+            <a th:href="@{'/edit_profile/' + ${#authentication.principal.user.id}}"
+               class="dropdown-item text-secondary d-flex align-items-center no-decoration">
+              <i class="material-icons">person</i>Edit Profile
+            </a>
+            <a th:href="@{/logged_users}" class="dropdown-item text-secondary d-flex align-items-center no-decoration">
+              <i class="material-icons">report</i>Logged Users
+            </a>
+            <a th:href="@{/reports}" class="dropdown-item text-secondary d-flex align-items-center no-decoration">
+              <i class="material-icons">report</i>Reports
+            </a>
+            <a th:href="@{/entities}" class="dropdown-item text-secondary d-flex align-items-center no-decoration">
+              <i class="material-icons">settings</i>Entity
+            </a>
+            <a th:href="@{/branches}" class="dropdown-item text-secondary d-flex align-items-center no-decoration">
+              <i class="material-icons">settings</i>Branches
+            </a>
+            <a th:href="@{/departments}"
+               class="dropdown-item text-secondary d-flex align-items-center no-decoration">
+              <i class="material-icons">settings</i>Departments
+            </a>
+            <a th:href="@{/units}" class="dropdown-item text-secondary d-flex align-items-center no-decoration">
+              <i class="material-icons">settings</i>Units
+            </a>
+            <a th:href="@{/loan_thresholds}"
+               class="dropdown-item text-secondary d-flex align-items-center no-decoration">
+              <i class="material-icons">settings</i>Loan Thresholds
+            </a>
+            <a th:href="@{/jobs}" class="dropdown-item text-secondary d-flex align-items-center no-decoration">
+              <i class="material-icons">settings</i>Jobs
+            </a>
+            <a th:href="@{/users}" class="dropdown-item text-secondary d-flex align-items-center no-decoration">
+              <i class="material-icons">settings</i>Users
+            </a>
+            <a th:href="@{/roles}" class="dropdown-item text-secondary d-flex align-items-center no-decoration">
+              <i class="material-icons">settings</i>Customer SMS Setting
+            </a>
+            <a th:href="@{/sms_templates}" class="dropdown-item text-secondary d-flex align-items-center no-decoration">
+              <i class="material-icons">settings</i>SMS Templates
+            </a>
+            <a th:href="@{/sms_messages}" class="dropdown-item text-secondary d-flex align-items-center no-decoration">
+              <i class="material-icons">settings</i>SMS Messages
+            </a>
+            <a th:href="@{/sms_counter}" class="dropdown-item text-secondary d-flex align-items-center no-decoration">
+              <i class="material-icons">settings</i>SMS Counter
+            </a>
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a href="#" class="text-yellow dropdown-toggle d-flex align-items-center h-100 no-decoration nav-menu-header"
+             data-toggle="dropdown" role="button" id="userAccountMenuLink" aria-haspopup="true"
+             aria-expanded="false">
+            <img th:src="@{${#authentication.principal.user.picturePath}}" class="rounded-circle nav-image">
+            &nbsp;<span th:text="${#authentication.principal.user.fullName}"></span>
+          </a>
+
+          <div class="dropdown-menu" aria-labelledby="userAccountMenuLink">
+            <!--<a th:href="@{/chat/users}" class="dropdown-item text-secondary d-flex align-items-center no-decoration">-->
+            <!--<i class="material-icons">chat</i>Live Chat-->
+            <!--</a>-->
+            <a th:href="@{/logout}"
+               class="dropdown-item text-secondary d-flex align-items-center no-decoration"
+               th:classappend="${#authentication.principal.user.id < 13 ? 'enabled' : ''}">
+              <i class="material-icons">exit_to_app</i>Logout
+            </a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

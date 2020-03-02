@@ -1,0 +1,44 @@
+<assembly>
+    <id>loanlead-core</id>
+
+    <formats>
+        <format>zip</format>
+    </formats>
+
+    <baseDirectory>/</baseDirectory>
+
+    <dependencySets>
+        <dependencySet>
+            <outputDirectory>/lib</outputDirectory>
+        </dependencySet>
+        <dependencySet>
+            <outputDirectory>/</outputDirectory>
+            <includes>
+                <include>com.loanlead:loanlead-web</include>
+            </includes>
+            <unpack>true</unpack>
+        </dependencySet>
+    </dependencySets>
+
+    <files>
+        <file>
+            <source>target/loanlead-core-${project.version}.jar</source>
+            <outputDirectory>/lib</outputDirectory>
+        </file>
+    </files>
+
+    <fileSets>
+        <fileSet>
+            <directory>src/main/scripts</directory>
+            <outputDirectory>/</outputDirectory>
+        </fileSet>
+        <fileSet>
+            <directory>src/main/resources</directory>
+            <includes>
+                <include>application.properties</include>
+            </includes>
+            <outputDirectory>/config</outputDirectory>
+        </fileSet>
+    </fileSets>
+
+</assembly>

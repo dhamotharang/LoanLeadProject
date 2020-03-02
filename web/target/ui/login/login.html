@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="styles/style.css">
+    <title>Document</title>
+</head>
+<body>
+<div class="edifecs-logo"></div>
+<div class="content">
+    <div class="brand">
+        <div class="brand-logo"></div>
+        <div class="brand-name">Installation Manager</div>
+    </div>
+    <form th:action="@{/perform_login}" class="form" method="POST">
+        <div th:if="${param.error}">
+            <div class="alert alert-danger">
+                Invalid username or password.
+            </div>
+        </div>
+        <div class="field">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" placeholder="Enter your username">
+        </div>
+        <div class="field" style="margin-top: 40px;">
+            <label for="password">Password</label>
+            <input type="text" id="password" name="password" placeholder="Enter your password">
+        </div>
+        <input type="submit" value="Login" class="submit">
+    </form>
+</div>
+<div class="credits">
+    <div class="powered">Powered by Edifecs</div>
+    <div class="copy">Copyright (C) 1999-2020 Edifecs Inc. All rights reserved.</div>
+</div>
+</body>
+</html>

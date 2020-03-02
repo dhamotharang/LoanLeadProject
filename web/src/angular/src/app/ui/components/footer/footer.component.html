@@ -1,0 +1,5 @@
+<div>
+  <button *ngFor="let btn of config.buttons"
+          (click)="buttonClick(btn)"
+          class="footer-button {{btn.cls}} action-button" [ngClass]="{disabled: btn.disabled}">{{btn.caption}}</button>
+</div>

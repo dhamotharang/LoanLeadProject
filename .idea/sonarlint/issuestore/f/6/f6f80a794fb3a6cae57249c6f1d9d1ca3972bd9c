@@ -1,0 +1,11 @@
+
+q
+java:S1128"ORemove this unused import 'com.fasterxml.jackson.annotation.JsonBackReference'.(»Ôœ¿ıÿÿÿÿ8¤¬ä¿‰.
+P
+java:S1068"3Remove this unused "customerService" private field.(Ş›ÕŒ8ë°ª¾‰.
+{
+java:S1450"^Remove the "customerService" field and declare it as a local variable in the relevant methods.(Ş›ÕŒ8ë°ª¾‰.
+b
+java:S4684A"@Replace this persistent entity with a simple POJO or DTO object.(Ö½­¿ÿÿÿÿÿ8½£½½‰.
+[
+java:S1128"9Remove this unused import 'org.springframework.ui.Model'.(ê†ıÿÿÿÿ8§úç¿‰.

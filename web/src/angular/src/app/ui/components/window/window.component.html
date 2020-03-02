@@ -1,0 +1,10 @@
+<p-sidebar
+  [dismissible]="false"
+  [showCloseIcon]="false"
+  [style]="{width:'80%',height: '100%', padding: 0, display: 'flex', flexDirection: 'column'}"
+  [visible]="true"
+  position="right">
+  <div class="stretch" style="display: grid;">
+    <ng-content></ng-content>
+  </div>
+</p-sidebar>

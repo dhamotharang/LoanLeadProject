@@ -1,0 +1,12 @@
+<ng-container [ngSwitch]="component.type">
+  <eim-split *ngSwitchCase="componentType.SPLIT"
+             [direction]="component.direction"
+             [resizable]="component.resizable"
+             [sizes]="component.sizes">
+    <eim-custom *ngFor="let item of component.components" [component]="item"></eim-custom>
+  </eim-split>
+  <eim-editor *ngSwitchCase="componentType.EDITOR"></eim-editor>
+  <eim-external *ngSwitchCase="componentType.IFRAME" [component]="component"></eim-external>
+  <eim-external *ngSwitchCase="componentType.HTML" [component]="component"></eim-external>
+  <eim-external *ngSwitchCase="componentType.WEB_COMPONENT" [component]="component"></eim-external>
+</ng-container>

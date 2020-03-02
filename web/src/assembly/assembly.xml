@@ -1,0 +1,25 @@
+<assembly>
+    <id>web-zip</id>
+
+    <formats>
+        <format>zip</format>
+    </formats>
+
+    <baseDirectory>/</baseDirectory>
+
+    <fileSets>
+        <fileSet>
+            <directory>src/angular/dist/</directory>
+            <outputDirectory>/ui</outputDirectory>
+        </fileSet>
+        <fileSet>
+            <directory>src/static/</directory>
+            <outputDirectory>/ui</outputDirectory>
+        </fileSet>
+        <fileSet>
+            <directory>src/main/resources/</directory>
+            <outputDirectory>/resources</outputDirectory>
+        </fileSet>
+    </fileSets>
+
+</assembly>

@@ -1,0 +1,3 @@
+<eim-window-content [header]="config.header" [footer]="config.footer" (actionPerformed)="actionPerformed($event)" class="stretch">
+  <eim-external (configChange)="dataChanged($event)" [component]="config.component"></eim-external>
+</eim-window-content>

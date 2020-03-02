@@ -1,0 +1,15 @@
+{
+  "envSettings": {
+    "name": "USR",
+    "color": ""
+  },
+  "actions": [{
+    "icon": "assets/images/user.png"
+  }, {
+    "type": "ENVIRONMENT_SETTINGS",
+    "icon": "assets/images/config.png"
+  }, {
+    "type": "LOGOUT",
+    "icon": "assets/images/logout.png"
+  }]
+}

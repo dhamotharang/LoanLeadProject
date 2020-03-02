@@ -1,0 +1,3 @@
+<eim-header *ngIf="header" [config]="header" (closeClick)="closeClick()"></eim-header>
+<ng-content></ng-content>
+<eim-footer *ngIf="footer" [config]="footer" (actionPerformed)="actionPerformed.emit($event)"></eim-footer>

@@ -1,0 +1,17 @@
+
+`
+java:S1192#"JDefine a constant instead of duplicating this literal "customers" 6 times.(¹–‡ª
+j
+java:S1192%"ODefine a constant instead of duplicating this literal "user/customers" 4 times.(±»Ä†ùÿÿÿÿ
+i
+java:S1192,"SDefine a constant instead of duplicating this literal "user/customer_form" 3 times.(“ÄÛ
+J
+java:S1066A"/Merge this if statement with the enclosing one.(†¼ÿŒøÿÿÿÿ
+H
+java:S1135"2Complete the task associated to this TODO comment.(üÔ¥ä
+[
+java:S46848"@Replace this persistent entity with a simple POJO or DTO object.(Î‰¹àüÿÿÿÿ
+m
+java:S37768"RRefactor this method to reduce its Cognitive Complexity from 17 to the 15 allowed.(Î‰¹àüÿÿÿÿ
+‡
+java:S11308"lRemove the declaration of thrown exception 'java.io.IOException', as it cannot be thrown from method's body.(Î‰¹àüÿÿÿÿ
