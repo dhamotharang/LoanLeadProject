@@ -4,9 +4,11 @@ import com.loanlead.auth.UserServiceImpl;
 import com.loanlead.models.Entity;
 import com.loanlead.services.EntityService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping(ReportController.PREFIX + "/entities")
@@ -15,7 +17,7 @@ public class EntityController {
     private EntityService entityService;
 
     @GetMapping
-    public List<Entity> entities(@RequestParam("page") Integer page, @RequestParam("itemsPerPage") Integer itemsPerPage) {
+    public ResponseEntity<List<Entity>> entities(@RequestParam("page") Integer page, @RequestParam("itemsPerPage") Integer itemsPerPage) {
         if (page == null) {
             page = UserServiceImpl.DEFAULT_PAGE;
         }
@@ -24,17 +26,17 @@ public class EntityController {
             itemsPerPage = UserServiceImpl.DEFAULT_ITEMS_PER_PAGE;
         }
 
-        return entityService.findAll(page, itemsPerPage).getContent();
+        return ResponseEntity.of(Optional.of(entityService.findAll(page, itemsPerPage).getContent()));
     }
 
     @GetMapping("/${entityId}")
-    public Entity findEntity(@PathVariable("entityId") Integer entityId) {
-        return entityService.find(entityId);
+    public ResponseEntity<Entity> findEntity(@PathVariable("entityId") Integer entityId) {
+        return ResponseEntity.of(Optional.of(entityService.find(entityId)));
     }
 
     @PostMapping
-    public Entity postingEntity(Entity entity) {
-        return entityService.save(entity);
+    public void postingEntity(@RequestBody Entity entity) {
+        entityService.save(entity);
     }
 
     @PostMapping("/delete")
