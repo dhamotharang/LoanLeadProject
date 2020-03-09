@@ -1,13 +1,14 @@
 package com.loanlead.controller;
 
 import com.loanlead.auth.UserService;
+import com.loanlead.auth.UserServiceImpl;
 import com.loanlead.auth.entities.User;
-import com.loanlead.services.*;
+import com.loanlead.services.BranchService;
+import com.loanlead.services.EntityService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
-import org.springframework.data.domain.Page;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
-import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
@@ -15,105 +16,53 @@ import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
-import javax.validation.Validator;
 import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
+import java.util.Optional;
 import java.util.regex.Pattern;
 
-@Controller
+@RestController
+@RequestMapping(ReportController.PREFIX + "/users")
 public class UserController {
-    @Autowired
     private UserService userService;
-
-    @Autowired
     private EntityService entityService;
-
-    @Autowired
     private BranchService branchService;
-
-    @Autowired
-    private LoanService loanService;
-
-    @Autowired
-    private Validator validator;
-
-    @Autowired
     private Environment environment;
 
-    @ModelAttribute("users")
-    public Page<User> populateEntities() {
-        return this.userService.findAll();
+    @Autowired
+    public UserController(UserService userService, EntityService entityService, BranchService branchService, Environment environment) {
+        this.userService = userService;
+        this.branchService = branchService;
+        this.entityService = entityService;
+        this.environment = environment;
     }
 
-    @GetMapping("/users")
-    public String users(Model model) {
-        model.addAttribute("users", userService.findAll());
-
-        return "admin/users";
-    }
-
-    @GetMapping("/edit_profile/{userId}")
-    public String editProfileForm(@PathVariable String userId, Model model) {
-        User userToEdit = this.userService.find(userId);
-        model.addAttribute("user", userToEdit);
-        model.addAttribute("entities", entityService.findAll());
-        model.addAttribute("branches", branchService.findAll());
-
-        return "admin/edit_profile";
-    }
-
-    @GetMapping("/user_form")
-    public String userFormCreate(Model model, Authentication authentication, HttpServletRequest request) {
-        if (request.isUserInRole("ROLE_ADMIN")) {
-            model.addAttribute("user", new User());
-            model.addAttribute("entities", entityService.findAll());
-            model.addAttribute("branches", branchService.findAll());
-
-            return "admin/user_form";
-        } else {
-            //model.addAttribute("user", ((UserPrincipal)authentication.getPrincipal()).getUser());
-
-            return "user/update_profile";
-        }
-    }
-
-    @GetMapping("/user_form/{userId}")
-    public String userForm(@PathVariable String userId, Model model) {
-        User userToEdit = this.userService.find(userId);
-        model.addAttribute("user", userToEdit);
-        model.addAttribute("entities", entityService.findAll());
-        model.addAttribute("branches", branchService.findAll());
-
-        return "admin/user_form";
-    }
-
-    @GetMapping("/user")
-    public String findUser(@RequestParam("userId") String userId, Model model) {
-        if (userId != null) {
-            User user = userService.find(userId);
-
-            if (user != null) {
-                model.addAttribute("users", Collections.singletonList(user));
-            } else {
-                model.addAttribute("users", new ArrayList<User>());
-            }
-        } else {
-            model.addAttribute("users", userService.findAll());
+    @GetMapping
+    public ResponseEntity<List<User>> users(@RequestParam("itemsPerPage") Integer itemsPerPage, @RequestParam("page") Integer page) {
+        if (itemsPerPage == null) {
+            itemsPerPage = UserServiceImpl.DEFAULT_ITEMS_PER_PAGE;
         }
 
-        return "admin/users";
+        if (page == null) {
+            page = UserServiceImpl.DEFAULT_PAGE;
+        }
+
+        return ResponseEntity.of(Optional.of(userService.findAll(itemsPerPage, page).toList()));
     }
 
-    @PostMapping("/user")
-    public String postingUser(@RequestParam("file") MultipartFile file, @Valid User user, BindingResult bindingResult, Model model, HttpServletRequest request, Authentication authentication) throws IOException {
+    @GetMapping("/{userId}")
+    public ResponseEntity<User> findUser(@PathVariable String userId) {
+        return ResponseEntity.of(Optional.of(userService.find(userId)));
+    }
+
+    @PostMapping
+    public ResponseEntity<User> save(@RequestParam("file") MultipartFile file, @RequestBody User user, HttpServletRequest request, Authentication authentication) throws IOException {
         if (file != null && file.getContentType() != null && file.getContentType().contains("image")) {
             file.transferTo(new File(environment.getProperty("loanlead.images.location") + "/" + file.getOriginalFilename()));
 
             user.setPicturePath("/images/" + file.getOriginalFilename());
-        } else if (user.getPicturePath() == null){
+        } else if (user.getPicturePath() == null) {
             user.setPicturePath("/images/no_picture.png");
         }
 
@@ -121,13 +70,13 @@ public class UserController {
 //            bindingResult.rejectValue("employeeId", "form.isNotUnique","Field is not unique");
 //        }
 
-        if (!Pattern.compile("^((?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])).{8,}").matcher(user.getPassword()).matches()) {
-            bindingResult.rejectValue("password", "form.doesNotMatchPattern","Field doesn't matches pattern");
-        }
-
-        if (user.getId() != null && !user.getEmployeeId().equals("") && !userService.isEmployeeIdUnique(user.getEmployeeId()) && !userService.findUserByEmployeeId(user.getEmployeeId()).getId().equals(user.getId())) {
-            bindingResult.rejectValue("employeeId", "form.isNotUnique","Field is not unique");
-        }
+//        if (!Pattern.compile("^((?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])).{8,}").matcher(user.getPassword()).matches()) {
+//            bindingResult.rejectValue("password", "form.doesNotMatchPattern", "Field doesn't matches pattern");
+//        }
+//
+//        if (user.getId() != null && !user.getEmployeeId().equals("") && !userService.isEmployeeIdUnique(user.getEmployeeId()) && !userService.findUserByEmployeeId(user.getEmployeeId()).getId().equals(user.getId())) {
+//            bindingResult.rejectValue("employeeId", "form.isNotUnique", "Field is not unique");
+//        }
 
 //        if (!user.getPhoneNumber1().equals("")) {
 //            if (!Pattern.compile("07[0-9]{8}").matcher(user.getPhoneNumber1()).matches()) {
@@ -145,13 +94,13 @@ public class UserController {
 //            }
 //        }
 
-        if (bindingResult.hasErrors()) {
-            model.addAttribute("user", user);
-            model.addAttribute("entities", entityService.findAll());
-            model.addAttribute("branches", branchService.findAll());
-
-            return "admin/user_form";
-        }
+//        if (bindingResult.hasErrors()) {
+//            model.addAttribute("user", user);
+//            model.addAttribute("entities", entityService.findAll());
+//            model.addAttribute("branches", branchService.findAll());
+//
+//            return "admin/user_form";
+//        }
 
         if (user.getId() == null) {
             user.setStatus("offline");
@@ -164,9 +113,7 @@ public class UserController {
 //            this.userService.save(user);
 //        }
 
-        model.addAttribute("users", userService.findAll());
-
-        return "admin/users";
+        return ResponseEntity.of(Optional.of(userService.save(user)));
     }
 
     @PostMapping("/edit_profile")
@@ -175,7 +122,7 @@ public class UserController {
             file.transferTo(new File(environment.getProperty("loanlead.images.location") + "/" + file.getOriginalFilename()));
 
             user.setPicturePath("/images/" + file.getOriginalFilename());
-        } else if (user.getPicturePath() == null){
+        } else if (user.getPicturePath() == null) {
             user.setPicturePath("/images/no_picture.png");
         }
 
@@ -184,19 +131,19 @@ public class UserController {
 //        }
 
         if (!Pattern.compile("^((?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])).{8,}").matcher(user.getPassword()).matches()) {
-            bindingResult.rejectValue("password", "form.doesNotMatchPattern","Field doesn't matches pattern");
+            bindingResult.rejectValue("password", "form.doesNotMatchPattern", "Field doesn't matches pattern");
         }
 
         if (user.getEmployeeId().equals("") || (userService.findUserByEmployeeId(user.getEmployeeId()) != null && !userService.findUserByEmployeeId(user.getEmployeeId()).getId().equals(user.getId()) && !userService.isEmployeeIdUnique(user.getEmployeeId()))) {
-            bindingResult.rejectValue("employeeId", "form.isEmpty","Field is empty");
+            bindingResult.rejectValue("employeeId", "form.isEmpty", "Field is empty");
         }
 
         if (user.getFullName().equals("")) {
-            bindingResult.rejectValue("fullName", "form.isEmpty","Field is empty");
+            bindingResult.rejectValue("fullName", "form.isEmpty", "Field is empty");
         }
 
         if (user.getEmail().equals("")) {
-            bindingResult.rejectValue("email", "form.isEmpty","Field is empty");
+            bindingResult.rejectValue("email", "form.isEmpty", "Field is empty");
         }
 
 //        if (!Pattern.compile("07[0-9]{8}").matcher(user.getPhoneNumber1()).matches()) {
@@ -251,28 +198,18 @@ public class UserController {
         return "redirect:/home";
     }
 
-    @PostMapping("/deleteUsers")
-    public String deleteUsers(@RequestParam("deleteUserId") Integer[] userIds, Model model) {
-//        if (userIds.length > 1) {
-//            this.userService.deleteAllByIds(userIds);
-//        } else {
-//            this.userService.deleteById(userIds[0]);
-//        }
-
-        model.addAttribute("users", this.userService.findAll());
-
-        return "admin/users";
+    @DeleteMapping
+    public void deleteUsers(@RequestParam("userIds") String[] userIds) {
+        userService.deleteAllByIds(userIds);
     }
 
-    @GetMapping("/api/users")
-    @ResponseBody
-    public Page<User> getUsers() {
-        return userService.findAll();
+    @GetMapping("/forwarded")
+    public ResponseEntity<List<User>> getForwardedUsers() {
+        return ResponseEntity.of(Optional.of(userService.findForwardedUsers().toList()));
     }
 
-    @GetMapping("/api/users/forwarded")
-    @ResponseBody
-    public Page<User> getForwardedUsers() {
-        return userService.findForwardedUsers();
+    @GetMapping("/logged_users")
+    public ResponseEntity<List<User>> getLoggedInUsers(@RequestParam("page") Integer page, @RequestParam("itemsPerPage") Integer itemsPerPage) {
+        return ResponseEntity.of(Optional.of(userService.getOnlineUsers(page, itemsPerPage).toList()));
     }
 }

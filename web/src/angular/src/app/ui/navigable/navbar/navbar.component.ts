@@ -1,7 +1,8 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {NavbarActionModel, NavbarActionType, NavBarModel} from "../../../model/config-model";
+import {NavbarActionModel, NavbarActionType} from "../../../model/config-model";
 import {Urls} from "../../../config/routes/constants";
 import {Router} from "@angular/router";
+import {EimEnvironmentModel} from "../../../model/environment/environment";
 
 @Component({
   selector: 'eim-navbar',
@@ -11,7 +12,18 @@ import {Router} from "@angular/router";
 export class NavbarComponent implements OnInit {
 
   @Input()
-  navBar: NavBarModel;
+  environment: EimEnvironmentModel;
+
+  actions: NavbarActionModel[] = [{
+    type: NavbarActionType.USER,
+    icon: "assets/images/user.png"
+  }, {
+    type: NavbarActionType.ENVIRONMENT_SETTINGS,
+    icon: "assets/images/config.png"
+  }, {
+    type: NavbarActionType.LOGOUT,
+    icon: "assets/images/logout.png"
+  }];
 
   constructor(private router: Router) {
   }
@@ -20,7 +32,7 @@ export class NavbarComponent implements OnInit {
   }
 
   navBarName() {
-    return this.navBar.envSettings ? this.navBar.envSettings.name : '';
+    return this.environment && this.environment.name ? this.environment.name : '';
   }
 
   actionClick(item: NavbarActionModel) {
@@ -30,6 +42,13 @@ export class NavbarComponent implements OnInit {
         break;
       case NavbarActionType.ENVIRONMENT_SETTINGS:
         this.router.navigate([`${Urls.NAV}/${Urls.ENVIRONMENT_SETTINGS}`]);
+    }
+  }
+
+  getHeaderStyle() {
+    const c = this.environment.color;
+    return {
+      background: `linear-gradient(180deg, ${c} 0px, ${c} 100px, #F2F2F2 200px)`
     }
   }
 }

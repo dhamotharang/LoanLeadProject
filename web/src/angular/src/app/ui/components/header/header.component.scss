@@ -2,7 +2,6 @@
   background: rgb(242, 242, 242);
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
   align-items: center;
   padding: 10px;
   font-size: 20px;
@@ -10,5 +9,24 @@
 }
 
 .header {
+  flex: 1;
+  min-width: 0;
+}
 
+.description {
+  font-size: 14px;
+  color: rgb(127, 127, 127);
+}
+
+.icon {
+  margin-right: 10px;
+
+  img {
+    width: 42px;
+    height: 42px;
+  }
+}
+
+.closeicon {
+  font-size: 28px;
 }

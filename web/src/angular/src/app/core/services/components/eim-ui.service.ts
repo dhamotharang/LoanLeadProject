@@ -7,15 +7,24 @@ import {DynamicComponent, ExternalActionMessage} from "../../../model/dynamic-co
 })
 export class EimUiService {
 
+  private activeComponent: ComponentRef<DynamicComponent>;
+
   constructor(private dynamicComponentFactoryService: DynamicComponentFactoryService) {
   }
 
   createComponent(data: ExternalActionMessage): DynamicComponent {
-    const component: ComponentRef<DynamicComponent> =
-      this.dynamicComponentFactoryService.createComponent(data.action);
-    component.instance.config = JSON.parse(JSON.stringify(data));
-    component.instance.show();
-    return component.instance;
+    if (this.activeComponent) {
+      this.activeComponent.instance.hide.emit();
+    }
+    this.activeComponent = this.dynamicComponentFactoryService.createComponent(data.action);
+    this.activeComponent.instance.config = JSON.parse(JSON.stringify(data));
+    // pass method because it is loosed at stringify
+    this.activeComponent.instance.config.saveMapper = data.saveMapper;
+    this.activeComponent.instance.show();
+    this.activeComponent.onDestroy(() => {
+      this.activeComponent = undefined;
+    });
+    return this.activeComponent.instance;
   }
 
 

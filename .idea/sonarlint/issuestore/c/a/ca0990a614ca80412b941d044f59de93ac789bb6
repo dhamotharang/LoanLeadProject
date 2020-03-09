@@ -1,47 +1,37 @@
 
-\
-java:S11925"FDefine a constant instead of duplicating this literal "users" 6 times.(ÊåĞş
-k
-java:S1192¿"ODefine a constant instead of duplicating this literal "Field is empty" 3 times.(ĞÒışÿÿÿÿ
-^
-java:S1192>"IDefine a constant instead of duplicating this literal "entities" 4 times.(ŠùÔ&
+Q	java:S125›"<This block of commented-out lines of code should be removed.(¾â‚S
+R	java:S125¿"<This block of commented-out lines of code should be removed.(ÄÉ®‹
+m
+java:S3776x"RRefactor this method to reduce its Cognitive Complexity from 16 to the 15 allowed.(Ë–¯¼ûÿÿÿÿ
+Q	java:S125Y"<This block of commented-out lines of code should be removed.(Á‘¥—
+S
+java:S1068"1Remove this unused "branchService" private field.(ş¢ü¬ÿÿÿÿÿ8’òÍ‹.
+R	java:S125"<This block of commented-out lines of code should be removed.(„Äô´
+]	java:S125I"<This block of commented-out lines of code should be removed.(ƒáãíÿÿÿÿÿ8­ÉïÍ‹.
+]	java:S125a"<This block of commented-out lines of code should be removed.(†™¡§ıÿÿÿÿ8’òÍ‹.
 y
-java:S1192Ù"bDefine a constant instead of duplicating this literal "Please, change data in this field" 3 times.(ŸÚÂµ
+java:S1192¤"bDefine a constant instead of duplicating this literal "Please, change data in this field" 3 times.(ŸÚÂµ
 i
-java:S1192¿"MDefine a constant instead of duplicating this literal "form.isEmpty" 3 times.(ĞÒışÿÿÿÿ
-s
-java:S1192Ù"\Define a constant instead of duplicating this literal "form.changeFieldRequirement" 3 times.(ŸÚÂµ
-g
-java:S1192"KDefine a constant instead of duplicating this literal "employeeId" 3 times.(Éî‘äøÿÿÿÿ
-b
-java:S11927"LDefine a constant instead of duplicating this literal "admin/users" 4 times.(ğà²
-d
-java:S1192}"IDefine a constant instead of duplicating this literal "password" 3 times.(¯ôÌÔüÿÿÿÿ
-k
-java:S1192K"PDefine a constant instead of duplicating this literal "admin/user_form" 3 times.(âŠ‹‚ùÿÿÿÿ
-d
-java:S1192?"IDefine a constant instead of duplicating this literal "branches" 4 times.(ãé°¯ûÿÿÿÿ
-F
-java:S1128"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ
-U
-java:S4684o"@Replace this persistent entity with a simple POJO or DTO object.(®øê/
+java:S1192Š"MDefine a constant instead of duplicating this literal "form.isEmpty" 3 times.(ĞÒışÿÿÿÿ
+[
+java:S4684x"@Replace this persistent entity with a simple POJO or DTO object.(Ë–¯¼ûÿÿÿÿ
+N
+java:S1068"1Remove this unused "entityService" private field.(–°¨¶8’òÍ‹.
+V
+java:S4684<"@Replace this persistent entity with a simple POJO or DTO object.(¡ÕÕ¤
+Q	java:S125n"<This block of commented-out lines of code should be removed.(ÄÉ®‹
+R	java:S125³"<This block of commented-out lines of code should be removed.(ÜÕã
+Q	java:S125E"<This block of commented-out lines of code should be removed.(†æ¡¥
 A
-java:S1075q"&Remove this hard-coded path-delimiter.(„Ä÷¬şÿÿÿÿ
-\
-java:S4684­"@Replace this persistent entity with a simple POJO or DTO object.(Ë–¯¼ûÿÿÿÿ
-n
-java:S3776­"RRefactor this method to reduce its Cognitive Complexity from 16 to the 15 allowed.(Ë–¯¼ûÿÿÿÿ
-B
-java:S1075¯"&Remove this hard-coded path-delimiter.(„Ä÷¬şÿÿÿÿ
-V	java:S125M"<This block of commented-out lines of code should be removed.(œ´ö“ùÿÿÿÿ
-Q	java:S125x"<This block of commented-out lines of code should be removed.(†æ¡¥
-R	java:S125„"<This block of commented-out lines of code should be removed.(Ù™Ì
-R	java:S125Œ"<This block of commented-out lines of code should be removed.(Á‘¥—
-R	java:S125¡"<This block of commented-out lines of code should be removed.(ÄÉ®‹
-R	java:S125¶"<This block of commented-out lines of code should be removed.(„Äô´
-R	java:S125Ê"<This block of commented-out lines of code should be removed.(Ü’‚ò
-Q	java:S125Ğ"<This block of commented-out lines of code should be removed.(¾â‚S
-W	java:S125ä"<This block of commented-out lines of code should be removed.( »Ãûÿÿÿÿ
-R	java:S125è"<This block of commented-out lines of code should be removed.(ÜÕã
-R	java:S125ô"<This block of commented-out lines of code should be removed.(ÄÉ®‹
-R	java:S125€"<This block of commented-out lines of code should be removed.(‹‘¿€
+java:S1075>"&Remove this hard-coded path-delimiter.(„Ä÷¬şÿÿÿÿ
+]	java:S125M"<This block of commented-out lines of code should be removed.(›ˆÚ©ÿÿÿÿÿ8­ÉïÍ‹.
+W	java:S125¯"<This block of commented-out lines of code should be removed.( »Ãûÿÿÿÿ
+R	java:S125•"<This block of commented-out lines of code should be removed.(Ü’‚ò
+Q	java:S125Q"<This block of commented-out lines of code should be removed.(Ù™Ì
+A
+java:S1075z"&Remove this hard-coded path-delimiter.(„Ä÷¬şÿÿÿÿ
+]	java:S125f"<This block of commented-out lines of code should be removed.(Õã˜¶üÿÿÿÿ8’òÍ‹.
+s
+java:S1192¤"\Define a constant instead of duplicating this literal "form.changeFieldRequirement" 3 times.(ŸÚÂµ
+k
+java:S1192Š"ODefine a constant instead of duplicating this literal "Field is empty" 3 times.(ĞÒışÿÿÿÿ

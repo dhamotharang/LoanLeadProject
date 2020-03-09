@@ -1,26 +1,21 @@
+import {EimUiConfigModel} from "./eim-ui-config";
+
 export interface EimComponentModel {
-  id: string;
-  name: string;
-  description: string;
-  version: string;
-  configs: EimConfigModel[];
-  validations: string[];
-  // tasks: Tasks;
-  uiConfig: EimUiConfigModel;
-  properties: any;
-  components: EimComponentModel[];
+  id?: string;
+  name?: string;
+  description?: string;
+  configs?: EimConfigModel[];
+  uiConfig?: EimUiConfigModel;
+  icon?: string;
+  components?: EimComponentModel[];
+  resources?: EimResourceModel[];
+}
+
+export interface EimResourceModel extends EimComponentModel {
+  optional: boolean;
+  optionalSelected: boolean;
 }
 
 export interface EimConfigModel {
   // todo
-}
-
-export interface EimUiConfigModel {
-  id: string;
-  type: EimUiType;
-  value: string;
-}
-
-export enum EimUiType {
-  IFRAME = 'IFRAME'
 }

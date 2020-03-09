@@ -2,6 +2,7 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {ExternalActionMessage} from "../../../model/dynamic-component";
 import {FooterAction, FooterButton} from "../../../model/ui/components/footer";
 import {DataService} from "../../../core/services/data.service";
+import {EimComponentModel, EimConfigModel} from "../../../model/component";
 
 @Component({
   selector: 'eim-external-configuration',
@@ -16,19 +17,16 @@ export class ExternalConfigurationComponent implements OnInit {
   @Output()
   hide: EventEmitter<any> = new EventEmitter();
 
-  private _componentData: any;
-
   constructor(private dataService: DataService) {
   }
 
   ngOnInit(): void {
   }
 
-  dataChanged(data: any) {
-    console.log('data changed');
-    console.log(data);
-    this._componentData = data;
-    if (!data) {
+  dataChanged(component: EimComponentModel, configs: EimConfigModel[]) {
+    console.log('external configuration config change', configs);
+    component.configs = configs;
+    if (!configs) {
       this.disableSaveButton();
     } else {
       this.enableSaveButton();
@@ -36,7 +34,6 @@ export class ExternalConfigurationComponent implements OnInit {
   }
 
   actionPerformed(event: FooterButton) {
-    console.log(event);
     switch (event.type) {
       case "SAVE":
         if (event.action) {
@@ -50,9 +47,26 @@ export class ExternalConfigurationComponent implements OnInit {
   }
 
   private saveData(action: FooterAction): void {
-    this.dataService.performAction(action.method, action.url, this._componentData).subscribe(() => {
-      this.hide.emit();
+    let data = this.convertToSaveObject(this.config.component);
+    if (this.config.saveMapper && typeof this.config.saveMapper === 'function') {
+      data = this.config.saveMapper(data);
+    }
+    this.dataService.performAction(action.method, action.url, data).subscribe((data) => {
+      if (data) {
+        this.hide.emit();
+      } else {
+        console.log('error');
+      }
     });
+  }
+
+  private convertToSaveObject(component: EimComponentModel) {
+    return {
+      id: component.id,
+      configs: component.configs,
+      components: component.components ? component.components.map(this.convertToSaveObject) : undefined,
+      resources: component.resources ? component.resources.map(this.convertToSaveObject) : undefined
+    }
   }
 
   private disableSaveButton() {
@@ -71,4 +85,11 @@ export class ExternalConfigurationComponent implements OnInit {
     });
   }
 
+  configError() {
+    const component = this.config.component;
+    const uiConfig = component.uiConfig;
+    const c = component.components || [];
+    const r = component.resources || [];
+    return !uiConfig && c.length == 0 && r.length == 0;
+  }
 }

@@ -25,7 +25,7 @@ export class TooltipComponent implements OnInit {
   ngOnInit() {
   }
 
-  show(event, target) {
+  show(event: Event, target?: EventTarget) {
     this.op.show(event, target);
   }
 }

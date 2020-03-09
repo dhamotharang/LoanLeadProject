@@ -1,18 +1,21 @@
 import {Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild} from '@angular/core';
-import {ExternalComponentModel} from "../../../../model/ui/components/external";
-import {ComponentModel} from "../../../../model/config-model";
+import {ConfigurableComponentModel} from "../../../../model/ui/components/configurable-component";
+import {EimExternalUiConfigModel} from "../../../../model/eim-ui-config";
 
 @Component({
   selector: 'eim-web',
   templateUrl: './web.component.html',
   styleUrls: ['./web.component.scss']
 })
-export class WebComponent implements OnInit, ExternalComponentModel {
+export class WebComponent implements OnInit, ConfigurableComponentModel {
+  @Input()
+  component: EimExternalUiConfigModel;
 
   @Input()
-  config: ComponentModel;
+  configs: any;
+
   @Output()
-  configChange: EventEmitter<any> = new EventEmitter<any>();
+  configsChange: EventEmitter<any> = new EventEmitter<any>();
 
   @ViewChild('webComponent', {static: true})
   webComponent: ElementRef;
@@ -21,12 +24,19 @@ export class WebComponent implements OnInit, ExternalComponentModel {
   }
 
   ngOnInit(): void {
-    const custom = document.createElement(this.config.value);
-    custom['configs'] = this.config.configs;
-    custom.addEventListener('configChange', (event: CustomEvent) => {
-      this.configChange.emit(event.detail);
+    const custom: HTMLElement = document.createElement(this.component.value);
+    if (this.configs) {
+      WebComponent.sendConfigs(custom, this.configs);
+    }
+    custom.addEventListener('configsChange', (event: CustomEvent) => {
+      console.log('web change config', event);
+      this.configsChange.emit(event.detail);
     });
     this.webComponent.nativeElement.appendChild(custom);
+  }
+
+  private static sendConfigs(custom: HTMLElement, configs: any): void {
+    custom['configs'] = configs;
   }
 
 }

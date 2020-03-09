@@ -1,0 +1,74 @@
+:host {
+  min-height: 150px;
+  border: 1px dashed rgb(127, 127, 127);
+  padding: 10px;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  .server-name {
+    margin: 0 10px;
+    flex: 1;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden
+  }
+
+  .menu {
+    margin-left: 10px;
+    font-size: 26px;
+    color: rgb(127, 127, 127);
+  }
+
+  .size22{
+    font-size: 22px;
+  }
+}
+
+.body {
+  padding: 5px;
+
+  .empty-message {
+    margin-top: 5px;
+    .info {
+      display: flex;
+      align-items: center;
+      font-size: 16px;
+
+      i {
+        width: 35px;
+        font-size: 24px;
+      }
+    }
+
+    .description {
+      margin-top: 5px;
+      padding-left: 35px;
+      font-size: 13px;
+      color: rgb(166, 166, 166);
+    }
+  }
+}
+
+.server-menu-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 5px 10px;
+
+  .menu-icon {
+    margin-right: 10px;
+    width: 20px;
+  }
+}
+
+.remove-color {
+  color: #BE5007;
+}
+
+.configure-color {
+  color: #717171;
+}

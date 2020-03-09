@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 
 @Component({
-  selector: 'loanlead-root',
+  selector: 'eim-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })

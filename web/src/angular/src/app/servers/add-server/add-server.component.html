@@ -1,0 +1,25 @@
+<div class="content" (input)="onDataChange()">
+  <div class="field">
+    <label class="row center">
+      <span>Server:</span>
+      <input type="text" class="flex1w" placeholder="Enter Name or IP Address" [(ngModel)]="serverName">
+    </label>
+  </div>
+  <div class="credentials"> Enter credentials to access the server</div>
+  <div class="field">
+    <label class="row center">
+      <span>Username:</span>
+      <input type="text" class="flex1w" placeholder="Enter username" [(ngModel)]="username">
+    </label>
+  </div>
+  <div class="field" style="margin-top: 6px;">
+    <label class="row center">
+      <span>Password:</span>
+      <input type="password" class="flex1w" placeholder="Enter password" [(ngModel)]="password">
+    </label>
+  </div>
+  <div class="test">
+    <button class="action-button secondary" (click)="testConnection()">Test</button>
+    <span class="error" *ngIf="errorMessage"><i class="fas fa-exclamation-circle"></i>{{errorMessage}}</span>
+  </div>
+</div>

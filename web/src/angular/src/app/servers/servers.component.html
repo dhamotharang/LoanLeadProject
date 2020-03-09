@@ -1,0 +1,28 @@
+<div class="header">
+  <span>SERVERS</span>
+  <div (click)="addServerClick()" class="add-server pointer noselect" id="add-server-action">
+    <i class="far fa-plus-square light-blue"></i>
+    <span>ADD A SERVER</span>
+  </div>
+</div>
+
+
+<div class="servers-container">
+  <eim-server *ngFor="let server of servers" [server]="server"></eim-server>
+  <div *ngIf="!servers || servers.length == 0" class="empty-message">
+    <div class="info light-blue"><i class="fas fa-exclamation-circle"></i>No servers defined</div>
+    <div class="description">Please use the <i class="far fa-plus-square light-blue"></i> button above to add servers to this environment</div>
+  </div>
+</div>
+
+
+<!--<div>-->
+<!--  servers will be displayed here soon!-->
+
+<!--&lt;!&ndash;          <div (click)="menu.show($event)" *ngFor="let resource of resources" class="resource pointer">&ndash;&gt;-->
+<!--&lt;!&ndash;            <img [src]="resource.icon" alt="">&ndash;&gt;-->
+<!--&lt;!&ndash;            <span>{{resource.caption}}</span>&ndash;&gt;-->
+<!--&lt;!&ndash;          </div>&ndash;&gt;-->
+<!--&lt;!&ndash;          <p-menu #menu [model]="buildMenuItems(resource)" [popup]="true" appendTo="body"></p-menu>&ndash;&gt;-->
+<!--</div>-->
+

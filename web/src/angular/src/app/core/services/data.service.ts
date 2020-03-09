@@ -3,9 +3,10 @@ import {HttpClient, HttpErrorResponse} from "@angular/common/http";
 import {Observable, of} from "rxjs";
 import {catchError, map} from "rxjs/operators";
 import {ServerResp} from "../../model/server-resp";
-import {ComponentModel, NavBarModel} from "../../model/config-model";
-import {EimResourceModel} from "../../model/resources/resource-model";
 import {HTTPMethod} from "../../model/ui/components/footer";
+import {EimEnvironmentModel} from "../../model/environment/environment";
+import {EimResourceModel} from "../../model/component";
+import {EimUiConfigModel} from "../../model/eim-ui-config";
 
 @Injectable({
   providedIn: 'root'
@@ -15,26 +16,32 @@ export class DataService {
   constructor(private http: HttpClient) {
   }
 
-  getNavigation(): Observable<NavBarModel> {
-    return this.get<NavBarModel>(`assets/mock/navigation.json`).pipe(map((data) => {
+  getEnvironment(): Observable<EimEnvironmentModel> {
+    return this.get<EimEnvironmentModel>(`/eim/api/environment`).pipe(map((data) => {
       return data.data;
     }));
   }
 
-  getWorkspace(): Observable<ComponentModel> {
-    return this.get<ComponentModel>(`assets/mock/workspace.json`).pipe(map((data) => {
-      return data.data;
-    }));
-  }
-
-  getResources(): Observable<EimResourceModel[]> {
-    return this.get<EimResourceModel[]>(`/eim/api/resources`).pipe(map((data) => {
+  getWorkspace(): Observable<EimUiConfigModel> {
+    return this.get<EimUiConfigModel>(`assets/mock/workspace.json`).pipe(map((data) => {
       return data.data;
     }));
   }
 
   getOptionalResources(): Observable<EimResourceModel[]> {
-    return this.get<EimResourceModel[]>(`assets/mock/optional-resources.json`).pipe(map((data) => {
+    return this.get<EimResourceModel[]>('/eim/api/resources/optional').pipe(map((data) => {
+      return data.data || [];
+    }));
+  }
+
+  getResources(): Observable<EimResourceModel[]> {
+    return this.get<EimResourceModel[]>(`/eim/api/resources`).pipe(map((data) => {
+      return data.data || [];
+    }));
+  }
+
+  saveEnvironment(environment: EimEnvironmentModel): Observable<EimEnvironmentModel> {
+    return this.post<EimEnvironmentModel>('/eim/api/environment', environment).pipe(map((data) => {
       return data.data;
     }));
   }
@@ -54,6 +61,8 @@ export class DataService {
       case HTTPMethod.PATCH:
         resp = this.patch<T>(url, data);
         break;
+      case HTTPMethod.DELETE:
+        resp = this.delete<T>(url);
       default:
         throw `Http method '${method}' not supported`;
     }
@@ -87,6 +96,13 @@ export class DataService {
     return this.http.patch<T>(url, body).pipe(
       map((data: T) => ServerResp.forData<T>(data)),
       catchError((err: HttpErrorResponse) => of<ServerResp<T>>(ServerResp.withError<T>(err)))
+    );
+  }
+
+  delete<T>(url: string): Observable<ServerResp<T>> {
+    return this.http.delete<T>(url).pipe(
+      map((data: T) => ServerResp.forData<T>(data)),
+      catchError((err: HttpErrorResponse) => of<ServerResp<T>>(ServerResp.withError<T>(err))),
     );
   }
 }

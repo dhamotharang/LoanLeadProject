@@ -22,6 +22,7 @@ com\loanlead\models\Report.class
 com\loanlead\auth\UserStatus.class
 com\loanlead\models\Branch.class
 com\loanlead\repositories\EntityRepository.class
+com\loanlead\auth\DefaultPasswordEncoder.class
 com\loanlead\services\BranchService.class
 com\loanlead\repositories\LoanRepository.class
 com\loanlead\auth\entities\Role.class
@@ -36,11 +37,13 @@ com\loanlead\models\Entity.class
 com\loanlead\controller\CustomerController.class
 com\loanlead\controller\BranchController.class
 com\loanlead\controller\UserController.class
+com\loanlead\auth\SecurityService.class
 com\loanlead\models\Loan.class
 com\loanlead\StaticResourceConfiguration.class
 com\loanlead\services\EntityService.class
 com\loanlead\repositories\CustomerRepository.class
 com\loanlead\controller\LoanController.class
+com\loanlead\models\ui\ReportModel.class
 com\loanlead\repositories\LoanProductRepository.class
 com\loanlead\auth\RoleRepository.class
 com\loanlead\auth\UserRepository.class

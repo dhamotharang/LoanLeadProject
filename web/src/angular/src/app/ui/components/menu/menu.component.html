@@ -1,1 +1,21 @@
-<p>menu works!</p>
+<eim-tooltip>
+  <div [ngClass]="menuWrapperClass()">
+    <div (click)="onMenuItemClick(item)" *ngFor="let item of menuItems" class="menu-item-wrapper">
+      <ng-container [ngSwitch]="item.type">
+
+        <!-- if menu item -->
+        <ng-container
+          *ngSwitchCase="_MenuItemType.ITEM"
+          [ngTemplateOutletContext]="{item: item}"
+          [ngTemplateOutlet]="itemTemplate">
+        </ng-container>
+
+        <!-- if menu separator -->
+        <ng-container *ngSwitchCase="_MenuItemType.SEPARATOR">
+          <div class="separator"></div>
+        </ng-container>
+      </ng-container>
+
+    </div>
+  </div>
+</eim-tooltip>

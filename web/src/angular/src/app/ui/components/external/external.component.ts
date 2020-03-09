@@ -5,22 +5,26 @@ import {
   OnInit,
   Output,
 } from '@angular/core';
-import {ComponentModel, ComponentType} from "../../../model/config-model";
+import {ConfigurableComponentModel} from "../../../model/ui/components/configurable-component";
+import {EimExternalUiConfigModel, EimUiConfigType} from "../../../model/eim-ui-config";
 
 @Component({
   selector: 'eim-external',
   templateUrl: './external.component.html',
   styleUrls: ['./external.component.scss']
 })
-export class ExternalComponent implements OnInit {
+export class ExternalComponent implements OnInit, ConfigurableComponentModel {
 
   @Input()
-  component: ComponentModel;
+  component: EimExternalUiConfigModel;
+
+  @Input()
+  configs: any;
 
   @Output()
-  configChange: EventEmitter<any> = new EventEmitter<any>();
+  configsChange: EventEmitter<any> = new EventEmitter<any>();
 
-  type = ComponentType;
+  type = EimUiConfigType;
 
   constructor() {
   }
@@ -28,4 +32,8 @@ export class ExternalComponent implements OnInit {
   ngOnInit() {
   }
 
+  dataChanged($event: any) {
+    console.log('external config change', $event);
+    this.configsChange.emit($event);
+  }
 }

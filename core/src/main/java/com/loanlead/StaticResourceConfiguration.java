@@ -43,6 +43,15 @@ public class StaticResourceConfiguration implements WebMvcConfigurer {
         registry
                 .addResourceHandler("/ui/**")
                 .addResourceLocations("file:" + profilePath + "/ui/angular/");
+        registry
+                .addResourceHandler("/css/**")
+                .addResourceLocations("file:" + profilePath + "/ui/css/");
+        registry
+                .addResourceHandler("/js/**")
+                .addResourceLocations("file:" + profilePath + "/ui/js/");
+        registry
+                .addResourceHandler("/bootstrap-4.1.1/**")
+                .addResourceLocations("file:" + profilePath + "/ui/bootstrap-4.1.1/");
     }
 
     @Bean

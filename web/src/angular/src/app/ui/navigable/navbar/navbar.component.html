@@ -1,6 +1,6 @@
-<div class="header">
-  <div [title]="navBarName()" class="logo"><span>{{navBarName()[0]}}</span></div>
+<div class="header" [ngStyle]="getHeaderStyle()">
+  <div *ngIf="navBarName()" [title]="navBarName()" class="logo"><span>{{navBarName()[0]}}</span></div>
   <div class="actions">
-    <img *ngFor="let item of navBar.actions" [src]="item.icon" alt="" (click)="actionClick(item)">
+    <img *ngFor="let item of actions" [src]="item.icon" alt="" (click)="actionClick(item)">
   </div>
 </div>

@@ -1,5 +1,13 @@
 <ng-container [ngSwitch]="component.type">
-  <eim-iframe *ngSwitchCase="type.IFRAME" [config]="component" (configChange)="configChange.emit($event)"></eim-iframe>
-  <eim-web *ngSwitchCase="type.WEB_COMPONENT" [config]="component" (configChange)="configChange.emit($event)"></eim-web>
+  <eim-iframe *ngSwitchCase="type.IFRAME"
+              [component]="component"
+              [(configs)]="configs"
+              (configsChange)="dataChanged($event)">
+  </eim-iframe>
+  <eim-web *ngSwitchCase="type.WEB_COMPONENT"
+           [component]="component"
+           [(configs)]="configs"
+           (configsChange)="dataChanged($event)">
+  </eim-web>
   <!--  <div *ngSwitchCase="type.HTML" [innerHTML]="component.value" class="html-content"></div>-->
 </ng-container>

@@ -21,9 +21,11 @@ C:\Users\11Born2Die11\IdeaProjects\loanlead\core\src\main\java\com\loanlead\repo
 C:\Users\11Born2Die11\IdeaProjects\loanlead\core\src\main\java\com\loanlead\services\LoanService.java
 C:\Users\11Born2Die11\IdeaProjects\loanlead\core\src\main\java\com\loanlead\repositories\EntityRepository.java
 C:\Users\11Born2Die11\IdeaProjects\loanlead\core\src\main\java\com\loanlead\WebSecurityConfig.java
+C:\Users\11Born2Die11\IdeaProjects\loanlead\core\src\main\java\com\loanlead\auth\DefaultPasswordEncoder.java
 C:\Users\11Born2Die11\IdeaProjects\loanlead\core\src\main\java\com\loanlead\controller\EntityController.java
 C:\Users\11Born2Die11\IdeaProjects\loanlead\core\src\main\java\com\loanlead\models\PhoneNumber.java
 C:\Users\11Born2Die11\IdeaProjects\loanlead\core\src\main\java\com\loanlead\repositories\CustomerRepository.java
+C:\Users\11Born2Die11\IdeaProjects\loanlead\core\src\main\java\com\loanlead\models\ui\ReportModel.java
 C:\Users\11Born2Die11\IdeaProjects\loanlead\core\src\main\java\com\loanlead\auth\UserRepository.java
 C:\Users\11Born2Die11\IdeaProjects\loanlead\core\src\main\java\com\loanlead\services\EntityService.java
 C:\Users\11Born2Die11\IdeaProjects\loanlead\core\src\main\java\com\loanlead\controller\BranchController.java
@@ -35,6 +37,7 @@ C:\Users\11Born2Die11\IdeaProjects\loanlead\core\src\main\java\com\loanlead\mode
 C:\Users\11Born2Die11\IdeaProjects\loanlead\core\src\main\java\com\loanlead\StaticResourceConfiguration.java
 C:\Users\11Born2Die11\IdeaProjects\loanlead\core\src\main\java\com\loanlead\models\LoanType.java
 C:\Users\11Born2Die11\IdeaProjects\loanlead\core\src\main\java\com\loanlead\models\LoanProduct.java
+C:\Users\11Born2Die11\IdeaProjects\loanlead\core\src\main\java\com\loanlead\auth\SecurityService.java
 C:\Users\11Born2Die11\IdeaProjects\loanlead\core\src\main\java\com\loanlead\repositories\PhoneNumberRepository.java
 C:\Users\11Born2Die11\IdeaProjects\loanlead\core\src\main\java\com\loanlead\models\Branch.java
 C:\Users\11Born2Die11\IdeaProjects\loanlead\core\src\main\java\com\loanlead\excel\AuditExcelManager.java

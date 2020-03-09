@@ -19,5 +19,6 @@ export enum HTTPMethod {
   GET,
   POST,
   PUT,
-  PATCH
+  PATCH,
+  DELETE
 }

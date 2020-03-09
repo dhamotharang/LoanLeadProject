@@ -14,7 +14,8 @@ export class HeaderComponent implements OnInit, OnChanges {
 
   @Input()
   config: HeaderConfig;
-  
+
+  _headerConfig: HeaderConfig;
 
   @Output()
   closeClick: EventEmitter<void> = new EventEmitter<any>();

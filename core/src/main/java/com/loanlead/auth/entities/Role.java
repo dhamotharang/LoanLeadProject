@@ -1,10 +1,12 @@
 package com.loanlead.auth.entities;
 
+import org.springframework.security.core.GrantedAuthority;
+
 import javax.persistence.*;
 
 @Entity
 @Table(name = "roles")
-public class Role {
+public class Role implements GrantedAuthority {
   @GeneratedValue(strategy = GenerationType.AUTO)
   private Integer id;
 
@@ -45,5 +47,10 @@ public class Role {
 
   public void setDisplayName(String displayName) {
     this.displayName = displayName;
+  }
+
+  @Override
+  public String getAuthority() {
+    return name;
   }
 }

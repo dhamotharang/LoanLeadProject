@@ -10,12 +10,12 @@ import {EnvironmentComponent} from "./environment/environment.component";
 import {NavigableComponent} from "./ui/navigable/navigable.component";
 
 const componentRoutes: Routes = [
-  // {path: Urls.WORKSPACE, component: WorkspaceComponent, pathMatch: 'full'},
-  // {path: Urls.SERVERS, component: ServersComponent, pathMatch: 'full'},
-  // {path: Urls.RESOURCES, component: ResourcesComponent, pathMatch: 'full'},
-  // {path: Urls.SIDEBAR, component: SidebarComponent, pathMatch: 'full'},
-  // {path: Urls.LOGS, component: LogsComponent, pathMatch: 'full'},
-  // {path: Urls.ENVIRONMENT_SETTINGS, component: EnvironmentComponent, pathMatch: 'full'}
+  {path: Urls.WORKSPACE, component: WorkspaceComponent, pathMatch: 'full'},
+  {path: Urls.SERVERS, component: ServersComponent, pathMatch: 'full'},
+  {path: Urls.RESOURCES, component: ResourcesComponent, pathMatch: 'full'},
+  {path: Urls.SIDEBAR, component: SidebarComponent, pathMatch: 'full'},
+  {path: Urls.LOGS, component: LogsComponent, pathMatch: 'full'},
+  {path: Urls.ENVIRONMENT_SETTINGS, component: EnvironmentComponent, pathMatch: 'full'}
 ];
 
 const navRoutes: Routes = [

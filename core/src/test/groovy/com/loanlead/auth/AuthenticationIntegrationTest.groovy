@@ -3,6 +3,9 @@ package com.loanlead.auth
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc
 import org.springframework.boot.test.context.SpringBootTest
+import org.springframework.security.core.userdetails.User
+import org.springframework.security.crypto.factory.PasswordEncoderFactories
+import org.springframework.security.crypto.password.PasswordEncoder
 import org.springframework.security.test.web.servlet.setup.SecurityMockMvcConfigurers
 import org.springframework.test.context.ActiveProfiles
 import org.springframework.test.web.servlet.MockMvc
@@ -58,9 +61,9 @@ class AuthenticationIntegrationTest extends Specification {
 
     def "successful admin form login"() {
         expect:
-        mvc.perform(formLogin("/perform_login").user("admin").password("admin"))
+        mvc.perform(formLogin("/perform_login").user("1170").password("asedrwe23dsSxcssdfr56ggf"))
                 .andExpect(status().isFound())
-                .andExpect(redirectedUrl("/ui"))
+                .andExpect(redirectedUrl("/ui/user"))
                 .andExpect(authenticated())
     }
 

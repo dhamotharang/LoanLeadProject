@@ -46,19 +46,19 @@ public class UrlAuthenticationSuccessHandler implements AuthenticationSuccessHan
         boolean isAdmin = false;
         final Collection<? extends GrantedAuthority> authorities = authentication.getAuthorities();
         for (final GrantedAuthority grantedAuthority : authorities) {
-            if (grantedAuthority.getAuthority().equals(AuthRole.USER.name())) {
+            if (!grantedAuthority.getAuthority().equals(AuthRole.ADMIN.role())) {
                 isUser = true;
                 break;
-            } else if (grantedAuthority.getAuthority().equals(AuthRole.ADMIN.name())) {
+            } else if (grantedAuthority.getAuthority().equals(AuthRole.ADMIN.role())) {
                 isAdmin = true;
                 break;
             }
         }
 
         if (isUser) {
-            return "/user";
+            return "/ui/user";
         } else if (isAdmin) {
-            return "/admin";
+            return "/ui/admin";
         } else {
             throw new IllegalStateException();
         }

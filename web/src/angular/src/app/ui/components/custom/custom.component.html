@@ -1,12 +1,30 @@
 <ng-container [ngSwitch]="component.type">
   <eim-split *ngSwitchCase="componentType.SPLIT"
-             [direction]="component.direction"
-             [resizable]="component.resizable"
-             [sizes]="component.sizes">
-    <eim-custom *ngFor="let item of component.components" [component]="item"></eim-custom>
+             [component]="asEimSplitUiConfigModel(component)">
+    <eim-custom *ngFor="let item of asEimSplitUiConfigModel(component).elements"
+                [component]="item"
+                (configsChange)="dataChanged($event)"
+                [(configs)]="configs">
+    </eim-custom>
   </eim-split>
-  <eim-editor *ngSwitchCase="componentType.EDITOR"></eim-editor>
-  <eim-external *ngSwitchCase="componentType.IFRAME" [component]="component"></eim-external>
-  <eim-external *ngSwitchCase="componentType.HTML" [component]="component"></eim-external>
-  <eim-external *ngSwitchCase="componentType.WEB_COMPONENT" [component]="component"></eim-external>
+  <eim-editor *ngSwitchCase="componentType.EDITOR"
+              [(configs)]="configs"
+              (configsChange)="dataChanged($event)"
+              [component]="component"
+  ></eim-editor>
+  <eim-external *ngSwitchCase="componentType.IFRAME"
+                [(configs)]="configs"
+                (configsChange)="dataChanged($event)"
+                [component]="asEimExternalUiConfigModel(component)">
+  </eim-external>
+  <eim-external *ngSwitchCase="componentType.HTML"
+                [(configs)]="configs"
+                (configsChange)="dataChanged($event)"
+                [component]="asEimExternalUiConfigModel(component)">
+  </eim-external>
+  <eim-external *ngSwitchCase="componentType.WEB_COMPONENT"
+                [(configs)]="configs"
+                (configsChange)="dataChanged($event)"
+                [component]="asEimExternalUiConfigModel(component)">
+  </eim-external>
 </ng-container>

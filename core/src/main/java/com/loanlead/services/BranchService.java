@@ -17,17 +17,17 @@ public class BranchService {
     @Autowired
     BranchRepository branchRepository;
 
-    public Page<Branch> findAll() {
-        return findAll(UserServiceImpl.DEFAULT_PAGE, UserServiceImpl.DEFAULT_ITEMS_PER_PAGE);
+    public Iterable<Branch> findAll() {
+        return branchRepository.findAll();
     }
 
-    public Page<Branch> findAll(@NotNull Integer page, @NotNull Integer itemsPerPage) {
+    public List<Branch> findAll(@NotNull Integer page, @NotNull Integer itemsPerPage) {
         Pageable pageable = PageRequest.of(page, itemsPerPage);
-        return branchRepository.findAll(pageable);
+        return branchRepository.findAll(pageable).getContent();
     }
 
-    public Branch find(int id) {
-        return branchRepository.findById(id).orElse(null);
+    public Branch find(String name) {
+        return branchRepository.findById(name).orElse(null);
     }
 
     public Branch save(Branch branch) {
@@ -42,8 +42,8 @@ public class BranchService {
         this.branchRepository.delete(branch);
     }
 
-    public void deleteById(int id) {
-        this.branchRepository.deleteById(id);
+    public void deleteById(String name) {
+        this.branchRepository.deleteById(name);
     }
 
     public void deleteAllByIds(Integer[] ids) {

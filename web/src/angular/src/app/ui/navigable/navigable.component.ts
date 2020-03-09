@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
+import {EimEnvironmentModel} from "../../model/environment/environment";
+import {EnvironmentService} from "../../core/services/environment.service";
 import {Observable} from "rxjs";
-import {NavBarModel} from "../../model/config-model";
-import {DataService} from "../../core/services/data.service";
 
 @Component({
   selector: 'eim-navigable-component',
@@ -10,12 +10,13 @@ import {DataService} from "../../core/services/data.service";
 })
 export class NavigableComponent implements OnInit {
 
-  navigation$: Observable<NavBarModel>;
+  environment$: Observable<EimEnvironmentModel>;
 
-  constructor(private dataService: DataService) {
+  constructor(private environmentService: EnvironmentService) {
   }
 
   ngOnInit() {
-    this.navigation$ = this.dataService.getNavigation();
+    this.environment$ = this.environmentService.getEnvironment();
   }
+
 }

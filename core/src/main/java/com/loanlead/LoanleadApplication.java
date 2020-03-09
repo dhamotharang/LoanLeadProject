@@ -19,12 +19,10 @@ import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
 import java.util.Properties;
 
-@Configuration
 @SpringBootApplication
 @EnableJpaRepositories(basePackages = {"com.loanlead.repositories", "com.loanlead.auth"})
 @EnableTransactionManagement
-@ComponentScan(basePackages = {"com.loanlead.auth", "com.loanlead.services", "com.loanlead.excel", "com.loanlead.controller"})
-public class LoanleadApplication extends SpringBootServletInitializer {
+public class LoanleadApplication {
     private String jndiName;
 
     public String getJndiName() {

@@ -5,10 +5,12 @@ import com.loanlead.auth.UserService;
 import com.loanlead.auth.UserServiceImpl;
 import com.loanlead.models.Loan;
 import com.loanlead.models.LoanProduct;
+import com.loanlead.models.ui.ReportModel;
 import com.loanlead.services.CustomerService;
 import com.loanlead.services.LoanProductService;
 import com.loanlead.services.LoanService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -20,6 +22,7 @@ import java.time.LocalDateTime;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 @RestController
 @RequestMapping(ReportController.PREFIX + "/loans")
@@ -62,31 +65,31 @@ public class LoanController {
     }
 
     @PostMapping
-    public Loan postLoan(@Valid Loan loan, BindingResult bindingResult, Authentication authentication) {
+    public ResponseEntity<Loan> postLoan(@RequestBody Loan loan, Authentication authentication) {
         LoanProduct loanProduct = loanProductService.find(loan.getLoanProduct().getId());
 
-        if (loanProduct.getMaxAmount() < loan.getAmount()) {
-            bindingResult.rejectValue("amount", "form.isBiggerThanCanBe","Field is bigger than it can be");
-        }
-
-        if (loanProduct.getMaxAmount() < loan.getTenure()) {
-            bindingResult.rejectValue("tenure", "form.isBiggerThanCanBe","Field is bigger than it can be");
-        }
+//        if (loanProduct.getMaxAmount() < loan.getAmount()) {
+//            bindingResult.rejectValue("amount", "form.isBiggerThanCanBe","Field is bigger than it can be");
+//        }
+//
+//        if (loanProduct.getMaxAmount() < loan.getTenure()) {
+//            bindingResult.rejectValue("tenure", "form.isBiggerThanCanBe","Field is bigger than it can be");
+//        }
 
         loan.setUser(userService.findUserByEmployeeId(authentication.getName()));
-        return loanService.save(loan);
+        return ResponseEntity.of(Optional.of(loanService.save(loan)));
     }
 
     @PostMapping("/forward")
-    public Loan forwardLoan(@RequestParam("loanId") Integer loanId, @RequestParam("comment") String comment, Authentication authentication) {
+    public ResponseEntity<Loan> forwardLoan(@RequestParam("loanId") Integer loanId, @RequestParam("comment") String comment, Authentication authentication) {
         loanService.forwardLoanById(loanService.find(loanId), comment, userService.findUserByEmployeeId(authentication.getName()));
-        return loanService.find(loanId);
+        return ResponseEntity.of(Optional.of(loanService.find(loanId)));
     }
 
     @PostMapping("/{action}/{loanId}")
-    public Loan approveLoan(@PathVariable("action") String action,
+    public ResponseEntity<Loan> approveLoan(@PathVariable("action") String action,
                               @PathVariable("loanId") Integer loanId,
-                              @RequestParam(value = "comment", required = false) String comment,
+                              @RequestParam(value = "comment") String comment,
                               Authentication authentication)
     {
         if (comment == null) {
@@ -94,63 +97,41 @@ public class LoanController {
         }
 
         loanService.updateStatus(loanService.find(loanId), this.mapActionStatuses.get(action), userService.findUserByEmployeeId(authentication.getName()), comment);
-        return loanService.find(loanId);
+        return ResponseEntity.of(Optional.of(loanService.find(loanId)));
     }
 
     @PostMapping("/defer")
-    public Loan postDeferLoan(@RequestParam("loanId") Integer loanId, @RequestParam("stage") Integer nextStage, @RequestParam("comment") String comment, Authentication authentication) {
+    public ResponseEntity<Loan> postDeferLoan(@RequestParam("loanId") Integer loanId, @RequestParam("stage") Integer nextStage, @RequestParam("comment") String comment, Authentication authentication) {
         loanService.deferLoan(loanService.find(loanId), nextStage, userService.findUserByEmployeeId(authentication.getName()), comment);
-        return loanService.find(loanId);
+        return ResponseEntity.of(Optional.of(loanService.find(loanId)));
     }
 
     @GetMapping("/receive/{loanId}")
-    public Loan receiveLoan(@PathVariable("loanId") Integer loanId, Authentication authentication) {
+    public ResponseEntity<Loan> receiveLoan(@PathVariable("loanId") Integer loanId, Authentication authentication) {
         loanService.receiveLoan(loanService.find(loanId), userService.findUserByEmployeeId(authentication.getName()));
-        return loanService.find(loanId);
+        return ResponseEntity.of(Optional.of(loanService.find(loanId)));
     }
 
     @GetMapping("/api/loans/{type}")
-    @ResponseBody
-    public List<Loan> loansReport(
+    public ResponseEntity<List<Loan>> loansReport(
             @PathVariable("type") String type,
-            @RequestParam(name = "minDate") LocalDateTime startDate,
-            @RequestParam(name = "maxDate") LocalDateTime endDate,
-            @RequestParam(name = "entityId") Integer entityId,
-            @RequestParam(name = "itemsPerPage") Integer itemsPerPage,
-            @RequestParam(name = "page") Integer page)
+            @RequestBody ReportModel reportModel)
     {
-        if (startDate == null) {
-            startDate = LoanService.MIN_DATE;
-        }
+        reportModel
+                .setDefaultStartDate(LoanService.MIN_DATE)
+                .setDefaultEndDate(LoanService.MAX_DATE)
+                .setDefaultItemsPerPage(UserServiceImpl.DEFAULT_ITEMS_PER_PAGE)
+                .setDefaultPage(UserServiceImpl.DEFAULT_PAGE);
 
-        if (endDate == null) {
-            endDate = LoanService.MAX_DATE;
-        }
-
-        if (itemsPerPage == null) {
-            itemsPerPage = UserServiceImpl.DEFAULT_ITEMS_PER_PAGE;
-        }
-
-        if (page == null) {
-            page = UserServiceImpl.DEFAULT_PAGE;
-        }
-
-        if (entityId == null) {
-            return loanService.findLoans(type, startDate, endDate, itemsPerPage, page);
+        if (reportModel.getEntityId() == null) {
+            return ResponseEntity.of(Optional.of(loanService.findLoans(type, reportModel.getStartDate(), reportModel.getEndDate(), reportModel.getItemsPerPage(), reportModel.getPage())));
         } else {
-            return loanService.findLoans(type, entityId, startDate, endDate, itemsPerPage, page);
+            return ResponseEntity.of(Optional.of(loanService.findLoans(type, reportModel.getEntityId(), reportModel.getStartDate(), reportModel.getEndDate(), reportModel.getItemsPerPage(), reportModel.getPage())));
         }
     }
 
-    @GetMapping("/api/customer/{customerId}/loans")
-    @ResponseBody
-    public List<Loan> customersLoans(@PathVariable("customerId") Integer customerId) {
-        return loanService.findLoansByCustomerId(customerId);
-    }
-
-    @GetMapping("/api/main/loans")
-    @ResponseBody
-    public List<Loan> mainPageLoans() {
-        return loanService.mainPageLoans();
+    @GetMapping("/main")
+    public ResponseEntity<List<Loan>> mainPageLoans() {
+        return ResponseEntity.of(Optional.of(loanService.mainPageLoans()));
     }
 }

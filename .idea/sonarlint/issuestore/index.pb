@@ -73,3 +73,27 @@ Kcore/src/test/groovy/com/loanlead/auth/AuthenticationIntegrationTest.groovy,a\
 core/pom.xml,7\6\76401d80919958a0380f14132adf8b8fc9c3d6ea
 h
 8core/src/main/java/com/loanlead/LoanleadApplication.java,e\7\e75c96d93b243853ec72200253cc9b28f87d8136
+r
+Bcore/src/main/java/com/loanlead/repositories/ReportRepository.java,7\3\73d231c6c7df8e8362aab3f5bbf20aec2662670d
+m
+=core/src/main/java/com/loanlead/services/CustomerService.java,8\a\8ac24fbe0eb32c58735e5876bf3e37f2855a50e2
+]
+-core/src/main/scripts/start-im-and-browse.bat,d\9\d93487874d9a79a84704feea7bce6d8789228e15
+X
+(core/src/main/assembly/assembly-core.xml,5\f\5fd79ce4f67f9f02e06822860c5b00661a583edc
+M
+web/src/assembly/assembly.xml,1\e\1e093e20de397bd99fd0839303252142ea468431
+;
+web/pom.xml,7\4\74db3766c5ffc022e47692cc672a7bd748475ac8
+t
+Dcore/src/main/java/com/loanlead/UrlAuthenticationSuccessHandler.java,9\f\9f1212ccc9149ed5f59b853950654f87ca65a193
+e
+5core/src/main/java/com/loanlead/auth/UserService.java,0\b\0b415bcf3cf5300f9e5240ff709fcc97eb5f57d7
+j
+:core/src/main/java/com/loanlead/models/ui/ReportModel.java,2\0\201737ea5430bcf9b630eb7bfb19edc27130911a
+p
+@core/src/main/java/com/loanlead/StaticResourceConfiguration.java,c\d\cd51078f92c1df5beba26b1960dcb1fda635ccf6
+O
+web/src/static/login/login.html,0\f\0f1c0f0193e6aed757432715a1104f99deb3a6a1
+f
+6core/src/main/java/com/loanlead/WebSecurityConfig.java,8\f\8ff6277fe09828cc5478902cc0d321aa2fcce5ce

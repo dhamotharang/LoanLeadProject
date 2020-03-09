@@ -1,4 +1,11 @@
 :host {
   display: grid;
+  grid-template-areas: "content";
   overflow: auto;
+  grid-template-rows: minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1fr);
+
+  & > * {
+    grid-area: content;
+  }
 }

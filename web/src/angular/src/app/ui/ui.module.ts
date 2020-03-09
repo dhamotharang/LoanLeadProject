@@ -12,7 +12,7 @@ import {ExternalWindowComponent} from './components/external-window/external-win
 import {CustomTooltipComponent} from './components/custom-tooltip/custom-tooltip.component';
 import {HeaderComponent} from './components/header/header.component';
 import {FooterComponent} from './components/footer/footer.component';
-import {OverlayPanelModule, SidebarModule} from "primeng";
+import {OverlayPanelModule, SidebarModule, TabViewModule} from "primeng";
 import {PipesModule} from "./pipes/pipes.module";
 import {IframeComponent} from './components/external/iframe/iframe.component';
 import {WebComponent} from './components/external/web/web.component';
@@ -43,7 +43,8 @@ import {ExternalConfigurationComponent} from './components/external-configuratio
   exports: [
     CustomComponent,
     NavbarComponent,
-    ExternalWindowComponent
+    ExternalWindowComponent,
+    MenuComponent
   ],
   imports: [
     CommonModule,
@@ -51,7 +52,8 @@ import {ExternalConfigurationComponent} from './components/external-configuratio
     SidebarModule,
     OverlayPanelModule,
     PipesModule,
-    RouterModule
+    RouterModule,
+    TabViewModule
   ]
 })
 export class UiModule {

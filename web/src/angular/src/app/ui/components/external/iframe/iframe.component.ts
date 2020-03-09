@@ -1,18 +1,21 @@
 import {Component, ElementRef, EventEmitter, Input, OnDestroy, OnInit, Output, ViewChild} from '@angular/core';
-import {ExternalComponentModel} from '../../../../model/ui/components/external';
-import {ComponentModel} from '../../../../model/config-model';
+import {ConfigurableComponentModel} from '../../../../model/ui/components/configurable-component';
+import {EimExternalUiConfigModel} from "../../../../model/eim-ui-config";
 
 @Component({
   selector: 'eim-iframe',
   templateUrl: './iframe.component.html',
   styleUrls: ['./iframe.component.scss']
 })
-export class IframeComponent implements OnInit, ExternalComponentModel, OnDestroy {
+export class IframeComponent implements OnInit, ConfigurableComponentModel, OnDestroy {
   @Input()
-  config: ComponentModel;
+  component: EimExternalUiConfigModel;
+
+  @Input()
+  configs: any;
 
   @Output()
-  configChange: EventEmitter<any> = new EventEmitter<any>();
+  configsChange: EventEmitter<any> = new EventEmitter<any>();
 
   @ViewChild('iframe', {static: true})
   iframe: ElementRef;
@@ -20,28 +23,33 @@ export class IframeComponent implements OnInit, ExternalComponentModel, OnDestro
   private _postMessageCallback: (e) => void;
 
   constructor() {
-    console.log(this);
     this.addEventListener();
   }
 
   private addEventListener() {
     this._postMessageCallback = (e) => {
       if (e.source === this.iframe.nativeElement.contentWindow) {
-        this.configChange.emit(e.data);
+        this.configsChange.emit(e.data);
       }
     };
     window.addEventListener('message', this._postMessageCallback);
   }
 
   ngOnInit(): void {
+    if (this.configs) {
+      console.log('config is present', this.configs);
+      this.sendConfigs(this.configs);
+    }
+  }
+
+  private sendConfigs(configs: any) {
     this.iframe.nativeElement.addEventListener('load', () => {
-      console.log('setting configs to content window', this.config.configs);
-      this.iframe.nativeElement.contentWindow.configs = this.config.configs;
+      console.log('setting configs to content window', configs);
+      this.iframe.nativeElement.contentWindow.configs = configs;
     });
   }
 
   ngOnDestroy(): void {
     window.removeEventListener('message', this._postMessageCallback);
   }
-
 }

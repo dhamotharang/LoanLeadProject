@@ -29,7 +29,7 @@ public class EntityController {
         return ResponseEntity.of(Optional.of(entityService.findAll(page, itemsPerPage).getContent()));
     }
 
-    @GetMapping("/${entityId}")
+    @GetMapping("/{entityId}")
     public ResponseEntity<Entity> findEntity(@PathVariable("entityId") Integer entityId) {
         return ResponseEntity.of(Optional.of(entityService.find(entityId)));
     }

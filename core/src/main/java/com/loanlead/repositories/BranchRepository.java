@@ -12,7 +12,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.Set;
 
 @Repository
-public interface BranchRepository extends PagingAndSortingRepository<Branch, Integer> {
+public interface BranchRepository extends PagingAndSortingRepository<Branch, String> {
     @Modifying
     @Query("DELETE FROM Branch b WHERE b.id IN :ids")
     @Transactional

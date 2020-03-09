@@ -1,9 +1,9 @@
 export const enum Urls {
-  MAIN = 'home',
-  ENTITIES = 'entities',
-  BRANCHES = 'branches',
-  USERS = 'users',
-  ROLES = 'roles',
-  DASHBOARD = 'dashboard',
-  REPORT = 'report'
+  NAV = 'nav',
+  WORKSPACE = 'workspace',
+  SERVERS = 'servers',
+  RESOURCES = 'resources',
+  SIDEBAR = 'sidebar',
+  LOGS = 'logs',
+  ENVIRONMENT_SETTINGS= 'env'
 }

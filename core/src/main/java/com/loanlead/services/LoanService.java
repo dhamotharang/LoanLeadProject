@@ -77,26 +77,10 @@ public class LoanService {
         return loans.getContent();
     }
 
-    public List<Loan> findLoans(String reportType) {
-        return findLoans(reportType, MIN_DATE, MAX_DATE);
-    }
-
-    public List<Loan> findLoans(String reportType, LocalDateTime minDate, LocalDateTime maxDate) {
-        return findLoans(reportType, minDate, maxDate, UserServiceImpl.DEFAULT_PAGE, UserServiceImpl.DEFAULT_ITEMS_PER_PAGE);
-    }
-
     public List<Loan> findLoans(String reportType, LocalDateTime minDate, LocalDateTime maxDate, Integer itemsPerPage, Integer page) {
         Pageable pageable = PageRequest.of(page, itemsPerPage);
         Page<Loan> loans = loanRepository.findLoans(reportType, minDate, maxDate, pageable);
         return loans.getContent();
-    }
-
-    public List<Loan> findLoans(String reportType, Integer entityId) {
-        return findLoans(reportType, entityId, MIN_DATE, MAX_DATE);
-    }
-
-    public List<Loan> findLoans(String reportType, Integer entityId, LocalDateTime minDate, LocalDateTime maxDate) {
-        return findLoans(reportType, entityId, minDate, maxDate, UserServiceImpl.DEFAULT_PAGE, UserServiceImpl.DEFAULT_ITEMS_PER_PAGE);
     }
 
     public List<Loan> findLoans(String reportType, Integer entityId, LocalDateTime minDate, LocalDateTime maxDate, Integer itemsPerPage, Integer page) {

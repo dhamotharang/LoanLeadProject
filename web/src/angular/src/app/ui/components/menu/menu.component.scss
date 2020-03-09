@@ -1,0 +1,26 @@
+.menu-item-wrapper {
+  display: flex;
+
+  .separator {
+    border-top: 1px solid #D9D9D9;
+    border-right: 1px solid #D9D9D9;
+    flex: 1;
+  }
+
+  &:hover {
+    background-color: #F2F2F2;
+    cursor: pointer;
+  }
+}
+
+.menu-wrapper {
+  display: flex;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
+.flex-column {
+  flex-direction: column;
+}

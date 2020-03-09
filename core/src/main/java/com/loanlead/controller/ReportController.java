@@ -4,6 +4,8 @@ import com.loanlead.auth.UserService;
 import com.loanlead.auth.UserServiceImpl;
 import com.loanlead.auth.entities.User;
 import com.loanlead.excel.*;
+import com.loanlead.models.ui.ReportModel;
+import com.loanlead.services.LoanService;
 import com.loanlead.services.ReportService;
 import org.apache.commons.io.IOUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,7 +22,7 @@ import java.time.Month;
 import java.util.List;
 
 @RestController
-@RequestMapping(ReportController.PREFIX)
+@RequestMapping(ReportController.PREFIX + "/reports")
 public class ReportController {
     static final String PREFIX = "/api";
     private ReportService reportService;
@@ -45,45 +47,7 @@ public class ReportController {
         this.reportService = reportService;
     }
 
-    @GetMapping("/logged_users")
-    @ResponseBody
-    public List<User> getLoggedInUsers(@RequestParam("page") Integer page, @RequestParam("itemsPerPage") Integer itemsPerPage) {
-        return userService.getOnlineUsers(page, itemsPerPage).getContent();
-    }
-
-    @GetMapping("/report")
-    public void report(
-            @RequestParam(name = "reportType", required = false)
-                    String reportType,
-            @RequestParam(value = "entityId", required = false)
-                    Integer entityId,
-            @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm")
-            @RequestParam(name = "minDate", required = false)
-                    LocalDateTime startDate,
-            @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm")
-            @RequestParam(name = "maxDate", required = false)
-                    LocalDateTime endDate,
-            HttpServletResponse response
-    ) throws IOException, ServletException {
-        startDate = startDate == null ? LocalDateTime.of(2018, Month.JANUARY, 1, 1, 1, 1) : startDate;
-        endDate = endDate == null ? LocalDateTime.now() : endDate;
-
-        reportsExcelManager.setReportType(reportType);
-        reportsExcelManager.setEntityId(entityId);
-        reportsExcelManager.setMinDate(startDate);
-        reportsExcelManager.setMaxDate(endDate);
-        reportsExcelManager.createTable();
-
-        response.setContentType("application/vnd.ms-excel");
-        response.setHeader("Content-Disposition", "attachment; filename=" + reportType + ".xlsx");
-
-        ServletOutputStream out = response.getOutputStream();
-        out.write(IOUtils.toByteArray(new FileInputStream(reportsExcelManager.getFilePath())));
-        out.flush();
-        out.close();
-    }
-
-    @GetMapping("/logged_user/report")
+    @GetMapping("/logged_user")
     public void getUserReport(HttpServletResponse response) throws IOException {
         loggedUserExcelManager.createTable();
 
@@ -96,7 +60,7 @@ public class ReportController {
         out.close();
     }
 
-    @GetMapping("/audit/report/{loanId}")
+    @GetMapping("/audit/{loanId}/report")
     public void getAuditReport(@PathVariable("loanId") Integer loanId, HttpServletResponse response) throws IOException {
         auditExcelManager.setLoanCode(loanId);
         auditExcelManager.createTable();
@@ -110,7 +74,7 @@ public class ReportController {
         out.close();
     }
 
-    @GetMapping("/role/report")
+    @GetMapping("/role")
     public void getRolesReport(HttpServletResponse response) throws IOException {
         roleExcelManager.createTable();
 
@@ -123,7 +87,7 @@ public class ReportController {
         out.close();
     }
 
-    @GetMapping("/user/report")
+    @GetMapping("/user")
     public void getUsersReport(HttpServletResponse response) throws IOException {
         userExcelManager.createTable();
 
@@ -136,7 +100,7 @@ public class ReportController {
         out.close();
     }
 
-    @GetMapping("/loan_threshold/report")
+    @GetMapping("/loan_threshold")
     public void getLoanProductReport(HttpServletResponse response) throws IOException {
         loanProductExcelManager.createTable();
 
@@ -150,8 +114,7 @@ public class ReportController {
     }
 
     @GetMapping("/audit/{loanId}")
-    @ResponseBody
-    public String getLoans(@PathVariable("loanId") Integer loanId,
+    public String getLoans(@PathVariable Integer loanId,
                            @RequestParam("page") Integer page,
                            @RequestParam("itemsPerPage") Integer itemsPerPage
     ) {
@@ -166,5 +129,31 @@ public class ReportController {
         reportService.findAllByLoanId(loanId, page, itemsPerPage);
 
         return "user/auditing";
+    }
+
+    @GetMapping("/{type}")
+    public void report(
+            @PathVariable
+                    String type,
+            @RequestBody ReportModel reportModel,
+            HttpServletResponse response
+    ) throws IOException, ServletException {
+        reportModel
+                .setDefaultStartDate(LoanService.MIN_DATE)
+                .setDefaultEndDate(LoanService.MAX_DATE);
+
+        reportsExcelManager.setReportType(type);
+        reportsExcelManager.setEntityId(reportModel.getEntityId());
+        reportsExcelManager.setMinDate(reportModel.getStartDate());
+        reportsExcelManager.setMaxDate(reportModel.getEndDate());
+        reportsExcelManager.createTable();
+
+        response.setContentType("application/vnd.ms-excel");
+        response.setHeader("Content-Disposition", "attachment; filename=" + type + ".xlsx");
+
+        ServletOutputStream out = response.getOutputStream();
+        out.write(IOUtils.toByteArray(new FileInputStream(reportsExcelManager.getFilePath())));
+        out.flush();
+        out.close();
     }
 }

@@ -115,7 +115,7 @@
                             <goal>single</goal>
                         </goals>
                         <configuration>
-                            <finalName>eim-portal-web-${project.version}</finalName>
+                            <finalName>loanlead-web-${project.version}</finalName>
                             <descriptors>
                                 <descriptor>src/assembly/assembly.xml</descriptor>
                             </descriptors>

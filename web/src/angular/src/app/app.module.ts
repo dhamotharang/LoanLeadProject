@@ -11,15 +11,12 @@ import {LogsModule} from "./logs/logs.module";
 import {HttpClientModule} from "@angular/common/http";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {EnvironmentModule} from "./environment/environment.module";
-import { EntitiesComponent } from './entities/entities.component';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    EntitiesComponent
+    AppComponent
   ],
   imports: [
-    EntitiesComponent,
     BrowserModule,
     AppRoutingModule,
     WorkspaceModule,

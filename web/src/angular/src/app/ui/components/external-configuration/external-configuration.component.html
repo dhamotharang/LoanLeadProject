@@ -1,3 +1,33 @@
-<eim-window-content [header]="config.header" [footer]="config.footer" (actionPerformed)="actionPerformed($event)" class="stretch">
-  <eim-external (configChange)="dataChanged($event)" [component]="config.component"></eim-external>
+<eim-window-content [header]="config.header"
+                    [footer]="config.footer"
+                    (actionPerformed)="actionPerformed($event)"
+                    class="stretch">
+  <eim-custom *ngIf="config.component.uiConfig"
+              (configsChange)="dataChanged(config.component, $event)"
+              [component]="config.component.uiConfig"
+              [(configs)]="config.component.configs">
+  </eim-custom>
+
+  <ng-container>
+    <p-tabView *ngIf="config.component.components || config.component.resources">
+      <p-tabPanel *ngFor="let component of config.component.components" [header]="component.name">
+        <eim-custom (configsChange)="dataChanged(component, $event)"
+                    [component]="component.uiConfig"
+                    [(configs)]="component.configs">
+        </eim-custom>
+      </p-tabPanel>
+
+      <p-tabPanel *ngFor="let component of config.component.resources" [header]="component.name">
+        <eim-custom (configsChange)="dataChanged(component, $event)"
+                    [component]="component.uiConfig"
+                    [(configs)]="component.configs">
+        </eim-custom>
+      </p-tabPanel>
+    </p-tabView>
+  </ng-container>
+
+  <div *ngIf="configError()" class="config-error">
+    <b>Component configuration ERROR!</b><br>
+    Either UIConfig or components or resources must be defined!
+  </div>
 </eim-window-content>

@@ -4,10 +4,12 @@ import com.loanlead.auth.UserServiceImpl;
 import com.loanlead.models.Branch;
 import com.loanlead.services.BranchService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.util.List;
+import java.util.Optional;
 
 //TODO Remake everything
 @RestController
@@ -21,8 +23,7 @@ public class BranchController {
     }
 
     @GetMapping
-    @ResponseBody
-    public List<Branch> branches(@RequestParam("page") Integer page, @RequestParam("itemsPerPage") Integer itemsPerPage) {
+    public ResponseEntity<List<Branch>> branches(@RequestParam("page") Integer page, @RequestParam("itemsPerPage") Integer itemsPerPage) {
         if (page == null) {
             page = UserServiceImpl.DEFAULT_PAGE;
         }
@@ -31,22 +32,22 @@ public class BranchController {
             itemsPerPage = UserServiceImpl.DEFAULT_ITEMS_PER_PAGE;
         }
 
-        return branchService.findAll(page, itemsPerPage).getContent();
+        return ResponseEntity.of(Optional.of(branchService.findAll(page, itemsPerPage).getContent()));
     }
 
     @GetMapping("/{branchId}")
-    public Branch findBranch(@PathVariable("branchId") Integer branchId) {
-        return branchService.find(branchId);
+    public ResponseEntity<Branch> findBranch(@PathVariable("branchId") Integer branchId) {
+        return ResponseEntity.of(Optional.of(branchService.find(branchId)));
     }
 
-    @PostMapping("/branch")
-    public Branch postingBranch(@Valid Branch branch) {
-        return this.branchService.save(branch);
+    @PostMapping
+    public ResponseEntity<Branch> postingBranch(@Valid Branch branch) {
+        return ResponseEntity.of(Optional.of(this.branchService.save(branch)));
     }
 
     @PostMapping("/delete")
-    public List<Branch> deleteBranches(@RequestParam("branchIds") Integer[] branchIds, @RequestParam("page") Integer page, @RequestParam("itemsPerPage") Integer itemsPerPage) {
+    public ResponseEntity<List<Branch>> deleteBranches(@RequestParam("branchIds") Integer[] branchIds, @RequestParam("page") Integer page, @RequestParam("itemsPerPage") Integer itemsPerPage) {
         branchService.deleteAllByIds(branchIds);
-        return branchService.findAll(page, itemsPerPage).getContent();
+        return ResponseEntity.of(Optional.of(branchService.findAll(page, itemsPerPage).getContent()));
     }
 }

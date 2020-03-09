@@ -1,7 +1,7 @@
 import {EventEmitter} from "@angular/core";
 import {HeaderConfig} from "./ui/components/header";
 import {FooterConfig} from "./ui/components/footer";
-import {ComponentModel} from "./config-model";
+import {EimComponentModel} from "./component";
 
 export interface DynamicComponent {
   hide: EventEmitter<any>;
@@ -18,6 +18,7 @@ export interface ExternalActionMessage {
   action: DynamicComponentType;
   header: HeaderConfig;
   footer: FooterConfig;
-  component: ComponentModel;
+  component: EimComponentModel;
+  saveMapper?: (data: EimComponentModel) => any;
   target?: string;
 }

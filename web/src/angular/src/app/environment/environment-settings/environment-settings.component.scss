@@ -1,0 +1,116 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 30px;
+}
+
+.header {
+  background-color: #F2F2F2;
+}
+
+.first-time-login {
+  padding: 20px 40px;
+  color: rgb(97, 109, 133);
+  font-size: 24px;
+}
+
+.env-settings-header {
+  display: grid;
+  padding: 10px;
+  grid-template-columns: auto 1fr;
+  grid-row-gap: 5px;
+  grid-column-gap: 20px;
+  grid-template-areas:
+    "img title"
+    "img name";
+
+  .img {
+    grid-area: img;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .title {
+    color: rgb(97, 109, 133);
+    grid-area: title;
+  }
+
+  .name {
+    grid-area: name;
+    font-size: 26px;
+  }
+}
+
+.content {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  overflow: auto;
+  margin: 0 30px;
+  flex-wrap: wrap;
+
+  .section {
+    width: 350px;
+
+    .field {
+      margin-top: 30px;
+      height: 70px;
+
+      .label {
+        font-size: 14px;
+        color: rgb(127, 127, 127);
+      }
+
+      .value {
+        margin-top: 10px;
+        display: flex;
+
+        input {
+          padding: 7px;
+        }
+
+        > * {
+          flex: 1;
+        }
+      }
+    }
+  }
+}
+
+.color {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+
+.color.active {
+  border: 4px solid black;
+}
+
+.button {
+  width: 100px;
+  margin-right: 10px;
+}
+
+.uninstall-button {
+  background-color: #dfa47c;
+  border: 1px solid #c55a11;
+  color: white;
+}
+
+.delete-button {
+  background-color: #ff7373;
+  border: 1px solid #ff0000;
+  color: white;
+}
+
+.footer {
+  margin-top: 20px;
+  border-top: 1px solid gray;
+  padding: 20px 20px 0 20px;
+
+  button {
+    margin-right: 10px;
+  }
+}

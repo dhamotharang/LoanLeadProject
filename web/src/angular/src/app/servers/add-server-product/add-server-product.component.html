@@ -1,0 +1,23 @@
+<div *ngIf="products$ | async as products" class="panel left-panel">
+  <ng-container *ngFor="let product of products">
+    <div class="product">
+      <p-checkbox name="resources"
+                  value="{{product.id}}"
+                  (onChange)="productSelect(product)"></p-checkbox>
+      <b>
+        <label (click)="labelClick(product)" class="pointer">{{product.name}}</label>
+      </b>
+    </div>
+    <div *ngFor="let component of product.components" class="component">
+      <p-checkbox name="resources"
+                  value="{{component.id}}"
+                  (onChange)="productSelect(component)"></p-checkbox>
+      <label (click)="labelClick(component)" class="pointer">{{component.name}}</label>
+    </div>
+  </ng-container>
+</div>
+
+<div class="panel description-panel">
+  <div *ngIf="description">{{description}}</div>
+  <div *ngIf="!description" class="middle">Click on any label on the left to get help</div>
+</div>
