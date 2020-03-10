@@ -1,9 +1,21 @@
 export const enum Urls {
-  NAV = 'nav',
-  WORKSPACE = 'workspace',
-  SERVERS = 'servers',
-  RESOURCES = 'resources',
-  SIDEBAR = 'sidebar',
-  LOGS = 'logs',
-  ENVIRONMENT_SETTINGS= 'env'
+  USER = 'user',
+  USERS = 'users',
+  USER_FORM = 'user_form',
+  BRANCHES = 'branches',
+  BRANCH_FORM = 'branch_form',
+  ENTITIES = 'entities',
+  ENTITY_FORM = 'entity_form',
+  PROFILE_EDIT = 'edit',
+  LOAN_FORM = 'loan_form',
+  LOAN_PRODUCTS = 'loan_products',
+  LOAN_PRODUCT_FORM = 'loan_product_form',
+  DASHBOARD = 'dashboard',
+  AUDITING = 'auditing',
+  CUSTOMER_FORM = 'customer_form',
+  CUSTOMERS = 'customers',
+  REPORTS = 'reports',
+  ADMIN_HOME = 'home',
+  USER_HOME = 'home',
+  ADMIN = 'admin'
 }

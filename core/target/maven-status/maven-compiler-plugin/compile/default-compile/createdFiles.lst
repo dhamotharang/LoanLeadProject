@@ -37,6 +37,7 @@ com\loanlead\models\Entity.class
 com\loanlead\controller\CustomerController.class
 com\loanlead\controller\BranchController.class
 com\loanlead\controller\UserController.class
+com\loanlead\models\ui\UserModel.class
 com\loanlead\auth\SecurityService.class
 com\loanlead\models\Loan.class
 com\loanlead\StaticResourceConfiguration.class

@@ -20,6 +20,9 @@ import {NavigableComponent} from './navigable/navigable.component';
 import {RouterModule} from "@angular/router";
 import {WindowContentComponent} from './components/window-content/window-content.component';
 import {ExternalConfigurationComponent} from './components/external-configuration/external-configuration.component';
+import { AdminComponent } from './admin/admin.component';
+import { UserNavigationComponent } from './user-navigation/user-navigation.component';
+import { AdminNavigationComponent } from './admin-navigation/admin-navigation.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +41,10 @@ import {ExternalConfigurationComponent} from './components/external-configuratio
     WebComponent,
     NavigableComponent,
     WindowContentComponent,
-    ExternalConfigurationComponent
+    ExternalConfigurationComponent,
+    AdminComponent,
+    UserNavigationComponent,
+    AdminNavigationComponent
   ],
   exports: [
     CustomComponent,

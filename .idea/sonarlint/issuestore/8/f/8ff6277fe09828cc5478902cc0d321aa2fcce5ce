@@ -1,3 +1,11 @@
 
-f
-java:S1128"KRemove this unused import 'org.springframework.context.annotation.Profile'.(Øİ¥İøÿÿÿÿ
+
+java:S1128"]Remove this unused import 'org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder'.(åÅÚ…ûÿÿÿÿ8Úôúç‹.
+Q
+java:S1068"/Remove this unused "USERS_QUERY" private field.(ÏŸ¬öúÿÿÿÿ8Úôúç‹.
+K
+java:S1068".Remove this unused "dataSource" private field.(ÀÀŠ¤8Úôúç‹.
+L
+java:S1068"/Remove this unused "ROLES_QUERY" private field.(º´ùª8Úôúç‹.
+m
+java:S1128"KRemove this unused import 'org.springframework.context.annotation.Profile'.(Øİ¥İøÿÿÿÿ8Úôúç‹.

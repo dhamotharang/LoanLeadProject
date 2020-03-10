@@ -1,10 +1,12 @@
 
-W
-java:S1128"BRemove this unused import 'javax.validation.constraints.NotEmpty'.(ÿÿör
-H
-java:S1874L"-Remove this use of "Email"; it is deprecated.(Íşíãşÿÿÿÿ
-\	java:S107L"BConstructor has 14 parameters, which is greater than 7 authorized.(Íşíãşÿÿÿÿ
-b
-java:S1128"GRemove this unused import 'org.hibernate.validator.constraints.Length'.(Ê—œªÿÿÿÿÿ
-H
-java:S1874 "-Remove this use of "Email"; it is deprecated.(ïŒ àøÿÿÿÿ
+M
+java:S1948"-Make "phoneNumber" transient or serializable.(ìæÕ÷üÿÿÿÿ8İé¿å‹.
+F
+java:S1874"-Remove this use of "Email"; it is deprecated.(ïŒ àøÿÿÿÿ
+Z	java:S107"BConstructor has 14 parameters, which is greater than 7 authorized.(Íşíãşÿÿÿÿ
+
+java:S4144"_Update this method so that its implementation is not identical to "getAuthorities" on line 111.(š¶ùÿÿÿÿ8¥ì‚æ‹.
+y
+java:S4144"^Update this method so that its implementation is not identical to "getEmployeeId" on line 102.(ú´­÷8»ÓÂå‹.
+F
+java:S1874"-Remove this use of "Email"; it is deprecated.(Íşíãşÿÿÿÿ

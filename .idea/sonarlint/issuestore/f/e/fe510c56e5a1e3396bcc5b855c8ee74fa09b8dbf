@@ -1,18 +1,18 @@
 
-]	java:S125#"<This block of commented-out lines of code should be removed.(ÿœ°Õşÿÿÿÿ8ñ¹³¾‹.
 N
 java:S1481 "1Remove this unused "documentType" local variable.(ÿàûÜ8ñ¹³¾‹.
-H
-java:S1135"2Complete the task associated to this TODO comment.(üÔ¥ä
-[
-java:S4684"@Replace this persistent entity with a simple POJO or DTO object.(à˜êøÿÿÿÿ
+J
+java:S1481!"-Remove this unused "document" local variable.(ç¨Ù´8ñ¹³¾‹.
+]	java:S125%"<This block of commented-out lines of code should be removed.(µÕ¦Ïùÿÿÿÿ8ñ¹³¾‹.
 ]	java:S125-"<This block of commented-out lines of code should be removed.(†™¡§ıÿÿÿÿ8ñ¹³¾‹.
 R
 java:S1128"0Remove this unused import 'java.io.IOException'.(ªº»Úıÿÿÿÿ8–¡öÍ‹.
-]
-java:S1854 "@Remove this useless assignment to local variable "documentType".(ÿàûÜ8ñ¹³¾‹.
-J
-java:S1481!"-Remove this unused "document" local variable.(ç¨Ù´8ñ¹³¾‹.
+[
+java:S4684"@Replace this persistent entity with a simple POJO or DTO object.(à˜êøÿÿÿÿ
+]	java:S125#"<This block of commented-out lines of code should be removed.(ÿœ°Õşÿÿÿÿ8ñ¹³¾‹.
+H
+java:S1135"2Complete the task associated to this TODO comment.(üÔ¥ä
 Y
 java:S1854!"<Remove this useless assignment to local variable "document".(ç¨Ù´8ñ¹³¾‹.
-]	java:S125%"<This block of commented-out lines of code should be removed.(µÕ¦Ïùÿÿÿÿ8ñ¹³¾‹.
+]
+java:S1854 "@Remove this useless assignment to local variable "documentType".(ÿàûÜ8ñ¹³¾‹.

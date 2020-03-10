@@ -1,0 +1,9 @@
+
+f
+java:S1128"KRemove this unused import 'org.springframework.context.annotation.Profile'.(ØÝ¥Ýøÿÿÿÿ
+R
+java:S1128"<Remove this unused import 'com.loanlead.auth.entities.Role'.(”åæ
+H
+java:S1068"2Remove this unused "roleRepository" private field.(Îê¤á
+T
+java:S1068"9Remove this unused "bCryptPasswordEncoder" private field.(º©ŸÙùÿÿÿÿ

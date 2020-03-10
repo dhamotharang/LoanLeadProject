@@ -3,28 +3,50 @@ import {NgModule} from '@angular/core';
 
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
-import {WorkspaceModule} from "./workspace/workspace.module";
-import {ServersModule} from "./servers/servers.module";
-import {ResourcesModule} from "./resources/resources.module";
-import {SidebarModule} from "./sidebar/sidebar.module";
-import {LogsModule} from "./logs/logs.module";
 import {HttpClientModule} from "@angular/common/http";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
-import {EnvironmentModule} from "./environment/environment.module";
+import { EntitiesComponent } from './entities/entities.component';
+import { BranchesComponent } from './branches/branches.component';
+import { CustomersComponent } from './customers/customers.component';
+import { EntityFormComponent } from './entity-form/entity-form.component';
+import { BranchFormComponent } from './branch-form/branch-form.component';
+import { UsersComponent } from './users/users.component';
+import { UserFormComponent } from './user-form/user-form.component';
+import { CustomerFormComponent } from './customer-form/customer-form.component';
+import { LoanFormComponent } from './loan-form/loan-form.component';
+import { LoanProductsComponent } from './loan-products/loan-products.component';
+import { LoanProductFormComponent } from './loan-product-form/loan-product-form.component';
+import { EditProfileComponent } from './edit-profile/edit-profile.component';
+import { AdminHomeComponent } from './admin-home/admin-home.component';
+import { UserHomeComponent } from './user-home/user-home.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { ReportsComponent } from './reports/reports.component';
+import { AuditingComponent } from './auditing/auditing.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    EntitiesComponent,
+    BranchesComponent,
+    CustomersComponent,
+    EntityFormComponent,
+    BranchFormComponent,
+    UsersComponent,
+    UserFormComponent,
+    CustomerFormComponent,
+    LoanFormComponent,
+    LoanProductsComponent,
+    LoanProductFormComponent,
+    EditProfileComponent,
+    AdminHomeComponent,
+    UserHomeComponent,
+    DashboardComponent,
+    ReportsComponent,
+    AuditingComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    WorkspaceModule,
-    ServersModule,
-    ResourcesModule,
-    SidebarModule,
-    EnvironmentModule,
-    LogsModule,
     HttpClientModule,
     BrowserAnimationsModule
   ],

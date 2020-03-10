@@ -32,11 +32,11 @@ public class BranchController {
             itemsPerPage = UserServiceImpl.DEFAULT_ITEMS_PER_PAGE;
         }
 
-        return ResponseEntity.of(Optional.of(branchService.findAll(page, itemsPerPage).getContent()));
+        return ResponseEntity.of(Optional.of(branchService.findAll(page, itemsPerPage)));
     }
 
     @GetMapping("/{branchId}")
-    public ResponseEntity<Branch> findBranch(@PathVariable("branchId") Integer branchId) {
+    public ResponseEntity<Branch> findBranch(@PathVariable("branchId") String branchId) {
         return ResponseEntity.of(Optional.of(branchService.find(branchId)));
     }
 
@@ -48,6 +48,6 @@ public class BranchController {
     @PostMapping("/delete")
     public ResponseEntity<List<Branch>> deleteBranches(@RequestParam("branchIds") Integer[] branchIds, @RequestParam("page") Integer page, @RequestParam("itemsPerPage") Integer itemsPerPage) {
         branchService.deleteAllByIds(branchIds);
-        return ResponseEntity.of(Optional.of(branchService.findAll(page, itemsPerPage).getContent()));
+        return ResponseEntity.of(Optional.of(branchService.findAll(page, itemsPerPage)));
     }
 }
