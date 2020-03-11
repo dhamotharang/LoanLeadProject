@@ -7,6 +7,7 @@ import {HTTPMethod} from "../../model/ui/components/footer";
 import {EimEnvironmentModel} from "../../model/environment/environment";
 import {EimResourceModel} from "../../model/component";
 import {EimUiConfigModel} from "../../model/eim-ui-config";
+import {User} from "../../model/user";
 
 @Injectable({
   providedIn: 'root'
@@ -16,8 +17,8 @@ export class DataService {
   constructor(private http: HttpClient) {
   }
 
-  getEnvironment(): Observable<EimEnvironmentModel> {
-    return this.get<EimEnvironmentModel>(`/eim/api/environment`).pipe(map((data) => {
+  getCurrentUser(): Observable<User> {
+    return this.get<User>(`/api/users/current_user`).pipe(map((data) => {
       return data.data;
     }));
   }
@@ -40,8 +41,8 @@ export class DataService {
     }));
   }
 
-  saveEnvironment(environment: EimEnvironmentModel): Observable<EimEnvironmentModel> {
-    return this.post<EimEnvironmentModel>('/eim/api/environment', environment).pipe(map((data) => {
+  saveUser(user: User): Observable<User> {
+    return this.post<User>('/api/user', user).pipe(map((data) => {
       return data.data;
     }));
   }

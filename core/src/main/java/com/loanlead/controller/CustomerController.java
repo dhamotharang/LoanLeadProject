@@ -1,5 +1,6 @@
 package com.loanlead.controller;
 
+import com.loanlead.auth.UserServiceImpl;
 import com.loanlead.models.Customer;
 import com.loanlead.models.Loan;
 import com.loanlead.services.CustomerService;
@@ -25,6 +26,19 @@ public class CustomerController {
     public CustomerController(CustomerService customerService, LoanService loanService) {
         this.customerService = customerService;
         this.loanService = loanService;
+    }
+
+    @GetMapping
+    public ResponseEntity<List<Customer>> findAll(@RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "itemsPerPage", required = false) Integer itemsPerPage) {
+        if (page == null) {
+            page = UserServiceImpl.DEFAULT_PAGE;
+        }
+
+        if (itemsPerPage == null) {
+            itemsPerPage = UserServiceImpl.DEFAULT_ITEMS_PER_PAGE;
+        }
+
+        return ResponseEntity.of(Optional.of(customerService.findAll(page, itemsPerPage)));
     }
 
     @PostMapping

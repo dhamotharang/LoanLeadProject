@@ -1,8 +1,6 @@
 import {NgModule} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
 import {Urls} from "./config/routes/constants";
-import {AdminNavigationComponent} from "./ui/admin-navigation/admin-navigation.component";
-import {UserNavigationComponent} from "./ui/user-navigation/user-navigation.component";
 import {BranchFormComponent} from "./branch-form/branch-form.component";
 import {BranchesComponent} from "./branches/branches.component";
 import {EntityFormComponent} from "./entity-form/entity-form.component";
@@ -47,7 +45,7 @@ const adminRoutes: Routes = [
 const adminEnvironment: Routes = [
   {
     path: Urls.ADMIN,
-    component: AdminNavigationComponent,
+    component: AdminHomeComponent,
     children: [
       {path: '', redirectTo: Urls.ADMIN_HOME, pathMatch: 'full'},
       ...adminRoutes
@@ -58,7 +56,7 @@ const adminEnvironment: Routes = [
 const userEnvironment: Routes = [
   {
     path: Urls.USER,
-    component: UserNavigationComponent,
+    component: UserHomeComponent,
     children: [
       {path: '', redirectTo: Urls.USER_HOME, pathMatch: 'full'},
       ...userRoutes

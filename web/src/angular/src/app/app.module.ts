@@ -1,6 +1,6 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
-
+import {CommonModule} from "@angular/common";
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {HttpClientModule} from "@angular/common/http";
@@ -22,6 +22,8 @@ import { UserHomeComponent } from './user-home/user-home.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ReportsComponent } from './reports/reports.component';
 import { AuditingComponent } from './auditing/auditing.component';
+import {UserNavigationModule} from "./ui/user-navigation/user-navigation.module";
+import {AdminNavigationModule} from "./ui/admin-navigation/admin-navigation.module";
 
 @NgModule({
   declarations: [
@@ -48,7 +50,9 @@ import { AuditingComponent } from './auditing/auditing.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    UserNavigationModule,
+    AdminNavigationModule
   ],
   providers: [
     HttpClientModule

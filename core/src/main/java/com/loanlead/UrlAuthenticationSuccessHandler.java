@@ -56,9 +56,9 @@ public class UrlAuthenticationSuccessHandler implements AuthenticationSuccessHan
         }
 
         if (isUser) {
-            return "/ui/user";
+            return "/ui/#/user";
         } else if (isAdmin) {
-            return "/ui/admin";
+            return "/ui/#/admin";
         } else {
             throw new IllegalStateException();
         }

@@ -23,7 +23,7 @@ public class BranchController {
     }
 
     @GetMapping
-    public ResponseEntity<List<Branch>> branches(@RequestParam("page") Integer page, @RequestParam("itemsPerPage") Integer itemsPerPage) {
+    public ResponseEntity<List<Branch>> branches(@RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "itemsPerPage", required = false) Integer itemsPerPage) {
         if (page == null) {
             page = UserServiceImpl.DEFAULT_PAGE;
         }

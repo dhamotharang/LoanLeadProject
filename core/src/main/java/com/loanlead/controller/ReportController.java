@@ -115,8 +115,8 @@ public class ReportController {
 
     @GetMapping("/audit/{loanId}")
     public String getLoans(@PathVariable Integer loanId,
-                           @RequestParam("page") Integer page,
-                           @RequestParam("itemsPerPage") Integer itemsPerPage
+                           @RequestParam(value = "page", required = false) Integer page,
+                           @RequestParam(value = "itemsPerPage", required = false) Integer itemsPerPage
     ) {
         if (page == null) {
             page = UserServiceImpl.DEFAULT_PAGE;

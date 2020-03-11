@@ -1,15 +1,20 @@
 import { Component, OnInit } from '@angular/core';
+import {Observable} from "rxjs";
+import {User} from "../../model/user";
+import {UserService} from "../../core/services/user.service";
 
 @Component({
-  selector: 'eim-user-navigation',
+  selector: 'loanlead-user-navigation',
   templateUrl: './user-navigation.component.html',
   styleUrls: ['./user-navigation.component.scss']
 })
 export class UserNavigationComponent implements OnInit {
+  user$: Observable<User>;
 
-  constructor() { }
-
-  ngOnInit(): void {
+  constructor(private userService: UserService) {
   }
 
+  ngOnInit() {
+    this.user$ = this.userService.getCurrentUser();
+  }
 }

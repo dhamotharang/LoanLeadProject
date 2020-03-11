@@ -39,7 +39,7 @@ public class UserController {
     }
 
     @GetMapping
-    public ResponseEntity<List<User>> users(@RequestParam("itemsPerPage") Integer itemsPerPage, @RequestParam("page") Integer page) {
+    public ResponseEntity<List<User>> users(@RequestParam(value = "itemsPerPage", required = false) Integer itemsPerPage, @RequestParam(value = "page", required = false) Integer page) {
         if (itemsPerPage == null) {
             itemsPerPage = UserServiceImpl.DEFAULT_ITEMS_PER_PAGE;
         }
@@ -54,6 +54,11 @@ public class UserController {
     @GetMapping("/{userId}")
     public ResponseEntity<User> findUser(@PathVariable String userId) {
         return ResponseEntity.of(Optional.of(userService.find(userId)));
+    }
+
+    @GetMapping("/current_user")
+    public ResponseEntity<User> findCurrentUser(Authentication authentication) {
+        return ResponseEntity.of(Optional.of((User) authentication.getPrincipal()));
     }
 
     @PostMapping
@@ -209,7 +214,15 @@ public class UserController {
     }
 
     @GetMapping("/logged_users")
-    public ResponseEntity<List<User>> getLoggedInUsers(@RequestParam("page") Integer page, @RequestParam("itemsPerPage") Integer itemsPerPage) {
+    public ResponseEntity<List<User>> getLoggedInUsers(@RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "itemsPerPage", required = false) Integer itemsPerPage) {
+        if (page == null) {
+            page = UserServiceImpl.DEFAULT_PAGE;
+        }
+
+        if (itemsPerPage == null) {
+            itemsPerPage = UserServiceImpl.DEFAULT_ITEMS_PER_PAGE;
+        }
+
         return ResponseEntity.of(Optional.of(userService.getOnlineUsers(page, itemsPerPage).toList()));
     }
 }

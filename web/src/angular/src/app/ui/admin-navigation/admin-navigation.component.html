@@ -1,67 +1,70 @@
-<nav id="header" class="navbar navbar-default navbar-expand-md navbar-fixed-top animated fadeInDown">
-  <div class="container-fluid">
-    <h2><a href="/home" class="text-yellow d-flex align-items-center no-decoration">Loanlead</a></h2>
-    <button class="navbar-toggler text-yellow" data-toggle="collapse" data-target=".navbar-collapse">
-      <i class="material-icons">menu</i>
-    </button>
-    <div class="navbar-collapse collapse justify-content-end">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a href="/home" class="nav-link text-yellow d-flex align-items-center no-decoration">
-            <i class="material-icons">home</i>&nbsp;Home
-          </a>
-        </li>
-        <li class="nav-item dropdown">
-          <a href="#" class="nav-link text-yellow d-flex align-items-center dropdown-toggle no-decoration"
-             data-toggle="dropdown" role="button" id="entitiesMenuLink" aria-haspopup="true"
-             aria-expanded="false">
-            <i class="material-icons">menu</i>&nbsp;Entities
-          </a>
+<ng-container *ngIf="user$ | async as user">
+  <nav id="header" class="navbar navbar-default navbar-expand-md navbar-fixed-top animated fadeInDown">
+    <div class="container-fluid">
+      <h2><a routerLink="/home" class="text-yellow d-flex align-items-center no-decoration">Loanlead</a></h2>
+      <button class="navbar-toggler text-yellow" data-toggle="collapse" data-target=".navbar-collapse">
+        <i class="material-icons">menu</i>
+      </button>
+      <div class="navbar-collapse collapse justify-content-end">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a routerLink="/home" class="nav-link text-yellow d-flex align-items-center no-decoration">
+              <i class="material-icons">home</i>&nbsp;Home
+            </a>
+          </li>
+          <li class="nav-item dropdown">
+            <a routerLink="/entities" class="nav-link text-yellow d-flex align-items-center dropdown-toggle no-decoration"
+               data-toggle="dropdown" role="button" id="entitiesMenuLink" aria-haspopup="true"
+               aria-expanded="false">
+              <i class="material-icons">menu</i>&nbsp;Entities
+            </a>
 
-          <div class="dropdown-menu fade" aria-labelledby="entitiesMenuLink">
-            <a href="'/edit_profile/' + ${#authentication.principal.user.id}"
-               class="dropdown-item text-secondary d-flex align-items-center no-decoration">
-              <i class="material-icons">person</i>Edit Profile
+            <div class="dropdown-menu fade" aria-labelledby="entitiesMenuLink">
+              <a [href]="['/edit_profile/' + user.id]"
+                 class="dropdown-item text-secondary d-flex align-items-center no-decoration">
+                <i class="material-icons">person</i>Edit Profile
+              </a>
+              <a routerLink="/logged_users" class="dropdown-item text-secondary d-flex align-items-center no-decoration">
+                <i class="material-icons">report</i>Logged Users
+              </a>
+              <a routerLink="/reports" class="dropdown-item text-secondary d-flex align-items-center no-decoration">
+                <i class="material-icons">report</i>Reports
+              </a>
+              <a routerLink="/entities" class="dropdown-item text-secondary d-flex align-items-center no-decoration">
+                <i class="material-icons">settings</i>Entity
+              </a>
+              <a routerLink="/branches" class="dropdown-item text-secondary d-flex align-items-center no-decoration">
+                <i class="material-icons">settings</i>Branches
+              </a>
+              <a routerLink="/loan_products"
+                 class="dropdown-item text-secondary d-flex align-items-center no-decoration">
+                <i class="material-icons">settings</i>Loan Thresholds
+              </a>
+              <a routerLink="/users" class="dropdown-item text-secondary d-flex align-items-center no-decoration">
+                <i class="material-icons">settings</i>Users
+              </a>
+              <a routerLink="/roles" class="dropdown-item text-secondary d-flex align-items-center no-decoration">
+                <i class="material-icons">settings</i>Customer SMS Setting
+              </a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a routerLink="/home"
+               class="text-yellow dropdown-toggle d-flex align-items-center h-100 no-decoration nav-menu-header"
+               data-toggle="dropdown" role="button" id="userAccountMenuLink" aria-haspopup="true"
+               aria-expanded="false">
+              <img [src]="[user.picturePath]" class="rounded-circle nav-image">
+              &nbsp;{{ user.fullName }}
             </a>
-            <a href="/logged_users" class="dropdown-item text-secondary d-flex align-items-center no-decoration">
-              <i class="material-icons">report</i>Logged Users
-            </a>
-            <a href="/reports" class="dropdown-item text-secondary d-flex align-items-center no-decoration">
-              <i class="material-icons">report</i>Reports
-            </a>
-            <a href="/entities" class="dropdown-item text-secondary d-flex align-items-center no-decoration">
-              <i class="material-icons">settings</i>Entity
-            </a>
-            <a href="/branches" class="dropdown-item text-secondary d-flex align-items-center no-decoration">
-              <i class="material-icons">settings</i>Branches
-            </a>
-            <a href="/loan_products"
-               class="dropdown-item text-secondary d-flex align-items-center no-decoration">
-              <i class="material-icons">settings</i>Loan Thresholds
-            </a>
-            <a href="/users" class="dropdown-item text-secondary d-flex align-items-center no-decoration">
-              <i class="material-icons">settings</i>Users
-            </a>
-            <a href="/roles" class="dropdown-item text-secondary d-flex align-items-center no-decoration">
-              <i class="material-icons">settings</i>Customer SMS Setting
-            </a>
-          </div>
-        </li>
-        <li class="nav-item dropdown">
-          <a href="#" class="text-yellow dropdown-toggle d-flex align-items-center h-100 no-decoration nav-menu-header"
-             data-toggle="dropdown" role="button" id="userAccountMenuLink" aria-haspopup="true"
-             aria-expanded="false">
-            <img src="@{${#authentication.principal.user.picturePath}}" class="rounded-circle nav-image">
-            &nbsp;#authentication.principal.user.fullName
-          </a>
 
-          <div class="dropdown-menu" aria-labelledby="userAccountMenuLink">
-            <a href="/logout" class="dropdown-item text-secondary d-flex align-items-center no-decoration">
-              <i class="material-icons">exit_to_app</i>Logout
-            </a>
-          </div>
-        </li>
-      </ul>
+            <div class="dropdown-menu" aria-labelledby="userAccountMenuLink">
+              <a href="/login/logout" class="dropdown-item text-secondary d-flex align-items-center no-decoration">
+                <i class="material-icons">exit_to_app</i>Logout
+              </a>
+            </div>
+          </li>
+        </ul>
+      </div>
     </div>
-  </div>
-</nav>
+  </nav>
+</ng-container>

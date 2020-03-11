@@ -17,7 +17,7 @@ public class EntityController {
     private EntityService entityService;
 
     @GetMapping
-    public ResponseEntity<List<Entity>> entities(@RequestParam("page") Integer page, @RequestParam("itemsPerPage") Integer itemsPerPage) {
+    public ResponseEntity<List<Entity>> entities(@RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "itemsPerPage", required = false) Integer itemsPerPage) {
         if (page == null) {
             page = UserServiceImpl.DEFAULT_PAGE;
         }
@@ -40,7 +40,15 @@ public class EntityController {
     }
 
     @PostMapping("/delete")
-    public List<Entity> deleteEntities(@RequestParam("deleteEntityId") Integer[] entityIds, @RequestParam("page") Integer page, @RequestParam("itemsPerPage") Integer itemsPerPage) {
+    public List<Entity> deleteEntities(@RequestParam("deleteEntityId") Integer[] entityIds, @RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "itemsPerPage", required = false) Integer itemsPerPage) {
+        if (page == null) {
+            page = UserServiceImpl.DEFAULT_PAGE;
+        }
+
+        if (itemsPerPage == null) {
+            itemsPerPage = UserServiceImpl.DEFAULT_ITEMS_PER_PAGE;
+        }
+
         entityService.deleteAllByIds(entityIds);
         return entityService.findAll(page, itemsPerPage).getContent();
     }
