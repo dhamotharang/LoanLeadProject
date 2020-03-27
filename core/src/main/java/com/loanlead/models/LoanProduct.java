@@ -6,12 +6,10 @@ import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "loan_products")
-public class LoanProduct {
+public class LoanProduct extends EntityModel{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-
-    @NotNull(message = "Loan product must be defined")
     @Column(name = "loan_product")
     private String loanProduct;
 
@@ -27,20 +25,15 @@ public class LoanProduct {
     @Column(name = "time_threshold")
     private Integer timeThreshold;
 
-    @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "loan_type", updatable = false, insertable = false)
-    private LoanType loanType;
-
     public LoanProduct() {
 
     }
 
-    public LoanProduct(@NotNull(message = "Loan product must be defined") String loanProduct, @NotNull(message = "Max amount must be defined") Integer maxAmount, @NotNull(message = "Max tenure must be defined") Integer maxTenure, @NotNull(message = "Time threshold must be defined") Integer timeThreshold, LoanType loanType) {
+    public LoanProduct(@NotNull(message = "Loan product must be defined") String loanProduct, @NotNull(message = "Max amount must be defined") Integer maxAmount, @NotNull(message = "Max tenure must be defined") Integer maxTenure, @NotNull(message = "Time threshold must be defined") Integer timeThreshold) {
         this.loanProduct = loanProduct;
         this.maxAmount = maxAmount;
         this.maxTenure = maxTenure;
         this.timeThreshold = timeThreshold;
-        this.loanType = loanType;
     }
 
     public Integer getId() {
@@ -81,13 +74,5 @@ public class LoanProduct {
 
     public void setTimeThreshold(Integer timeThreshold) {
         this.timeThreshold = timeThreshold;
-    }
-
-    public LoanType getLoanType() {
-        return loanType;
-    }
-
-    public void setLoanType(LoanType loanType) {
-        this.loanType = loanType;
     }
 }

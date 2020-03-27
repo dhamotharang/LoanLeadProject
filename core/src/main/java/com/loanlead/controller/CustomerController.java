@@ -3,6 +3,8 @@ package com.loanlead.controller;
 import com.loanlead.auth.UserServiceImpl;
 import com.loanlead.models.Customer;
 import com.loanlead.models.Loan;
+import com.loanlead.models.ui.ModelEntityMapper;
+import com.loanlead.models.ui.models.CustomerModel;
 import com.loanlead.services.CustomerService;
 import com.loanlead.services.LoanService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,8 +13,11 @@ import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
+import java.util.Collections;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 
 //TODO Remake everything
@@ -21,15 +26,17 @@ import java.util.Optional;
 public class CustomerController {
     private CustomerService customerService;
     private LoanService loanService;
+    private ModelEntityMapper mapper;
 
     @Autowired
-    public CustomerController(CustomerService customerService, LoanService loanService) {
+    public CustomerController(CustomerService customerService, LoanService loanService, ModelEntityMapper mapper) {
         this.customerService = customerService;
         this.loanService = loanService;
+        this.mapper = mapper;
     }
 
     @GetMapping
-    public ResponseEntity<List<Customer>> findAll(@RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "itemsPerPage", required = false) Integer itemsPerPage) {
+    public ResponseEntity<List<CustomerModel>> findAll(@RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "itemsPerPage", required = false) Integer itemsPerPage) {
         if (page == null) {
             page = UserServiceImpl.DEFAULT_PAGE;
         }
@@ -38,48 +45,39 @@ public class CustomerController {
             itemsPerPage = UserServiceImpl.DEFAULT_ITEMS_PER_PAGE;
         }
 
-        return ResponseEntity.of(Optional.of(customerService.findAll(page, itemsPerPage)));
+        List<Customer> customers = customerService.findAll(page, itemsPerPage);
+        List<CustomerModel> customerModels = customers.stream().map(customer -> mapper.toModel(customer, CustomerModel.class)).collect(Collectors.toList());
+        return ResponseEntity.of(Optional.of(customerModels));
+    }
+
+    @GetMapping("/count")
+    public ResponseEntity<Integer> entitiesCount() {
+        return ResponseEntity.of(Optional.of(customerService.findCount()));
+    }
+
+    @GetMapping("/unique")
+    public ResponseEntity<Customer> isUnique(@RequestParam("fieldName") String name, @RequestParam("value") String value) {
+        return ResponseEntity.of(Optional.ofNullable(customerService.findByFieldName(name, value)));
+    }
+
+    @GetMapping("/all")
+    public ResponseEntity<List<CustomerModel>> getAllCustomers() {
+        return findAll(0, Integer.MAX_VALUE);
     }
 
     @PostMapping
-    public ResponseEntity<Customer> save(@RequestBody Customer customer, Authentication authentication) {
-        String documentType = customer.getDocumentType();
-        String document = customer.getDocument();
-
-//        if (!document.isEmpty() &&
-//                (!customerService.isDocumentUnique(document) ||
-//                ((documentType.equalsIgnoreCase("national id") && !Pattern.compile("[a-zA-Z0-9]{14}").matcher(document).matches()) ||
-//                    (documentType.equalsIgnoreCase("driving permit") && !Pattern.compile("[0-9]{13}").matcher(document).matches()) ||
-//                        (documentType.equalsIgnoreCase("passport") && !Pattern.compile("B[0-9]{7}").matcher(document).matches())))) {
-//            if (customer.getId() != null && !customerService.getCustomerByDocument(customer.getDocument()).getId().equals(customer.getId())) {
-//                bindingResult.rejectValue("document", "form.doesNotMatchPattern", "Document doesn't match pattern");
-//            }
-//        }
-//
-//        if (bindingResult.hasErrors()) {
-//            return "user/customer_form";
-//        }
-
-        return ResponseEntity.of(Optional.of(this.customerService.save(customer)));
+    public ResponseEntity<CustomerModel> save(@RequestBody CustomerModel customerModel) {
+        Customer customer = mapper.toEntity(customerModel, Customer.class);
+        return ResponseEntity.of(Optional.of(mapper.toModel(this.customerService.save(customer), CustomerModel.class)));
     }
 
-    @GetMapping("/{customerId}")
-    public ResponseEntity<Customer> findCustomer(@PathVariable Integer customerId) {
-        return ResponseEntity.of(Optional.of(this.customerService.find(customerId)));
+    @GetMapping("/{id}")
+    public ResponseEntity<CustomerModel> findCustomer(@PathVariable Integer id) {
+        return ResponseEntity.of(Optional.of(mapper.toModel(this.customerService.find(id), CustomerModel.class)));
     }
 
-    @DeleteMapping
-    public void deleteCustomers(@RequestParam Integer[] customerIds) {
-        this.customerService.deleteAllByIds(customerIds);
-    }
-
-    @GetMapping("/{customerId}/loans/count")
-    public ResponseEntity<Integer> getCustomerLoansCount(@PathVariable Integer customerId) {
-        return ResponseEntity.of(Optional.of(customerService.getCustomerLoansCount(customerId)));
-    }
-
-    @GetMapping("/{customerId}/loans")
-    public ResponseEntity<List<Loan>> customersLoans(@PathVariable Integer customerId) {
-        return ResponseEntity.of(Optional.of(loanService.findLoansByCustomerId(customerId)));
+    @PostMapping("/delete")
+    public void delete(@RequestParam("ids") Integer[] ids) {
+        customerService.deleteAllByIds(ids);
     }
 }

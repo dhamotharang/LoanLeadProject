@@ -7,8 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
+import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping(ReportController.PREFIX + "/entities")
@@ -29,27 +29,33 @@ public class EntityController {
         return ResponseEntity.of(Optional.of(entityService.findAll(page, itemsPerPage).getContent()));
     }
 
-    @GetMapping("/{entityId}")
-    public ResponseEntity<Entity> findEntity(@PathVariable("entityId") Integer entityId) {
-        return ResponseEntity.of(Optional.of(entityService.find(entityId)));
+    @GetMapping("/count")
+    public ResponseEntity<Integer> entitiesCount() {
+        return ResponseEntity.of(Optional.of(entityService.findCount()));
+    }
+
+    @GetMapping("/unique")
+    public ResponseEntity<Entity> isUnique(@RequestParam("fieldName") String name, @RequestParam("value") String value) {
+        return ResponseEntity.of(Optional.ofNullable(entityService.findByFieldName(name, value)));
+    }
+
+    @GetMapping("/all")
+    public ResponseEntity<List<Entity>> getAllEntities() {
+        return entities(0, Integer.MAX_VALUE);
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<Entity> findEntity(@PathVariable Integer id) {
+        return ResponseEntity.of(Optional.of(entityService.find(id)));
     }
 
     @PostMapping
-    public void postingEntity(@RequestBody Entity entity) {
-        entityService.save(entity);
+    public ResponseEntity<Entity> postingEntity(@RequestBody Entity entity) {
+        return ResponseEntity.of(Optional.of(entityService.save(entity)));
     }
 
     @PostMapping("/delete")
-    public List<Entity> deleteEntities(@RequestParam("deleteEntityId") Integer[] entityIds, @RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "itemsPerPage", required = false) Integer itemsPerPage) {
-        if (page == null) {
-            page = UserServiceImpl.DEFAULT_PAGE;
-        }
-
-        if (itemsPerPage == null) {
-            itemsPerPage = UserServiceImpl.DEFAULT_ITEMS_PER_PAGE;
-        }
-
-        entityService.deleteAllByIds(entityIds);
-        return entityService.findAll(page, itemsPerPage).getContent();
+    public void delete(@RequestParam("ids") Integer[] ids) {
+        entityService.deleteAllByIds(ids);
     }
 }

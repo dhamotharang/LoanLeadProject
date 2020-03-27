@@ -1,1 +1,72 @@
-<p>entities works!</p>
+<loanlead-admin-navigation></loanlead-admin-navigation>
+<ng-container *ngIf="entities$ | async as entities">
+  <div *ngIf="entities.length" class="border border-secondary m-3 p-3 bg-white rounded animated fadeIn">
+    <div class="py-2 page-body-heading justify-content-between">
+      <label class="rounded col-lg-2 col-md-3 col-12 py-2 page-heading d-flex align-items-center justify-content-center"><i class="material-icons">group</i>&nbsp;Entities</label>
+
+      <div class="col-md-3 col-12">
+        <div class="form-group">
+          <label for="itemsCount">Items Count</label>
+          <input id="itemsCount"
+                 type="number"
+                 placeholder="Search"
+                 data-placeholder="Search"
+                 class="form-control"
+                 [formControl]="itemsCount"
+                 (input)="validate()"
+                 (blur)="filter()"
+                 required>
+          <div class="feedback text-danger"></div>
+        </div>
+      </div>
+    </div>
+    <div class="py-2 d-flex justify-content-end">
+      <a routerLink="../entity_form" class="btn btn-primary d-flex align-items-center col-lg-2 col-md-3 col-sm-4 col-12 justify-content-center py-2"><i class="material-icons">add</i>&nbsp;Create new entity</a>
+    </div>
+    <div class="py-2" style="overflow-x: auto;">
+      <table id="contentTable" class="table table-striped table-hover table-bordered table-condensed" style="min-width: 1595px;">
+        <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Short name</th>
+          <th>Box number</th>
+          <th>Plot number</th>
+          <th>Branches number</th>
+          <th>Description</th>
+          <th>Created at</th>
+          <th>Edit</th>
+          <th><input type="checkbox" id="select-all" (click)="selectAllTrigger(entities)"/></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr [id]="[entity.id]" *ngFor="let entity of entities">
+          <td>{{ entity.id }}</td>
+          <td>{{ entity.name }}</td>
+          <td>{{ entity.shortName}}</td>
+          <td>{{ entity.boxNumber}}</td>
+          <td>{{ entity.plotNumber }}</td>
+          <td>{{ entity.branchesNumber}}</td>
+          <td>{{ entity.description }}</td>
+          <td>{{ format(dateInstance(entity.createdAt)) }}</td>
+          <td><a [routerLink]="['../entity_form/' + entity.id]">Edit</a></td>
+          <td><input type="checkbox" [checked]="selectAll" (click)="check(entity.id)"></td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="py-2">
+      <button type="button" id="deleteButton" class="btn btn-primary" [disabled]="!anySelected" (click)="delete()">Delete entities</button>
+    </div>
+  </div>
+  <div class="empty-list" *ngIf="!entities.length">
+    No entities was found.
+  </div>
+</ng-container>
+
+<ng-container *ngIf="entitiesCount$ | async as entitiesCount">
+  <app-pagination *ngIf="entitiesCount > itemsCount.value"
+                  [lastPage]="pagesCount(entitiesCount)"
+                  (pageChanged)="load($event)">
+  </app-pagination>
+</ng-container>

@@ -1,4 +1,7 @@
 
-s	java:S1350"YReduce the total number of break and continue statements in this loop to use at most one.(÷¿Ëıÿÿÿÿ
+s	java:S135B"YReduce the total number of break and continue statements in this loop to use at most one.(÷¿Ëıÿÿÿÿ
 f
-java:S1128"KRemove this unused import 'org.springframework.context.annotation.Profile'.(Øİ¥İøÿÿÿÿ
+java:S1128
+"KRemove this unused import 'org.springframework.context.annotation.Profile'.(Øİ¥İøÿÿÿÿ
+x
+java:S2441,"VMake "CustomHttpSessionBindingListener" serializable or don't store it in the session.(£™Õàûÿÿÿÿ8Ğ­ä¹.

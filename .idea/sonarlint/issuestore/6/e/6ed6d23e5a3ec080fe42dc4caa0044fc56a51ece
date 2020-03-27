@@ -1,5 +1,7 @@
 
 `
-java:S1128">Remove this unused import 'com.loanlead.auth.UserServiceImpl'.(ıçª²üÿÿÿÿ8úÿè‹.
+java:S1128">Remove this unused import 'com.loanlead.auth.UserServiceImpl'.(ıçª²üÿÿÿÿ8™¹–½.
 c
-java:S1128"ARemove this unused import 'org.springframework.data.domain.Page'.(˜âüÿÿÿÿ8‹ÿè‹.
+java:S1128"ARemove this unused import 'org.springframework.data.domain.Page'.(˜âüÿÿÿÿ8™¹–½.
+c
+java:S1128"ARemove this unused import 'javax.persistence.criteria.Predicate'.(«úÿÿÿÿ8™¹–½.

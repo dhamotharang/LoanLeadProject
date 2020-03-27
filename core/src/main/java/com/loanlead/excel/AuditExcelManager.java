@@ -13,6 +13,7 @@ import org.springframework.stereotype.Component;
 
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.List;
 
 
 // TODO Remake getting data
@@ -29,6 +30,8 @@ public class AuditExcelManager {
     private String[] excelColumns;
     private String excelColumnsString;
     private int loanCode;
+    private int page;
+    private int itemsPerPage;
 
     public static AuditExcelManager getInstance() {
         if (AuditExcelManager.classInstance == null) {
@@ -43,15 +46,23 @@ public class AuditExcelManager {
     }
 
     public String getFilePath() {
-        return this.env.getProperty("loanlead.excel.location") + "/" + this.fileName;
+        return "excel/" + this.fileName;
     }
 
     public void setLoanCode(int loanCode) {
         this.loanCode = loanCode;
     }
 
+    public void setPage(int page) {
+        this.page = page;
+    }
+
+    public void setItemsPerPage(int itemsPerPage) {
+        this.itemsPerPage = itemsPerPage;
+    }
+
     public void createTable() {
-        try (FileOutputStream out = new FileOutputStream(this.env.getProperty("loanlead.excel.location") + "/" + this.fileName)) {
+        try (FileOutputStream out = new FileOutputStream("excel/" + this.fileName)) {
             Workbook workbook = new XSSFWorkbook();
             Sheet loanSheet = workbook.createSheet("Audit Details");
             loanSheet.addMergedRegion(new CellRangeAddress(0, 0, 0, 5));
@@ -81,21 +92,21 @@ public class AuditExcelManager {
     }
 
     private void setSheetData(Sheet sheet) {
-        Page<Report> auditings = reportService.findAllByLoanId(loanCode, 1, 1000);
+        List<Report> auditings = reportService.findAllByLoanId(loanCode, page, itemsPerPage).getContent();
 
-//        if (!auditings.isEmpty()) {
-//            for (int i = 0; i < auditings.getSize(); i++) {
-//                Row row = sheet.createRow(i + 2);
-//                Report auditing = auditings.get(i);
-//
-//                row.createCell(0).setCellValue(auditing.getId());
-//                row.createCell(1).setCellValue(auditing.getRole().getDisplayName());
-//                row.createCell(2).setCellValue(auditing.getStatus());
-//                row.createCell(3).setCellValue(auditing.getCreatedAt().toString().replace('T', ' '));
-//                row.createCell(4).setCellValue(auditing.getUser().getBranch().getName());
-//                row.createCell(5).setCellValue(auditing.getUser().getFullName());
-//                row.createCell(6).setCellValue(auditing.getComment());
-//            }
-//        }
+        if (!auditings.isEmpty()) {
+            for (int i = 0; i < auditings.size(); i++) {
+                Row row = sheet.createRow(i + 2);
+                Report auditing = auditings.get(i);
+
+                row.createCell(0).setCellValue(auditing.getId());
+                row.createCell(1).setCellValue(auditing.getRole().getDisplayName());
+                row.createCell(2).setCellValue(auditing.getStatus());
+                row.createCell(3).setCellValue(auditing.getActionedAt().toString().replace('T', ' '));
+                row.createCell(4).setCellValue(auditing.getActionedBy().getBranches().iterator().next().getName());
+                row.createCell(5).setCellValue(auditing.getActionedBy().getFullName());
+                row.createCell(6).setCellValue(auditing.getComment());
+            }
+        }
     }
 }

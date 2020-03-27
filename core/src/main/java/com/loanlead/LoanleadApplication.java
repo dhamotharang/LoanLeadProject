@@ -8,12 +8,14 @@ import org.springframework.boot.web.servlet.support.SpringBootServletInitializer
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
+import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 
 import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
@@ -23,16 +25,14 @@ import java.util.Properties;
 @EnableJpaRepositories(basePackages = {"com.loanlead.repositories", "com.loanlead.auth"})
 @EnableTransactionManagement
 public class LoanleadApplication {
-    private String jndiName;
+    @Value("${datasource.database-name:loanlead}")
+    private String databaseName;
 
-    public String getJndiName() {
-        return jndiName;
-    }
+    @Value("${datasource.username:root}")
+    private String username;
 
-    @Value("${db.jndi:jdbc/MyDB}")
-    public void setJndiName(String jndiName) {
-        this.jndiName = jndiName;
-    }
+    @Value("${datasource.password:}")
+    private String password;
 
     public static void main(String[] args) {
         SpringApplication.run(LoanleadApplication.class, args);
@@ -44,14 +44,10 @@ public class LoanleadApplication {
     }
 
     @Bean
-    public DataSource dataSource(
-            @Value("${jdbc.url:jdbc:mysql://localhost:3306/loanlead}") String url,
-            @Value("${jdbc.username:root}") String username,
-            @Value("${jdbc.password:}") String password
-    ) {
+    public DataSource dataSource() {
         DataSourceBuilder dataSourceBuilder = DataSourceBuilder.create();
         dataSourceBuilder.driverClassName("com.mysql.jdbc.Driver");
-        dataSourceBuilder.url(url);
+        dataSourceBuilder.url("jdbc:mysql://localhost:3306/" + databaseName);
         dataSourceBuilder.username(username);
         dataSourceBuilder.password(password);
         return dataSourceBuilder.build();
@@ -75,6 +71,13 @@ public class LoanleadApplication {
         JpaTransactionManager transactionManager = new JpaTransactionManager();
         transactionManager.setEntityManagerFactory(entityManagerFactory);
         return transactionManager;
+    }
+
+    @Bean
+    public CommonsMultipartResolver multipartResolver() {
+        CommonsMultipartResolver multipartResolver = new CommonsMultipartResolver();
+        multipartResolver.setMaxUploadSize(99999999);
+        return multipartResolver;
     }
 
 }

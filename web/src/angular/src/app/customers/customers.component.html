@@ -1,1 +1,149 @@
-<p>customers works!</p>
+<loanlead-user-navigation></loanlead-user-navigation>
+<ng-container *ngIf="customers$ | async as customers">
+  <div *ngIf="customers.length" class="border border-secondary m-3 p-3 bg-white rounded animated fadeIn">
+    <div class="py-2 page-body-heading justify-content-between">
+      <label class="rounded col-lg-2 col-md-3 col-12 py-2 page-heading d-flex align-items-center justify-content-center"><i class="material-icons">group</i>&nbsp;Customers</label>
+
+      <div class="col-md-3 col-12">
+        <div class="form-group">
+          <label for="itemsCount">Items Count</label>
+          <input id="itemsCount"
+                 type="number"
+                 placeholder="Search"
+                 data-placeholder="Search"
+                 class="form-control"
+                 [formControl]="itemsCount"
+                 (input)="validate()"
+                 (blur)="filter()"
+                 required>
+          <div class="feedback text-danger"></div>
+        </div>
+      </div>
+    </div>
+    <div class="py-2 d-flex justify-content-end">
+      <a routerLink="../customer_form" class="btn btn-primary d-flex align-items-center col-lg-2 col-md-3 col-sm-4 col-12 justify-content-center py-2"><i class="material-icons">add</i>&nbsp;Create new customer</a>
+    </div>
+    <ng-container *ngIf="currentUser$ | async as currentUser">
+      <div class="py-2" style="overflow-x: auto;">
+        <table id="contentTable" class="table table-striped table-hover table-bordered table-condensed" style="min-width: 1595px;">
+          <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Status</th>
+            <th>Phone number 1</th>
+            <th>Created at</th>
+            <th *ngIf="currentUser.roles.includes('Application')">Edit</th>
+            <th *ngIf="currentUser.roles.includes('Application')"><input type="checkbox" id="select-all" (click)="selectAllTrigger(customers)"/></th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr [id]="[customer.id]" *ngFor="let customer of customers">
+            <td>{{ customer.id }}</td>
+            <td>{{ customer.name }}</td>
+            <td><a href="javascript:void(0);" data-toggle="modal" data-target="#loansTableModal" (click)="setCustomerLoans(customer)">{{ customer.loans.length == 0 ? 'Has no loans' : customer.loans.length == 1 ? 'First time borrower' : 'Repeat borrower' }}</a></td>
+            <td>{{ customer.phoneNumber }}</td>
+            <td>{{ format(dateInstance(customer.createdAt)) }}</td>
+            <td *ngIf="currentUser.roles.includes('Application')"><a [routerLink]="['../customer_form/' + customer.id]">Edit</a></td>
+            <td *ngIf="currentUser.roles.includes('Application')"><input type="checkbox" [checked]="selectAll" (click)="check(customer.id)"></td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </ng-container>
+    <div class="py-2">
+      <button type="button" id="deleteButton" class="btn btn-primary" [disabled]="!anySelected" (click)="delete()">Delete customers</button>
+    </div>
+  </div>
+  <div class="empty-list" *ngIf="!customers.length">
+    No customers was found.
+  </div>
+</ng-container>
+
+<ng-container *ngIf="customersCount$ | async as customersCount">
+  <app-pagination *ngIf="customersCount > itemsCount.value"
+                  [lastPage]="pagesCount(customersCount)"
+                  (pageChanged)="load($event)">
+  </app-pagination>
+</ng-container>
+
+<ng-container *ngIf="customerLoans">
+  <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" id="loansTableModal" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Loans</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        </div>
+        <div class="modal-body" style="overflow-x: auto;">
+          <table *ngIf="customerLoans.length" id="loansTable" class="table table-striped table-hover table-bordered table-condensed"
+                 style="min-width: 1350px;">
+            <thead>
+            <tr>
+              <th>ID</th>
+              <th>Customer</th>
+              <th>Type</th>
+              <th>Tenure</th>
+              <th>Amount</th>
+              <th>Stage</th>
+              <th>Status</th>
+              <th>User</th>
+              <th>Branch</th>
+              <th>Stage at</th>
+              <th>Created at</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let loan of customerLoans">
+              <td>{{ loan.id }}</td>
+              <td>{{ loan.customer }}</td>
+              <td>{{ loan.type }}</td>
+              <td>{{ loan.tenure }}</td>
+              <td>{{ loan.amount }}</td>
+              <td>{{ loan.role.displayName }}</td>
+              <td>{{ loan.status }}</td>
+              <td>{{ loan.user.fullName }}</td>
+              <td><a href="javascript:void(0);" data-toggle="modal" data-target="#branchesTableModal" (click)="setUserBranches(loan.user.branches)">Branches</a></td>
+              <td>{{ loan.stagedAt }}</td>
+              <td>{{ loan.createdAt }}</td>
+            </tr>
+            </tbody>
+          </table>
+          <div class="empty-list" *ngIf="!customerLoans.length">
+            No loans was found.
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-container>
+
+<ng-container *ngIf="userBranches">
+  <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" id="branchesTableModal" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Roles</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        </div>
+        <div class="modal-body" style="overflow-x: auto;">
+          <ul *ngIf="userBranches.length">
+            <li *ngFor="let branch of userBranches">{{ branch }}</li>
+          </ul>
+          <div class="empty-list" *ngIf="!userBranches.length">
+            No loans was found.
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-container>
+

@@ -1,9 +1,11 @@
 
-f
-java:S1128"KRemove this unused import 'org.springframework.context.annotation.Profile'.(ØÝ¥Ýøÿÿÿÿ
-R
-java:S1128"<Remove this unused import 'com.loanlead.auth.entities.Role'.(”åæ
-H
-java:S1068"2Remove this unused "roleRepository" private field.(Îê¤á
-T
-java:S1068"9Remove this unused "bCryptPasswordEncoder" private field.(º©ŸÙùÿÿÿÿ
+[
+java:S1068"9Remove this unused "bCryptPasswordEncoder" private field.(º©ŸÙùÿÿÿÿ8ì€¦Ê.
+Y
+java:S1128"<Remove this unused import 'com.loanlead.auth.entities.Role'.(”åæ8©ï¥Ê.
+Q
+java:S1068"/Remove this unused "roleService" private field.(Ù¤Ã•úÿÿÿÿ8©ï¥Ê.
+±
+java:S1130š"’Remove the declaration of thrown exception 'org.springframework.security.core.userdetails.UsernameNotFoundException' which is a runtime exception.(É­½Ô8¾Ÿ¦Ê.
+m
+java:S1128"KRemove this unused import 'org.springframework.context.annotation.Profile'.(ØÝ¥Ýøÿÿÿÿ8©ï¥Ê.

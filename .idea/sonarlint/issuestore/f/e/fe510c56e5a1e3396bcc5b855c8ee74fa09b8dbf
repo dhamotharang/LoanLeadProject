@@ -1,18 +1,17 @@
 
-N
-java:S1481 "1Remove this unused "documentType" local variable.(ÿàûÜ8ñ¹³¾‹.
-J
-java:S1481!"-Remove this unused "document" local variable.(ç¨Ù´8ñ¹³¾‹.
-]	java:S125%"<This block of commented-out lines of code should be removed.(µÕ¦Ïùÿÿÿÿ8ñ¹³¾‹.
-]	java:S125-"<This block of commented-out lines of code should be removed.(†™¡§ýÿÿÿÿ8ñ¹³¾‹.
-R
-java:S1128"0Remove this unused import 'java.io.IOException'.(ªº»Úýÿÿÿÿ8–¡öÍ‹.
-[
-java:S4684"@Replace this persistent entity with a simple POJO or DTO object.(à˜êøÿÿÿÿ
-]	java:S125#"<This block of commented-out lines of code should be removed.(ÿœ°Õþÿÿÿÿ8ñ¹³¾‹.
-H
-java:S1135"2Complete the task associated to this TODO comment.(üÔ¥ä
-Y
-java:S1854!"<Remove this useless assignment to local variable "document".(ç¨Ù´8ñ¹³¾‹.
+W
+java:S1128"5Remove this unused import 'com.loanlead.models.Loan'.(é¸úÒúÿÿÿÿ8ÏèÇÙŽ.
+T
+java:S1128"2Remove this unused import 'java.util.Collections'.(¢³ïÓþÿÿÿÿ8û§¨ƒ.
+j
+java:S1128"MRemove this unused import 'org.springframework.security.core.Authentication'.(ñýÓ“8‡³Þ¿Ž.
 ]
-java:S1854 "@Remove this useless assignment to local variable "documentType".(ÿàûÜ8ñ¹³¾‹.
+java:S4684E"@Replace this persistent entity with a simple POJO or DTO object.(Þÿãí8Û‚’ÀŽ.
+H
+java:S1135"2Complete the task associated to this TODO comment.(üÔ¥ä
+L
+java:S1128"*Remove this unused import 'java.util.Map'.(¼è½Òþÿÿÿÿ8éá§ƒ.
+R
+java:S1128"0Remove this unused import 'java.io.IOException'.(ªº»Úýÿÿÿÿ8–¡öÍ‹.
+Q
+java:S1068"/Remove this unused "loanService" private field.(–˜åëÿÿÿÿÿ8ÏèÇÙŽ.

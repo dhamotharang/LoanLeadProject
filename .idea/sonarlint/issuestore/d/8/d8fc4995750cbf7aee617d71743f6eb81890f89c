@@ -1,20 +1,10 @@
 
-^
-java:S1128"<Remove this unused import 'com.loanlead.auth.entities.User'.(ÍŒıÈüÿÿÿÿ8ËŞŒ¿‹.
-N
-java:S1128",Remove this unused import 'java.time.Month'.(¤‚Éøÿÿÿÿ8ÄÖ‹¿‹.
-M
-java:S1128"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ8ËŞŒ¿‹.
-Q
-java:S1068$"/Remove this unused "userService" private field.(¶òÁÈùÿÿÿÿ8ËŞŒ¿‹.
-s
-java:S1128"QRemove this unused import 'org.springframework.format.annotation.DateTimeFormat'.(‡ˆôƒøÿÿÿÿ8ìÉ…¿‹.
-v
-java:S11927"TDefine a constant instead of duplicating this literal "Content-Disposition" 6 times.(ğÖ«éúÿÿÿÿ8ÖÈ“¿‹.
-b	java:S107'"AConstructor has 8 parameters, which is greater than 7 authorized.(ÍŸÿÿÿÿÿ8×¾œÀ‰.
 {
-java:S11926"YDefine a constant instead of duplicating this literal "application/vnd.ms-excel" 6 times.(÷Üäúÿÿÿÿ8ÖÈ“¿‹.
-V
-java:S1128"4Remove this unused import 'java.time.LocalDateTime'.(æÃ§ƒüÿÿÿÿ8ÄÖ‹¿‹.
+java:S11921"YDefine a constant instead of duplicating this literal "application/vnd.ms-excel" 6 times.(÷Üäúÿÿÿÿ8ÖÈ“¿‹.
 š
-java:S1130Œ"wRemove the declaration of thrown exception 'javax.servlet.ServletException', as it cannot be thrown from method's body.(íë§…ıÿÿÿÿ8¶ÿ¢¿‹.
+java:S1130‡"wRemove the declaration of thrown exception 'javax.servlet.ServletException', as it cannot be thrown from method's body.(íë§…ıÿÿÿÿ8¶ÿ¢¿‹.
+v
+java:S11922"TDefine a constant instead of duplicating this literal "Content-Disposition" 6 times.(ğÖ«éúÿÿÿÿ8ÖÈ“¿‹.
+Q
+java:S1068"/Remove this unused "userService" private field.(¶òÁÈùÿÿÿÿ8ËŞŒ¿‹.
+b	java:S107""AConstructor has 8 parameters, which is greater than 7 authorized.(ÍŸÿÿÿÿÿ8×¾œÀ‰.

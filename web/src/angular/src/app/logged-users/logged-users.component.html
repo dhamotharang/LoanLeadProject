@@ -1,0 +1,42 @@
+<loanlead-admin-navigation></loanlead-admin-navigation>
+<ng-container *ngIf="users$ | async as users">
+  <div class="border border-secondary m-3 p-3 bg-white rounded animated fadeInUp">
+    <div class="py-2 page-body-heading justify-content-between">
+      <label class="rounded col-lg-2 col-md-3 col-12 py-2 page-heading d-flex align-items-center justify-content-center">
+        <i class="material-icons">account_balance</i>&nbsp;Logged Users
+      </label>
+    </div>
+    <hr>
+    <div class="py-2" style="overflow-x: auto;">
+      <table id="contentTable" class="table table-striped table-hover table-bordered table-condensed">
+        <thead>
+        <tr>
+          <th>ID</th>
+          <th>User Name</th>
+          <th>Name</th>
+          <th>Contact nr. 1</th>
+          <th>Email</th>
+          <th>Branch</th>
+          <th>Created at</th>
+          <th>Logout user</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let user of users">
+          <td><a href="javascript:void(0);" class="text-dark-blue">{{ user.id }}</a></td>
+          <td><a href="javascript:void(0);" class="text-dark-blue">{{ user.employeeId }}</a></td>
+          <td><a href="javascript:void(0);" class="text-dark-blue">{{ user.fullName }}</a></td>
+          <td><a href="javascript:void(0);" class="text-dark-blue">{{ user.phoneNumber }}</a></td>
+          <td><a href="javascript:void(0);" class="text-dark-blue">{{ user.email }}</a></td>
+          <td><a href="javascript:void(0);" class="text-dark-blue">{{ user.branches[0] }}</a></td>
+          <td><a href="javascript:void(0);" class="text-dark-blue">{{ format(dateInstance(user.createdAt)) }}</a></td>
+          <td><a href="javascript:void(0);" (click)="logoutUser(user.employeeId)">Logout user</a></td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="p-2">
+      <a href="/api/reports/logged" class="btn btn-primary">Report</a>
+    </div>
+  </div>
+</ng-container>

@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="eim-portal-web" />
+        <module name="loanlead-web" />
         <module name="loanlead-core" />
       </profile>
     </annotationProcessing>

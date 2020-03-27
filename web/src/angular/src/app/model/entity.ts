@@ -1,10 +1,10 @@
 export interface Entity {
-  id: number;
+  id?: number;
   name: string;
   shortName: string;
   boxNumber: string;
   plotNumber: string;
   branchesNumber: string;
   description: string;
-  createdAt: string;
+  createdAt?: string;
 }

@@ -8,8 +8,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Root;
 import javax.validation.constraints.NotNull;
 import java.util.*;
 
@@ -27,6 +31,12 @@ public class EntityService {
         return entityRepository.findAll(pageable);
     }
 
+    public Integer findCount() {
+        return entityRepository.findCount();
+    }
+
+    public Entity findByFieldName(String name, String value) {return (Entity) entityRepository.findOne(byColumnNameAndValue(name, value)).orElse(null); }
+
     public Entity find(@NotNull Integer id) {
         return entityRepository.findById(id).orElse(null);
     }
@@ -39,11 +49,15 @@ public class EntityService {
         this.entityRepository.delete(entity);
     }
 
-    public void deleteById(int id) {
+    public void deleteById(Integer id) {
         this.entityRepository.deleteById(id);
     }
 
     public void deleteAllByIds(Integer[] ids) {
         this.entityRepository.deleteEntitiesByIds(new HashSet<>(Arrays.asList(ids)));
+    }
+
+    private static Specification<Entity> byColumnNameAndValue(String columnName, String value) {
+        return (Root<Entity> root, CriteriaQuery<?> query, CriteriaBuilder builder) -> builder.equal(root.<String>get(columnName), value);
     }
 }

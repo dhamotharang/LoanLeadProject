@@ -1,5 +1,6 @@
 package com.loanlead.models;
 
+import com.loanlead.auth.entities.Role;
 import com.loanlead.auth.entities.User;
 import javax.persistence.Entity;
 import javax.persistence.*;
@@ -7,7 +8,7 @@ import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "reports")
-public class Report {
+public class Report extends EntityModel{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
@@ -16,26 +17,21 @@ public class Report {
     private String comment;
 
     @Column(name = "actioned_at")
-    private LocalDateTime createdAt;
+    private LocalDateTime actionedAt;
 
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "loan_id", insertable = false, updatable = false)
+    @JoinColumn(name = "loan_id")
     private Loan loan;
 
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "actioned_by", insertable = false, updatable = false)
+    @JoinColumn(name = "actioned_by")
     private User actionedBy;
 
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "stage")
+    private Role role;
+
     public Report() {
-
-    }
-
-    public Report(String status, String comment, LocalDateTime createdAt, Loan loan, User actionedBy) {
-        this.status = status;
-        this.comment = comment;
-        this.createdAt = createdAt;
-        this.loan = loan;
-        this.actionedBy = actionedBy;
     }
 
     public Integer getId() {
@@ -62,12 +58,12 @@ public class Report {
         this.comment = comment;
     }
 
-    public LocalDateTime getCreatedAt() {
-        return createdAt;
+    public LocalDateTime getActionedAt() {
+        return actionedAt;
     }
 
-    public void setCreatedAt(LocalDateTime createdAt) {
-        this.createdAt = createdAt;
+    public void setActionedAt(LocalDateTime createdAt) {
+        this.actionedAt = createdAt;
     }
 
     public Loan getLoan() {
@@ -84,5 +80,13 @@ public class Report {
 
     public void setActionedBy(User actionedBy) {
         this.actionedBy = actionedBy;
+    }
+
+    public Role getRole() {
+        return role;
+    }
+
+    public void setRole(Role role) {
+        this.role = role;
     }
 }

@@ -12,8 +12,9 @@ import static org.springframework.security.test.web.servlet.response.SecurityMoc
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.redirectedUrl;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 
-@org.springframework.boot.test.context.SpringBootTest(webEnvironment=org.springframework.boot.test.context.SpringBootTest.WebEnvironment.RANDOM_PORT) @org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc() @org.springframework.test.context.ActiveProfiles(value="im-portal") public class AuthenticationIntegrationTest
+@org.springframework.boot.test.context.SpringBootTest(webEnvironment=org.springframework.boot.test.context.SpringBootTest.WebEnvironment.RANDOM_PORT) @org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc() public class AuthenticationIntegrationTest
   extends spock.lang.Specification  implements
     groovy.lang.GroovyObject {
 ;

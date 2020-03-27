@@ -5,23 +5,23 @@ import javax.persistence.Entity;
 
 @Entity
 @Table(name = "phone_numbers")
-public class PhoneNumber {
+public class PhoneNumber extends EntityModel{
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(name = "first_phone_number")
-    private String firstPhoneNumber;
+    @Column(name = "phone_number")
+    private String phoneNumber;
 
-    @Column(name = "second_phone_number")
-    private String secondPhoneNumber;
+    @Column(name = "optional_phone_number")
+    private String optionalPhoneNumber;
 
     public PhoneNumber() {
     }
 
-    public PhoneNumber(String firstPhoneNumber, String secondPhoneNumber) {
-        this.firstPhoneNumber = firstPhoneNumber;
-        this.secondPhoneNumber = secondPhoneNumber;
+    public PhoneNumber(String phoneNumber, String optionalPhoneNumber) {
+        this.phoneNumber = phoneNumber;
+        this.optionalPhoneNumber = optionalPhoneNumber;
     }
 
     public Integer getId() {
@@ -32,19 +32,19 @@ public class PhoneNumber {
         this.id = id;
     }
 
-    public String getFirstPhoneNumber() {
-        return firstPhoneNumber;
+    public String getPhoneNumber() {
+        return phoneNumber;
     }
 
-    public void setFirstPhoneNumber(String firstPhoneNumber) {
-        this.firstPhoneNumber = firstPhoneNumber;
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
     }
 
-    public String getSecondPhoneNumber() {
-        return secondPhoneNumber;
+    public String getOptionalPhoneNumber() {
+        return optionalPhoneNumber;
     }
 
-    public void setSecondPhoneNumber(String secondPhoneNumber) {
-        this.secondPhoneNumber = secondPhoneNumber;
+    public void setOptionalPhoneNumber(String optionalPhoneNumber) {
+        this.optionalPhoneNumber = optionalPhoneNumber;
     }
 }

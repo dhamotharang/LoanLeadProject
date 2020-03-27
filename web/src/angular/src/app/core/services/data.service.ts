@@ -1,12 +1,9 @@
 import {Injectable} from '@angular/core';
-import {HttpClient, HttpErrorResponse} from "@angular/common/http";
+import {HttpClient, HttpErrorResponse, HttpHeaders, HttpParams} from "@angular/common/http";
 import {Observable, of} from "rxjs";
 import {catchError, map} from "rxjs/operators";
 import {ServerResp} from "../../model/server-resp";
 import {HTTPMethod} from "../../model/ui/components/footer";
-import {EimEnvironmentModel} from "../../model/environment/environment";
-import {EimResourceModel} from "../../model/component";
-import {EimUiConfigModel} from "../../model/eim-ui-config";
 import {User} from "../../model/user";
 
 @Injectable({
@@ -19,30 +16,6 @@ export class DataService {
 
   getCurrentUser(): Observable<User> {
     return this.get<User>(`/api/users/current_user`).pipe(map((data) => {
-      return data.data;
-    }));
-  }
-
-  getWorkspace(): Observable<EimUiConfigModel> {
-    return this.get<EimUiConfigModel>(`assets/mock/workspace.json`).pipe(map((data) => {
-      return data.data;
-    }));
-  }
-
-  getOptionalResources(): Observable<EimResourceModel[]> {
-    return this.get<EimResourceModel[]>('/eim/api/resources/optional').pipe(map((data) => {
-      return data.data || [];
-    }));
-  }
-
-  getResources(): Observable<EimResourceModel[]> {
-    return this.get<EimResourceModel[]>(`/eim/api/resources`).pipe(map((data) => {
-      return data.data || [];
-    }));
-  }
-
-  saveUser(user: User): Observable<User> {
-    return this.post<User>('/api/user', user).pipe(map((data) => {
       return data.data;
     }));
   }
@@ -72,15 +45,31 @@ export class DataService {
     }));
   }
 
-  get<T>(url: string): Observable<ServerResp<T>> {
-    return this.http.get<T>(url).pipe(
+  get<T>(
+    url: string,
+    params?: HttpParams | {
+      [param: string]: string | string[];
+    }
+  ): Observable<ServerResp<T>> {
+    return this.http.get<T>(url, { params }).pipe(
       map((data: T) => ServerResp.forData<T>(data)),
       catchError((err: HttpErrorResponse) => of<ServerResp<T>>(ServerResp.withError<T>(err))),
     );
   }
 
-  post<T>(url: string, body: any): Observable<ServerResp<T>> {
-    return this.http.post<T>(url, body).pipe(
+  post<T>(url: string, body: any, options?: {
+    headers?: HttpHeaders | {
+      [header: string]: string | string[];
+    };
+    observe?: 'body';
+    params?: HttpParams | {
+      [param: string]: string | string[];
+    };
+    reportProgress?: boolean;
+    responseType?: 'json';
+    withCredentials?: boolean;
+  }): Observable<ServerResp<T>> {
+    return this.http.post<T>(url, body, options).pipe(
       map((data: T) => ServerResp.forData<T>(data)),
       catchError((err: HttpErrorResponse) => of<ServerResp<T>>(ServerResp.withError<T>(err)))
     );

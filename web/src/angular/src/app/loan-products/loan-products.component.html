@@ -1,1 +1,66 @@
-<p>loan-products works!</p>
+<loanlead-admin-navigation></loanlead-admin-navigation>
+<ng-container *ngIf="loanProducts$ | async as loanProducts">
+  <div *ngIf="loanProducts.length" class="border border-secondary m-3 p-3 bg-white rounded animated fadeIn">
+    <div class="py-2 page-body-heading justify-content-between">
+      <label class="rounded col-lg-2 col-md-3 col-12 py-2 page-heading d-flex align-items-center justify-content-center"><i class="material-icons">group</i>&nbsp;Loan Products</label>
+
+      <div class="col-md-3 col-12">
+        <div class="form-group">
+          <label for="itemsCount">Items Count</label>
+          <input id="itemsCount"
+                 type="number"
+                 placeholder="Search"
+                 data-placeholder="Search"
+                 class="form-control"
+                 [formControl]="itemsCount"
+                 (input)="validate()"
+                 (blur)="filter()"
+                 required>
+          <div class="feedback text-danger"></div>
+        </div>
+      </div>
+    </div>
+    <div class="py-2 d-flex justify-content-end">
+      <a routerLink="../loan_products_form" class="btn btn-primary d-flex align-items-center col-lg-2 col-md-3 col-sm-4 col-12 justify-content-center py-2"><i class="material-icons">add</i>&nbsp;Create new loan product</a>
+    </div>
+    <div class="py-2" style="overflow-x: auto;">
+      <table id="contentTable" class="table table-striped table-hover table-bordered table-condensed" style="min-width: 1595px;">
+        <thead>
+        <tr>
+          <th>ID</th>
+          <th>Loan Product</th>
+          <th>Max Amount</th>
+          <th>Max Tenure</th>
+          <th>Time Threshold</th>
+          <th>Edit</th>
+          <th><input type="checkbox" id="select-all" (click)="selectAllTrigger(loanProducts)"/></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr [id]="[loanProduct.id]" *ngFor="let loanProduct of loanProducts">
+          <td>{{ loanProduct.id }}</td>
+          <td>{{ loanProduct.loanProduct }}</td>
+          <td>{{ loanProduct.maxAmount }}</td>
+          <td>{{ loanProduct.maxTenure }}</td>
+          <td>{{ loanProduct.timeThreshold }}</td>
+          <td><a [routerLink]="['../loan_products_form/' + loanProduct.id]">Edit</a></td>
+          <td><input type="checkbox" [checked]="selectAll" (click)="check(loanProduct.id)"></td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="py-2">
+      <button type="button" id="deleteButton" class="btn btn-primary" [disabled]="!anySelected" (click)="delete()">Delete loanProducts</button>
+    </div>
+  </div>
+  <div class="empty-list" *ngIf="!loanProducts.length">
+    No loanProducts was found.
+  </div>
+</ng-container>
+
+<ng-container *ngIf="loanProductsCount$ | async as loanProductsCount">
+  <app-pagination *ngIf="loanProductsCount > itemsCount.value"
+                  [lastPage]="pagesCount(loanProductsCount)"
+                  (pageChanged)="load($event)">
+  </app-pagination>
+</ng-container>

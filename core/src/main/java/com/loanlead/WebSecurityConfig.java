@@ -1,15 +1,14 @@
 package com.loanlead;
 
 import com.loanlead.auth.AuthRole;
+import com.loanlead.auth.CustomLogoutSuccessHandler;
 import com.loanlead.auth.DefaultPasswordEncoder;
-import com.loanlead.auth.SecurityService;
-import org.springframework.context.annotation.Profile;
+import com.loanlead.auth.UserServiceImpl;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import javax.sql.DataSource;
 
@@ -17,8 +16,9 @@ import javax.sql.DataSource;
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     private final DefaultPasswordEncoder defaultPasswordEncoder;
-    private final SecurityService securityService;
+    private final UserServiceImpl userService;
     private final UrlAuthenticationSuccessHandler successHandler;
+    private final CustomLogoutSuccessHandler logoutHandler;
     private final DataSource dataSource;
 
     private static final String USERS_QUERY = "select employee_id, password, '1' from users where employee_id=?";
@@ -26,18 +26,20 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     public WebSecurityConfig(
             DefaultPasswordEncoder defaultPasswordEncoder,
-            SecurityService securityService,
+            UserServiceImpl userService,
             UrlAuthenticationSuccessHandler successHandler,
+            CustomLogoutSuccessHandler logoutHandler,
             DataSource dataSource) {
         this.defaultPasswordEncoder = defaultPasswordEncoder;
-        this.securityService = securityService;
+        this.userService = userService;
         this.successHandler = successHandler;
+        this.logoutHandler = logoutHandler;
         this.dataSource = dataSource;
     }
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth.userDetailsService(securityService).passwordEncoder(defaultPasswordEncoder);
+        auth.userDetailsService(userService).passwordEncoder(defaultPasswordEncoder);
     }
 
     @Override
@@ -46,10 +48,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .headers().frameOptions().sameOrigin()
                 .and()
                 .authorizeRequests()
-                .antMatchers("/css/**").permitAll()
-                .antMatchers("/js/**").permitAll()
-                .antMatchers("/bootstrap-4.1.1/**").permitAll()
-                .antMatchers("/ui/#/admin/**").hasAuthority(AuthRole.ADMIN.name())
+                .antMatchers("/css/**", "/js/**", "/images/**", "/bootstrap-4.1.1/**").permitAll()
+                .antMatchers("/ui/#/admin/**").hasRole(AuthRole.ADMIN.name())
                 .antMatchers("/ui/#/user/**").authenticated()
                 .antMatchers("/sign-up").not().authenticated()
                 .anyRequest().authenticated()
@@ -64,11 +64,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .logout()
                 .logoutUrl("/logout")
                 .logoutSuccessUrl("/login/logout")
+                .logoutSuccessHandler(logoutHandler)
                 .invalidateHttpSession(true)
-                .deleteCookies("JSESSIONID")
-                .and()
-                .exceptionHandling()
-                .accessDeniedPage("/access-denied");
+                .deleteCookies("JSESSIONID");
     }
 
 

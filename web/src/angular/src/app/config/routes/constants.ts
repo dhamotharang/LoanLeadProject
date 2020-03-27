@@ -9,13 +9,13 @@ export const enum Urls {
   PROFILE_EDIT = 'edit',
   LOAN_FORM = 'loan_form',
   LOAN_PRODUCTS = 'loan_products',
-  LOAN_PRODUCT_FORM = 'loan_product_form',
+  LOAN_PRODUCT_FORM = 'loan_products_form',
   DASHBOARD = 'dashboard',
   AUDITING = 'auditing',
   CUSTOMER_FORM = 'customer_form',
   CUSTOMERS = 'customers',
   REPORTS = 'reports',
-  ADMIN_HOME = 'home',
-  USER_HOME = 'home',
+  LOGGED_USERS = 'logged',
+  HOME = 'home',
   ADMIN = 'admin'
 }

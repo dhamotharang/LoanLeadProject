@@ -1,18 +1,17 @@
 import {Role} from "./role";
 import {Branch} from "./branch";
+import {PhoneNumber} from "./phone-number";
 
 export interface User {
   id: number;
   employeeId: string;
-  phoneNumbersId: string;
+  phoneNumber: string;
+  optionalPhoneNumber: string;
   password: string;
   fullName: string;
   email: string;
-  status: string;
-  picturePath: string;
-  updatedAt: string;
-  statusChangeTimestamp: string;
-  createdAt: string;
-  roles: Role[];
-  branches: Branch[];
+  createdAt?: string;
+  roles: string[];
+  branches: string[];
+  picturePath?: string;
 }

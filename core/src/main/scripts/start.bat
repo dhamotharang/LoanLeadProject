@@ -20,7 +20,7 @@ SET CONF=.;config
 SET LIB=lib\*
 
 SET CP=%CONF%;%LIB%
-SET SPRING_CONF_OPTS=--spring.config.location=classpath:file:./config/application.properties
+SET SPRING_CONF_OPTS=--spring.config.location=classpath:/application.properties
 
 java -Dloader.path="." -classpath "%CP%" com.loanlead.LoanleadApplication %SPRING_CONF_OPTS%
 

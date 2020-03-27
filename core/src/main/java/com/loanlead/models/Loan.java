@@ -11,10 +11,11 @@ import java.util.List;
 
 @Entity
 @Table(name = "loans")
-public class Loan {
+public class Loan extends EntityModel{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+    private String type;
     private Integer amount;
     private Integer tenure;
     private String status;
@@ -23,36 +24,38 @@ public class Loan {
     @Column(name = "type_changed")
     private Boolean typeChanged;
 
+    @CreationTimestamp
     @Column(name = "receive_timestamp")
     private LocalDateTime receiveTimestamp;
 
     @CreationTimestamp
-    @Column(name = "created_at")
+    @Column(name = "created_at", updatable = false)
     private LocalDateTime createdAt;
 
     @Column(name = "defer_stage")
     private Integer deferStage;
 
+    @CreationTimestamp
     @Column(name = "staged_at")
     private LocalDateTime stagedAt;
 
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "customer_id", insertable = false, updatable = false)
+    @JoinColumn(name = "customer_id")
     private Customer customer;
 
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "loan_product", insertable = false, updatable = false)
+    @JoinColumn(name = "loan_product_id")
     private LoanProduct loanProduct;
 
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "actioned_by", insertable = false, updatable = false)
+    @JoinColumn(name = "actioned_by")
     private User user;
 
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "stage", insertable = false, updatable = false)
+    @JoinColumn(name = "stage")
     private Role role;
 
-    @ManyToMany(fetch = FetchType.EAGER)
+    @ManyToMany(cascade = CascadeType.MERGE, fetch = FetchType.EAGER)
     @JoinTable(name = "loans_security_types",
             joinColumns = @JoinColumn(name = "loan_id"),
             inverseJoinColumns = @JoinColumn(name = "security_type_id"))
@@ -60,7 +63,8 @@ public class Loan {
 
     public Loan() {}
 
-    public Loan(Integer amount, Integer tenure, String status, String comment, Boolean typeChanged, LocalDateTime receiveTimestamp, LocalDateTime createdAt, Integer deferStage, LocalDateTime stagedAt, Customer customer, LoanProduct loanProduct, User user, Role role, List<SecurityType> securityTypes) {
+    public Loan(String type, Integer amount, Integer tenure, String status, String comment, Boolean typeChanged, LocalDateTime receiveTimestamp, LocalDateTime createdAt, Integer deferStage, LocalDateTime stagedAt, Customer customer, LoanProduct loanProduct, User user, Role role, List<SecurityType> securityTypes) {
+        this.type = type;
         this.amount = amount;
         this.tenure = tenure;
         this.status = status;
@@ -83,6 +87,14 @@ public class Loan {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
 
     public Integer getAmount() {
@@ -195,5 +207,15 @@ public class Loan {
 
     public void setSecurityTypes(List<SecurityType> securityTypes) {
         this.securityTypes = securityTypes;
+    }
+
+    public Report toReport() {
+        Report report = new Report();
+        report.setLoan(this);
+        report.setRole(this.getRole());
+        report.setActionedBy(this.getUser());
+        report.setComment(this.getComment());
+        report.setActionedAt(LocalDateTime.now());
+        return report;
     }
 }

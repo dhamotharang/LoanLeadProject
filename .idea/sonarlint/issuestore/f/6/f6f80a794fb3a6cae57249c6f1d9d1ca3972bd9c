@@ -1,23 +1,3 @@
 
-[
-java:S1128"9Remove this unused import 'org.springframework.ui.Model'.(ê†ıÿÿÿÿ8§úç¿‰.
-V
-java:S1128"4Remove this unused import 'java.time.LocalDateTime'.(æÃ§ƒüÿÿÿÿ8šØ¾‹.
 b
-java:S4684D"@Replace this persistent entity with a simple POJO or DTO object.(÷í˜ÿøÿÿÿÿ8½£½½‰.
-P
-java:S1068 "3Remove this unused "customerService" private field.(Ş›ÕŒ8ë°ª¾‰.
-{
-java:S1450 "^Remove the "customerService" field and declare it as a local variable in the relevant methods.(Ş›ÕŒ8ë°ª¾‰.
-R
-java:S1481E"0Remove this unused "loanProduct" local variable.(®™Öšûÿÿÿÿ8¨¶É¾‹.
-X	java:S125G"<This block of commented-out lines of code should be removed.(Æü‡Ÿ8¨¶É¾‹.
-k
-java:S1128"IRemove this unused import 'org.springframework.validation.BindingResult'.(‹¶¸ùÿÿÿÿ8Ü™È¾‹.
-U
-java:S1128"3Remove this unused import 'javax.validation.Valid'.(æ¤ñ÷úÿÿÿÿ8üÉÇ¾‹.
-X	java:S125K"<This block of commented-out lines of code should be removed.(„¾òÔ8¨¶É¾‹.
-a
-java:S1854E"?Remove this useless assignment to local variable "loanProduct".(®™Öšûÿÿÿÿ8¨¶É¾‹.
-q
-java:S1128"ORemove this unused import 'com.fasterxml.jackson.annotation.JsonBackReference'.(»Ôœ¿ıÿÿÿÿ8¤¬ä¿‰.
+java:S46841"@Replace this persistent entity with a simple POJO or DTO object.(÷í˜ÿøÿÿÿÿ8½£½½‰.

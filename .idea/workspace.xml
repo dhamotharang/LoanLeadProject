@@ -2,262 +2,531 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a7078996-457e-4480-82b3-5c06cf623e30" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/4/04a17e730140081a8de2473d4408a5a6e0577ab8" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/9/09986abc402707479f6b33841fbdc3bae2a6817d" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/d/0dd9ca40ce2493412bf1d20874eb2884e0e70947" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/f/2fc88f342e108b93cb7fe5cf623471a9d05135f2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/e/4ed2379850448ab731d2293fa566c39600806cfa" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/5/556f858018edb695bdce0079bf39c3eaed41edd1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/e/8e2bf16c5e8c36132c25e69ebe8827c0888bf187" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/9/99d442e7244c90d893868a65e4f5607c748314ad" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/a/9aca624e64b553ba9096d478185d0d8e7d582076" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/6/a64539a8a8f3ba05ef3d289181289b3dbfc797ec" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/9/c905c1b8967397ec4380e97296282594405be39b" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/a/da19f2ffa505be4afa9ad884d570b79ed5d628c8" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/3/f3d295a5e7185e802239a50e425b794aad35d90e" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/src/main/java/com/loanlead/models/ui/models/ReportFormModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/angular/src/app/dashboard/loan-form/loan-form.component.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/angular/src/app/home/home.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/angular/src/app/home/home.component.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/angular/src/app/home/home.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/angular/src/app/home/home.module.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/angular/src/app/loan-products/loan-product-form/loan-product-form.component.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/angular/src/app/users/user-form/user-form.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/9e2292a0-120a-4d83-80c4-6f1e0561f77a.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/9e2292a0-120a-4d83-80c4-6f1e0561f77a.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/b/1badb2f1d9b07bd6952fe35412a776e91ae401fe" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/b/1badb2f1d9b07bd6952fe35412a776e91ae401fe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/d/1da2bd96c163f924955e2fdc2c5611658bcf49eb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/d/1da2bd96c163f924955e2fdc2c5611658bcf49eb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/0/201737ea5430bcf9b630eb7bfb19edc27130911a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/5/256bd4c01f030ac9616ca46e680a927eca7566b3" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/5/256bd4c01f030ac9616ca46e680a927eca7566b3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/9/29a9050cf91d417ada757e0b022e8b683936a9ea" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/9/29a9050cf91d417ada757e0b022e8b683936a9ea" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/d/2ddc83a11eb4a21ed14f25be7207ec13179411cb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/d/2ddc83a11eb4a21ed14f25be7207ec13179411cb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/0/309e7b964f881b5c62004ad0036fce2052ccd1de" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/0/309e7b964f881b5c62004ad0036fce2052ccd1de" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/2/320c50192b2b1f11028e890fe19058b209e19d12" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/2/320c50192b2b1f11028e890fe19058b209e19d12" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/3/3342e276449181e2a35d49784aa54c88a314896f" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/3/3342e276449181e2a35d49784aa54c88a314896f" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/c/3cd4d1e973651f9314663403ab1cc136e10f89d1" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/c/3cd4d1e973651f9314663403ab1cc136e10f89d1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/8/481dfd514bca775230715f4e253f75eaec0da97f" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/8/481dfd514bca775230715f4e253f75eaec0da97f" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/5/5522046c5fc16fc32b511717f5be8d589df20ecc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/9/59b8b8127edf412e79762c27e0e3478656e683f4" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/9/59b8b8127edf412e79762c27e0e3478656e683f4" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/e/6ed6d23e5a3ec080fe42dc4caa0044fc56a51ece" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/e/6ed6d23e5a3ec080fe42dc4caa0044fc56a51ece" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/2/72ec5d053f0601f327d014bcb71d9196f4adf975" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/2/72ec5d053f0601f327d014bcb71d9196f4adf975" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/3/830d173cf4b82ca034914316814f3c1820bd5bab" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/3/830d173cf4b82ca034914316814f3c1820bd5bab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/a/8ac24fbe0eb32c58735e5876bf3e37f2855a50e2" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/a/8ac24fbe0eb32c58735e5876bf3e37f2855a50e2" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/f/8ff6277fe09828cc5478902cc0d321aa2fcce5ce" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/f/8ff6277fe09828cc5478902cc0d321aa2fcce5ce" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/6/96aeeacf4a9a8edf1c190b9e3516a7cff4dc6b11" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/6/96aeeacf4a9a8edf1c190b9e3516a7cff4dc6b11" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/f/9f1212ccc9149ed5f59b853950654f87ca65a193" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/f/9f1212ccc9149ed5f59b853950654f87ca65a193" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/f/9f304f7d162076af50b44bb5ca5a320c83b62f0e" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/f/9f304f7d162076af50b44bb5ca5a320c83b62f0e" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/4/b4d9cabedb20a8d843bc8e7f7dc4e64d386d5339" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/4/b4d9cabedb20a8d843bc8e7f7dc4e64d386d5339" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/2/c278fe593aeab998aec3313257fbf0015687ca52" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/2/c278fe593aeab998aec3313257fbf0015687ca52" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/a/ca0990a614ca80412b941d044f59de93ac789bb6" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/a/ca0990a614ca80412b941d044f59de93ac789bb6" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/d/cd51078f92c1df5beba26b1960dcb1fda635ccf6" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/d/cd51078f92c1df5beba26b1960dcb1fda635ccf6" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/1/d19c36a107b102c3befd1ebcbfbd3b898ab75ccf" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/1/d19c36a107b102c3befd1ebcbfbd3b898ab75ccf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/1/d1c1d1735fcba0c92e123e9b403e6fe5400145c3" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/1/d1c1d1735fcba0c92e123e9b403e6fe5400145c3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/8/d8fc4995750cbf7aee617d71743f6eb81890f89c" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/8/d8fc4995750cbf7aee617d71743f6eb81890f89c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/9/d93487874d9a79a84704feea7bce6d8789228e15" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/a/da80738d2582dc50ea149cb1aeaf1456a278940f" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/a/da80738d2582dc50ea149cb1aeaf1456a278940f" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/b/db910a01cb3b23d2528b54cfd0c3f9f9bcdba63b" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/b/db910a01cb3b23d2528b54cfd0c3f9f9bcdba63b" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/a/eaabc7a67cbb7fd4360a0447efc136321de10621" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/6/f6f80a794fb3a6cae57249c6f1d9d1ca3972bd9c" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/6/f6f80a794fb3a6cae57249c6f1d9d1ca3972bd9c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/e/fe510c56e5a1e3396bcc5b855c8ee74fa09b8dbf" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/e/fe510c56e5a1e3396bcc5b855c8ee74fa09b8dbf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/core/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/assembly/assembly-core.xml" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/assembly/assembly-core.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/loanlead/LoanleadApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/com/loanlead/LoanleadApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/loanlead/StaticResourceConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/com/loanlead/StaticResourceConfiguration.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/src/main/java/com/loanlead/UrlAuthenticationSuccessHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/com/loanlead/UrlAuthenticationSuccessHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/src/main/java/com/loanlead/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/com/loanlead/WebSecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/loanlead/auth/SecurityService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/loanlead/auth/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/com/loanlead/auth/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/loanlead/auth/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/com/loanlead/auth/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/loanlead/auth/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/com/loanlead/auth/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/loanlead/auth/entities/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/com/loanlead/auth/entities/Role.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/loanlead/auth/entities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/com/loanlead/auth/entities/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/src/main/java/com/loanlead/controller/BranchController.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/com/loanlead/controller/BranchController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/src/main/java/com/loanlead/controller/CustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/com/loanlead/controller/CustomerController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/src/main/java/com/loanlead/controller/EntityController.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/com/loanlead/controller/EntityController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/loanlead/controller/LoanController.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/com/loanlead/controller/LoanController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/loanlead/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/com/loanlead/controller/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/loanlead/controller/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/com/loanlead/controller/MainController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/src/main/java/com/loanlead/controller/ReportController.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/com/loanlead/controller/ReportController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/src/main/java/com/loanlead/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/com/loanlead/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/scripts/start-im-and-browse.bat" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/scripts/start.bat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/scripts/start-im.sh" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/scripts/start.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/loanlead/excel/AuditExcelManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/com/loanlead/excel/AuditExcelManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/loanlead/excel/LoanProductExcelManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/com/loanlead/excel/LoanProductExcelManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/loanlead/excel/LoggedUserExcelManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/com/loanlead/excel/LoggedUserExcelManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/loanlead/excel/ReportsExcelManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/com/loanlead/excel/ReportsExcelManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/loanlead/models/Branch.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/com/loanlead/models/Branch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/loanlead/models/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/com/loanlead/models/Customer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/loanlead/models/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/com/loanlead/models/Entity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/loanlead/models/Loan.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/com/loanlead/models/Loan.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/loanlead/models/LoanProduct.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/com/loanlead/models/LoanProduct.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/loanlead/models/LoanType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/loanlead/models/PhoneNumber.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/com/loanlead/models/PhoneNumber.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/loanlead/models/Report.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/com/loanlead/models/Report.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/loanlead/models/SecurityType.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/com/loanlead/models/SecurityType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/loanlead/models/ui/ReportModel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/loanlead/models/ui/UserModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/com/loanlead/models/ui/models/UserModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/loanlead/repositories/BranchRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/com/loanlead/repositories/BranchRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/loanlead/repositories/CustomerRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/com/loanlead/repositories/CustomerRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/loanlead/repositories/EntityRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/com/loanlead/repositories/EntityRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/loanlead/repositories/LoanProductRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/com/loanlead/repositories/LoanProductRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/loanlead/repositories/LoanRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/com/loanlead/repositories/LoanRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/loanlead/repositories/PhoneNumberRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/com/loanlead/repositories/PhoneNumberRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/loanlead/repositories/ReportRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/com/loanlead/repositories/ReportRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/loanlead/services/BranchService.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/com/loanlead/services/BranchService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/loanlead/services/CustomerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/com/loanlead/services/CustomerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/loanlead/services/EntityService.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/com/loanlead/services/EntityService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/loanlead/services/LoanProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/com/loanlead/services/LoanProductService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/loanlead/services/LoanService.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/com/loanlead/services/LoanService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/loanlead/services/PhoneNumberService.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/com/loanlead/services/PhoneNumberService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/loanlead/services/ReportService.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/com/loanlead/services/ReportService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/scripts/start.bat" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/scripts/start.bat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/test/groovy/com/loanlead/auth/AuthenticationIntegrationTest.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/test/groovy/com/loanlead/auth/AuthenticationIntegrationTest.groovy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/classes/com/loanlead/LoanleadApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/classes/com/loanlead/LoanleadApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/classes/com/loanlead/StaticResourceConfiguration.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/classes/com/loanlead/StaticResourceConfiguration.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/target/classes/com/loanlead/UrlAuthenticationSuccessHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/classes/com/loanlead/UrlAuthenticationSuccessHandler.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/target/classes/com/loanlead/WebSecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/classes/com/loanlead/WebSecurityConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/classes/com/loanlead/auth/SecurityService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/classes/com/loanlead/auth/UserRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/classes/com/loanlead/auth/UserRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/classes/com/loanlead/auth/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/classes/com/loanlead/auth/UserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/classes/com/loanlead/auth/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/classes/com/loanlead/auth/UserServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/classes/com/loanlead/auth/entities/Role.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/classes/com/loanlead/auth/entities/Role.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/classes/com/loanlead/auth/entities/User$UserBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/classes/com/loanlead/auth/entities/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/classes/com/loanlead/auth/entities/User.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/target/classes/com/loanlead/controller/BranchController.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/classes/com/loanlead/controller/BranchController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/target/classes/com/loanlead/controller/CustomerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/classes/com/loanlead/controller/CustomerController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/target/classes/com/loanlead/controller/EntityController.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/classes/com/loanlead/controller/EntityController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/classes/com/loanlead/controller/LoanController.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/classes/com/loanlead/controller/LoanController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/classes/com/loanlead/controller/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/classes/com/loanlead/controller/LoginController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/classes/com/loanlead/controller/MainController.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/classes/com/loanlead/controller/MainController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/target/classes/com/loanlead/controller/ReportController.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/classes/com/loanlead/controller/ReportController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/target/classes/com/loanlead/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/classes/com/loanlead/controller/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/classes/com/loanlead/excel/AuditExcelManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/classes/com/loanlead/excel/AuditExcelManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/classes/com/loanlead/excel/LoanProductExcelManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/classes/com/loanlead/excel/LoanProductExcelManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/classes/com/loanlead/excel/LoggedUserExcelManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/classes/com/loanlead/excel/LoggedUserExcelManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/classes/com/loanlead/excel/ReportsExcelManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/classes/com/loanlead/excel/ReportsExcelManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/classes/com/loanlead/models/Branch.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/classes/com/loanlead/models/Branch.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/classes/com/loanlead/models/Customer.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/classes/com/loanlead/models/Customer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/classes/com/loanlead/models/Entity.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/classes/com/loanlead/models/Entity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/classes/com/loanlead/models/Loan.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/classes/com/loanlead/models/Loan.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/classes/com/loanlead/models/LoanProduct.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/classes/com/loanlead/models/LoanProduct.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/classes/com/loanlead/models/LoanType.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/classes/com/loanlead/models/PhoneNumber.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/classes/com/loanlead/models/PhoneNumber.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/classes/com/loanlead/models/Report.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/classes/com/loanlead/models/Report.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/classes/com/loanlead/models/SecurityType.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/classes/com/loanlead/models/SecurityType.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/classes/com/loanlead/models/ui/ReportModel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/classes/com/loanlead/models/ui/UserModel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/classes/com/loanlead/repositories/BranchRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/classes/com/loanlead/repositories/BranchRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/classes/com/loanlead/repositories/CustomerRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/classes/com/loanlead/repositories/CustomerRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/classes/com/loanlead/repositories/EntityRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/classes/com/loanlead/repositories/EntityRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/classes/com/loanlead/repositories/LoanProductRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/classes/com/loanlead/repositories/LoanProductRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/classes/com/loanlead/repositories/LoanRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/classes/com/loanlead/repositories/LoanRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/classes/com/loanlead/repositories/PhoneNumberRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/classes/com/loanlead/repositories/PhoneNumberRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/classes/com/loanlead/repositories/ReportRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/classes/com/loanlead/repositories/ReportRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/classes/com/loanlead/services/BranchService.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/classes/com/loanlead/services/BranchService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/classes/com/loanlead/services/CustomerService.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/classes/com/loanlead/services/CustomerService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/classes/com/loanlead/services/EntityService.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/classes/com/loanlead/services/EntityService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/classes/com/loanlead/services/LoanProductService.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/classes/com/loanlead/services/LoanProductService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/classes/com/loanlead/services/LoanService.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/classes/com/loanlead/services/LoanService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/classes/com/loanlead/services/PhoneNumberService.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/classes/com/loanlead/services/PhoneNumberService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/classes/com/loanlead/services/ReportService.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/classes/com/loanlead/services/ReportService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/generated-sources/groovy-stubs/test/com/loanlead/auth/AuthenticationIntegrationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/generated-sources/groovy-stubs/test/com/loanlead/auth/AuthenticationIntegrationTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT.zip" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT.zip" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/loanlead-core-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/loanlead-core-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/loanlead-web-1.0-SNAPSHOT.zip" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/loanlead-web-1.0-SNAPSHOT.zip" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/start-im-and-browse.bat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/start-im.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/main-es2015.js" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/main-es2015.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/main-es2015.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/main-es2015.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/main-es5.js" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/main-es5.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/main-es5.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/main-es5.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/styles-es2015.js" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/styles-es2015.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/styles-es2015.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/styles-es2015.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/styles-es5.js" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/styles-es5.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/styles-es5.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/styles-es5.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/config/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/FastInfoset-1.2.15.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/HikariCP-3.4.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/ant-1.9.13.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/ant-antlr-1.9.13.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/ant-launcher-1.9.13.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/antlr-2.7.7.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/aspectjweaver-1.9.5.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/attoparser-2.0.5.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/byte-buddy-1.10.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/classmate-1.5.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/commons-cli-1.4.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/commons-codec-1.10.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/commons-collections4-4.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/commons-fileupload-1.3.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/commons-io-2.4.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/curvesapi-1.04.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/dom4j-2.1.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/groovy-2.5.9.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/groovy-all-2.5.9.pom" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/groovy-ant-2.5.9.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/groovy-cli-commons-2.5.9.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/groovy-cli-picocli-2.5.9.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/groovy-console-2.5.9.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/groovy-datetime-2.5.9.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/groovy-docgenerator-2.5.9.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/groovy-groovydoc-2.5.9.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/groovy-groovysh-2.5.9.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/groovy-jmx-2.5.9.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/groovy-json-2.5.9.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/groovy-jsr223-2.5.9.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/groovy-macro-2.5.9.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/groovy-nio-2.5.9.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/groovy-servlet-2.5.9.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/groovy-sql-2.5.9.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/groovy-swing-2.5.9.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/groovy-templates-2.5.9.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/groovy-test-2.5.4.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/groovy-xml-2.5.9.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/gson-2.8.5.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/hamcrest-core-1.3.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/hibernate-commons-annotations-5.1.0.Final.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/hibernate-core-5.4.10.Final.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/hibernate-validator-6.0.18.Final.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/istack-commons-runtime-3.0.7.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/jackson-annotations-2.10.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/jackson-core-2.10.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/jackson-databind-2.10.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/jackson-datatype-jdk8-2.10.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/jackson-datatype-jsr310-2.10.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/jackson-module-parameter-names-2.10.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/jakarta.activation-api-1.2.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/jakarta.annotation-api-1.3.5.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/jakarta.persistence-api-2.2.3.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/jakarta.transaction-api-1.3.3.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/jakarta.validation-api-2.0.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/jandex-2.1.1.Final.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/javassist-3.24.0-GA.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/jaxb-runtime-2.3.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/jboss-logging-3.3.2.Final.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/jline-2.14.6.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/json-20180813.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/jul-to-slf4j-1.7.30.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/junit-4.12.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/loanlead-core-1.0-SNAPSHOT.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/loanlead-web-1.0-SNAPSHOT.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/log4j-api-2.12.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/log4j-core-2.12.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/log4j-jul-2.12.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/log4j-slf4j-impl-2.12.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/mysql-connector-java-5.1.6.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/picocli-4.0.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/poi-3.15.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/poi-ooxml-3.15.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/poi-ooxml-schemas-3.15.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/qdox-1.12.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/slf4j-api-1.7.25.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/snakeyaml-1.25.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/spock-core-1.3-groovy-2.5.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/spring-aop-5.2.3.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/spring-aspects-5.2.3.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/spring-beans-5.2.3.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/spring-boot-2.2.4.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/spring-boot-autoconfigure-2.2.4.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/spring-boot-devtools-2.2.4.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/spring-boot-starter-2.2.4.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/spring-boot-starter-aop-2.2.4.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/spring-boot-starter-data-jpa-2.2.4.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/spring-boot-starter-jdbc-2.2.4.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/spring-boot-starter-json-2.2.4.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/spring-boot-starter-log4j2-2.2.4.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/spring-boot-starter-security-2.2.4.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/spring-boot-starter-thymeleaf-2.2.4.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/spring-boot-starter-tomcat-2.2.4.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/spring-boot-starter-validation-2.2.4.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/spring-boot-starter-web-2.2.4.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/spring-boot-test-2.2.4.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/spring-boot-test-autoconfigure-2.2.4.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/spring-context-5.2.3.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/spring-core-5.2.3.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/spring-data-commons-2.2.4.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/spring-data-jpa-2.2.4.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/spring-expression-5.2.3.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/spring-jcl-5.2.3.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/spring-jdbc-5.2.3.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/spring-orm-5.2.3.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/spring-security-config-5.2.1.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/spring-security-core-5.2.2.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/spring-security-test-5.2.2.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/spring-security-web-5.2.1.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/spring-test-5.2.3.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/spring-tx-5.2.3.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/spring-web-5.2.3.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/spring-webmvc-5.2.3.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/stax-api-1.0.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/stax-ex-1.8.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/staxon-1.3.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/thymeleaf-3.0.11.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/thymeleaf-extras-java8time-3.0.4.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/thymeleaf-extras-springsecurity5-3.0.4.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/thymeleaf-spring5-3.0.11.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/tomcat-embed-core-9.0.30.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/tomcat-embed-el-9.0.30.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/tomcat-embed-websocket-9.0.30.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/txw2-2.3.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/unbescape-1.1.6.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/xmlbeans-2.6.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/start.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/start.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/assets/images/config.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/assets/images/content_packs.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/assets/images/database.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/assets/images/email.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/assets/images/env.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/assets/images/file_domains.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/assets/images/jms.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/assets/images/license.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/assets/images/logout.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/assets/images/resource.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/assets/images/server.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/assets/images/user.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/assets/mock/resources.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/assets/mock/workspace.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/color.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/fa-brands-400.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/fa-brands-400.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/fa-brands-400.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/fa-brands-400.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/fa-brands-400.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/fa-regular-400.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/fa-regular-400.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/fa-regular-400.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/fa-regular-400.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/fa-regular-400.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/fa-solid-900.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/fa-solid-900.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/fa-solid-900.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/fa-solid-900.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/fa-solid-900.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/hue.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/line.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/loading.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/main-es2015.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/main-es2015.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/main-es5.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/main-es5.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/open-sans-v15-latin-300.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/open-sans-v15-latin-300.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/open-sans-v15-latin-300.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/open-sans-v15-latin-300.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/open-sans-v15-latin-300.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/open-sans-v15-latin-700.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/open-sans-v15-latin-700.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/open-sans-v15-latin-700.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/open-sans-v15-latin-700.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/open-sans-v15-latin-700.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/open-sans-v15-latin-regular.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/open-sans-v15-latin-regular.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/open-sans-v15-latin-regular.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/open-sans-v15-latin-regular.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/open-sans-v15-latin-regular.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/password-meter.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/polyfills-es2015.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/polyfills-es2015.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/polyfills-es5.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/polyfills-es5.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/primeicons.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/primeicons.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/primeicons.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/primeicons.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/runtime-es2015.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/runtime-es2015.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/runtime-es5.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/runtime-es5.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/scripts.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/scripts.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/styles-es2015.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/styles-es2015.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/styles-es5.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/styles-es5.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/vendor-es2015.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/vendor-es2015.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/vendor-es5.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/vendor-es5.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/bootstrap-4.1.1/css/bootstrap-grid.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/bootstrap-4.1.1/css/bootstrap-grid.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/bootstrap-4.1.1/css/bootstrap-grid.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/bootstrap-4.1.1/css/bootstrap-grid.min.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/bootstrap-4.1.1/css/bootstrap-reboot.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/bootstrap-4.1.1/css/bootstrap-reboot.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/bootstrap-4.1.1/css/bootstrap-reboot.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/bootstrap-4.1.1/css/bootstrap-reboot.min.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/bootstrap-4.1.1/css/bootstrap.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/bootstrap-4.1.1/css/bootstrap.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/bootstrap-4.1.1/css/bootstrap.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/bootstrap-4.1.1/css/bootstrap.min.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/bootstrap-4.1.1/js/bootstrap.bundle.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/bootstrap-4.1.1/js/bootstrap.bundle.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/bootstrap-4.1.1/js/bootstrap.bundle.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/bootstrap-4.1.1/js/bootstrap.bundle.min.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/bootstrap-4.1.1/js/bootstrap.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/bootstrap-4.1.1/js/bootstrap.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/bootstrap-4.1.1/js/bootstrap.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/bootstrap-4.1.1/js/bootstrap.min.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/css/animate.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/css/blade-pagination.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/css/chat.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/css/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/images/3szBftMD1AA.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/images/Sms integration.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/images/attachment.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/images/file.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/images/no_logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/images/no_picture.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/images/sms integration2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/images/sms.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/js/chat.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/js/items-per-page.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/js/jquery-3.3.1.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/js/jquery.blade-pagination.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/js/loan-form.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/js/popper.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/js/reports.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/login/login.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/login/styles/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/sign-up/sign_up.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/core/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/maven-archiver/pom.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/admin-home/admin-home.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/angular/src/app/admin-home/admin-home.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/test-classes/com/loanlead/auth/AuthenticationIntegrationTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/test-classes/com/loanlead/auth/AuthenticationIntegrationTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/angular/node/node_modules/npm/node_modules/make-fetch-happen/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/angular/node/node_modules/npm/node_modules/make-fetch-happen/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/angular/node/node_modules/npm/node_modules/npm-registry-fetch/node_modules/make-fetch-happen/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/angular/node/node_modules/npm/node_modules/npm-registry-fetch/node_modules/make-fetch-happen/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/angular/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/angular/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/angular/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/angular/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/admin-home/admin-home.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/admin-home/admin-home.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/9/094f29d662b28ba37874bb4300bc36e0b19dc326" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/admin-home/admin-home.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/admin-home/admin-home.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/admin-home/admin-home.module.ts" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/angular/src/app/app-routing.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/angular/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/auditing/auditing.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/angular/src/app/auditing/auditing.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/auditing/auditing.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/angular/src/app/auditing/auditing.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/branch-form/branch-form.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/branch-form/branch-form.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/c/1cd2a7bb17c6a61960a340919619f3050b623eed" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/branch-form/branch-form.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/branch-form/branch-form.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/branches/branches.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/angular/src/app/branches/branches.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/branches/branches.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/angular/src/app/branches/branches.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/config/routes/constants.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/angular/src/app/config/routes/constants.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/core/services/data.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/angular/src/app/core/services/data.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/core/services/environment.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/angular/src/app/core/services/environment.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/core/services/entities.service.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/angular/src/app/core/services/entities.service.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/core/services/entities.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/angular/src/app/core/services/entity.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/core/services/environment.service.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/core/services/environment.service.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/core/services/products.service.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/core/services/products.service.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/core/services/servers.service.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/core/services/servers.service.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/core/services/user.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/angular/src/app/core/services/user.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/customer-form/customer-form.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/angular/src/app/customers/customer-form/customer-form.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/customer-form/customer-form.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/4/442d32084e94b3a833841a87ecac8a80b0e8bac4" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/customer-form/customer-form.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/angular/src/app/customers/customer-form/customer-form.component.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/customer-form/customer-form.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/angular/src/app/customers/customer-form/customer-form.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/customers/customers.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/angular/src/app/customers/customers.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/customers/customers.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/angular/src/app/customers/customers.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/dashboard/dashboard.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/angular/src/app/dashboard/dashboard.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/dashboard/dashboard.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/angular/src/app/dashboard/dashboard.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/edit-profile/edit-profile.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/angular/src/app/edit-profile/edit-profile.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/edit-profile/edit-profile.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/angular/src/app/edit-profile/edit-profile.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/entities/entities.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/angular/src/app/entities/entities.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/entities/entities.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/angular/src/app/entities/entities.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/entity-form/entity-form.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/entity-form/entity-form.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/a/4a30316906fbcbd0a392d9f7bfdf6ede818cb280" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/entity-form/entity-form.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/entity-form/entity-form.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/loan-form/loan-form.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/angular/src/app/dashboard/loan-form/loan-form.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/loan-form/loan-form.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/b/6b8dcb03f6b89685cf8316b20c6455d09970ff88" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/loan-form/loan-form.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/angular/src/app/dashboard/loan-form/loan-form.component.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/loan-form/loan-form.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/angular/src/app/dashboard/loan-form/loan-form.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/loan-product-form/loan-product-form.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/angular/src/app/loan-products/loan-product-form/loan-product-form.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/loan-product-form/loan-product-form.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/c/7c5b9d6d3369ef8908276b8e2c7ebe8ad92fa88d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/loan-product-form/loan-product-form.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/angular/src/app/loan-products/loan-product-form/loan-product-form.component.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/loan-product-form/loan-product-form.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/angular/src/app/loan-products/loan-product-form/loan-product-form.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/loan-products/loan-products.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/angular/src/app/loan-products/loan-products.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/loan-products/loan-products.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/angular/src/app/loan-products/loan-products.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/model/branch.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/angular/src/app/model/branch.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/model/entity.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/angular/src/app/model/entity.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/model/environment/environment.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/model/servers/server-model.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/model/ui/components/footer.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/model/user.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/angular/src/app/model/user.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/reports/reports.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/angular/src/app/reports/reports.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/reports/reports.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/angular/src/app/reports/reports.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/ui/admin-navigation/admin-navigation.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/angular/src/app/ui/admin-navigation/admin-navigation.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/ui/admin-navigation/admin-navigation.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/angular/src/app/ui/admin-navigation/admin-navigation.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/ui/admin-navigation/admin-navigation.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/angular/src/app/ui/admin-navigation/admin-navigation.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/ui/navigable/navbar/navbar.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/ui/navigable/navbar/navbar.component.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/ui/navigable/navbar/navbar.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/ui/navigable/navbar/navbar.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/ui/navigable/navigable.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/ui/navigable/navigable.component.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/ui/navigable/navigable.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/ui/navigable/navigable.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/ui/ui.module.ts" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/ui/user-navigation/user-navigation.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/angular/src/app/ui/user-navigation/user-navigation.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/ui/user-navigation/user-navigation.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/angular/src/app/ui/user-navigation/user-navigation.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/user-home/user-home.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/angular/src/app/user-home/user-home.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/angular/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/angular/src/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/ui/user-navigation/user-navigation.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/angular/src/app/ui/user-navigation/user-navigation.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/user-form/user-form.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/angular/src/app/users/user-form/user-form.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/user-form/user-form.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/b/9bb3ff9df2d8417c882c17babe04052740ab5ba3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/user-form/user-form.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/angular/src/app/users/user-form/user-form.component.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/user-form/user-form.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/angular/src/app/users/user-form/user-form.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/user-home/user-home.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/user-home/user-home.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/angular/src/app/customers/customer-form/customer-form.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/user-home/user-home.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/angular/src/app/home/home.component.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/user-home/user-home.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/user-home/user-home.module.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/users/users.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/angular/src/app/users/users.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/users/users.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/angular/src/app/users/users.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/src/angular/src/styles.scss" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/angular/src/styles.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/loanlead-web-1.0-SNAPSHOT.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/loanlead-web-1.0-SNAPSHOT.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/maven-archiver/pom.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/resources/dist/angular/assets/images/config.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/resources/dist/angular/assets/images/content_packs.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/resources/dist/angular/assets/images/database.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/resources/dist/angular/assets/images/email.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/resources/dist/angular/assets/images/env.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/resources/dist/angular/assets/images/file_domains.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/resources/dist/angular/assets/images/jms.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/resources/dist/angular/assets/images/license.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/resources/dist/angular/assets/images/logout.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/resources/dist/angular/assets/images/resource.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/resources/dist/angular/assets/images/server.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/resources/dist/angular/assets/images/user.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/resources/dist/angular/assets/mock/resources.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/resources/dist/angular/assets/mock/workspace.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/resources/dist/angular/color.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/resources/dist/angular/fa-brands-400.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/resources/dist/angular/fa-brands-400.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/resources/dist/angular/fa-brands-400.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/resources/dist/angular/fa-brands-400.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/resources/dist/angular/fa-brands-400.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/resources/dist/angular/fa-regular-400.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/resources/dist/angular/fa-regular-400.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/resources/dist/angular/fa-regular-400.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/resources/dist/angular/fa-regular-400.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/resources/dist/angular/fa-regular-400.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/resources/dist/angular/fa-solid-900.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/resources/dist/angular/fa-solid-900.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/resources/dist/angular/fa-solid-900.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/resources/dist/angular/fa-solid-900.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/resources/dist/angular/fa-solid-900.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/resources/dist/angular/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/resources/dist/angular/hue.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/resources/dist/angular/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/resources/dist/angular/line.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/resources/dist/angular/loading.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/resources/dist/angular/main-es2015.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/resources/dist/angular/main-es2015.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/resources/dist/angular/main-es5.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/resources/dist/angular/main-es5.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/resources/dist/angular/open-sans-v15-latin-300.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/resources/dist/angular/open-sans-v15-latin-300.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/resources/dist/angular/open-sans-v15-latin-300.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/resources/dist/angular/open-sans-v15-latin-300.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/resources/dist/angular/open-sans-v15-latin-300.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/resources/dist/angular/open-sans-v15-latin-700.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/resources/dist/angular/open-sans-v15-latin-700.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/resources/dist/angular/open-sans-v15-latin-700.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/resources/dist/angular/open-sans-v15-latin-700.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/resources/dist/angular/open-sans-v15-latin-700.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/resources/dist/angular/open-sans-v15-latin-regular.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/resources/dist/angular/open-sans-v15-latin-regular.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/resources/dist/angular/open-sans-v15-latin-regular.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/resources/dist/angular/open-sans-v15-latin-regular.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/resources/dist/angular/open-sans-v15-latin-regular.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/resources/dist/angular/password-meter.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/resources/dist/angular/polyfills-es2015.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/resources/dist/angular/polyfills-es2015.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/resources/dist/angular/polyfills-es5.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/resources/dist/angular/polyfills-es5.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/resources/dist/angular/primeicons.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/resources/dist/angular/primeicons.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/resources/dist/angular/primeicons.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/resources/dist/angular/primeicons.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/resources/dist/angular/runtime-es2015.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/resources/dist/angular/runtime-es2015.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/resources/dist/angular/runtime-es5.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/resources/dist/angular/runtime-es5.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/resources/dist/angular/scripts.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/resources/dist/angular/scripts.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/resources/dist/angular/styles-es2015.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/resources/dist/angular/styles-es2015.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/resources/dist/angular/styles-es5.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/resources/dist/angular/styles-es5.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/resources/dist/angular/vendor-es2015.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/resources/dist/angular/vendor-es2015.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/resources/dist/angular/vendor-es5.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/resources/dist/angular/vendor-es5.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/ui/angular/assets/images/config.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/ui/angular/assets/images/content_packs.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/ui/angular/assets/images/database.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/ui/angular/assets/images/email.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/ui/angular/assets/images/env.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/ui/angular/assets/images/file_domains.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/ui/angular/assets/images/jms.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/ui/angular/assets/images/license.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/ui/angular/assets/images/logout.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/ui/angular/assets/images/resource.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/ui/angular/assets/images/server.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/ui/angular/assets/images/user.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/ui/angular/assets/mock/resources.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/ui/angular/assets/mock/workspace.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/ui/angular/color.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/ui/angular/fa-brands-400.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/ui/angular/fa-brands-400.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/ui/angular/fa-brands-400.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/ui/angular/fa-brands-400.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/ui/angular/fa-brands-400.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/ui/angular/fa-regular-400.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/ui/angular/fa-regular-400.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/ui/angular/fa-regular-400.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/ui/angular/fa-regular-400.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/ui/angular/fa-regular-400.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/ui/angular/fa-solid-900.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/ui/angular/fa-solid-900.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/ui/angular/fa-solid-900.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/ui/angular/fa-solid-900.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/ui/angular/fa-solid-900.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/ui/angular/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/ui/angular/hue.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/ui/angular/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/ui/angular/line.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/ui/angular/loading.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/ui/angular/main-es2015.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/ui/angular/main-es2015.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/ui/angular/main-es5.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/ui/angular/main-es5.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/ui/angular/open-sans-v15-latin-300.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/ui/angular/open-sans-v15-latin-300.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/ui/angular/open-sans-v15-latin-300.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/ui/angular/open-sans-v15-latin-300.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/ui/angular/open-sans-v15-latin-300.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/ui/angular/open-sans-v15-latin-700.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/ui/angular/open-sans-v15-latin-700.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/ui/angular/open-sans-v15-latin-700.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/ui/angular/open-sans-v15-latin-700.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/ui/angular/open-sans-v15-latin-700.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/ui/angular/open-sans-v15-latin-regular.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/ui/angular/open-sans-v15-latin-regular.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/ui/angular/open-sans-v15-latin-regular.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/ui/angular/open-sans-v15-latin-regular.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/ui/angular/open-sans-v15-latin-regular.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/ui/angular/password-meter.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/ui/angular/polyfills-es2015.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/ui/angular/polyfills-es2015.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/ui/angular/polyfills-es5.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/ui/angular/polyfills-es5.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/ui/angular/primeicons.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/ui/angular/primeicons.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/ui/angular/primeicons.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/ui/angular/primeicons.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/ui/angular/runtime-es2015.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/ui/angular/runtime-es2015.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/ui/angular/runtime-es5.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/ui/angular/runtime-es5.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/ui/angular/scripts.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/ui/angular/scripts.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/ui/angular/styles-es2015.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/ui/angular/styles-es2015.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/ui/angular/styles-es5.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/ui/angular/styles-es5.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/ui/angular/vendor-es2015.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/ui/angular/vendor-es2015.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/ui/angular/vendor-es5.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/ui/angular/vendor-es5.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/ui/bootstrap-4.1.1/css/bootstrap-grid.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/ui/bootstrap-4.1.1/css/bootstrap-grid.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/ui/bootstrap-4.1.1/css/bootstrap-grid.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/ui/bootstrap-4.1.1/css/bootstrap-grid.min.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/ui/bootstrap-4.1.1/css/bootstrap-reboot.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/ui/bootstrap-4.1.1/css/bootstrap-reboot.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/ui/bootstrap-4.1.1/css/bootstrap-reboot.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/ui/bootstrap-4.1.1/css/bootstrap-reboot.min.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/ui/bootstrap-4.1.1/css/bootstrap.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/ui/bootstrap-4.1.1/css/bootstrap.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/ui/bootstrap-4.1.1/css/bootstrap.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/ui/bootstrap-4.1.1/css/bootstrap.min.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/ui/bootstrap-4.1.1/js/bootstrap.bundle.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/ui/bootstrap-4.1.1/js/bootstrap.bundle.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/ui/bootstrap-4.1.1/js/bootstrap.bundle.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/ui/bootstrap-4.1.1/js/bootstrap.bundle.min.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/ui/bootstrap-4.1.1/js/bootstrap.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/ui/bootstrap-4.1.1/js/bootstrap.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/ui/bootstrap-4.1.1/js/bootstrap.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/ui/bootstrap-4.1.1/js/bootstrap.min.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/ui/css/animate.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/ui/css/blade-pagination.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/ui/css/chat.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/ui/css/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/ui/images/3szBftMD1AA.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/ui/images/Sms integration.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/ui/images/attachment.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/ui/images/file.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/ui/images/no_logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/ui/images/no_picture.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/ui/images/sms integration2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/ui/images/sms.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/ui/js/chat.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/ui/js/items-per-page.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/ui/js/jquery-3.3.1.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/ui/js/jquery.blade-pagination.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/ui/js/loan-form.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/ui/js/popper.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/ui/js/reports.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/ui/login/login.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/ui/login/styles/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/ui/sign-up/sign_up.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/static/bootstrap-4.1.1/css/bootstrap-grid.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/static/bootstrap-4.1.1/css/bootstrap-grid.min.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/static/bootstrap-4.1.1/css/bootstrap-reboot.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/static/bootstrap-4.1.1/css/bootstrap-reboot.min.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/static/bootstrap-4.1.1/css/bootstrap.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/static/bootstrap-4.1.1/css/bootstrap.min.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/static/login/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/static/login/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/static/sign-up/sign_up.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/static/sign-up/sign_up.html" afterDir="false" />
     </list>
-    <ignored path="$PROJECT_DIR$/target/" />
-    <ignored path="$PROJECT_DIR$/web/target/" />
-    <ignored path="$PROJECT_DIR$/core/target/" />
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/loanlead$AuthenticationIntegrationTest_sign_up_form.ic" NAME="AuthenticationIntegrationTest.sign up form Coverage Results" MODIFIED="1584729471881" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.loanlead.auth.*</FILTER>
+    </SUITE>
   </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
@@ -296,236 +565,25 @@
     </expand>
     <select />
   </component>
-  <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/src/angular/src/app/app-routing.module.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="680">
-              <caret line="58" column="32" selection-start-line="58" selection-start-column="32" selection-end-line="58" selection-end-column="32" />
-              <folding>
-                <element signature="e#0#39#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/src/angular/src/app/app.module.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="23" column="66" selection-start-line="23" selection-start-column="66" selection-end-line="23" selection-end-column="66" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/src/angular/src/app/ui/admin-navigation/admin-navigation.module.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="41" selection-start-line="5" selection-start-column="41" selection-end-line="5" selection-end-column="41" />
-              <folding>
-                <element signature="e#0#41#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/src/angular/src/app/admin-home/admin-home.component.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="20" selection-start-column="20" selection-end-column="20" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/src/angular/src/app/ui/user-navigation/user-navigation.module.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="16" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="16" />
-              <folding>
-                <element signature="e#0#41#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/src/angular/src/app/user-home/user-home.component.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="26" selection-start-column="26" selection-end-column="26" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/src/angular/src/app/ui/admin-navigation/admin-navigation.component.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-              <folding>
-                <element signature="e#0#50#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/web/src/angular/src/app/admin-home/admin-home.module.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="43" selection-start-line="6" selection-start-column="43" selection-end-line="6" selection-end-column="43" />
-              <folding>
-                <element signature="e#0#41#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/src/angular/src/app/user-home/user-home.module.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" column="56" selection-start-line="1" selection-start-column="56" selection-end-line="1" selection-end-column="56" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/src/angular/src/app/ui/user-navigation/user-navigation.component.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-              <folding>
-                <element signature="e#0#50#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
-  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
-        <option value="Interface" />
         <option value="HTML File" />
+        <option value="FxmlFile" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
   </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>LoanThre</find>
-      <find>LoanThreshold</find>
-      <find>loanThreshold</find>
-      <find>EnableAutoConfiguration</find>
-      <find>edife</find>
-      <find>actionedBy</find>
-      <find>findRunningLoans</find>
-      <find>2.0.0-bet</find>
-      <find>eim-</find>
-      <find>/delete&quot;</find>
-      <find>toList</find>
-      <find>getContent</find>
-      <find>request</find>
-      <find>usersB</find>
-      <find>passwordEncoder</find>
-      <find>toString</find>
-      <find>employee_id</find>
-      <find>Employee ID</find>
-      <find>./../</find>
-      <find>}&quot;</find>
-      <find>#</find>
-      <find>th:</find>
-      <find>}</find>
-      <find>Environment</find>
-      <find>environment</find>
-      <find>findAll</find>
-      <find>page</find>
-      <find>logged_user</find>
-      <find>Admin</find>
-      <find>href</find>
-    </findStrings>
-    <replaceStrings>
-      <replace>loanleadAppFileTemplateResolver</replace>
-      <replace>EmployeeId</replace>
-      <replace>employeeId</replace>
-      <replace>LoanProduct</replace>
-      <replace>loanProduct</replace>
-      <replace>toList</replace>
-      <replace>username</replace>
-      <replace>Username</replace>
-      <replace>/</replace>
-      <replace>href=&quot;</replace>
-      <replace>&quot;</replace>
-      <replace>user</replace>
-      <replace>User</replace>
-      <replace>routerLink</replace>
-    </replaceStrings>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/core/src/main/java/com/loanlead/services/LoanService.java" />
-        <option value="$PROJECT_DIR$/core/src/main/java/com/loanlead/controller/LoanController.java" />
-        <option value="$PROJECT_DIR$/core/src/main/java/com/loanlead/auth/DefaultPasswordEncoder.java" />
-        <option value="$PROJECT_DIR$/core/src/main/java/com/loanlead/auth/entities/Role.java" />
-        <option value="$PROJECT_DIR$/core/src/main/java/com/loanlead/auth/SecurityService.java" />
-        <option value="$PROJECT_DIR$/core/src/main/java/com/loanlead/auth/AuthRole.java" />
-        <option value="$PROJECT_DIR$/core/src/main/java/com/loanlead/auth/entities/User.java" />
-        <option value="$PROJECT_DIR$/web/src/static/login/login.html" />
-        <option value="$PROJECT_DIR$/web/src/static/sign-up/sign_up.html" />
-        <option value="$PROJECT_DIR$/core/src/test/groovy/com/loanlead/auth/AuthenticationIntegrationTest.groovy" />
-        <option value="$PROJECT_DIR$/core/src/main/java/com/loanlead/models/ui/UserModel.java" />
-        <option value="$PROJECT_DIR$/core/src/main/java/com/loanlead/repositories/BranchRepository.java" />
-        <option value="$PROJECT_DIR$/core/src/main/java/com/loanlead/services/BranchService.java" />
-        <option value="$PROJECT_DIR$/core/src/main/java/com/loanlead/controller/LoginController.java" />
-        <option value="$PROJECT_DIR$/web/src/angular/src/app/app.component.scss" />
-        <option value="$PROJECT_DIR$/web/src/angular/src/app/config/routes/constants.ts" />
-        <option value="$PROJECT_DIR$/web/src/angular/src/app/model/entity.ts" />
-        <option value="$PROJECT_DIR$/web/src/angular/src/app/model/role.ts" />
-        <option value="$PROJECT_DIR$/web/src/angular/src/app/model/user.ts" />
-        <option value="$PROJECT_DIR$/web/src/angular/src/app/core/services/entities.service.ts" />
-        <option value="$PROJECT_DIR$/web/src/angular/src/app/model/branch.ts" />
-        <option value="$PROJECT_DIR$/core/src/main/java/com/loanlead/StaticResourceConfiguration.java" />
-        <option value="$PROJECT_DIR$/core/src/main/java/com/loanlead/WebSecurityConfig.java" />
-        <option value="$PROJECT_DIR$/core/src/main/java/com/loanlead/UrlAuthenticationSuccessHandler.java" />
-        <option value="$PROJECT_DIR$/web/src/angular/src/styles.scss" />
-        <option value="$PROJECT_DIR$/web/src/angular/src/index.html" />
-        <option value="$PROJECT_DIR$/core/src/main/java/com/loanlead/controller/BranchController.java" />
-        <option value="$PROJECT_DIR$/core/src/main/java/com/loanlead/controller/EntityController.java" />
-        <option value="$PROJECT_DIR$/core/src/main/java/com/loanlead/controller/CustomerController.java" />
-        <option value="$PROJECT_DIR$/core/src/main/java/com/loanlead/controller/ReportController.java" />
-        <option value="$PROJECT_DIR$/core/src/main/java/com/loanlead/controller/UserController.java" />
-        <option value="$PROJECT_DIR$/web/src/angular/src/app/app.component.ts" />
-        <option value="$PROJECT_DIR$/web/src/angular/src/app/user-home/user-home.component.ts" />
-        <option value="$PROJECT_DIR$/web/src/angular/src/app/ui/user-navigation/user-navigation.component.html" />
-        <option value="$PROJECT_DIR$/web/src/angular/src/app/core/services/data.service.ts" />
-        <option value="$PROJECT_DIR$/web/src/angular/src/app/core/services/environment.service.ts" />
-        <option value="$PROJECT_DIR$/web/src/angular/src/app/ui/admin-navigation/admin-navigation.component.html" />
-        <option value="$PROJECT_DIR$/core/src/main/scripts/start.sh" />
-        <option value="$PROJECT_DIR$/web/src/angular/src/app/core/services/user.service.ts" />
-        <option value="$PROJECT_DIR$/web/src/angular/src/app/ui/user-navigation/user-navigation.module.ts" />
-        <option value="$PROJECT_DIR$/web/src/angular/src/app/ui/admin-navigation/admin-navigation.module.ts" />
-        <option value="$PROJECT_DIR$/web/src/angular/src/app/app.module.ts" />
-        <option value="$PROJECT_DIR$/web/src/angular/src/app/app-routing.module.ts" />
-        <option value="$PROJECT_DIR$/web/src/angular/src/app/ui/admin-navigation/admin-navigation.component.ts" />
-        <option value="$PROJECT_DIR$/web/src/angular/src/app/ui/user-navigation/user-navigation.component.ts" />
-        <option value="$PROJECT_DIR$/web/src/angular/src/app/user-home/user-home.component.html" />
-        <option value="$PROJECT_DIR$/web/src/angular/src/app/admin-home/admin-home.component.html" />
-        <option value="$PROJECT_DIR$/web/src/angular/src/app/admin-home/admin-navigation.module.ts" />
-        <option value="$PROJECT_DIR$/web/src/angular/src/app/user-home/user-navigation.module.ts" />
-        <option value="$PROJECT_DIR$/web/src/angular/src/app/user-home/user-home.module.ts" />
-        <option value="$PROJECT_DIR$/web/src/angular/src/app/admin-home/admin-home.module.ts" />
-      </list>
+  <component name="IgnoredFileRootStore">
+    <option name="generatedRoots">
+      <set>
+        <option value="C:\Users\11Born2Die11\IdeaProjects\loanlead\.idea" />
+      </set>
     </option>
   </component>
   <component name="MavenImportPreferences">
@@ -535,364 +593,8 @@
       </MavenImportingSettings>
     </option>
   </component>
-  <component name="MavenProjectNavigator">
-    <treeState>
-      <expand>
-        <path>
-          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
-          <item name="loanlead" type="9519ce18:MavenProjectsStructure$ProjectNode" />
-        </path>
-        <path>
-          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
-          <item name="loanlead" type="9519ce18:MavenProjectsStructure$ProjectNode" />
-          <item name="Lifecycle" type="58874e2:MavenProjectsStructure$LifecycleNode" />
-        </path>
-        <path>
-          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
-          <item name="Loanlead core" type="9519ce18:MavenProjectsStructure$ProjectNode" />
-        </path>
-        <path>
-          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
-          <item name="Loanlead core" type="9519ce18:MavenProjectsStructure$ProjectNode" />
-          <item name="Lifecycle" type="58874e2:MavenProjectsStructure$LifecycleNode" />
-        </path>
-        <path>
-          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
-          <item name="LoanLead WEB" type="9519ce18:MavenProjectsStructure$ProjectNode" />
-        </path>
-        <path>
-          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
-          <item name="LoanLead WEB" type="9519ce18:MavenProjectsStructure$ProjectNode" />
-          <item name="Lifecycle" type="58874e2:MavenProjectsStructure$LifecycleNode" />
-        </path>
-      </expand>
-      <select />
-    </treeState>
-  </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-7" />
-    <option name="width" value="1642" />
-    <option name="height" value="1407" />
-  </component>
   <component name="ProjectId" id="1Y36Cy2xGFr89n0IvPlYMd5aQyW" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
-  <component name="ProjectView">
-    <navigator proportions="" version="1">
-      <foldersAlwaysOnTop value="true" />
-    </navigator>
-    <panes>
-      <pane id="PackagesPane" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="loanlead" type="b2602c69:ProjectViewProjectNode" />
-              <item name="loanlead" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="loanlead" type="b2602c69:ProjectViewProjectNode" />
-              <item name="loanlead" type="462c0819:PsiDirectoryNode" />
-              <item name="core" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="loanlead" type="b2602c69:ProjectViewProjectNode" />
-              <item name="loanlead" type="462c0819:PsiDirectoryNode" />
-              <item name="core" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="loanlead" type="b2602c69:ProjectViewProjectNode" />
-              <item name="loanlead" type="462c0819:PsiDirectoryNode" />
-              <item name="core" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="loanlead" type="b2602c69:ProjectViewProjectNode" />
-              <item name="loanlead" type="462c0819:PsiDirectoryNode" />
-              <item name="core" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="loanlead" type="b2602c69:ProjectViewProjectNode" />
-              <item name="loanlead" type="462c0819:PsiDirectoryNode" />
-              <item name="core" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="loanlead" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="loanlead" type="b2602c69:ProjectViewProjectNode" />
-              <item name="loanlead" type="462c0819:PsiDirectoryNode" />
-              <item name="core" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="loanlead" type="462c0819:PsiDirectoryNode" />
-              <item name="auth" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="loanlead" type="b2602c69:ProjectViewProjectNode" />
-              <item name="loanlead" type="462c0819:PsiDirectoryNode" />
-              <item name="core" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="loanlead" type="462c0819:PsiDirectoryNode" />
-              <item name="auth" type="462c0819:PsiDirectoryNode" />
-              <item name="entities" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="loanlead" type="b2602c69:ProjectViewProjectNode" />
-              <item name="loanlead" type="462c0819:PsiDirectoryNode" />
-              <item name="core" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="loanlead" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="loanlead" type="b2602c69:ProjectViewProjectNode" />
-              <item name="loanlead" type="462c0819:PsiDirectoryNode" />
-              <item name="core" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="loanlead" type="462c0819:PsiDirectoryNode" />
-              <item name="excel" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="loanlead" type="b2602c69:ProjectViewProjectNode" />
-              <item name="loanlead" type="462c0819:PsiDirectoryNode" />
-              <item name="core" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="loanlead" type="462c0819:PsiDirectoryNode" />
-              <item name="models" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="loanlead" type="b2602c69:ProjectViewProjectNode" />
-              <item name="loanlead" type="462c0819:PsiDirectoryNode" />
-              <item name="core" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="loanlead" type="462c0819:PsiDirectoryNode" />
-              <item name="models" type="462c0819:PsiDirectoryNode" />
-              <item name="ui" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="loanlead" type="b2602c69:ProjectViewProjectNode" />
-              <item name="loanlead" type="462c0819:PsiDirectoryNode" />
-              <item name="core" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="loanlead" type="462c0819:PsiDirectoryNode" />
-              <item name="services" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="loanlead" type="b2602c69:ProjectViewProjectNode" />
-              <item name="loanlead" type="462c0819:PsiDirectoryNode" />
-              <item name="core" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="scripts" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="loanlead" type="b2602c69:ProjectViewProjectNode" />
-              <item name="loanlead" type="462c0819:PsiDirectoryNode" />
-              <item name="core" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="loanlead" type="b2602c69:ProjectViewProjectNode" />
-              <item name="loanlead" type="462c0819:PsiDirectoryNode" />
-              <item name="core" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="groovy" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="loanlead" type="b2602c69:ProjectViewProjectNode" />
-              <item name="loanlead" type="462c0819:PsiDirectoryNode" />
-              <item name="core" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="groovy" type="462c0819:PsiDirectoryNode" />
-              <item name="auth" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="loanlead" type="b2602c69:ProjectViewProjectNode" />
-              <item name="loanlead" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="loanlead" type="b2602c69:ProjectViewProjectNode" />
-              <item name="loanlead" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="loanlead" type="b2602c69:ProjectViewProjectNode" />
-              <item name="loanlead" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="angular" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="loanlead" type="b2602c69:ProjectViewProjectNode" />
-              <item name="loanlead" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="angular" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="loanlead" type="b2602c69:ProjectViewProjectNode" />
-              <item name="loanlead" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="angular" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="loanlead" type="b2602c69:ProjectViewProjectNode" />
-              <item name="loanlead" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="angular" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="admin-home" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="loanlead" type="b2602c69:ProjectViewProjectNode" />
-              <item name="loanlead" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="angular" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="core" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="loanlead" type="b2602c69:ProjectViewProjectNode" />
-              <item name="loanlead" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="angular" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="core" type="462c0819:PsiDirectoryNode" />
-              <item name="services" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="loanlead" type="b2602c69:ProjectViewProjectNode" />
-              <item name="loanlead" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="angular" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="loanlead" type="b2602c69:ProjectViewProjectNode" />
-              <item name="loanlead" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="angular" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="ui" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="loanlead" type="b2602c69:ProjectViewProjectNode" />
-              <item name="loanlead" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="angular" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="ui" type="462c0819:PsiDirectoryNode" />
-              <item name="admin-navigation" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="loanlead" type="b2602c69:ProjectViewProjectNode" />
-              <item name="loanlead" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="angular" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="ui" type="462c0819:PsiDirectoryNode" />
-              <item name="user-navigation" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="loanlead" type="b2602c69:ProjectViewProjectNode" />
-              <item name="loanlead" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="angular" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="user-home" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="loanlead" type="b2602c69:ProjectViewProjectNode" />
-              <item name="loanlead" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="angular" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="loanlead" type="b2602c69:ProjectViewProjectNode" />
-              <item name="loanlead" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="loanlead" type="b2602c69:ProjectViewProjectNode" />
-              <item name="loanlead" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="loanlead" type="b2602c69:ProjectViewProjectNode" />
-              <item name="loanlead" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="images" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="loanlead" type="b2602c69:ProjectViewProjectNode" />
-              <item name="loanlead" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="login" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="Scope" />
-    </panes>
-  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -906,34 +608,51 @@
     <property name="RequestMappingsPanelWidth0" value="75" />
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1583923434442" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1584839039987" />
     <property name="editor.config.ad.shown" value="true" />
-    <property name="last_opened_file_path" value="C:/Program Files/nodejs/node.exe" />
+    <property name="last_directory_selection" value="$PROJECT_DIR$/core/src/main/java/com/loanlead/models/ui" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/web/src/angular/src/app/reports" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path" value="C:/Program Files/nodejs/node" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="ts.external.directory.path" value="C:\Users\11Born2Die11\IdeaProjects\loanlead\web\src\angular\node_modules\typescript\lib" />
+    <property name="ts.rename.search.for.js.occurrences" value="false" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\11Born2Die11\IdeaProjects\loanlead\web\src\angular\src\app\ui\user-navigation" />
-    </key>
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.loanlead.services" />
     </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.loanlead.auth" />
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.loanlead.models.ui.models" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\11Born2Die11\IdeaProjects\loanlead\web\src\angular\src\app\user-home" />
-      <recent name="C:\Users\11Born2Die11\IdeaProjects\loanlead\web\src\angular\src\app\admin-home" />
-      <recent name="C:\Users\11Born2Die11\IdeaProjects\loanlead\web\src\angular\src\app\ui\admin-navigation" />
-      <recent name="C:\Users\11Born2Die11\IdeaProjects\loanlead\web\src\angular\src\app\model\ui\components" />
-      <recent name="C:\Users\11Born2Die11\IdeaProjects\loanlead\web\src\angular\src\app\model" />
+      <recent name="C:\Users\11Born2Die11\IdeaProjects\loanlead\web\src\angular\src\app\reports" />
+      <recent name="C:\Users\11Born2Die11\IdeaProjects\loanlead\web\src\angular\src\app\logged-users" />
+      <recent name="C:\Users\11Born2Die11\IdeaProjects\loanlead\web\src\angular\src\app\users" />
+      <recent name="C:\Users\11Born2Die11\IdeaProjects\loanlead\web\src\angular\src\app\customers" />
+      <recent name="C:\Users\11Born2Die11\IdeaProjects\loanlead\core\src\main\java\com\loanlead\auth" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.loanlead.auth" />
+      <recent name="com.loanlead.models.ui" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\11Born2Die11\IdeaProjects\loanlead\web\src\angular\src\app\auditing" />
+      <recent name="C:\Users\11Born2Die11\IdeaProjects\loanlead\web\src\angular\src\app\dashboard" />
+      <recent name="C:\Users\11Born2Die11\IdeaProjects\loanlead\web\src\angular\src\app\edit-profile" />
+      <recent name="C:\Users\11Born2Die11\IdeaProjects\loanlead\web\src\angular\src\app\users" />
+      <recent name="C:\Users\11Born2Die11\IdeaProjects\loanlead\web\src\angular\src\app\customers" />
     </key>
   </component>
   <component name="Regex">
@@ -947,20 +666,8 @@
     <option name="referencePos" value="0" />
     <option name="showLabels" value="true" />
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
-  <component name="RunManager" selected="JUnit.AuthenticationIntegrationTest.successful admin form login">
-    <configuration name="AuthenticationIntegrationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.AuthenticationIntegrationTest.sign up form">
+    <configuration name="AuthenticationIntegrationTest.sign up form" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="loanlead-core" />
       <extension name="coverage">
         <pattern>
@@ -970,24 +677,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.loanlead.auth" />
       <option name="MAIN_CLASS_NAME" value="com.loanlead.auth.AuthenticationIntegrationTest" />
-      <option name="METHOD_NAME" value="" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="PARAMETERS" value="" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="AuthenticationIntegrationTest.csrf is generated" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="loanlead-core" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.loanlead.auth.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.loanlead.auth" />
-      <option name="MAIN_CLASS_NAME" value="com.loanlead.auth.AuthenticationIntegrationTest" />
-      <option name="METHOD_NAME" value="csrf is generated" />
+      <option name="METHOD_NAME" value="sign up form" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -1009,25 +699,60 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LoanleadApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+    <configuration name="EntityControllerTest.entity put request" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="loanlead-core" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.loanlead.*" />
+          <option name="PATTERN" value="com.loanlead.controller.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.loanlead.LoanleadApplication" />
+      <option name="PACKAGE_NAME" value="com.loanlead.controller" />
+      <option name="MAIN_CLASS_NAME" value="com.loanlead.controller.EntityControllerTest" />
+      <option name="METHOD_NAME" value="entity put request" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ModelEntityMapperTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="loanlead-core" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.loanlead.ui.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.loanlead.ui" />
+      <option name="MAIN_CLASS_NAME" value="com.loanlead.ui.ModelEntityMapperTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ModelEntityMapperTest.loan product test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="loanlead-core" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.loanlead.ui.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.loanlead.ui" />
+      <option name="MAIN_CLASS_NAME" value="com.loanlead.ui.ModelEntityMapperTest" />
+      <option name="METHOD_NAME" value="loan product test" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.AuthenticationIntegrationTest.sign up form" />
         <item itemvalue="JUnit.AuthenticationIntegrationTest.successful admin form login" />
-        <item itemvalue="Spring Boot.LoanleadApplication" />
-        <item itemvalue="JUnit.AuthenticationIntegrationTest.csrf is generated" />
-        <item itemvalue="JUnit.AuthenticationIntegrationTest" />
+        <item itemvalue="JUnit.ModelEntityMapperTest" />
+        <item itemvalue="JUnit.ModelEntityMapperTest.loan product test" />
+        <item itemvalue="JUnit.EntityControllerTest.entity put request" />
       </list>
     </recent_temporary>
   </component>
@@ -1048,462 +773,103 @@
       <workItem from="1583626895031" duration="10528000" />
       <workItem from="1583707886196" duration="15667000" />
       <workItem from="1583798133408" duration="6124000" />
-      <workItem from="1583884866071" duration="10330000" />
+      <workItem from="1583884866071" duration="31231000" />
+      <workItem from="1584049832611" duration="596000" />
+      <workItem from="1584058841845" duration="64744000" />
+      <workItem from="1584428255699" duration="100797000" />
+      <workItem from="1584850974711" duration="53878000" />
+      <workItem from="1585068703836" duration="84693000" />
     </task>
     <servers />
-  </component>
-  <component name="TestHistory">
-    <history-entry file="AuthenticationIntegrationTest_successful_admin_form_login - 2020.03.09 at 02h 34m 27s.xml">
-      <configuration name="AuthenticationIntegrationTest.successful admin form login" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="AuthenticationIntegrationTest_successful_admin_form_login - 2020.03.09 at 02h 36m 41s.xml">
-      <configuration name="AuthenticationIntegrationTest.successful admin form login" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="AuthenticationIntegrationTest_successful_admin_form_login - 2020.03.09 at 02h 42m 07s.xml">
-      <configuration name="AuthenticationIntegrationTest.successful admin form login" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="AuthenticationIntegrationTest_successful_admin_form_login - 2020.03.09 at 02h 43m 30s.xml">
-      <configuration name="AuthenticationIntegrationTest.successful admin form login" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="AuthenticationIntegrationTest_successful_admin_form_login - 2020.03.09 at 02h 45m 11s.xml">
-      <configuration name="AuthenticationIntegrationTest.successful admin form login" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="AuthenticationIntegrationTest_successful_admin_form_login - 2020.03.09 at 02h 45m 24s.xml">
-      <configuration name="AuthenticationIntegrationTest.successful admin form login" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="AuthenticationIntegrationTest_successful_admin_form_login - 2020.03.09 at 02h 46m 13s.xml">
-      <configuration name="AuthenticationIntegrationTest.successful admin form login" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="AuthenticationIntegrationTest_successful_admin_form_login - 2020.03.09 at 02h 48m 04s.xml">
-      <configuration name="AuthenticationIntegrationTest.successful admin form login" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="AuthenticationIntegrationTest_successful_admin_form_login - 2020.03.11 at 04h 42m 21s.xml">
-      <configuration name="AuthenticationIntegrationTest.successful admin form login" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="AuthenticationIntegrationTest_successful_admin_form_login - 2020.03.11 at 04h 44m 01s.xml">
-      <configuration name="AuthenticationIntegrationTest.successful admin form login" configurationId="JUnit" />
-    </history-entry>
-  </component>
-  <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="104686000" />
-  </component>
-  <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="2576" height="1416" extended-state="6" />
-    <editor active="true" />
-    <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17329094" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Designer" order="2" />
-      <window_info id="Image Layers" order="3" />
-      <window_info id="Capture Tool" order="4" />
-      <window_info id="UI Designer" order="5" />
-      <window_info id="Favorites" order="6" side_tool="true" />
-      <window_info id="Web" order="7" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.21979734" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.27591583" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.3998441" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Spring" order="7" />
-      <window_info anchor="bottom" id="TypeScript" order="8" weight="0.32969603" />
-      <window_info anchor="bottom" id="Terminal" order="9" weight="0.32969603" />
-      <window_info anchor="bottom" id="Docker" order="10" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
-      <window_info anchor="bottom" id="Java Enterprise" order="12" />
-      <window_info anchor="bottom" id="Database Changes" order="13" />
-      <window_info anchor="bottom" id="Version Control" order="14" />
-      <window_info anchor="bottom" id="Duplicate detector" order="15" weight="0.3289166" />
-      <window_info anchor="bottom" id="Regex" order="16" />
-      <window_info anchor="bottom" id="SonarLint" order="17" />
-      <window_info anchor="bottom" id="Messages" order="18" weight="0.32969603" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Maven" order="3" visible="true" weight="0.18561208" />
-      <window_info anchor="right" id="Palette" order="4" />
-      <window_info anchor="right" id="Capture Analysis" order="5" />
-      <window_info anchor="right" id="Database" order="6" weight="0.16176471" />
-      <window_info anchor="right" id="Palette&#9;" order="7" />
-      <window_info anchor="right" id="Theme Preview" order="8" />
-      <window_info anchor="right" id="Bean Validation" order="9" />
-    </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
-  <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/web/src/angular/src/app/model/role.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="12" selection-start-line="1" selection-start-column="12" selection-end-line="1" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/angular/src/app/core/services/servers.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/angular/src/app/model/branch.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="50" selection-start-line="2" selection-start-column="50" selection-end-line="2" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/angular/src/app/core/services/entities.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="45" selection-start-line="3" selection-start-column="45" selection-end-line="3" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/com/loanlead/StaticResourceConfiguration.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="625">
-          <caret line="57" column="72" selection-start-line="57" selection-start-column="72" selection-end-line="57" selection-end-column="72" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/angular/src/main.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#45#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/angular/src/app/app.component.scss">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/angular/src/app/app.component.spec.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#53#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/com/loanlead/WebSecurityConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="697">
-          <caret line="52" column="36" selection-start-line="52" selection-start-column="36" selection-end-line="52" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/com/loanlead/UrlAuthenticationSuccessHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="60" column="26" selection-start-line="60" selection-start-column="26" selection-end-line="60" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/static/login/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="7" selection-start-line="16" selection-start-column="7" selection-end-line="16" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/angular/src/favicon.ico">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/static/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" selection-end-line="151" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/angular/src/styles.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="28" selection-start-line="14" selection-start-column="28" selection-end-line="14" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/static/css/animate.css">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/angular/src/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="6" selection-start-line="17" selection-start-column="6" selection-end-line="17" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/com/loanlead/controller/BranchController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="25" column="133" selection-start-line="25" selection-start-column="133" selection-end-line="25" selection-end-column="133" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/com/loanlead/controller/EntityController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="663">
-          <caret line="49" column="9" selection-start-line="49" selection-start-column="9" selection-end-line="49" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/com/loanlead/controller/CustomerController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="39" selection-start-line="39" selection-end-line="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/com/loanlead/controller/LoanController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="847">
-          <caret line="112" column="5" selection-start-line="112" selection-start-column="5" selection-end-line="112" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/com/loanlead/controller/LoginController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="734">
-          <caret line="103" column="44" selection-start-line="103" selection-start-column="44" selection-end-line="103" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/com/loanlead/controller/MainController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/com/loanlead/controller/ReportController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="118" column="81" selection-start-line="118" selection-start-column="81" selection-end-line="118" selection-end-column="81" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-core/5.2.2.RELEASE/spring-security-core-5.2.2.RELEASE.jar!/org/springframework/security/core/Authentication.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="18" column="11" selection-start-line="18" selection-start-column="11" selection-end-line="18" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/com/loanlead/auth/entities/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/com/loanlead/controller/UserController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="61" column="5" lean-forward="true" selection-start-line="61" selection-start-column="5" selection-end-line="61" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/angular/src/app/user-home/user-home.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/angular/src/app/model/ui/components/footer.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="6" selection-start-line="18" selection-start-column="6" selection-end-line="18" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/angular/src/app/model/server-resp.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/angular/src/app/core/services/data.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="629">
-          <caret line="46" column="8" selection-start-line="46" selection-start-column="8" selection-end-line="46" selection-end-column="8" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/angular/src/app/core/services/environment.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="2" selection-start-line="17" selection-start-column="2" selection-end-line="17" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/angular/src/app/ui/admin-navigation/admin-navigation.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="25" column="18" selection-start-line="25" selection-start-column="18" selection-end-line="25" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/scripts/start.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="60" selection-start-line="13" selection-start-column="60" selection-end-line="13" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/scripts/start.bat">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/angular/src/app/app.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="27" selection-start-line="7" selection-start-column="27" selection-end-line="7" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/angular/src/app/app.component.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/angular/node_modules/@angular/common/common.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="301">
-          <caret line="93" column="4" selection-start-line="93" selection-start-column="4" selection-end-line="93" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/angular/src/app/ui/user-navigation/user-navigation.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="32" selection-start-column="32" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/angular/node_modules/rxjs/src/internal/BehaviorSubject.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="14" column="2" selection-start-line="14" selection-start-column="2" selection-end-line="14" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/angular/src/app/model/user.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="17" selection-start-line="3" selection-start-column="17" selection-end-line="3" selection-end-column="17" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/angular/src/app/core/services/user.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="26" column="38" selection-start-line="26" selection-start-column="38" selection-end-line="26" selection-end-column="38" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/angular/src/app/ui/admin-navigation/admin-navigation.module.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="41" selection-start-line="5" selection-start-column="41" selection-end-line="5" selection-end-column="41" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/angular/src/app/app-routing.module.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="680">
-          <caret line="58" column="32" selection-start-line="58" selection-start-column="32" selection-end-line="58" selection-end-column="32" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/angular/src/app/user-home/user-home.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="26" selection-start-column="26" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/angular/src/app/admin-home/admin-home.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="20" selection-start-column="20" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/angular/src/app/ui/admin-navigation/admin-navigation.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-          <folding>
-            <element signature="e#0#50#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/angular/src/app/app.module.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" column="66" selection-start-line="23" selection-start-column="66" selection-end-line="23" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/angular/src/app/ui/user-navigation/user-navigation.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-          <folding>
-            <element signature="e#0#50#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/angular/src/app/ui/user-navigation/user-navigation.module.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="16" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="16" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/angular/src/app/user-home/user-home.module.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="56" selection-start-line="1" selection-start-column="56" selection-end-line="1" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/angular/src/app/admin-home/admin-home.module.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="43" selection-start-line="6" selection-start-column="43" selection-end-line="6" selection-end-column="43" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+  <component name="WindowStateProjectService">
+    <state x="872" y="358" key="#Auto_Import" timestamp="1584938843322">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="872" y="358" key="#Auto_Import/0.0.2560.1400@0.0.2560.1400" timestamp="1584938843322" />
+    <state x="1085" y="416" key="#com.intellij.ide.util.MemberChooser" timestamp="1585298596441">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1085" y="416" key="#com.intellij.ide.util.MemberChooser/0.0.2560.1400@0.0.2560.1400" timestamp="1585298596441" />
+    <state x="544" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1584923841620">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="544" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1584923841620" />
+    <state x="1010" y="447" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1585210097934">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1010" y="447" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1585210097934" />
+    <state x="1035" y="403" key="#xdebugger.evaluate" timestamp="1584934578845">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1035" y="403" key="#xdebugger.evaluate/0.0.2560.1400@0.0.2560.1400" timestamp="1584934578845" />
+    <state width="2517" height="310" key="GridCell.Tab.0.bottom" timestamp="1585299355131">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2517" height="310" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1585299355131" />
+    <state width="2517" height="310" key="GridCell.Tab.0.center" timestamp="1585299355131">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2517" height="310" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1585299355131" />
+    <state width="2517" height="310" key="GridCell.Tab.0.left" timestamp="1585299355131">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2517" height="310" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1585299355131" />
+    <state width="2517" height="310" key="GridCell.Tab.0.right" timestamp="1585299355131">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2517" height="310" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1585299355131" />
+    <state width="2517" height="492" key="GridCell.Tab.1.bottom" timestamp="1584934638788">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2517" height="492" key="GridCell.Tab.1.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1584934638788" />
+    <state width="2517" height="492" key="GridCell.Tab.1.center" timestamp="1584934638788">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2517" height="492" key="GridCell.Tab.1.center/0.0.2560.1400@0.0.2560.1400" timestamp="1584934638788" />
+    <state width="2517" height="492" key="GridCell.Tab.1.left" timestamp="1584934638788">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2517" height="492" key="GridCell.Tab.1.left/0.0.2560.1400@0.0.2560.1400" timestamp="1584934638788" />
+    <state width="2517" height="492" key="GridCell.Tab.1.right" timestamp="1584934638788">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2517" height="492" key="GridCell.Tab.1.right/0.0.2560.1400@0.0.2560.1400" timestamp="1584934638788" />
+    <state x="810" y="355" key="Maven.ArtifactSearchDialog" timestamp="1585298190911">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="810" y="355" key="Maven.ArtifactSearchDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1585298190911" />
+    <state x="92" y="92" width="2376" height="1216" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1584939025649">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="92" y="92" width="2376" height="1216" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1584939025649" />
+    <state x="924" y="315" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1585274240176">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="924" y="315" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.2560.1400@0.0.2560.1400" timestamp="1585274240176" />
+    <state x="1089" y="617" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1584934990170">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1089" y="617" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.2560.1400@0.0.2560.1400" timestamp="1584934990170" />
+    <state x="976" y="298" width="1221" height="804" key="find.popup" timestamp="1585297449045">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="976" y="298" width="1221" height="804" key="find.popup/0.0.2560.1400@0.0.2560.1400" timestamp="1585297449045" />
+    <state x="1143" y="626" width="348" height="298" key="org.angular.cli.generate" timestamp="1585275371847">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1143" y="626" width="348" height="298" key="org.angular.cli.generate/0.0.2560.1400@0.0.2560.1400" timestamp="1585275371847" />
+    <state x="936" y="330" key="run.anything.popup" timestamp="1585278761392">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="936" y="330" key="run.anything.popup/0.0.2560.1400@0.0.2560.1400" timestamp="1585278761392" />
+    <state x="943" y="315" width="672" height="678" key="search.everywhere.popup" timestamp="1584925931714">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="943" y="315" width="672" height="678" key="search.everywhere.popup/0.0.2560.1400@0.0.2560.1400" timestamp="1584925931714" />
   </component>
   <component name="masterDetails">
     <states>

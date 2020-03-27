@@ -6,10 +6,11 @@ import javax.persistence.Entity;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 @Table(name = "customers")
-public class Customer {
+public class Customer extends EntityModel{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
@@ -23,11 +24,8 @@ public class Customer {
     @NotNull(message = "This field has to be not empty")
     private String name;
 
-    @NotNull(message = "This field has to be not empty")
-    private String email;
-
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "phone_numbers_id", insertable = false, updatable = false)
+    @JoinColumn(name = "phone_numbers_id")
     private PhoneNumber phoneNumber;
 
     @CreationTimestamp
@@ -38,11 +36,10 @@ public class Customer {
 
     }
 
-    public Customer(String documentType, @NotNull(message = "This field has to be not empty") String document, @NotNull(message = "This field has to be not empty") String name, @NotNull(message = "This field has to be not empty") String email, PhoneNumber phoneNumber, LocalDateTime createdAt) {
+    public Customer(String documentType, @NotNull(message = "This field has to be not empty") String document, @NotNull(message = "This field has to be not empty") String name, PhoneNumber phoneNumber, LocalDateTime createdAt) {
         this.documentType = documentType;
         this.document = document;
         this.name = name;
-        this.email = email;
         this.phoneNumber = phoneNumber;
         this.createdAt = createdAt;
     }
@@ -77,14 +74,6 @@ public class Customer {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
     }
 
     public PhoneNumber getPhoneNumber() {

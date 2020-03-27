@@ -1,37 +1,15 @@
 
-N
-java:S1068"1Remove this unused "entityService" private field.(–°¨¶8’òÍ‹.
-Q	java:S125E"<This block of commented-out lines of code should be removed.(†æ¡¥
-W	java:S125¯"<This block of commented-out lines of code should be removed.( »Ãûÿÿÿÿ
-]	java:S125M"<This block of commented-out lines of code should be removed.(›ˆÚ©ÿÿÿÿÿ8­ÉïÍ‹.
 k
-java:S1192Š"ODefine a constant instead of duplicating this literal "Field is empty" 3 times.(ĞÒışÿÿÿÿ
-A
-java:S1075z"&Remove this hard-coded path-delimiter.(„Ä÷¬şÿÿÿÿ
-R	java:S125•"<This block of commented-out lines of code should be removed.(Ü’‚ò
-Q	java:S125n"<This block of commented-out lines of code should be removed.(ÄÉ®‹
-R	java:S125¿"<This block of commented-out lines of code should be removed.(ÄÉ®‹
-]	java:S125I"<This block of commented-out lines of code should be removed.(ƒáãíÿÿÿÿÿ8­ÉïÍ‹.
-Q	java:S125Y"<This block of commented-out lines of code should be removed.(Á‘¥—
-]	java:S125f"<This block of commented-out lines of code should be removed.(Õã˜¶üÿÿÿÿ8’òÍ‹.
-Q	java:S125›"<This block of commented-out lines of code should be removed.(¾â‚S
-S
-java:S1068"1Remove this unused "branchService" private field.(ş¢ü¬ÿÿÿÿÿ8’òÍ‹.
-s
-java:S1192¤"\Define a constant instead of duplicating this literal "form.changeFieldRequirement" 3 times.(ŸÚÂµ
-Q	java:S125Q"<This block of commented-out lines of code should be removed.(Ù™Ì
-y
-java:S1192¤"bDefine a constant instead of duplicating this literal "Please, change data in this field" 3 times.(ŸÚÂµ
-R	java:S125³"<This block of commented-out lines of code should be removed.(ÜÕã
-m
-java:S3776x"RRefactor this method to reduce its Cognitive Complexity from 16 to the 15 allowed.(Ë–¯¼ûÿÿÿÿ
-]	java:S125a"<This block of commented-out lines of code should be removed.(†™¡§ıÿÿÿÿ8’òÍ‹.
-A
-java:S1075>"&Remove this hard-coded path-delimiter.(„Ä÷¬şÿÿÿÿ
+java:S1128"IRemove this unused import 'org.springframework.validation.BindingResult'.(‹¶¸ùÿÿÿÿ8§–ï÷.
 [
-java:S4684x"@Replace this persistent entity with a simple POJO or DTO object.(Ë–¯¼ûÿÿÿÿ
-i
-java:S1192Š"MDefine a constant instead of duplicating this literal "form.isEmpty" 3 times.(ĞÒışÿÿÿÿ
-R	java:S125"<This block of commented-out lines of code should be removed.(„Äô´
+java:S1128"9Remove this unused import 'org.springframework.ui.Model'.(ê†ıÿÿÿÿ8§–ï÷.
+_
+java:S1128"BRemove this unused import 'javax.servlet.http.HttpServletRequest'.(ø©¹…8Í°±÷.
+N
+java:S1068$"1Remove this unused "entityService" private field.(–°¨¶8’òÍ‹.
+s
+java:S1128"VRemove this unused import 'org.springframework.security.core.userdetails.UserDetails'.(ÊÁ¥8ÛÕ’Ì.
 V
-java:S4684<"@Replace this persistent entity with a simple POJO or DTO object.(¡ÕÕ¤
+java:S1128"4Remove this unused import 'java.util.regex.Pattern'.(Ã•…Äúÿÿÿÿ8Ö€ø.
+S
+java:S1068%"1Remove this unused "branchService" private field.(ş¢ü¬ÿÿÿÿÿ8†íª÷.

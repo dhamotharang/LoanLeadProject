@@ -1,1 +1,70 @@
-<p>branches works!</p>
+<loanlead-admin-navigation></loanlead-admin-navigation>
+<ng-container *ngIf="branches$ | async as branches">
+  <div *ngIf="branches.length" class="border border-secondary m-3 p-3 bg-white rounded animated fadeIn">
+    <div class="py-2 page-body-heading justify-content-between">
+      <label class="rounded col-lg-2 col-md-3 col-12 py-2 page-heading d-flex align-items-center justify-content-center"><i class="material-icons">group</i>&nbsp;Branches</label>
+
+      <div class="col-md-3 col-12">
+        <div class="form-group">
+          <label for="itemsCount">Items Count</label>
+          <input id="itemsCount"
+                 type="number"
+                 placeholder="Search"
+                 data-placeholder="Search"
+                 class="form-control"
+                 [formControl]="itemsCount"
+                 (input)="validate()"
+                 (blur)="filter()"
+                 required>
+          <div class="feedback text-danger"></div>
+        </div>
+      </div>
+    </div>
+    <div class="py-2 d-flex justify-content-end">
+      <a routerLink="../branch_form" class="btn btn-primary d-flex align-items-center col-lg-2 col-md-3 col-sm-4 col-12 justify-content-center py-2"><i class="material-icons">add</i>&nbsp;Create new branch</a>
+    </div>
+    <div class="py-2" style="overflow-x: auto;">
+      <table id="contentTable" class="table table-striped table-hover table-bordered table-condensed" style="min-width: 1595px;">
+        <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Entity name</th>
+          <th>Type</th>
+          <th>District</th>
+          <th>Town</th>
+          <th>Created at</th>
+          <th>Edit</th>
+          <th><input type="checkbox" id="select-all" (click)="selectAllTrigger(branches)"/></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr [id]="[branch.id]" *ngFor="let branch of branches">
+          <td>{{ branch.id }}</td>
+          <td>{{ branch.name }}</td>
+          <td>{{ branch.entityName }}</td>
+          <td>{{ branch.type }}</td>
+          <td>{{ branch.district }}</td>
+          <td>{{ branch.town }}</td>
+          <td>{{ format(dateInstance(branch.createdAt)) }}</td>
+          <td><a [routerLink]="['../branch_form/' + branch.id]">Edit</a></td>
+          <td><input type="checkbox" [checked]="selectAll" (click)="check(branch.id)"></td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="py-2">
+      <button type="button" id="deleteButton" class="btn btn-primary" [disabled]="!anySelected" (click)="delete()">Delete branches</button>
+    </div>
+  </div>
+  <div class="empty-list" *ngIf="!branches.length">
+    No branches was found.
+  </div>
+</ng-container>
+
+<ng-container *ngIf="branchesCount$ | async as branchesCount">
+  <app-pagination *ngIf="branchesCount > itemsCount.value"
+                  [lastPage]="pagesCount(branchesCount)"
+                  (pageChanged)="load($event)">
+  </app-pagination>
+</ng-container>

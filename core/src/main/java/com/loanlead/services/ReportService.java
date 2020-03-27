@@ -1,14 +1,14 @@
 package com.loanlead.services;
 
 import com.loanlead.models.Report;
+import com.loanlead.models.ui.models.ReportFormModel;
+import com.loanlead.models.ui.models.ReportModel;
 import com.loanlead.repositories.ReportRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
-
-import java.time.LocalDateTime;
 
 @Service
 public class ReportService {
@@ -33,8 +33,16 @@ public class ReportService {
         return reportRepository.findAllByLoanId(loanId, pageable);
     }
 
-    public Page<Report> findAllSortByLoanId(LocalDateTime minDate, LocalDateTime maxDate, Integer page, Integer itemsPerPage) {
-        Pageable pageable = PageRequest.of(page, itemsPerPage);
-        return reportRepository.findAllOrderByLoanId(minDate, maxDate, pageable);
+    public Integer findAllByLoanIdCount(Integer loanId) {
+        return reportRepository.findAllByLoanIdCount(loanId);
+    }
+
+    public Page<Report> findAllSortByLoanId(ReportFormModel reportFormModel) {
+        Pageable pageable = PageRequest.of(reportFormModel.getPage(), reportFormModel.getItemsPerPage());
+        return reportRepository.findAllOrderByLoanId(reportFormModel.getStartDate(), reportFormModel.getEndDate(), pageable);
+    }
+
+    public Integer findAllSortByLoanIdCount(ReportFormModel reportFormModel) {
+        return reportRepository.findAllOrderByLoanIdCount(reportFormModel.getStartDate(), reportFormModel.getEndDate());
     }
 }

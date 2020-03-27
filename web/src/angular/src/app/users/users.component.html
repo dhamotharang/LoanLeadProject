@@ -1,1 +1,158 @@
-<p>users works!</p>
+<loanlead-admin-navigation></loanlead-admin-navigation>
+<ng-container *ngIf="newUsers$ | async as newUsers">
+  <div *ngIf="newUsers.length" class="border border-secondary m-3 p-3 bg-white rounded animated fadeIn">
+    <div class="py-2 page-body-heading justify-content-between">
+      <label
+        class="rounded col-lg-2 col-md-3 col-12 py-2 page-heading d-flex align-items-center justify-content-center"><i
+        class="material-icons">group</i>&nbsp;New Users</label>
+
+      <div class="col-md-3 col-12">
+        <div class="form-group">
+          <label for="newUsersItemsCount">Items Count</label>
+          <input id="newUsersItemsCount"
+                 type="number"
+                 placeholder="Search"
+                 data-placeholder="Search"
+                 class="form-control"
+                 [formControl]="newUsersItemsCount"
+                 (input)="validateNewUsersItemsCount()"
+                 (blur)="filterNewUsers()"
+                 required>
+          <div class="feedback text-danger"></div>
+        </div>
+      </div>
+    </div>
+    <div class="py-2" style="overflow-x: auto;">
+      <table class="table table-striped table-hover table-bordered table-condensed"
+             style="min-width: 1595px;">
+        <thead>
+        <tr>
+          <th>ID</th>
+          <th>User Name</th>
+          <th>Name</th>
+          <th>Role</th>
+          <th>Contact nr. 1</th>
+          <th>Email</th>
+          <th>Approve</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr [id]="[user.id]" *ngFor="let user of newUsers">
+          <td>{{ user.id }}</td>
+          <td>{{ user.employeeId }}</td>
+          <td>{{ user.fullName }}</td>
+          <td><a href="javascript:void(0);" data-toggle="modal" data-target="#rolesTableModal" (click)="setUserRoles(user)">Roles</a></td>
+          <td>{{ user.phoneNumber }}</td>
+          <td>{{ user.email }}</td>
+          <td><a href="javascript:void(0);" (click)="approveUser(user.id)">Approve</a></td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="empty-list" *ngIf="!newUsers.length">
+    No new users was found.
+  </div>
+</ng-container>
+
+<ng-container *ngIf="newUsersCount$ | async as newUsersCount">
+  <app-pagination *ngIf="newUsersCount > usersItemsCount.value"
+                  [lastPage]="newUsersPagesCount(newUsersCount)"
+                  (pageChanged)="loadNewUsers($event)">
+  </app-pagination>
+</ng-container>
+
+<ng-container *ngIf="users$ | async as users">
+  <div *ngIf="users.length" class="border border-secondary m-3 p-3 bg-white rounded animated fadeIn">
+    <div class="py-2 page-body-heading justify-content-between">
+      <label
+        class="rounded col-lg-2 col-md-3 col-12 py-2 page-heading d-flex align-items-center justify-content-center"><i
+        class="material-icons">group</i>&nbsp;Users</label>
+
+      <div class="col-md-3 col-12">
+        <div class="form-group">
+          <label for="usersItemsCount">Items Count</label>
+          <input id="usersItemsCount"
+                 type="number"
+                 placeholder="Search"
+                 data-placeholder="Search"
+                 class="form-control"
+                 [formControl]="usersItemsCount"
+                 (input)="validateUsersItemsCount()"
+                 (blur)="filterUsers()"
+                 required>
+          <div class="feedback text-danger"></div>
+        </div>
+      </div>
+    </div>
+    <div class="py-2" style="overflow-x: auto;">
+      <table id="contentTable" class="table table-striped table-hover table-bordered table-condensed"
+             style="min-width: 1595px;">
+        <thead>
+        <tr>
+          <th>ID</th>
+          <th>User Name</th>
+          <th>Name</th>
+          <th>Role</th>
+          <th>Contact nr. 1</th>
+          <th>Email</th>
+          <th>Edit</th>
+          <th><input type="checkbox" id="select-all" (click)="selectAllTrigger(users)"/></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr [id]="[user.id]" *ngFor="let user of users">
+          <td>{{ user.id }}</td>
+          <td>{{ user.employeeId }}</td>
+          <td>{{ user.fullName }}</td>
+          <td><a href="javascript:void(0);" data-toggle="modal" data-target="#rolesTableModal" (click)="setUserRoles(user)">Roles</a></td>
+          <td>{{ user.phoneNumber }}</td>
+          <td>{{ user.email }}</td>
+          <td><a [routerLink]="['../user_form/' + user.id]">Edit</a></td>
+          <td><input type="checkbox" [checked]="selectAll" (click)="check(user.id)"></td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="py-2">
+      <button type="button" id="deleteButton" class="btn btn-primary" [disabled]="!anySelected" (click)="delete()">
+        Delete users
+      </button>
+    </div>
+  </div>
+  <div class="empty-list" *ngIf="!users.length">
+    No users was found.
+  </div>
+</ng-container>
+
+<ng-container *ngIf="usersCount$ | async as usersCount">
+  <app-pagination *ngIf="usersCount > usersItemsCount.value"
+                  [lastPage]="usersPagesCount(usersCount)"
+                  (pageChanged)="loadUsers($event)">
+  </app-pagination>
+</ng-container>
+
+<ng-container *ngIf="userRoles">
+  <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" id="rolesTableModal" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Roles</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        </div>
+        <div class="modal-body" style="overflow-x: auto;">
+          <ul *ngIf="userRoles.length">
+            <li *ngFor="let role of userRoles">{{ role }}</li>
+          </ul>
+          <div class="empty-list" *ngIf="!userRoles.length">
+            No loans was found.
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-container>

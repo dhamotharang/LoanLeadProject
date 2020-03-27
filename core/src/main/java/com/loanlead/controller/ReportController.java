@@ -2,24 +2,26 @@ package com.loanlead.controller;
 
 import com.loanlead.auth.UserService;
 import com.loanlead.auth.UserServiceImpl;
-import com.loanlead.auth.entities.User;
 import com.loanlead.excel.*;
-import com.loanlead.models.ui.ReportModel;
-import com.loanlead.services.LoanService;
+import com.loanlead.models.Report;
+import com.loanlead.models.ui.ModelEntityMapper;
+import com.loanlead.models.ui.models.ReportFormModel;
+import com.loanlead.models.ui.models.ReportModel;
 import com.loanlead.services.ReportService;
 import org.apache.commons.io.IOUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import javax.servlet.ServletException;
 import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletResponse;
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.time.LocalDateTime;
-import java.time.Month;
+import java.time.LocalDate;
 import java.util.List;
+import java.util.Optional;
+import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping(ReportController.PREFIX + "/reports")
@@ -33,21 +35,21 @@ public class ReportController {
     private RoleExcelManager roleExcelManager;
     private UserExcelManager userExcelManager;
     private LoanProductExcelManager loanProductExcelManager;
-    private UserService userService;
+    private ModelEntityMapper mapper;
 
     @Autowired
-    public ReportController(ReportsExcelManager reportsExcelManager, LoggedUserExcelManager loggedUserExcelManager, AuditExcelManager auditExcelManager, RoleExcelManager roleExcelManager, UserExcelManager userExcelManager, LoanProductExcelManager loanProductExcelManager, UserService userService, ReportService reportService) {
+    public ReportController(ReportsExcelManager reportsExcelManager, LoggedUserExcelManager loggedUserExcelManager, AuditExcelManager auditExcelManager, RoleExcelManager roleExcelManager, UserExcelManager userExcelManager, LoanProductExcelManager loanProductExcelManager, ModelEntityMapper mapper, ReportService reportService) {
         this.reportsExcelManager = reportsExcelManager;
         this.loggedUserExcelManager = loggedUserExcelManager;
         this.auditExcelManager = auditExcelManager;
         this.roleExcelManager = roleExcelManager;
         this.userExcelManager = userExcelManager;
         this.loanProductExcelManager = loanProductExcelManager;
-        this.userService = userService;
         this.reportService = reportService;
+        this.mapper = mapper;
     }
 
-    @GetMapping("/logged_user")
+    @GetMapping("/logged")
     public void getUserReport(HttpServletResponse response) throws IOException {
         loggedUserExcelManager.createTable();
 
@@ -60,9 +62,16 @@ public class ReportController {
         out.close();
     }
 
-    @GetMapping("/audit/{loanId}/report")
-    public void getAuditReport(@PathVariable("loanId") Integer loanId, HttpServletResponse response) throws IOException {
+    @GetMapping("/report")
+    public void getAuditReport(
+            @RequestParam("loanId") Integer loanId,
+            @RequestParam(value = "page", required = false) Integer page,
+            @RequestParam(value = "itemsPerPage", required = false) Integer itemsPerPage,
+            HttpServletResponse response
+    ) throws IOException {
         auditExcelManager.setLoanCode(loanId);
+        auditExcelManager.setPage(page);
+        auditExcelManager.setItemsPerPage(itemsPerPage);
         auditExcelManager.createTable();
 
         response.setContentType("application/vnd.ms-excel");
@@ -100,7 +109,7 @@ public class ReportController {
         out.close();
     }
 
-    @GetMapping("/loan_threshold")
+    @GetMapping("/loan-product")
     public void getLoanProductReport(HttpServletResponse response) throws IOException {
         loanProductExcelManager.createTable();
 
@@ -113,10 +122,10 @@ public class ReportController {
         out.close();
     }
 
-    @GetMapping("/audit/{loanId}")
-    public String getLoans(@PathVariable Integer loanId,
-                           @RequestParam(value = "page", required = false) Integer page,
-                           @RequestParam(value = "itemsPerPage", required = false) Integer itemsPerPage
+    @GetMapping("/{loanId}")
+    public ResponseEntity<List<ReportModel>> getLoans(@PathVariable Integer loanId,
+                                                      @RequestParam(value = "page", required = false) Integer page,
+                                                      @RequestParam(value = "itemsPerPage", required = false) Integer itemsPerPage
     ) {
         if (page == null) {
             page = UserServiceImpl.DEFAULT_PAGE;
@@ -126,34 +135,38 @@ public class ReportController {
             itemsPerPage = UserServiceImpl.DEFAULT_ITEMS_PER_PAGE;
         }
 
-        reportService.findAllByLoanId(loanId, page, itemsPerPage);
-
-        return "user/auditing";
+        List<Report> reports = reportService.findAllByLoanId(loanId, page, itemsPerPage).getContent();
+        return ResponseEntity.of(Optional.of(reports.stream().map(report -> mapper.toModel(report, ReportModel.class)).collect(Collectors.toList())));
     }
 
-    @GetMapping("/{type}")
-    public void report(
-            @PathVariable
-                    String type,
-            @RequestBody ReportModel reportModel,
-            HttpServletResponse response
-    ) throws IOException, ServletException {
-        reportModel
-                .setDefaultStartDate(LoanService.MIN_DATE)
-                .setDefaultEndDate(LoanService.MAX_DATE);
+    @GetMapping("/{loanId}/count")
+    public ResponseEntity<Integer> getLoansCount(@PathVariable Integer loanId) {
+        return ResponseEntity.of(Optional.of(reportService.findAllByLoanIdCount(loanId)));
+    }
 
-        reportsExcelManager.setReportType(type);
-        reportsExcelManager.setEntityId(reportModel.getEntityId());
-        reportsExcelManager.setMinDate(reportModel.getStartDate());
-        reportsExcelManager.setMaxDate(reportModel.getEndDate());
+    @GetMapping("/specific")
+    public void report(
+            @RequestParam("startDate") @DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate startDate,
+            @RequestParam("endDate") @DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate endDate,
+            @RequestParam("reportType") String reportType,
+            @RequestParam(value = "entityId", required = false) Integer entityId,
+            @RequestParam("itemsPerPage") Integer itemsPerPage,
+            @RequestParam("page") Integer page,
+            HttpServletResponse response
+    ) throws IOException {
+        reportsExcelManager.setReportFormModel(toReportModel(startDate, endDate, reportType, entityId, itemsPerPage, page));
         reportsExcelManager.createTable();
 
         response.setContentType("application/vnd.ms-excel");
-        response.setHeader("Content-Disposition", "attachment; filename=" + type + ".xlsx");
+        response.setHeader("Content-Disposition", "attachment; filename=" + reportType + ".xlsx");
 
         ServletOutputStream out = response.getOutputStream();
         out.write(IOUtils.toByteArray(new FileInputStream(reportsExcelManager.getFilePath())));
         out.flush();
         out.close();
+    }
+
+    private ReportFormModel toReportModel(LocalDate startDate, LocalDate endDate, String reportType, Integer entityId, Integer itemsPerPage, Integer page) {
+        return new ReportFormModel(startDate, endDate, reportType, entityId, itemsPerPage, page);
     }
 }

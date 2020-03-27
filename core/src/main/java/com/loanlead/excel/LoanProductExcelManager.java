@@ -26,7 +26,6 @@ public class LoanProductExcelManager {
         private static LoanProductExcelManager classInstance;
         private String[] excelColumns;
         private String excelColumnsString;
-        private int loanCode;
 
         public static LoanProductExcelManager getInstance() {
             if (LoanProductExcelManager.classInstance == null) {
@@ -37,15 +36,11 @@ public class LoanProductExcelManager {
         }
 
         private LoanProductExcelManager() {
-            this.excelColumnsString = "ID,Amount,Tenure,Type,Time Threshold";
+            this.excelColumnsString = "ID,Type,Amount,Tenure,Time Threshold";
         }
 
         public String getFilePath() {
             return this.env.getProperty("loanlead.excel.location") + "/" + this.fileName;
-        }
-
-        public void setLoanCode(int loanCode) {
-            this.loanCode = loanCode;
         }
 
         public void createTable() {
@@ -79,18 +74,18 @@ public class LoanProductExcelManager {
         }
 
         private void setSheetData(Sheet sheet) {
-            List<LoanProduct> users = loanProductService.findAll().getContent();
+            List<LoanProduct> loanProducts = loanProductService.findAll();
 
-            if (!users.isEmpty()) {
-                for (int i = 0; i < users.size(); i++) {
+            if (!loanProducts.isEmpty()) {
+                for (int i = 0; i < loanProducts.size(); i++) {
                     Row row = sheet.createRow(i + 2);
-                    LoanProduct user = users.get(i);
+                    LoanProduct loanProduct = loanProducts.get(i);
 
-                    row.createCell(0).setCellValue(user.getId());
-                    row.createCell(1).setCellValue(user.getMaxAmount());
-                    row.createCell(2).setCellValue(user.getMaxTenure());
-                    row.createCell(3).setCellValue(user.getLoanType().getType());
-                    row.createCell(4).setCellValue(user.getTimeThreshold());
+                    row.createCell(0).setCellValue(loanProduct.getId());
+                    row.createCell(1).setCellValue(loanProduct.getLoanProduct());
+                    row.createCell(1).setCellValue(loanProduct.getMaxAmount());
+                    row.createCell(2).setCellValue(loanProduct.getMaxTenure());
+                    row.createCell(4).setCellValue(loanProduct.getTimeThreshold());
                 }
             }
         }

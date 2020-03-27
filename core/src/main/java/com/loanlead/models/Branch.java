@@ -11,11 +11,10 @@ import java.time.LocalDateTime;
 
 @javax.persistence.Entity
 @Table(name = "branches")
-public class Branch implements Serializable {
+public class Branch extends EntityModel {
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-
-    @Id
     private String name;
 
     @NotNull(message = "This field has to be not empty")
@@ -32,7 +31,7 @@ public class Branch implements Serializable {
     private LocalDateTime createdAt;
 
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "entity_name", insertable = false, updatable = false)
+    @JoinColumn(name = "entity_id")
     private Entity entity;
 
     public Branch() {

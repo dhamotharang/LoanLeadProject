@@ -1,14 +1,17 @@
 package com.loanlead.auth
 
+import com.loanlead.models.ui.models.UserModel
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc
 import org.springframework.boot.test.context.SpringBootTest
+import org.springframework.mock.web.MockMultipartFile
 import org.springframework.security.core.userdetails.User
 import org.springframework.security.crypto.factory.PasswordEncoderFactories
 import org.springframework.security.crypto.password.PasswordEncoder
 import org.springframework.security.test.web.servlet.setup.SecurityMockMvcConfigurers
 import org.springframework.test.context.ActiveProfiles
 import org.springframework.test.web.servlet.MockMvc
+import org.springframework.test.web.servlet.request.MockMvcRequestBuilders
 import org.springframework.test.web.servlet.setup.MockMvcBuilders
 import org.springframework.web.context.WebApplicationContext
 import spock.lang.Ignore
@@ -20,10 +23,10 @@ import static org.springframework.security.test.web.servlet.response.SecurityMoc
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.redirectedUrl
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status
+import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @AutoConfigureMockMvc
-@ActiveProfiles("im-portal")
 class AuthenticationIntegrationTest extends Specification {
 
     @Autowired
@@ -61,7 +64,7 @@ class AuthenticationIntegrationTest extends Specification {
 
     def "successful admin form login"() {
         expect:
-        mvc.perform(formLogin("/perform_login").user("1170").password("asedrwe23dsSxcssdfr56ggf"))
+        mvc.perform(formLogin("/perform_login").user("lets912").password("P@ssw0rd1"))
                 .andExpect(status().isFound())
                 .andExpect(redirectedUrl("/ui/user"))
                 .andExpect(authenticated())
@@ -87,5 +90,23 @@ class AuthenticationIntegrationTest extends Specification {
         mvc.perform(formLogin("/perform_login").user("dba").password("xxx"))
                 .andExpect(status().isFound())
                 .andExpect(redirectedUrl("/login?error"))
+    }
+
+    def "sign up form"() {
+        expect:
+        MockMultipartFile file = new MockMultipartFile("file", "filename.txt", "image", "some xml".getBytes());
+        MockMvc mockMvc = MockMvcBuilders.webAppContextSetup(context).build()
+        mockMvc.perform(MockMvcRequestBuilders.multipart("/sign-up")
+                .file(file)
+                .param("employeeId", "aebaze")
+                .param("password", "apoejba")
+                .param("email", "tema.pavlov.00@mail.ru")
+                .param("phoneNumber", "120jbabeoj")
+                .param("optionalPhoneNumber", "122109e2900")
+                .param("fullName", "alaepobja")
+                .param("roles", "ROLE_ADMIN", "ROLE_APPLICATION")
+                .param("branches", "Head Office"))
+                .andDo(print())
+                .andExpect(status().isFound())
     }
 }

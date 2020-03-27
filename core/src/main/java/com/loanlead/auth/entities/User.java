@@ -1,10 +1,12 @@
 package com.loanlead.auth.entities;
 
 import com.loanlead.models.Branch;
+import com.loanlead.models.EntityModel;
 import com.loanlead.models.PhoneNumber;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 import org.hibernate.validator.constraints.Email;
+import org.springframework.data.domain.Persistable;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
@@ -16,11 +18,11 @@ import java.util.Set;
 
 @Entity
 @Table(name = "users")
-public class User implements UserDetails {
+public class User extends EntityModel {
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Id
     @Column(name = "employee_id")
     private String employeeId;
 
@@ -42,7 +44,7 @@ public class User implements UserDetails {
     private boolean newlyCreated;
 
     @CreationTimestamp
-    @Column(name = "created_at")
+    @Column(name = "created_at", updatable = false)
     private LocalDateTime createdAt;
 
     @UpdateTimestamp
@@ -53,43 +55,22 @@ public class User implements UserDetails {
     private LocalDateTime statusChangeTimestamp;
 
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "phone_numbers_id", insertable = false, updatable = false)
+    @JoinColumn(name = "phone_numbers_id")
     private PhoneNumber phoneNumber;
 
     @ManyToMany(cascade = CascadeType.MERGE, fetch = FetchType.EAGER)
     @JoinTable(
             name = "users_branches",
-            joinColumns = @JoinColumn(name = "employee_id"),
-            inverseJoinColumns = @JoinColumn(name = "branch_name"))
+            joinColumns = @JoinColumn(name = "user_id"),
+            inverseJoinColumns = @JoinColumn(name = "branch_id"))
     private Set<Branch> branches;
 
     @ManyToMany(cascade = CascadeType.MERGE, fetch = FetchType.EAGER)
     @JoinTable(
             name = "users_roles",
-            joinColumns = @JoinColumn(name = "employee_id"),
-            inverseJoinColumns = @JoinColumn(name = "role_name"))
+            joinColumns = @JoinColumn(name = "user_id"),
+            inverseJoinColumns = @JoinColumn(name = "role_id"))
     private Set<Role> roles;
-
-    public User() {
-
-    }
-
-    public User(Integer id, String employeeId, @NotNull(message = "Password is empty") String password, String fullName, @Email(message = "Email must be valid") String email, String picturePath, String status, boolean newlyCreated, LocalDateTime createdAt, LocalDateTime updatedAt, LocalDateTime statusChangeTimestamp, PhoneNumber phoneNumber, Set<Branch> branches, Set<Role> roles) {
-        this.id = id;
-        this.employeeId = employeeId;
-        this.password = password;
-        this.fullName = fullName;
-        this.email = email;
-        this.picturePath = picturePath;
-        this.status = status;
-        this.newlyCreated = newlyCreated;
-        this.createdAt = createdAt;
-        this.updatedAt = updatedAt;
-        this.statusChangeTimestamp = statusChangeTimestamp;
-        this.phoneNumber = phoneNumber;
-        this.branches = branches;
-        this.roles = roles;
-    }
 
     public Integer getId() {
         return id;
@@ -107,38 +88,8 @@ public class User implements UserDetails {
         this.employeeId = employeeId;
     }
 
-    @Override
-    public Collection<? extends GrantedAuthority> getAuthorities() {
-        return roles;
-    }
-
     public String getPassword() {
         return password;
-    }
-
-    @Override
-    public String getUsername() {
-        return employeeId;
-    }
-
-    @Override
-    public boolean isAccountNonExpired() {
-        return true;
-    }
-
-    @Override
-    public boolean isAccountNonLocked() {
-        return true;
-    }
-
-    @Override
-    public boolean isCredentialsNonExpired() {
-        return true;
-    }
-
-    @Override
-    public boolean isEnabled() {
-        return true;
     }
 
     public void setPassword(String password) {
@@ -231,100 +182,5 @@ public class User implements UserDetails {
 
     public void setRoles(Set<Role> roles) {
         this.roles = roles;
-    }
-
-    public static UserBuilder builder(){
-        return new UserBuilder();
-    }
-
-    public static class UserBuilder {
-        private Integer id;
-        private String employeeId;
-        private String password;
-        private String fullName;
-        private String email;
-        private String picturePath;
-        private String status;
-        private boolean newlyCreated;
-        private LocalDateTime createdAt;
-        private LocalDateTime updatedAt;
-        private LocalDateTime statusChangeTimestamp;
-        private PhoneNumber phoneNumber;
-        private Set<Branch> branches;
-        private Set<Role> roles;
-
-        public UserBuilder id(Integer id) {
-            this.id = id;
-            return this;
-        }
-
-        public UserBuilder employeeId(String employeeId) {
-            this.employeeId = employeeId;
-            return this;
-        }
-
-        public UserBuilder password(String password) {
-            this.password = password;
-            return this;
-        }
-
-        public UserBuilder fullName(String fullName) {
-            this.fullName = fullName;
-            return this;
-        }
-
-        public UserBuilder email(String email) {
-            this.email = email;
-            return this;
-        }
-
-        public UserBuilder picturePath(String picturePath) {
-            this.picturePath = picturePath;
-            return this;
-        }
-
-        public UserBuilder status(String status) {
-            this.status = status;
-            return this;
-        }
-
-        public UserBuilder newlyCreated(boolean newlyCreated) {
-            this.newlyCreated = newlyCreated;
-            return this;
-        }
-
-        public UserBuilder createdAt(LocalDateTime createdAt) {
-            this.createdAt = createdAt;
-            return this;
-        }
-
-        public UserBuilder updatedAt(LocalDateTime updatedAt) {
-            this.updatedAt = updatedAt;
-            return this;
-        }
-
-        public UserBuilder statusChangeTimestamp(LocalDateTime statusChangeTimestamp) {
-            this.statusChangeTimestamp = statusChangeTimestamp;
-            return this;
-        }
-
-        public UserBuilder phoneNumber(PhoneNumber phoneNumber) {
-            this.phoneNumber = phoneNumber;
-            return this;
-        }
-
-        public UserBuilder branches(Set<Branch> branches) {
-            this.branches = branches;
-            return this;
-        }
-
-        public UserBuilder roles(Set<Role> roles) {
-            this.roles = roles;
-            return this;
-        }
-
-        public User build() {
-            return new User(id, employeeId, password, fullName, email, picturePath, status, newlyCreated, createdAt, updatedAt, statusChangeTimestamp, phoneNumber, branches, roles);
-        }
     }
 }

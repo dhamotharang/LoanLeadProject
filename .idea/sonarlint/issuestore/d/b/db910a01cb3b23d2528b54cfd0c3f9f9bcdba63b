@@ -1,5 +1,7 @@
 
+}
+java:S1128"[Remove this unused import 'org.springframework.data.repository.PagingAndSortingRepository'.(›¤×ëûÿÿÿÿ8®º½.
 Y
-java:S1128"7Remove this unused import 'com.loanlead.models.Branch'.(ËæŞİùÿÿÿÿ8‡®ùº‰.
+java:S1128"<Remove this unused import 'com.loanlead.auth.entities.Role'.(”åæ8Áé§.
 Y
-java:S1128"<Remove this unused import 'com.loanlead.auth.entities.Role'.(”åæ8ç™ùº‰.
+java:S1128"7Remove this unused import 'com.loanlead.models.Branch'.(ËæŞİùÿÿÿÿ8Áé§.

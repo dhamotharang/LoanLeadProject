@@ -11,11 +11,10 @@ import java.time.LocalDateTime;
 
 @javax.persistence.Entity
 @Table(name = "entities")
-public class Entity implements Serializable {
+public class Entity extends EntityModel {
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-
-    @Id
     private String name;
 
     @Column(name = "short_name")
@@ -34,9 +33,6 @@ public class Entity implements Serializable {
     @NotNull(message = "This field has to be not empty")
     @Pattern(regexp = "\\d+", message = "Phone number must be valid")
     private String branchesNumber;
-
-    @NotNull(message = "This field has to be not empty")
-    @Pattern(regexp = "\\w*", message = "Description must be valid")
     private String description;
 
     @CreationTimestamp

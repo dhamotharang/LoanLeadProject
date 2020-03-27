@@ -2,29 +2,37 @@ package com.loanlead.auth;
 
 import com.loanlead.auth.entities.Role;
 import com.loanlead.auth.entities.User;
+import com.loanlead.models.Customer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Profile;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.jpa.domain.Specification;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Root;
 import java.util.*;
 
 @Service
-public class UserServiceImpl implements UserService {
-    public static final Integer DEFAULT_PAGE = 1;
+public class UserServiceImpl implements UserService, UserDetailsService {
+    public static final Integer DEFAULT_PAGE = 0;
     public static final Integer DEFAULT_ITEMS_PER_PAGE = 20;
 
     private UserRepository userRepository;
-    private RoleRepository roleRepository;
+    private RoleService roleService;
     private BCryptPasswordEncoder bCryptPasswordEncoder;
 
     @Autowired
-    public UserServiceImpl(UserRepository userRepository, RoleRepository roleRepository, BCryptPasswordEncoder bCryptPasswordEncoder) {
+    public UserServiceImpl(UserRepository userRepository, RoleService roleService, BCryptPasswordEncoder bCryptPasswordEncoder) {
         this.userRepository = userRepository;
-        this.roleRepository = roleRepository;
+        this.roleService = roleService;
         this.bCryptPasswordEncoder = bCryptPasswordEncoder;
     }
 
@@ -40,8 +48,34 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public User find(String employeeId) {
-        return this.userRepository.findById(employeeId).orElse(null);
+    public Integer findCount() {
+        return userRepository.findCount();
+    }
+
+    @Override
+    public Page<User> findNewAll() {
+        return findNewAll(DEFAULT_PAGE, DEFAULT_ITEMS_PER_PAGE);
+    }
+
+    @Override
+    public Page<User> findNewAll(Integer page, Integer itemsPerPage) {
+        Pageable pageable = PageRequest.of(page, itemsPerPage);
+        return userRepository.findNew(pageable);
+    }
+
+    @Override
+    public Integer findNewCount() {
+        return userRepository.findNewCount();
+    }
+
+    @Override
+    public Integer approveUser(Integer id) {
+        return userRepository.approveUser(id);
+    }
+
+    @Override
+    public User find(Integer id) {
+        return this.userRepository.findById(id).orElse(null);
     }
 
     @Override
@@ -60,13 +94,13 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public void deleteById(String id) {
+    public void deleteById(Integer id) {
         this.userRepository.deleteById(id);
     }
 
     @Override
-    public void deleteAllByIds(String[] ids) {
-        this.userRepository.deleteUsersByIds(Arrays.asList(ids));
+    public void deleteAllByIds(Integer[] ids) {
+        this.userRepository.deleteUsersByIds(new HashSet<>(Arrays.asList(ids)));
     }
 
     @Override
@@ -100,6 +134,13 @@ public class UserServiceImpl implements UserService {
         return userRepository.findUserByEmployeeId(employeeId);
     }
 
+    public User findByFieldName(String name, String value) {return (User) userRepository.findOne(byColumnNameAndValue(name, value)).orElse(null); }
+
+    @Override
+    public List<User> findByRoleIdAndBranchIds(Integer roleId, List<Integer> branchIds) {
+        return userRepository.findByRoleIdAndBranchIds(roleId, branchIds);
+    }
+
     @Override
     public boolean isAlreadyLoggedIn(String s) {
         return userRepository.findLoggedInUser(s) != null;
@@ -121,4 +162,17 @@ public class UserServiceImpl implements UserService {
         return userRepository.findForwardedUsers(pageable);
     }
 
+    @Override
+    public UserDetails loadUserByUsername(String s) throws UsernameNotFoundException {
+        User user = userRepository.findUserByEmployeeId(s);
+        if (user != null && user.getStatus().equals(UserStatus.OFFLINE.value())) {
+            return new CustomUserDetails(user);
+        } else {
+            throw new UsernameNotFoundException("Specified user was not found");
+        }
+    }
+
+    private static Specification<User> byColumnNameAndValue(String columnName, String value) {
+        return (Root<User> root, CriteriaQuery<?> query, CriteriaBuilder builder) -> builder.equal(root.<String>get(columnName), value);
+    }
 }

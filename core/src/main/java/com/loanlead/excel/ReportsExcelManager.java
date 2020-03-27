@@ -1,5 +1,8 @@
 package com.loanlead.excel;
 
+import com.loanlead.models.Loan;
+import com.loanlead.models.Report;
+import com.loanlead.models.ui.models.ReportFormModel;
 import com.loanlead.services.ReportService;
 import com.loanlead.services.LoanService;
 import org.apache.poi.ss.usermodel.*;
@@ -12,7 +15,7 @@ import org.springframework.stereotype.Component;
 
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.time.LocalDateTime;
+import java.util.List;
 
 // TODO Remake everything
 @Component
@@ -28,82 +31,52 @@ public class ReportsExcelManager {
 
     private static ReportsExcelManager classInstance;
     private String fileName;
-    private String[] excelColumns;
     private String excelColumnsString;
-    private Integer entityId;
-    private LocalDateTime minDate;
-    private LocalDateTime maxDate;
-
-    public void setMinDate(LocalDateTime minDate) {
-        this.minDate = minDate;
-    }
-
-    public void setMaxDate(LocalDateTime maxDate) {
-        this.maxDate = maxDate;
-    }
-
-    private String reportType;
-
-    public static ReportsExcelManager getInstance() {
-        if (ReportsExcelManager.classInstance == null) {
-            ReportsExcelManager.classInstance = new ReportsExcelManager();
-        }
-
-        return ReportsExcelManager.classInstance;
-    }
+    private ReportFormModel reportFormModel;
 
     public String getFilePath() {
-        return this.env.getProperty("loanlead.excel.location") + "/" + this.fileName;
+        return "excel/" + this.fileName;
     }
 
-    public void setReportType(String reportType) {
-        this.reportType = reportType;
-        this.fileName = reportType + ".xlsx";
-
-        if (reportType.equals("comprehensive")) {
-            excelColumnsString = "Id,Customer,Stage,Status,Report Timestamp,User,Branch,Comment";
+    public void setReportFormModel(ReportFormModel reportFormModel) {
+        this.reportFormModel = reportFormModel;
+        this.fileName = reportFormModel.getReportType() + ".xlsx";
+        if (reportFormModel.getReportType().equals("comprehensive")) {
+            excelColumnsString = "Id,Customer,Stage,Status,Actioned At,User,Branch,Comment";
         } else {
-            excelColumnsString = "Id,Customer,Type,Tenure,Amount,Stage,Status,User,Branch,Stage At,Create dAt,Comment";
+            excelColumnsString = "Id,Customer,Type,Tenure,Amount,Stage,Status,User,Branch,Stage At,Created At,Comment";
         }
-    }
-
-    public void setEntityId(Integer entityId) {
-        this.entityId = entityId;
     }
 
     public void createTable() {
-        try (FileOutputStream out = new FileOutputStream(this.env.getProperty("loanlead.excel.location") + "/" + this.fileName)) {
+        try (FileOutputStream out = new FileOutputStream("excel/" + this.fileName)) {
             Workbook workbook = new XSSFWorkbook();
-            Sheet loanSheet = workbook.createSheet(this.reportType);
+            Sheet loanSheet = workbook.createSheet(this.reportFormModel.getReportType());
             loanSheet.addMergedRegion(new CellRangeAddress(0, 0, 0, 10));
 
             String titleContent = "";
 
-            if (this.reportType.equalsIgnoreCase("comprehensive")) {
+            if (this.reportFormModel.getReportType().equalsIgnoreCase("comprehensive")) {
                 titleContent = "Comprehensive Report";
-            } else if (this.reportType.equalsIgnoreCase("running")) {
+            } else if (this.reportFormModel.getReportType().equalsIgnoreCase("running")) {
                 titleContent = "List of loans Running Report";
-            } else if (this.reportType.equalsIgnoreCase("forwarded")) {
+            } else if (this.reportFormModel.getReportType().equalsIgnoreCase("forwarded")) {
                 titleContent = "List of loans Forwarded Report";
-            } else if (this.reportType.equalsIgnoreCase("rejected")) {
+            } else if (this.reportFormModel.getReportType().equalsIgnoreCase("rejected")) {
                 titleContent = "List of loans Rejected Report";
-            } else if (this.reportType.equalsIgnoreCase("deferred")) {
+            } else if (this.reportFormModel.getReportType().equalsIgnoreCase("deferred")) {
                 titleContent = "List of loans Deferred Report";
-            } else if (this.reportType.equalsIgnoreCase("disbursed")) {
+            } else if (this.reportFormModel.getReportType().equalsIgnoreCase("disbursed")) {
                 titleContent = "List of loans Disbursed Report";
-            } else if (this.reportType.equalsIgnoreCase("pendingByMovementStage")) {
+            } else if (this.reportFormModel.getReportType().equalsIgnoreCase("stage")) {
                 titleContent = "Loans pending by Movement Stage";
-            } else if (this.reportType.equalsIgnoreCase("pendingByUser")) {
+            } else if (this.reportFormModel.getReportType().equalsIgnoreCase("user")) {
                 titleContent = "Loans pending by User";
-            } else if (this.reportType.equalsIgnoreCase("pendingByBranch")) {
+            } else if (this.reportFormModel.getReportType().equalsIgnoreCase("branch")) {
                 titleContent = "Loans pending by Branch";
-            } else if (this.reportType.equalsIgnoreCase("forwardedByUser")) {
-                titleContent = "Loans Forwarded by User";
-            } else if (this.reportType.equalsIgnoreCase("users")) {
-            	titleContent = "Logged users";
             }
 
-            this.excelColumns = excelColumnsString.split(",");
+            String[] excelColumns = excelColumnsString.split(",");
 
             Row title = loanSheet.createRow(0);
             Cell titleCell = title.createCell(0);
@@ -112,9 +85,9 @@ public class ReportsExcelManager {
 
             Row headersRow = loanSheet.createRow(1);
 
-            for (int i = 0; i < this.excelColumns.length; i++) {
+            for (int i = 0; i < excelColumns.length; i++) {
                 Cell cell = headersRow.createCell(i);
-                cell.setCellValue(this.excelColumns[i]);
+                cell.setCellValue(excelColumns[i]);
             }
 
             this.setSheetData(loanSheet);
@@ -126,40 +99,40 @@ public class ReportsExcelManager {
     }
 
     private void setSheetData(Sheet sheet) {
-//        if (reportType.equals("comprehensive")) {
-//            List<Report> auditingDetails = auditingService.findAllSortByLoanId(minDate, maxDate);
-//
-//            for (Report auditing: auditingDetails) {
-//                Row row = sheet.createRow(auditingDetails.indexOf(auditing) + 2);
-//
-//                row.createCell(0).setCellValue(auditing.getId());
-//                row.createCell(1).setCellValue(auditing.getLoan().getCustomer().getName());
-//                row.createCell(2).setCellValue(auditing.getRole().getDisplayName());
-//                row.createCell(3).setCellValue(auditing.getStatus());
-//                row.createCell(4).setCellValue(auditing.getCreatedAt().toString().replace('T', ' '));
-//                row.createCell(5).setCellValue(auditing.getUser().getFullName());
-//                row.createCell(6).setCellValue(auditing.getUser().getBranch().getName());
-//                row.createCell(7).setCellValue(auditing.getComment());
-//            }
-//        } else {
-//            List<Loan> loansDetails = loanService.findLoans(this.reportType, this.entityId, this.minDate, this.maxDate);
-//
-//            for (Loan loan: loansDetails) {
-//                Row row = sheet.createRow(loansDetails.indexOf(loan) + 2);
-//
-//                row.createCell(0).setCellValue(loan.getId());
-//                row.createCell(1).setCellValue(loan.getCustomer().getName());
-//                row.createCell(2).setCellValue(loan.getType());
-//                row.createCell(3).setCellValue(loan.getTenure());
-//                row.createCell(4).setCellValue(loan.getAmount());
-//                row.createCell(5).setCellValue(loan.getRole().getDisplayName());
-//                row.createCell(6).setCellValue(loan.getStatus());
-//                row.createCell(7).setCellValue(loan.getUser().getFullName());
-//                row.createCell(8).setCellValue(loan.getUser().getBranch().getName());
-//                row.createCell(9).setCellValue(loan.getStageTimestamp().toString().replace('T', ' '));
-//                row.createCell(10).setCellValue(loan.getCreatedAt().toString().replace('T', ' '));
-//                row.createCell(11).setCellValue(loan.getComment());
-//            }
-//        }
+        if (reportFormModel.getReportType().equals("comprehensive")) {
+            List<Report> auditingDetails = reportService.findAllSortByLoanId(reportFormModel).getContent();
+
+            for (Report auditing: auditingDetails) {
+                Row row = sheet.createRow(auditingDetails.indexOf(auditing) + 2);
+
+                row.createCell(0).setCellValue(auditing.getId());
+                row.createCell(1).setCellValue(auditing.getLoan().getCustomer().getName());
+                row.createCell(2).setCellValue(auditing.getActionedBy().getRoles().iterator().next().getDisplayName());
+                row.createCell(3).setCellValue(auditing.getStatus());
+                row.createCell(4).setCellValue(auditing.getActionedAt().toString().replace('T', ' '));
+                row.createCell(5).setCellValue(auditing.getActionedBy().getFullName());
+                row.createCell(6).setCellValue(auditing.getActionedBy().getBranches().iterator().next().getName());
+                row.createCell(7).setCellValue(auditing.getComment());
+            }
+        } else {
+            List<Loan> loansDetails = loanService.findLoans(reportFormModel);
+
+            for (Loan loan: loansDetails) {
+                Row row = sheet.createRow(loansDetails.indexOf(loan) + 2);
+
+                row.createCell(0).setCellValue(loan.getId());
+                row.createCell(1).setCellValue(loan.getCustomer().getName());
+                row.createCell(2).setCellValue(loan.getType());
+                row.createCell(3).setCellValue(loan.getTenure());
+                row.createCell(4).setCellValue(loan.getAmount());
+                row.createCell(5).setCellValue(loan.getRole().getDisplayName());
+                row.createCell(6).setCellValue(loan.getStatus());
+                row.createCell(7).setCellValue(loan.getUser().getFullName());
+                row.createCell(8).setCellValue(loan.getUser().getBranches().iterator().next().getName());
+                row.createCell(9).setCellValue(loan.getStagedAt().toString().replace('T', ' '));
+                row.createCell(10).setCellValue(loan.getCreatedAt().toString().replace('T', ' '));
+                row.createCell(11).setCellValue(loan.getComment());
+            }
+        }
     }
 }

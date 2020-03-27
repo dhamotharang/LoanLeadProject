@@ -1,0 +1,170 @@
+<ng-container *ngIf="user">
+  <loanlead-admin-navigation></loanlead-admin-navigation>
+  <div class="border border-secondary m-3 p-3 bg-white rounded" style="position: relative; z-index: 2;">
+    <div class="py-2">
+      <label
+        class="rounded col-lg-2 col-md-3 col-sm-6 col py-2 page-heading d-flex align-items-center justify-content-center">
+        <em class="material-icons">person</em>&nbsp;User Form</label>
+    </div>
+    <hr>
+    <div class="py-2">
+      <form action="/users" method="POST" class="form-horizontal form-with-image" enctype="multipart/form-data"
+            [formGroup]="formGroup" (ngSubmit)="submit()">
+        <fieldset class="border border-yellow rounded">
+          <legend class="d-block w-auto ml-3 text-dark-blue">Form</legend>
+
+          <div class="row px-4 justify-content-center">
+            <div class="col-lg-3 col-md-4 col-12 d-flex justify-content-center p-3">
+              <label for="picture" class="image-input rounded-circle"><img [src]="user.picturePath"
+                                                                           class="rounded-circle"></label>
+              <input type="file" name="file" id="picture" hidden (change)="onFileChange($event)">
+            </div>
+            <div class="col-lg-5 col-md-6 col-12 d-flex justify-content-center flex-column">
+              <div class="col-lg-4 col-md-5 col-12">
+                <div class="form-group">
+                  <label for="employeeId">Employee ID</label>
+                  <input id="employeeId"
+                         class="form-control"
+                         type="text"
+                         placeholder="Employee Id"
+                         formControlName="employeeId"
+                         (input)="validate()"
+                         (blur)="isUnique('employeeId')"
+                         required>
+                  <div class="feedback text-danger">
+                  </div>
+                </div>
+              </div>
+              <div class="form-group pl-3">
+                <label for="password">Password</label>
+                <input tabindex="0" type="password"
+                       id="password"
+                       class="form-control"
+                       placeholder="Password"
+                       formControlName="password"
+                       (input)="validate()"
+                       data-toggle="popover">
+                <div class="feedback text-danger">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row px-4">
+            <div class="responsive-form-group w-100 justify-content-center">
+              <div class="col-lg-4 col-md-5 col-12">
+                <div class="form-group">
+                  <label for="fullName">Full name</label>
+                  <input id="fullName"
+                         class="form-control"
+                         type="text"
+                         placeholder="Full name"
+                         formControlName="fullName"
+                         (input)="validate()"
+                         required>
+                  <div class="feedback text-danger">
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-5 col-12">
+                <div class="form-group">
+                  <label for="email">Email</label>
+                  <input id="email"
+                         class="form-control"
+                         type="email"
+                         placeholder="Email"
+                         formControlName="email"
+                         (input)="validate()"
+                         (blur)="isUnique('email')"
+                         required>
+                  <div class="feedback text-danger">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row px-4">
+            <div class="responsive-form-group w-100 justify-content-center">
+              <div class="col-lg-4 col-md-5 col-12">
+                <div class="form-group">
+                  <label for="phoneNumber">Phone Number</label>
+                  <input id="phoneNumber"
+                         class="form-control"
+                         type="text"
+                         placeholder="Phone Number"
+                         formControlName="phoneNumber"
+                         (input)="validate()"
+                         (blur)="isUnique('phoneNumber')"
+                         required>
+                  <div class="feedback text-danger">
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-5 col-12">
+                <div class="form-group">
+                  <label for="optionalPhoneNumber">Optional Phone Number</label>
+                  <input id="optionalPhoneNumber"
+                         class="form-control"
+                         type="text"
+                         placeholder="Optional Phone Number"
+                         formControlName="optionalPhoneNumber"
+                         (input)="validate()">
+                  <div class="feedback text-danger">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row px-4">
+            <div class="responsive-form-group w-100 justify-content-center">
+              <ng-container *ngIf="roles$ | async as roles">
+                <div class="col-lg-4 col-md-5 col-12">
+                  <div class="form-group">
+                    <label for="roles">Roles</label>
+                    <select id="roles"
+                            class="form-control"
+                            type="text"
+                            formControlName="roles"
+                            autocomplete="off"
+                            (change)="validate()"
+                            required
+                            multiple>
+                      <option value="" *ngFor="let role of roles" [value]="role.name">{{ role.displayName }}</option>
+                    </select>
+                    <div class="feedback text-danger">
+                    </div>
+                  </div>
+                </div>
+              </ng-container>
+              <ng-container *ngIf="branches$ | async as branches">
+                <div class="col-lg-4 col-md-5 col-12">
+                  <div class="form-group">
+                    <label for="branches">Branches</label>
+                    <select id="branches"
+                            class="form-control"
+                            type="text"
+                            formControlName="branches"
+                            autocomplete="off"
+                            (change)="validate()"
+                            required
+                            multiple>
+                      <option value="" *ngFor="let branch of branches" [value]="branch.id">{{ branch.name }}</option>
+                    </select>
+                    <div class="feedback text-danger">
+                    </div>
+                  </div>
+                </div>
+              </ng-container>
+            </div>
+          </div>
+          <hr>
+          <div class="d-flex flex-row pt-2 pb-4 justify-content-end">
+            <button type="submit"
+                    class="btn btn-primary submit-button d-flex col-2 justify-content-center mr-4"
+                    [disabled]="!formGroup.valid">Save
+            </button>
+          </div>
+        </fieldset>
+      </form>
+    </div>
+  </div>
+</ng-container>

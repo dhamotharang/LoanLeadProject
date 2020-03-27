@@ -1,8 +1,12 @@
 package com.loanlead;
 
 import com.loanlead.auth.AuthRole;
+import com.loanlead.auth.CustomHttpSessionBindingListener;
+import com.loanlead.auth.LoggedUsersMap;
+import com.loanlead.auth.UserService;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Profile;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
@@ -21,11 +25,25 @@ import java.util.Collection;
 @Component
 public class UrlAuthenticationSuccessHandler implements AuthenticationSuccessHandler {
     protected final Log logger = LogFactory.getLog(this.getClass());
-
+    private final UserService userService;
+    private LoggedUsersMap loggedUsersMap;
     private RedirectStrategy redirectStrategy = new DefaultRedirectStrategy();
+
+    @Autowired
+    public UrlAuthenticationSuccessHandler(UserService userService, LoggedUsersMap loggedUsersMap) {
+        this.userService = userService;
+        this.loggedUsersMap = loggedUsersMap;
+    }
 
     @Override
     public void onAuthenticationSuccess(final HttpServletRequest request, final HttpServletResponse response, final Authentication authentication) throws IOException {
+        HttpSession session = (request.getSession(false) != null) ? request.getSession(false) : request.getSession();
+        CustomHttpSessionBindingListener user = new CustomHttpSessionBindingListener(authentication.getName(), loggedUsersMap, userService);
+
+        if (session != null) {
+            session.setAttribute("user", user);
+        }
+
         handle(request, response, authentication);
         clearAuthenticationAttributes(request);
     }

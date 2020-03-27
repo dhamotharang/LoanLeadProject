@@ -7,8 +7,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Predicate;
+import javax.persistence.criteria.Root;
 import javax.validation.constraints.NotNull;
 import java.util.*;
 
@@ -26,8 +31,16 @@ public class BranchService {
         return branchRepository.findAll(pageable).getContent();
     }
 
-    public Branch find(String name) {
-        return branchRepository.findById(name).orElse(null);
+    public Integer findCount() {
+        return branchRepository.findCount();
+    }
+
+    public Branch findByFieldName(String name, String value) {
+        return (Branch) branchRepository.findOne(byColumnNameAndValue(name, value)).orElse(null);
+    }
+
+    public Branch find(Integer id) {
+        return branchRepository.findById(id).orElse(null);
     }
 
     public Branch save(Branch branch) {
@@ -42,11 +55,15 @@ public class BranchService {
         this.branchRepository.delete(branch);
     }
 
-    public void deleteById(String name) {
-        this.branchRepository.deleteById(name);
+    public void deleteById(Integer id) {
+        this.branchRepository.deleteById(id);
     }
 
     public void deleteAllByIds(Integer[] ids) {
         this.branchRepository.deleteBranchesByIds(new HashSet<>(Arrays.asList(ids)));
+    }
+
+    private static Specification<Branch> byColumnNameAndValue(String columnName, String value) {
+        return (Root<Branch> root, CriteriaQuery<?> query, CriteriaBuilder builder) -> builder.equal(root.<String>get(columnName), value);
     }
 }

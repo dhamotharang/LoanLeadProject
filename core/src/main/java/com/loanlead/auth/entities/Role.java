@@ -1,16 +1,16 @@
 package com.loanlead.auth.entities;
 
+import com.loanlead.models.EntityModel;
 import org.springframework.security.core.GrantedAuthority;
 
 import javax.persistence.*;
 
 @Entity
 @Table(name = "roles")
-public class Role implements GrantedAuthority {
+public class Role extends EntityModel implements GrantedAuthority {
+  @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
   private Integer id;
-
-  @Id
   private String name;
 
   @Column(name = "display_name")
