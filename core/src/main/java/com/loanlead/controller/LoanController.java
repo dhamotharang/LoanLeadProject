@@ -95,11 +95,17 @@ public class LoanController {
             loan.setRole(roleService.find(1));
         }
         loan.setUser(((CustomUserDetails) authentication.getPrincipal()).getUser());
+        loan = loanService.save(loan);
+
         reportService.save(loan.toReport());
         if (loan.getStatus().equals("Forwarded")) {
-
+            try {
+                sendNotification(loan);
+            } catch (UnirestException e) {
+                e.printStackTrace();
+            }
         }
-        return ResponseEntity.of(Optional.of(mapper.toModel(loanService.save(loan), LoanModel.class)));
+        return ResponseEntity.of(Optional.of(mapper.toModel(loan, LoanModel.class)));
     }
 
     @GetMapping("/receive/{loanId}")

@@ -36,7 +36,7 @@ public interface UserRepository extends JpaRepository<User, Integer>, JpaSpecifi
     @Query("SELECT u FROM User u WHERE u.status = 'online'")
     Page<User> findOnlineUsers(Pageable pageable);
 
-    @Query("SELECT u FROM User u, PhoneNumber p WHERE u.phoneNumber.id = p.id AND :phoneNumber IN (p.phoneNumber, p.optionalPhoneNumber)")
+    @Query("SELECT u FROM User u WHERE u.phoneNumber.id IN (SELECT p.id FROM PhoneNumber p WHERE :phoneNumber IN (p.phoneNumber, p.optionalPhoneNumber))")
     User findUserByPhoneNumber(@Param("phoneNumber") String phoneNumber);
 
     @Query("SELECT DISTINCT u FROM User u, Loan l WHERE u.employeeId = l.user AND l.status = 'Forwarded'")

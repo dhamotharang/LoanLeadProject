@@ -13,7 +13,7 @@ const toSpaceBetween = (s: string): string => {
 };
 
 @Component({
-  selector: 'eim-customer-form',
+  selector: 'loanlead-customer-form',
   templateUrl: './customer-form.component.html',
   styleUrls: ['./customer-form.component.scss']
 })
@@ -27,15 +27,16 @@ export class CustomerFormComponent implements OnInit {
     private customerService: CustomerService,
     private fb: FormBuilder,
     private activatedRoute: ActivatedRoute
-  ) { }
+  ) {
+  }
 
   ngOnInit(): void {
     this.formGroup = this.fb.group({
       name: [''],
       document: [''],
-      documentType: [''],
-      phoneNumber: [''],
-      optionalPhoneNumber: ['', null],
+      documentType: ['national id'],
+      phoneNumber: ['', Validators.pattern('07[0-9]{8}')],
+      optionalPhoneNumber: ['', Validators.pattern('07[0-9]{8}')],
     }, {
       validators: Validators.required
     });
@@ -50,11 +51,11 @@ export class CustomerFormComponent implements OnInit {
               if (customer != null) {
                 this.customer = customer;
                 this.formGroup.patchValue({
-                  name:  customer.name,
-                  document:  customer.document,
-                  documentType:  customer.documentType,
-                  phoneNumber:  customer.phoneNumber,
-                  optionalPhoneNumber:  customer.optionalPhoneNumber
+                  name: customer.name,
+                  document: customer.document,
+                  documentType: customer.documentType,
+                  phoneNumber: customer.phoneNumber,
+                  optionalPhoneNumber: customer.optionalPhoneNumber
                 });
               }
             });
@@ -71,6 +72,37 @@ export class CustomerFormComponent implements OnInit {
     });
 
     return result;
+  }
+
+  validateDocument() {
+    const documentControl = this.formGroup.get('document');
+
+    if (!documentControl.errors && documentControl.value) {
+      let invalid = false;
+      switch (this.formGroup.get('documentType').value) {
+        case 'national id':
+          if (!documentControl.value.toString().match(/C[A-Z0-9]{13}/g)) {
+            invalid = true;
+          }
+          break;
+        case 'passport':
+          if (!documentControl.value.toString().match(/B\d{9}/g)) {
+            invalid = true;
+          }
+          break;
+        case 'driving permit':
+          if (!documentControl.value.toString().match(/\d{8}\/\d\/\d/g)) {
+            invalid = true;
+          }
+          break;
+      }
+
+      if (invalid) {
+        documentControl.setErrors({invalid: true});
+      }
+    }
+
+    this.validateFormControl('document');
   }
 
   validateFormControl(controlName: string): boolean {
@@ -91,8 +123,14 @@ export class CustomerFormComponent implements OnInit {
           case 'required':
             textContent = 'Please, enter this field';
             break;
+          case 'invalid':
+            textContent = 'Please, enter valid field';
+            break;
           case 'notUnique':
             textContent = `This ${toSpaceBetween(controlName)} already exists`;
+            break;
+          case 'pattern':
+            textContent = `Invalid ${toSpaceBetween(controlName)} format`;
             break;
           default:
             textContent = '';
@@ -159,7 +197,7 @@ export class CustomerFormComponent implements OnInit {
 
       observable
         .subscribe((data: Customer) => {
-          this.router.navigate(['/user/customers']);
+          this.router.navigate(['/customers']);
         }, () => {
           alert("Error while saving customer");
         });

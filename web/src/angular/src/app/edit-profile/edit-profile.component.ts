@@ -1,11 +1,10 @@
 import {ChangeDetectorRef, Component, OnInit} from '@angular/core';
 import {Observable} from 'rxjs';
 import {User} from '../model/user';
-import {Role} from '../model/role';
-import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
+import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {UserService} from '../core/services/user.service';
-import {RoleService} from '../core/services/role.service';
 import {Router} from '@angular/router';
+import {ServerResp} from "../model/server-resp";
 
 const toSpaceBetween = (s: string): string => {
   return s.replace(
@@ -15,7 +14,7 @@ const toSpaceBetween = (s: string): string => {
 };
 
 @Component({
-  selector: 'eim-edit-profile',
+  selector: 'loanlead-edit-profile',
   templateUrl: './edit-profile.component.html',
   styleUrls: ['./edit-profile.component.scss']
 })
@@ -23,27 +22,23 @@ export class EditProfileComponent implements OnInit {
   file = null;
 
   user: User;
-  roles$: Observable<Role[]>;
   formGroup: FormGroup = new FormGroup({
     employeeId: new FormControl('', Validators.required),
     password: new FormControl('', Validators.required),
     fullName: new FormControl('', Validators.required),
     email: new FormControl('', [Validators.required, Validators.email]),
-    phoneNumber: new FormControl('', Validators.required),
-    optionalPhoneNumber: new FormControl(''),
-    roles: new FormControl([''], Validators.required),
+    phoneNumber: new FormControl('', [Validators.required, Validators.pattern('07[0-9]{8}')]),
+    optionalPhoneNumber: new FormControl('', Validators.pattern('07[0-9]{8}')),
   });
 
   constructor(
     private userService: UserService,
-    private roleService: RoleService,
     private cd: ChangeDetectorRef,
     private router: Router
   ) {
   }
 
   ngOnInit(): void {
-    this.roles$ = this.roleService.getAllRoles();
     this.userService.getCurrentUser().subscribe((user: User) => {
       this.user = user;
       this.formGroup.patchValue({
@@ -89,6 +84,9 @@ export class EditProfileComponent implements OnInit {
           case 'notUnique':
             textContent = `This ${toSpaceBetween(controlName)} already exists`;
             break;
+          case 'pattern':
+            textContent = `Invalid ${toSpaceBetween(controlName)} format`;
+            break;
           default:
             textContent = '';
             break;
@@ -104,7 +102,6 @@ export class EditProfileComponent implements OnInit {
   isUnique(fieldType: string): boolean {
     let result = true;
     const control = this.formGroup.get(fieldType);
-    const form = document.querySelector('form');
 
     if (!control.errors && control.value) {
       this.userService.getUserByField(fieldType, control.value)
@@ -137,17 +134,23 @@ export class EditProfileComponent implements OnInit {
       formData.append('password', this.formGroup.get('password').value);
       formData.append('fullName', this.formGroup.get('fullName').value);
       formData.append('email', this.formGroup.get('email').value);
+      formData.append('status', this.user.status);
       formData.append('phoneNumber', this.formGroup.get('phoneNumber').value);
       formData.append('optionalPhoneNumber', this.formGroup.get('optionalPhoneNumber').value);
-      this.formGroup.get('roles').value.forEach((role) => formData.append('roles', role));
-      this.user.branches.forEach((branch) => formData.append('branches', branch));
+      this.user.roles.forEach(role => formData.append('roles', role));
+      this.user.branches.forEach(branch => formData.append('branches', branch));
 
-      const observable: Observable<User> = this.userService.save(formData);
-      observable
-        .subscribe((data: User) => {
-          this.router.navigate(['../home']);
-        }, () => {
-          alert('Error while saving user');
+      if (!this.file) {
+        formData.append('picturePath', this.user.picturePath);
+      }
+
+      this.userService.save(formData)
+        .subscribe((data: ServerResp<User>) => {
+          if (!data.err) {
+            this.router.navigate(['/home']);
+          } else {
+            alert('Error while saving user');
+          }
         });
     }
   }

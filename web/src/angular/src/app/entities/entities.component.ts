@@ -5,9 +5,10 @@ import {EntityService} from "../core/services/entity.service";
 import {FormControl, Validators} from "@angular/forms";
 import {Router} from "@angular/router";
 import {ServerResp} from "../model/server-resp";
+import {NgxSpinnerService} from "ngx-spinner";
 
 @Component({
-  selector: 'eim-entities',
+  selector: 'loanlead-entities',
   templateUrl: './entities.component.html',
   styleUrls: ['./entities.component.scss']
 })
@@ -28,10 +29,11 @@ export class EntitiesComponent implements OnInit {
   anySelected: boolean;
   entitiesToDelete: number[];
 
-  constructor(private entityService: EntityService, private router: Router) {
+  constructor(private entityService: EntityService, private router: Router, private spinner: NgxSpinnerService) {
   }
 
   ngOnInit(): void {
+    this.spinner.show();
     this.load(1);
     this.entitiesCount$ = this.entityService.getEntitiesCount();
     this.selectAll = false;
@@ -50,7 +52,10 @@ export class EntitiesComponent implements OnInit {
   }
 
   load(page: number) {
-    this.entities$ = this.entityService.getEntities(page - 1, this.itemsCount.value);
+    this.entities$ = this.entityService.getEntities(page - 1, this.itemsCount.value).pipe(entities => {
+      this.spinner.hide();
+      return entities;
+    });
   }
 
   validate() {

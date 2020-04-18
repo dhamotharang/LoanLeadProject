@@ -14,7 +14,7 @@ const toSpaceBetween = (s: string): string => {
 };
 
 @Component({
-  selector: 'eim-entity-form',
+  selector: 'loanlead-entity-form',
   templateUrl: './entity-form.component.html',
   styleUrls: ['./entity-form.component.scss']
 })
@@ -170,7 +170,7 @@ export class EntityFormComponent implements OnInit {
 
       observable
         .subscribe((data: Entity) => {
-          this.router.navigate(['/admin/entities']);
+          this.router.navigate(['/entities']);
         }, () => {
           alert("Error while saving entity");
         });

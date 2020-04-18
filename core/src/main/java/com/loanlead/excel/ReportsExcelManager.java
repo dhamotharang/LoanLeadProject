@@ -3,8 +3,8 @@ package com.loanlead.excel;
 import com.loanlead.models.Loan;
 import com.loanlead.models.Report;
 import com.loanlead.models.ui.models.ReportFormModel;
-import com.loanlead.services.ReportService;
 import com.loanlead.services.LoanService;
+import com.loanlead.services.ReportService;
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.ss.util.CellRangeAddress;
 import org.apache.poi.ss.util.CellUtil;
@@ -13,11 +13,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Component;
 
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.time.LocalDateTime;
 import java.util.List;
 
-// TODO Remake everything
 @Component
 public class ReportsExcelManager {
     @Autowired
@@ -48,11 +50,15 @@ public class ReportsExcelManager {
         }
     }
 
-    public void createTable() {
-        try (FileOutputStream out = new FileOutputStream("excel/" + this.fileName)) {
+    public ByteArrayInputStream createTable() {
+        try (ByteArrayOutputStream out = new ByteArrayOutputStream()) {
             Workbook workbook = new XSSFWorkbook();
             Sheet loanSheet = workbook.createSheet(this.reportFormModel.getReportType());
-            loanSheet.addMergedRegion(new CellRangeAddress(0, 0, 0, 10));
+            if (reportFormModel.getReportType().equals("comprehensive")) {
+                loanSheet.addMergedRegion(new CellRangeAddress(0, 0, 0, 8));
+            } else {
+                loanSheet.addMergedRegion(new CellRangeAddress(0, 0, 0, 11));
+            }
 
             String titleContent = "";
 
@@ -93,8 +99,10 @@ public class ReportsExcelManager {
             this.setSheetData(loanSheet);
 
             workbook.write(out);
+            return new ByteArrayInputStream(out.toByteArray());
         } catch (IOException e) {
-            System.out.println("IOException in ReportsExcelManager: " + e.getMessage());
+            e.printStackTrace();
+            return null;
         }
     }
 
@@ -102,14 +110,14 @@ public class ReportsExcelManager {
         if (reportFormModel.getReportType().equals("comprehensive")) {
             List<Report> auditingDetails = reportService.findAllSortByLoanId(reportFormModel).getContent();
 
-            for (Report auditing: auditingDetails) {
+            for (Report auditing : auditingDetails) {
                 Row row = sheet.createRow(auditingDetails.indexOf(auditing) + 2);
 
                 row.createCell(0).setCellValue(auditing.getId());
                 row.createCell(1).setCellValue(auditing.getLoan().getCustomer().getName());
                 row.createCell(2).setCellValue(auditing.getActionedBy().getRoles().iterator().next().getDisplayName());
                 row.createCell(3).setCellValue(auditing.getStatus());
-                row.createCell(4).setCellValue(auditing.getActionedAt().toString().replace('T', ' '));
+                row.createCell(4).setCellValue(formatDateTime(auditing.getActionedAt()));
                 row.createCell(5).setCellValue(auditing.getActionedBy().getFullName());
                 row.createCell(6).setCellValue(auditing.getActionedBy().getBranches().iterator().next().getName());
                 row.createCell(7).setCellValue(auditing.getComment());
@@ -117,22 +125,35 @@ public class ReportsExcelManager {
         } else {
             List<Loan> loansDetails = loanService.findLoans(reportFormModel);
 
-            for (Loan loan: loansDetails) {
+            for (Loan loan : loansDetails) {
                 Row row = sheet.createRow(loansDetails.indexOf(loan) + 2);
 
                 row.createCell(0).setCellValue(loan.getId());
                 row.createCell(1).setCellValue(loan.getCustomer().getName());
                 row.createCell(2).setCellValue(loan.getType());
                 row.createCell(3).setCellValue(loan.getTenure());
-                row.createCell(4).setCellValue(loan.getAmount());
+                row.createCell(4).setCellValue(amountModify(loan.getAmount().toString()));
                 row.createCell(5).setCellValue(loan.getRole().getDisplayName());
                 row.createCell(6).setCellValue(loan.getStatus());
                 row.createCell(7).setCellValue(loan.getUser().getFullName());
                 row.createCell(8).setCellValue(loan.getUser().getBranches().iterator().next().getName());
-                row.createCell(9).setCellValue(loan.getStagedAt().toString().replace('T', ' '));
-                row.createCell(10).setCellValue(loan.getCreatedAt().toString().replace('T', ' '));
+                row.createCell(9).setCellValue(formatDateTime(loan.getStagedAt()));
+                row.createCell(10).setCellValue(formatDateTime(loan.getCreatedAt()));
                 row.createCell(11).setCellValue(loan.getComment());
             }
         }
+    }
+
+    private String formatDateTime(LocalDateTime dateTime) {
+        return ((dateTime.getDayOfMonth() < 10) ? '0' + String.valueOf(dateTime.getDayOfMonth()) : String.valueOf(dateTime.getDayOfMonth())) +
+                '/' + ((dateTime.getMonth().getValue() < 10) ? '0' + (dateTime.getMonth().getValue() + 1) : (dateTime.getMonth().getValue() + 1)) +
+                '/' + dateTime.getYear() +
+                ' ' + ((dateTime.getHour() < 10) ? '0' + dateTime.getHour() : dateTime.getHour()) +
+                ':' + ((dateTime.getMinute() < 10) ? '0' + dateTime.getMinute() : dateTime.getMinute()) +
+                ':' + ((dateTime.getSecond() < 10) ? '0' + dateTime.getSecond() : dateTime.getSecond());
+    }
+
+    private String amountModify(String amount) {
+        return amount.replaceAll("\\B(?=(\\d{3})+(?!\\d))", ",");
     }
 }

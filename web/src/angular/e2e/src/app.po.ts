@@ -6,6 +6,6 @@ export class AppPage {
   }
 
   getTitleText() {
-    return element(by.css('eim-root .content span')).getText() as Promise<string>;
+    return element(by.css('loanlead-root .content span')).getText() as Promise<string>;
   }
 }

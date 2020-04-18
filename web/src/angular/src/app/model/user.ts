@@ -10,8 +10,10 @@ export interface User {
   password: string;
   fullName: string;
   email: string;
+  status?: string;
   createdAt?: string;
   roles: string[];
   branches: string[];
   picturePath?: string;
+  newlyCreated: boolean;
 }

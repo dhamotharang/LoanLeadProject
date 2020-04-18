@@ -38,7 +38,7 @@ public class ModelEntityMapper {
                 .customize(new CustomMapper<UserModel, User>() {
                     @Override
                     public void mapAtoB(UserModel userModel, User user, MappingContext context) {
-                        user.setRoles(Stream.of(userModel.getRoles()).map(roleService::findByName).filter(Objects::nonNull).collect(Collectors.toSet()));
+                        user.setRoles(Stream.of(userModel.getRoles()).map(roleService::findByDisplayName).filter(Objects::nonNull).collect(Collectors.toSet()));
                         user.setBranches(Stream.of(userModel.getBranches()).map(branchName -> branchService.findByFieldName("name", branchName)).filter(Objects::nonNull).collect(Collectors.toSet()));
 
                         PhoneNumber phoneNumber;

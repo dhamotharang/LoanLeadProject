@@ -1,4 +1,4 @@
-<loanlead-admin-navigation></loanlead-admin-navigation>
+<loanlead-navigation></loanlead-navigation>
 <ng-container *ngIf="branches$ | async as branches">
   <div *ngIf="branches.length" class="border border-secondary m-3 p-3 bg-white rounded animated fadeIn">
     <div class="py-2 page-body-heading justify-content-between">
@@ -47,7 +47,7 @@
           <td>{{ branch.district }}</td>
           <td>{{ branch.town }}</td>
           <td>{{ format(dateInstance(branch.createdAt)) }}</td>
-          <td><a [routerLink]="['../branch_form/' + branch.id]">Edit</a></td>
+          <td><a [routerLink]="['/branch_form/' + branch.id]">Edit</a></td>
           <td><input type="checkbox" [checked]="selectAll" (click)="check(branch.id)"></td>
         </tr>
         </tbody>

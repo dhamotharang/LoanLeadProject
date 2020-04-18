@@ -8,12 +8,12 @@ import {UserService} from '../core/services/user.service';
 import {Loan} from '../model/loan';
 import {ReportForm} from '../model/ui/components/report-form';
 import {Branch} from '../model/branch';
-import {Role} from '../model/role';
 import {BranchService} from '../core/services/branch.service';
 import {Report} from "../model/report";
+import {NgxSpinnerService} from "ngx-spinner";
 
 @Component({
-  selector: 'eim-reports',
+  selector: 'loanlead-reports',
   templateUrl: './reports.component.html',
   styleUrls: ['./reports.component.scss']
 })
@@ -22,7 +22,7 @@ export class ReportsComponent implements OnInit {
     startDate: new FormControl('', [Validators.required]),
     endDate: new FormControl('', [Validators.required]),
     reportType: new FormControl(''),
-    itemsCount: new FormControl('5', [Validators.required, Validators.min(5), Validators.max(20)])
+    itemsCount: new FormControl('5', [Validators.required, Validators.min(1)])
   });
 
   loansCount$: Observable<number>;
@@ -37,7 +37,8 @@ export class ReportsComponent implements OnInit {
     private fb: FormBuilder,
     private loanService: LoanService,
     private branchService: BranchService,
-    private userService: UserService
+    private userService: UserService,
+    private spinner: NgxSpinnerService
   ) {
     this.entities = [];
     this.userBranches = [];
@@ -167,10 +168,17 @@ export class ReportsComponent implements OnInit {
   }
 
   loadLoans(reportForm: ReportForm) {
+    this.spinner.show();
     if (reportForm.reportType === 'comprehensive') {
-      this.comprehensiveLoans$ = this.loanService.getComprehensiveReports(reportForm);
+      this.comprehensiveLoans$ = this.loanService.getComprehensiveReports(reportForm).pipe(reports => {
+        this.spinner.hide();
+        return reports;
+      });
     } else {
-      this.loans$ = this.loanService.getReports(reportForm);
+      this.loans$ = this.loanService.getReports(reportForm).pipe(reports => {
+        this.spinner.hide();
+        return reports;
+      });
     }
   }
 
@@ -200,6 +208,23 @@ export class ReportsComponent implements OnInit {
     }
 
     return resultLink;
+  }
+
+  format(date: Date) {
+    return ((date.getDate() < 10) ? '0' + date.getDate() : date.getDate()) +
+      "/" + ((date.getMonth() < 10) ? '0' + (date.getMonth() + 1) : (date.getMonth() + 1)) +
+      "/" + date.getFullYear() +
+      " " + ((date.getHours() < 10) ? '0' + date.getHours() : date.getHours()) +
+      ":" + ((date.getMinutes() < 10) ? '0' + date.getMinutes() : date.getMinutes()) +
+      ":" + ((date.getSeconds() < 10) ? '0' + date.getSeconds() : date.getSeconds());
+  }
+
+  dateInstance(date: string) {
+    return new Date(date);
+  }
+
+  modifyAmount(amount: string): string {
+    return amount.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
   }
 
 }

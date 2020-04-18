@@ -7,7 +7,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "roles")
-public class Role extends EntityModel implements GrantedAuthority {
+public class Role extends EntityModel {
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
   private Integer id;
@@ -47,10 +47,5 @@ public class Role extends EntityModel implements GrantedAuthority {
 
   public void setDisplayName(String displayName) {
     this.displayName = displayName;
-  }
-
-  @Override
-  public String getAuthority() {
-    return name;
   }
 }

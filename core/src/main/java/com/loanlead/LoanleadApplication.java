@@ -47,7 +47,7 @@ public class LoanleadApplication {
     public DataSource dataSource() {
         DataSourceBuilder dataSourceBuilder = DataSourceBuilder.create();
         dataSourceBuilder.driverClassName("com.mysql.jdbc.Driver");
-        dataSourceBuilder.url("jdbc:mysql://localhost:3306/" + databaseName);
+        dataSourceBuilder.url("jdbc:mysql://localhost:3306/" + databaseName + "?characterEncoding=utf8");
         dataSourceBuilder.username(username);
         dataSourceBuilder.password(password);
         return dataSourceBuilder.build();

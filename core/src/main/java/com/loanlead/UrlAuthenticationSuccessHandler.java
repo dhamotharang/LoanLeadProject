@@ -1,15 +1,11 @@
 package com.loanlead;
 
-import com.loanlead.auth.AuthRole;
 import com.loanlead.auth.CustomHttpSessionBindingListener;
-import com.loanlead.auth.LoggedUsersMap;
 import com.loanlead.auth.UserService;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Profile;
 import org.springframework.security.core.Authentication;
-import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.web.DefaultRedirectStrategy;
 import org.springframework.security.web.RedirectStrategy;
 import org.springframework.security.web.WebAttributes;
@@ -20,28 +16,29 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
-import java.util.Collection;
+import java.util.HashMap;
+import java.util.Map;
 
 @Component
 public class UrlAuthenticationSuccessHandler implements AuthenticationSuccessHandler {
     protected final Log logger = LogFactory.getLog(this.getClass());
     private final UserService userService;
-    private LoggedUsersMap loggedUsersMap;
     private RedirectStrategy redirectStrategy = new DefaultRedirectStrategy();
+    private final Map<String, HttpSession> userSessions = new HashMap<>();
 
     @Autowired
-    public UrlAuthenticationSuccessHandler(UserService userService, LoggedUsersMap loggedUsersMap) {
+    public UrlAuthenticationSuccessHandler(UserService userService) {
         this.userService = userService;
-        this.loggedUsersMap = loggedUsersMap;
     }
 
     @Override
     public void onAuthenticationSuccess(final HttpServletRequest request, final HttpServletResponse response, final Authentication authentication) throws IOException {
         HttpSession session = (request.getSession(false) != null) ? request.getSession(false) : request.getSession();
-        CustomHttpSessionBindingListener user = new CustomHttpSessionBindingListener(authentication.getName(), loggedUsersMap, userService);
+        CustomHttpSessionBindingListener user = new CustomHttpSessionBindingListener(authentication.getName(), userService);
 
         if (session != null) {
             session.setAttribute("user", user);
+            userSessions.put(authentication.getName(), session);
         }
 
         handle(request, response, authentication);
@@ -60,26 +57,7 @@ public class UrlAuthenticationSuccessHandler implements AuthenticationSuccessHan
     }
 
     protected String determineTargetUrl(final Authentication authentication) {
-        boolean isUser = false;
-        boolean isAdmin = false;
-        final Collection<? extends GrantedAuthority> authorities = authentication.getAuthorities();
-        for (final GrantedAuthority grantedAuthority : authorities) {
-            if (!grantedAuthority.getAuthority().equals(AuthRole.ADMIN.role())) {
-                isUser = true;
-                break;
-            } else if (grantedAuthority.getAuthority().equals(AuthRole.ADMIN.role())) {
-                isAdmin = true;
-                break;
-            }
-        }
-
-        if (isUser) {
-            return "/ui/#/user";
-        } else if (isAdmin) {
-            return "/ui/#/admin";
-        } else {
-            throw new IllegalStateException();
-        }
+        return "/ui/#";
     }
 
     /**
@@ -96,12 +74,7 @@ public class UrlAuthenticationSuccessHandler implements AuthenticationSuccessHan
         session.removeAttribute(WebAttributes.AUTHENTICATION_EXCEPTION);
     }
 
-    public void setRedirectStrategy(final RedirectStrategy redirectStrategy) {
-        this.redirectStrategy = redirectStrategy;
+    public Map<String, HttpSession> getUserSessions() {
+        return userSessions;
     }
-
-    protected RedirectStrategy getRedirectStrategy() {
-        return redirectStrategy;
-    }
-
 }

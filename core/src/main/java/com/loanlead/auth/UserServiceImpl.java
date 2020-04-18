@@ -53,11 +53,6 @@ public class UserServiceImpl implements UserService, UserDetailsService {
     }
 
     @Override
-    public Page<User> findNewAll() {
-        return findNewAll(DEFAULT_PAGE, DEFAULT_ITEMS_PER_PAGE);
-    }
-
-    @Override
     public Page<User> findNewAll(Integer page, Integer itemsPerPage) {
         Pageable pageable = PageRequest.of(page, itemsPerPage);
         return userRepository.findNew(pageable);
@@ -69,8 +64,8 @@ public class UserServiceImpl implements UserService, UserDetailsService {
     }
 
     @Override
-    public Integer approveUser(Integer id) {
-        return userRepository.approveUser(id);
+    public User approveUser(User user) {
+        return userRepository.save(user);
     }
 
     @Override
@@ -84,18 +79,8 @@ public class UserServiceImpl implements UserService, UserDetailsService {
     }
 
     @Override
-    public User update(User user) {
-        return this.userRepository.save(user);
-    }
-
-    @Override
     public void delete(User user) {
         this.userRepository.delete(user);
-    }
-
-    @Override
-    public void deleteById(Integer id) {
-        this.userRepository.deleteById(id);
     }
 
     @Override
@@ -114,19 +99,9 @@ public class UserServiceImpl implements UserService, UserDetailsService {
     }
 
     @Override
-    public Page<User> getOnlineUsers() {
-        return getOnlineUsers(DEFAULT_PAGE, DEFAULT_ITEMS_PER_PAGE);
-    }
-
-    @Override
     public Page<User> getOnlineUsers(Integer page, Integer itemsPerPage) {
         Pageable pageable = PageRequest.of(page, itemsPerPage);
         return userRepository.findOnlineUsers(pageable);
-    }
-
-    @Override
-    public boolean isEmployeeIdUnique(String employeeId) {
-        return userRepository.findUserByEmployeeId(employeeId) == null;
     }
 
     @Override
@@ -142,13 +117,16 @@ public class UserServiceImpl implements UserService, UserDetailsService {
     }
 
     @Override
-    public boolean isAlreadyLoggedIn(String s) {
-        return userRepository.findLoggedInUser(s) != null;
+    public User findUserByPhoneNumber(String phoneNumber) {
+        return userRepository.findUserByPhoneNumber(phoneNumber);
     }
 
     @Override
-    public boolean isUniquePhoneNumber(String phoneNumber) {
-        return userRepository.findUserByPhoneNumber(phoneNumber) == null;
+    public User findUserByOptionalPhoneNumber(String optionalPhoneNumber) {
+        if (optionalPhoneNumber == null || optionalPhoneNumber.equals("")) {
+            return null;
+        }
+        return userRepository.findUserByPhoneNumber(optionalPhoneNumber);
     }
 
     @Override
@@ -165,7 +143,7 @@ public class UserServiceImpl implements UserService, UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String s) throws UsernameNotFoundException {
         User user = userRepository.findUserByEmployeeId(s);
-        if (user != null && user.getStatus().equals(UserStatus.OFFLINE.value())) {
+        if (user != null && user.getStatus().equals(UserStatus.OFFLINE.value()) && !user.isNewlyCreated()) {
             return new CustomUserDetails(user);
         } else {
             throw new UsernameNotFoundException("Specified user was not found");

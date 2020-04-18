@@ -1,4 +1,8 @@
-<loanlead-user-navigation></loanlead-user-navigation>
+<ngx-spinner bgColor="#FFFFFF" size="medium" color="#2129BF" type="ball-clip-rotate">
+  <p class="text-light" style="font-size: 20px;">Loading...</p>
+</ngx-spinner>
+
+<loanlead-navigation></loanlead-navigation>
 <ng-container *ngIf="customers$ | async as customers">
   <div *ngIf="customers.length" class="border border-secondary m-3 p-3 bg-white rounded animated fadeIn">
     <div class="py-2 page-body-heading justify-content-between">
@@ -18,6 +22,10 @@
                  required>
           <div class="feedback text-danger"></div>
         </div>
+      </div>
+      <div class="form-group col-lg-4 col-md-5 col-12 py-2 pr-0 pl-md-2 pl-0">
+        <label for="filterInput">Search</label>
+        <input type="text" id="filterInput" placeholder="Loan" class="form-control w-100" (input)="filterLoans($event)">
       </div>
     </div>
     <div class="py-2 d-flex justify-content-end">
@@ -44,7 +52,7 @@
             <td><a href="javascript:void(0);" data-toggle="modal" data-target="#loansTableModal" (click)="setCustomerLoans(customer)">{{ customer.loans.length == 0 ? 'Has no loans' : customer.loans.length == 1 ? 'First time borrower' : 'Repeat borrower' }}</a></td>
             <td>{{ customer.phoneNumber }}</td>
             <td>{{ format(dateInstance(customer.createdAt)) }}</td>
-            <td *ngIf="currentUser.roles.includes('Application')"><a [routerLink]="['../customer_form/' + customer.id]">Edit</a></td>
+            <td *ngIf="currentUser.roles.includes('Application')"><a [routerLink]="['/customer_form/' + customer.id]">Edit</a></td>
             <td *ngIf="currentUser.roles.includes('Application')"><input type="checkbox" [checked]="selectAll" (click)="check(customer.id)"></td>
           </tr>
           </tbody>
@@ -99,13 +107,13 @@
               <td>{{ loan.customer }}</td>
               <td>{{ loan.type }}</td>
               <td>{{ loan.tenure }}</td>
-              <td>{{ loan.amount }}</td>
+              <td>{{ modifyAmount(loan.amount.toString()) }}</td>
               <td>{{ loan.role.displayName }}</td>
               <td>{{ loan.status }}</td>
               <td>{{ loan.user.fullName }}</td>
               <td><a href="javascript:void(0);" data-toggle="modal" data-target="#branchesTableModal" (click)="setUserBranches(loan.user.branches)">Branches</a></td>
-              <td>{{ loan.stagedAt }}</td>
-              <td>{{ loan.createdAt }}</td>
+              <td>{{ format(dateInstance(loan.stagedAt)) }}</td>
+              <td>{{ format(dateInstance(loan.createdAt)) }}</td>
             </tr>
             </tbody>
           </table>

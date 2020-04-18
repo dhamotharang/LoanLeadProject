@@ -1,5 +1,6 @@
 package com.loanlead.auth;
 
+import com.loanlead.UrlAuthenticationSuccessHandler;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.web.authentication.logout.LogoutSuccessHandler;
@@ -13,12 +14,8 @@ import java.io.IOException;
 
 @Component
 public class CustomLogoutSuccessHandler implements LogoutSuccessHandler {
-    private final UserService userService;
-
     @Autowired
-    public CustomLogoutSuccessHandler(UserService userService) {
-        this.userService = userService;
-    }
+    UrlAuthenticationSuccessHandler authenticationSuccessHandler;
 
     @Override
     public void onLogoutSuccess(HttpServletRequest request,
@@ -28,6 +25,8 @@ public class CustomLogoutSuccessHandler implements LogoutSuccessHandler {
 
         if (session != null){
             session.removeAttribute("user");
+            authenticationSuccessHandler.getUserSessions().get(authentication.getName()).invalidate();
+            authenticationSuccessHandler.getUserSessions().remove(authentication.getName());
         }
     }
 }

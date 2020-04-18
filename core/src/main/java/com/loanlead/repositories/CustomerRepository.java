@@ -36,4 +36,7 @@ public interface CustomerRepository extends JpaRepository<Customer, Integer>, Jp
 
     @Query("SELECT COUNT(c) FROM Customer c")
     public Integer findCount();
+
+    @Query("SELECT c FROM Customer c WHERE c.phoneNumber.id IN (SELECT p.id FROM PhoneNumber p WHERE :phoneNumber IN (p.phoneNumber, p.optionalPhoneNumber))")
+    public Customer findCustomerByPhoneNumber(@Param("phoneNumber") String phoneNumber);
 }

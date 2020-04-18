@@ -1,4 +1,8 @@
-<loanlead-admin-navigation></loanlead-admin-navigation>
+<ngx-spinner bgColor="#FFFFFF" size="medium" color="#2129BF" type="ball-clip-rotate">
+  <p class="text-light" style="font-size: 20px;">Loading...</p>
+</ngx-spinner>
+
+<loanlead-navigation></loanlead-navigation>
 <ng-container *ngIf="newUsers$ | async as newUsers">
   <div *ngIf="newUsers.length" class="border border-secondary m-3 p-3 bg-white rounded animated fadeIn">
     <div class="py-2 page-body-heading justify-content-between">
@@ -44,7 +48,7 @@
           <td><a href="javascript:void(0);" data-toggle="modal" data-target="#rolesTableModal" (click)="setUserRoles(user)">Roles</a></td>
           <td>{{ user.phoneNumber }}</td>
           <td>{{ user.email }}</td>
-          <td><a href="javascript:void(0);" (click)="approveUser(user.id)">Approve</a></td>
+          <td><a href="javascript:void(0);" data-toggle="modal" data-target="#rolesModal" (click)="approveUser(user)">Approve</a></td>
         </tr>
         </tbody>
       </table>
@@ -108,7 +112,7 @@
           <td><a href="javascript:void(0);" data-toggle="modal" data-target="#rolesTableModal" (click)="setUserRoles(user)">Roles</a></td>
           <td>{{ user.phoneNumber }}</td>
           <td>{{ user.email }}</td>
-          <td><a [routerLink]="['../user_form/' + user.id]">Edit</a></td>
+          <td><a [routerLink]="['/user_form/' + user.id]">Edit</a></td>
           <td><input type="checkbox" [checked]="selectAll" (click)="check(user.id)"></td>
         </tr>
         </tbody>
@@ -118,6 +122,9 @@
       <button type="button" id="deleteButton" class="btn btn-primary" [disabled]="!anySelected" (click)="delete()">
         Delete users
       </button>
+    </div>
+    <div class="p-2">
+      <a href="/api/reports/user" class="btn btn-primary">Export excel</a>
     </div>
   </div>
   <div class="empty-list" *ngIf="!users.length">
@@ -150,6 +157,32 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-container>
+
+<ng-container *ngIf="roles$ | async as roles">
+  <div class="modal fade" id="rolesModal" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Roles</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        </div>
+        <div class="modal-body">
+          <div class="form-group">
+            <label for="roles">Roles</label>
+            <select name="roles" id="roles" class="form-control" [formControl]="userToApproveRoles" multiple>
+              <option value="" disabled selected>Select user roles</option>
+              <option *ngFor="let role of roles" [value]="role.displayName">{{ role.displayName }}</option>
+            </select>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal" (click)="save()">Done
           </button>
         </div>
       </div>

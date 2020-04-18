@@ -11,8 +11,11 @@ import org.springframework.core.env.Environment;
 import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Component;
 
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.time.LocalDateTime;
 import java.util.List;
 
 
@@ -42,7 +45,7 @@ public class AuditExcelManager {
     }
 
     private AuditExcelManager() {
-        this.excelColumnsString = "ID,Branch,Status,Date,Actioned By,Comment";
+        this.excelColumnsString = "ID,Branch,Status,Date,User,Branch,Comment";
     }
 
     public String getFilePath() {
@@ -61,13 +64,13 @@ public class AuditExcelManager {
         this.itemsPerPage = itemsPerPage;
     }
 
-    public void createTable() {
-        try (FileOutputStream out = new FileOutputStream("excel/" + this.fileName)) {
+    public ByteArrayInputStream createTable() {
+        try (ByteArrayOutputStream out = new ByteArrayOutputStream()) {
             Workbook workbook = new XSSFWorkbook();
             Sheet loanSheet = workbook.createSheet("Audit Details");
-            loanSheet.addMergedRegion(new CellRangeAddress(0, 0, 0, 5));
+            loanSheet.addMergedRegion(new CellRangeAddress(0, 0, 0, 6));
 
-            String titleContent = "Audit Details";
+            String titleContent = "Auditing";
 
             this.excelColumns = excelColumnsString.split(",");
 
@@ -86,8 +89,10 @@ public class AuditExcelManager {
             this.setSheetData(loanSheet);
 
             workbook.write(out);
+            return new ByteArrayInputStream(out.toByteArray());
         } catch (IOException e) {
             System.out.println("IOException in ReportsExcelManager");
+            return null;
         }
     }
 
@@ -102,11 +107,20 @@ public class AuditExcelManager {
                 row.createCell(0).setCellValue(auditing.getId());
                 row.createCell(1).setCellValue(auditing.getRole().getDisplayName());
                 row.createCell(2).setCellValue(auditing.getStatus());
-                row.createCell(3).setCellValue(auditing.getActionedAt().toString().replace('T', ' '));
+                row.createCell(3).setCellValue(formatDateTime(auditing.getActionedAt()));
                 row.createCell(4).setCellValue(auditing.getActionedBy().getBranches().iterator().next().getName());
                 row.createCell(5).setCellValue(auditing.getActionedBy().getFullName());
                 row.createCell(6).setCellValue(auditing.getComment());
             }
         }
+    }
+
+    private String formatDateTime(LocalDateTime dateTime) {
+        return ((dateTime.getDayOfMonth() < 10) ? '0' + String.valueOf(dateTime.getDayOfMonth()) : String.valueOf(dateTime.getDayOfMonth())) +
+                '/' + ((dateTime.getMonth().getValue() < 10) ? '0' + (dateTime.getMonth().getValue() + 1) : (dateTime.getMonth().getValue() + 1)) +
+                '/' + dateTime.getYear() +
+                ' ' + ((dateTime.getHour() < 10) ? '0' + dateTime.getHour() : dateTime.getHour()) +
+                ':' + ((dateTime.getMinute() < 10) ? '0' + dateTime.getMinute() : dateTime.getMinute()) +
+                ':' + ((dateTime.getSecond() < 10) ? '0' + dateTime.getSecond() : dateTime.getSecond());
     }
 }

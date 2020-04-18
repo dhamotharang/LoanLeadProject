@@ -11,8 +11,11 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Component;
 
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Component
@@ -24,8 +27,8 @@ public class LoggedUserExcelManager {
         return "excel/logged.xlsx";
     }
 
-    public void createTable() {
-        try (FileOutputStream out = new FileOutputStream("excel/logged.xlsx")) {
+    public ByteArrayInputStream createTable() {
+        try (ByteArrayOutputStream out = new ByteArrayOutputStream()) {
             Workbook workbook = new XSSFWorkbook();
             Sheet loanSheet = workbook.createSheet("Logged Users");
             loanSheet.addMergedRegion(new CellRangeAddress(0, 0, 0, 7));
@@ -50,8 +53,10 @@ public class LoggedUserExcelManager {
             this.setSheetData(loanSheet);
 
             workbook.write(out);
+            return new ByteArrayInputStream(out.toByteArray());
         } catch (IOException e) {
             System.out.println("IOException in ReportsExcelManager");
+            return null;
         }
     }
 
@@ -69,9 +74,18 @@ public class LoggedUserExcelManager {
                 row.createCell(3).setCellValue(user.getPhoneNumber().getPhoneNumber());
                 row.createCell(4).setCellValue(user.getEmail());
                 row.createCell(5).setCellValue(user.getBranches().iterator().next().getName());
-                row.createCell(6).setCellValue(user.getStatusChangeTimestamp().toString());
+                row.createCell(6).setCellValue(formatDateTime(user.getStatusChangeTimestamp()));
                 row.createCell(7).setCellValue(user.getStatus());
             }
         }
+    }
+
+    private String formatDateTime(LocalDateTime dateTime) {
+        return ((dateTime.getDayOfMonth() < 10) ? '0' + String.valueOf(dateTime.getDayOfMonth()) : String.valueOf(dateTime.getDayOfMonth())) +
+                '/' + ((dateTime.getMonth().getValue() < 10) ? '0' + (dateTime.getMonth().getValue() + 1) : (dateTime.getMonth().getValue() + 1)) +
+                '/' + dateTime.getYear() +
+                ' ' + ((dateTime.getHour() < 10) ? '0' + dateTime.getHour() : dateTime.getHour()) +
+                ':' + ((dateTime.getMinute() < 10) ? '0' + dateTime.getMinute() : dateTime.getMinute()) +
+                ':' + ((dateTime.getSecond() < 10) ? '0' + dateTime.getSecond() : dateTime.getSecond());
     }
 }

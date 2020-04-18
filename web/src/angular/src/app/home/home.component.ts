@@ -1,40 +1,47 @@
-import { Component, OnInit } from '@angular/core';
-import {Loan} from "../model/loan";
-import {Observable} from "rxjs";
-import {LoanService} from "../core/services/loan.service";
-import {FormControl, Validators} from "@angular/forms";
-import {LoanCounts} from "../model/ui/components/loan-counts";
-import {Router} from "@angular/router";
-import {User} from "../model/user";
-import {UserService} from "../core/services/user.service";
+import {Component, OnInit} from '@angular/core';
+import {Loan} from '../model/loan';
+import {Observable} from 'rxjs';
+import {LoanService} from '../core/services/loan.service';
+import {FormControl, Validators} from '@angular/forms';
+import {LoanCounts} from '../model/ui/components/loan-counts';
+import {Router} from '@angular/router';
+import * as $ from 'jquery';
+import {UserService} from '../core/services/user.service';
+import {NgxSpinnerService} from "ngx-spinner";
 
 @Component({
-  selector: 'eim-user-home',
+  selector: 'loanlead-user-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  searchValue: FormControl = new FormControl('');
   itemsCount: FormControl = new FormControl(
     5,
     [
       Validators.required,
-      Validators.min(5),
-      Validators.max(20),
+      Validators.min(1)
     ]);
 
   loansCount$: Observable<number>;
   loans$: Observable<Loan[]>;
   loanCounts$: Observable<LoanCounts>;
-  currentUser$: Observable<User>;
   userBranches: string[];
   countChanged: boolean;
 
-  constructor(private loanService: LoanService, private router: Router, private userService: UserService) { }
+  constructor(
+    private loanService: LoanService,
+    private router: Router,
+    private userService: UserService,
+    private spinner: NgxSpinnerService) {
+  }
 
   ngOnInit(): void {
-    this.currentUser$ = this.userService.getCurrentUser();
-    this.loans$ = this.loanService.getMainPageLoans(0, 5);
+    this.spinner.show();
+    this.loans$ = this.loanService.getMainPageLoans(0, 5).pipe(loans => {
+      this.spinner.hide();
+      return loans;
+    });
+
     this.loansCount$ = this.loanService.getMainPageLoansCount();
     this.loanCounts$ = this.loanService.getMainLoansCount();
   }
@@ -59,9 +66,6 @@ export class HomeComponent implements OnInit {
           case 'min':
             textContent = 'Please, enter higher number';
             break;
-          case 'max':
-            textContent = 'Please, enter lower number';
-            break;
           default:
             textContent = '';
             break;
@@ -81,7 +85,7 @@ export class HomeComponent implements OnInit {
   }
 
   pagesCount(loansCount: number) {
-    let result = loansCount / this.itemsCount.value;
+    const result = loansCount / this.itemsCount.value;
     return Math.round(result) < result ? Math.round(result) + 1 : Math.round(result);
   }
 
@@ -89,11 +93,11 @@ export class HomeComponent implements OnInit {
     if (this.difference(this.dateNow(), this.dateInstance(loan.createdAt).getTime()) > loan.loanProduct.timeThreshold) {
       return 'bg-danger';
     } else if (loan.status === 'Deferred') {
-      return 'bg-warning'
+      return 'bg-warning';
     } else if (loan.role.id > 4) {
       return 'bg-pink';
     } else {
-      return 'bg-success'
+      return 'bg-success';
     }
   }
 
@@ -107,24 +111,24 @@ export class HomeComponent implements OnInit {
 
   format(date: Date) {
     return ((date.getDate() < 10) ? '0' + date.getDate() : date.getDate()) +
-      "/" + ((date.getMonth() < 10) ? '0' + (date.getMonth() + 1) : (date.getMonth() + 1)) +
-      "/" + date.getFullYear() +
-      " " + ((date.getHours() < 10) ? '0' + date.getHours() : date.getHours()) +
-      ":" + ((date.getMinutes() < 10) ? '0' + date.getMinutes() : date.getMinutes()) +
-      ":" + ((date.getSeconds() < 10) ? '0' + date.getSeconds() : date.getSeconds());
+      '/' + ((date.getMonth() < 10) ? '0' + (date.getMonth() + 1) : (date.getMonth() + 1)) +
+      '/' + date.getFullYear() +
+      ' ' + ((date.getHours() < 10) ? '0' + date.getHours() : date.getHours()) +
+      ':' + ((date.getMinutes() < 10) ? '0' + date.getMinutes() : date.getMinutes()) +
+      ':' + ((date.getSeconds() < 10) ? '0' + date.getSeconds() : date.getSeconds());
   }
 
   difference(firstDate: number, lastDate: number): number {
-    let milliseconds = firstDate - lastDate;
+    const milliseconds = firstDate - lastDate;
     return Math.floor(milliseconds / 1000 / 3600 / 24);
   }
 
   age(firstDate: number, lastDate: number): string {
-    let milliseconds = firstDate - lastDate;
-    let hours = Math.floor(milliseconds / 1000 / 3600);
-    let days = Math.floor(hours / 24);
+    const milliseconds = firstDate - lastDate;
+    const hours = Math.floor(milliseconds / 1000 / 3600);
+    const days = Math.floor(hours / 24);
 
-    return days + " days " + (hours - days * 24) + " hours";
+    return days + ' days ' + (hours - days * 24) + ' hours';
   }
 
   dateNow() {
@@ -136,14 +140,20 @@ export class HomeComponent implements OnInit {
   }
 
   auditing(id: number) {
-    this.router.navigate(['/user/auditing', id]);
+    this.router.navigate(['/auditing', id]);
   }
 
   modifyAmount(amount: string): string {
-    return amount.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    return amount.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
   }
 
   setUserBranches(branches: string[]) {
     this.userBranches = branches;
+  }
+
+  filterLoans(event: Event) {
+    $('#contentTable tbody tr').filter(function () {
+      $(this).toggle($(this).text().toLowerCase().indexOf($(event.target).val().toLowerCase()) > -1);
+    });
   }
 }

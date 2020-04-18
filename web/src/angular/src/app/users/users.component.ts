@@ -4,9 +4,12 @@ import {Observable} from "rxjs";
 import {UserService} from "../core/services/user.service";
 import {FormControl, Validators} from "@angular/forms";
 import {ServerResp} from "../model/server-resp";
+import {Role} from "../model/role";
+import {RoleService} from "../core/services/role.service";
+import {NgxSpinnerService} from "ngx-spinner";
 
 @Component({
-  selector: 'eim-users',
+  selector: 'loanlead-users',
   templateUrl: './users.component.html',
   styleUrls: ['./users.component.scss']
 })
@@ -26,24 +29,29 @@ export class UsersComponent implements OnInit {
       Validators.min(5),
       Validators.max(20),
     ]);
+  userToApproveRoles: FormControl = new FormControl('', Validators.required);
 
   usersCount$: Observable<number>;
   newUsersCount$: Observable<number>;
 
   users$: Observable<User[]>;
+  roles$: Observable<Role[]>;
   newUsers$: Observable<User[]>;
   userRoles: string[];
   countChanged: boolean;
   selectAll: boolean;
   anySelected: boolean;
   entitiesToDelete: number[];
+  userToApprove: User;
 
-  constructor(private userService: UserService) {
+  constructor(private userService: UserService, private roleService: RoleService, private spinner: NgxSpinnerService) {
   }
 
   ngOnInit(): void {
+    this.spinner.show();
     this.loadUsers(1);
     this.loadNewUsers(1);
+    this.roles$ = this.roleService.getAllRoles();
     this.usersCount$ = this.userService.getUsersCount();
     this.newUsersCount$ = this.userService.getNewUsersCount();
     this.selectAll = false;
@@ -62,7 +70,10 @@ export class UsersComponent implements OnInit {
   }
 
   loadUsers(page: number) {
-    this.users$ = this.userService.getUsers(page - 1, this.usersItemsCount.value);
+    this.users$ = this.userService.getUsers(page - 1, this.usersItemsCount.value).pipe(users => {
+      this.spinner.hide();
+      return users;
+    });
   }
 
   loadNewUsers(page: number) {
@@ -70,8 +81,8 @@ export class UsersComponent implements OnInit {
   }
 
   validateUsersItemsCount() {
-    const input = document.getElementById('itemsCount');
-    const labelSpan = document.querySelector('#itemsCount + .feedback');
+    const input = document.getElementById('usersItemsCount');
+    const labelSpan = document.querySelector('#usersItemsCount + .feedback');
 
     input.classList[this.usersItemsCount.errors ? 'add' : 'remove']('invalid');
     let textContent = '';
@@ -99,8 +110,8 @@ export class UsersComponent implements OnInit {
   }
 
   validateNewUsersItemsCount() {
-    const input = document.getElementById('itemsCount');
-    const labelSpan = document.querySelector('#itemsCount + .feedback');
+    const input = document.getElementById('newUsersItemsCount');
+    const labelSpan = document.querySelector('#newUsersItemsCount + .feedback');
 
     input.classList[this.newUsersItemsCount.errors ? 'add' : 'remove']('invalid');
     let textContent = '';
@@ -180,12 +191,18 @@ export class UsersComponent implements OnInit {
     this.userRoles = user.roles;
   }
 
-  approveUser(id: number) {
-    this.userService.approveUser(id).subscribe((data: number) => {
+  approveUser(user: User) {
+    user.newlyCreated = false;
+    this.userToApprove = user;
+  }
+
+  save() {
+    this.userToApprove.roles = this.userToApproveRoles.value;
+    this.userService.approveUser(this.userToApprove).subscribe((data: User) => {
       if (data) {
         this.ngOnInit();
       }
-    })
+    });
   }
 
   delete() {
@@ -196,6 +213,6 @@ export class UsersComponent implements OnInit {
         this.loadUsers(1);
         this.usersCount$ = this.userService.getUsersCount();
       }
-    })
+    });
   }
 }

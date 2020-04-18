@@ -15,10 +15,10 @@
       "sizes": [50, 50],
       "elements": [{
         "type": "WEB_COMPONENT",
-        "value": "eim-servers"
+        "value": "loanlead-servers"
       }, {
         "type": "WEB_COMPONENT",
-        "value": "eim-resources"
+        "value": "loanlead-resources"
       }]
     }, {
       "type": "SPLIT",
@@ -27,10 +27,10 @@
       "resizable": false,
       "elements": [{
         "type": "WEB_COMPONENT",
-        "value": "eim-sidebar-products"
+        "value": "loanlead-sidebar-products"
       }, {
         "type": "WEB_COMPONENT",
-        "value": "eim-sidebar"
+        "value": "loanlead-sidebar"
       }]
     }]
   }, {

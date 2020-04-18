@@ -19,22 +19,16 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     private final UserServiceImpl userService;
     private final UrlAuthenticationSuccessHandler successHandler;
     private final CustomLogoutSuccessHandler logoutHandler;
-    private final DataSource dataSource;
-
-    private static final String USERS_QUERY = "select employee_id, password, '1' from users where employee_id=?";
-    private static final String ROLES_QUERY = "select u.employee_id, r.name from users u inner join users_roles ur on(u.employee_id=ur.employee_id) inner join roles r on(ur.role_name=r.name) where u.employee_id=?";
 
     public WebSecurityConfig(
             DefaultPasswordEncoder defaultPasswordEncoder,
             UserServiceImpl userService,
             UrlAuthenticationSuccessHandler successHandler,
-            CustomLogoutSuccessHandler logoutHandler,
-            DataSource dataSource) {
+            CustomLogoutSuccessHandler logoutHandler) {
         this.defaultPasswordEncoder = defaultPasswordEncoder;
         this.userService = userService;
         this.successHandler = successHandler;
         this.logoutHandler = logoutHandler;
-        this.dataSource = dataSource;
     }
 
     @Override
@@ -49,9 +43,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
                 .authorizeRequests()
                 .antMatchers("/css/**", "/js/**", "/images/**", "/bootstrap-4.1.1/**").permitAll()
-                .antMatchers("/ui/#/admin/**").hasRole(AuthRole.ADMIN.name())
-                .antMatchers("/ui/#/user/**").authenticated()
-                .antMatchers("/sign-up").not().authenticated()
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()
@@ -74,6 +65,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     public void configure(WebSecurity web) {
         web.ignoring()
                 .antMatchers("/login/**")
+                .antMatchers("/sign-up")
                 .antMatchers("/favicon.ico");
     }
 }

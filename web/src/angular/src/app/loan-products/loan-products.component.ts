@@ -7,9 +7,10 @@ import {Router} from "@angular/router";
 import * as $ from 'jquery';
 import {Entity} from "../model/entity";
 import {ServerResp} from "../model/server-resp";
+import {NgxSpinnerService} from "ngx-spinner";
 
 @Component({
-  selector: 'eim-loan-products',
+  selector: 'loanlead-loan-products',
   templateUrl: './loan-products.component.html',
   styleUrls: ['./loan-products.component.scss']
 })
@@ -30,9 +31,10 @@ export class LoanProductsComponent implements OnInit {
   anySelected: boolean;
   entitiesToDelete: number[];
 
-  constructor(private loanProductService: LoanProductService, private router: Router) { }
+  constructor(private loanProductService: LoanProductService, private router: Router, private spinner: NgxSpinnerService) { }
 
   ngOnInit(): void {
+    this.spinner.show();
     this.load(1);
     this.loanProductsCount$ = this.loanProductService.getLoanProductsCount();
     this.selectAll = false;
@@ -51,7 +53,10 @@ export class LoanProductsComponent implements OnInit {
   }
 
   load(page: number) {
-    this.loanProducts$ = this.loanProductService.getLoanProducts(page - 1, this.itemsCount.value);
+    this.loanProducts$ = this.loanProductService.getLoanProducts(page - 1, this.itemsCount.value).pipe(loanProducts => {
+      this.spinner.hide();
+      return loanProducts;
+    });
   }
 
   validate() {

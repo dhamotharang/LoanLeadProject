@@ -9,9 +9,10 @@ import {UserService} from '../core/services/user.service';
 import {Loan} from '../model/loan';
 import {ServerResp} from '../model/server-resp';
 import {Branch} from "../model/branch";
+import {NgxSpinnerService} from "ngx-spinner";
 
 @Component({
-  selector: 'eim-customers',
+  selector: 'loanlead-customers',
   templateUrl: './customers.component.html',
   styleUrls: ['./customers.component.scss']
 })
@@ -21,8 +22,7 @@ export class CustomersComponent implements OnInit {
     5,
     [
       Validators.required,
-      Validators.min(5),
-      Validators.max(20),
+      Validators.min(1),
     ]);
 
   customersCount$: Observable<number>;
@@ -35,10 +35,11 @@ export class CustomersComponent implements OnInit {
   anySelected: boolean;
   entitiesToDelete: number[];
 
-  constructor(private customerService: CustomerService, private userService: UserService) {
+  constructor(private customerService: CustomerService, private userService: UserService, private spinner: NgxSpinnerService) {
   }
 
   ngOnInit(): void {
+    this.spinner.show();
     this.load(1);
     this.customersCount$ = this.customerService.getCustomersCount();
     this.currentUser$ = this.userService.getCurrentUser();
@@ -58,7 +59,10 @@ export class CustomersComponent implements OnInit {
   }
 
   load(page: number) {
-    this.customers$ = this.customerService.getCustomers(page - 1, this.itemsCount.value);
+    this.customers$ = this.customerService.getCustomers(page - 1, this.itemsCount.value).pipe(customers => {
+      this.spinner.hide();
+      return customers;
+    });
   }
 
   validate() {
@@ -126,6 +130,10 @@ export class CustomersComponent implements OnInit {
     return new Date(date);
   }
 
+  modifyAmount(amount: string): string {
+    return amount.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+  }
+
   setCustomerLoans(customer: Customer) {
     this.customerLoans = customer.loans;
   }
@@ -142,6 +150,12 @@ export class CustomersComponent implements OnInit {
         this.load(1);
         this.customersCount$ = this.customerService.getCustomersCount();
       }
+    });
+  }
+
+  filterLoans(event: Event) {
+    $('#contentTable tbody tr').filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf($(event.target).val().toLowerCase()) > -1);
     });
   }
 }

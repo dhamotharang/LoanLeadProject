@@ -1,4 +1,4 @@
-<loanlead-user-navigation></loanlead-user-navigation>
+<loanlead-navigation></loanlead-navigation>
 <div class="border border-secondary m-3 p-3 bg-white rounded" style="position: relative; z-index: 2;">
   <div class="py-2">
     <label class="rounded col-lg-2 col-md-3 col-sm-6 col py-2 page-heading d-flex align-items-center justify-content-center">
@@ -24,20 +24,20 @@
                      (blur)="isUnique('name')"
                      required>
               <div class="feedback text-danger">
-
               </div>
             </div>
-            <div class="form-group pl-3">
-              <label for="document">Document</label>
-              <input id="document"
-                     class="form-control"
-                     type="text"
-                     placeholder="Document"
-                     formControlName="document"
-                     autocomplete="off"
-                     (input)="validate()"
-                     (blur)="isUnique('document')"
-                     required>
+            <div class="form-group">
+              <label for="documentType">Document Type</label>
+              <select id="documentType"
+                      class="form-control"
+                      formControlName="documentType"
+                      required
+                      (change)="validateDocument()">
+                <option value="national id">National ID</option>
+                <option value="passport">Passport</option>
+                <option value="driving permit">Driving Permit</option>
+                <option value="village id">Village Id</option>
+              </select>
               <div class="feedback text-danger">
               </div>
             </div>
@@ -46,23 +46,20 @@
         <div class="row px-4">
           <div class="responsive-form-group w-100 justify-content-center">
             <div class="col-lg-4 col-md-5 col-12">
-              <div class="form-group">
-                <label for="documentType">Document Type</label>
-                <select id="documentType"
-                        class="form-control"
-                        formControlName="documentType"
-                        required
-                        (change)="validate()">
-                  <option value="national id">National ID</option>
-                  <option value="passport">Passport</option>
-                  <option value="driving permit">Driving Permit</option>
-                  <option value="village id">Village Id</option>
-                </select>
+              <div class="form-group pl-3">
+                <label for="document">Document</label>
+                <input id="document"
+                       class="form-control"
+                       type="text"
+                       placeholder="Document"
+                       formControlName="document"
+                       autocomplete="off"
+                       (input)="validateDocument()"
+                       (blur)="isUnique('document')"
+                       required>
                 <div class="feedback text-danger">
                 </div>
               </div>
-            </div>
-            <div class="col-lg-4 col-md-5 col-12">
               <div class="form-group">
                 <label for="phoneNumber">First Phone Number</label>
                 <input id="phoneNumber"
@@ -72,10 +69,13 @@
                        formControlName="phoneNumber"
                        autocomplete="off"
                        (input)="validate()"
+                       (blur)="isUnique('phoneNumber')"
                        required>
                 <div class="feedback text-danger">
                 </div>
               </div>
+            </div>
+            <div class="col-lg-4 col-md-5 col-12">
             </div>
           </div>
         </div>
@@ -90,7 +90,8 @@
                        placeholder="Second Phone Number"
                        formControlName="optionalPhoneNumber"
                        autocomplete="off"
-                       (input)="validate()">
+                       (input)="validate()"
+                       (blur)="isUnique('optionalPhoneNumber')">
                 <div class="feedback text-danger">
                 </div>
               </div>
@@ -100,7 +101,7 @@
         </div>
         <hr>
         <div class="d-flex flex-row pt-2 pb-4 justify-content-end">
-          <a routerLink="/user/customers"
+          <a routerLink="/customers"
              class="no-decoration btn btn-secondary submit-button d-flex col-2 align-items-center justify-content-center mr-4">
             <i class="material-icons">arrow_back</i>&nbsp;Back
           </a>

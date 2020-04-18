@@ -26,10 +26,7 @@ const userRoutes: Routes = [
   {path: Urls.CUSTOMER_FORM, component: CustomerFormComponent, pathMatch: 'full'},
   {path: Urls.CUSTOMER_FORM + '/:customerId', component: CustomerFormComponent, pathMatch: 'full'},
   {path: Urls.DASHBOARD, component: DashboardComponent, pathMatch: 'full'},
-  {path: Urls.REPORTS, component: ReportsComponent, pathMatch: 'full'},
   {path: Urls.AUDITING + '/:loanId', component: AuditingComponent, pathMatch: 'full'},
-  {path: Urls.HOME, component: HomeComponent, pathMatch: 'full'},
-  {path: Urls.PROFILE_EDIT, component: EditProfileComponent, pathMatch: 'full'}
 ];
 
 const adminRoutes: Routes = [
@@ -50,29 +47,10 @@ const adminRoutes: Routes = [
   {path: Urls.LOGGED_USERS, component: LoggedUsersComponent, pathMatch: 'full'}
 ];
 
-const adminEnvironment: Routes = [
-  {
-    path: Urls.ADMIN,
-    children: [
-      {path: '', redirectTo: Urls.HOME, pathMatch: 'full'},
-      ...adminRoutes
-    ]
-  },
-];
-
-const userEnvironment: Routes = [
-  {
-    path: Urls.USER,
-    children: [
-      {path: '', redirectTo: Urls.HOME, pathMatch: 'full'},
-      ...userRoutes
-    ]
-  }
-];
-
 const routes: Routes = [
-  ...adminEnvironment,
-  ...userEnvironment
+  {path: '', component: HomeComponent, pathMatch: 'full'},
+  ...adminRoutes,
+  ...userRoutes
 ];
 
 @NgModule({

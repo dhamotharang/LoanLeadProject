@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
     <meta charset="UTF-8">
-    <title>Users Form</title>
+    <title>Sign Up</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -120,23 +120,8 @@
                     <div class="responsive-form-group w-100 justify-content-center">
                         <div class="col-lg-4 col-md-5 col-12">
                             <div class="form-group">
-                                <label for="role">Role</label>
-                                <select id="role" class="form-control" name="roles" th:classappend="${#fields.hasErrors('roles')} ? 'is-invalid' : 'is-valid'" multiple="multiple">
-                                    <option value="" disabled selected>Chose role</option>
-                                    <option th:each="role: ${roles}"
-                                            th:value="${role.name}"
-                                            th:text="${role.displayName}"
-                                            th:selected="${#arrays.contains(user.roles, role.name)}"></option>
-                                </select>
-                                <div class="invalid-feedback">
-                                    Please chose a valid role.
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-5 col-12">
-                            <div class="form-group">
                                 <label for="branches">Branch</label>
-                                <select id="branches" class="form-control" name="branches" th:classappend="${#fields.hasErrors('branches')} ? 'is-invalid' : 'is-valid'" multiple="multiple">
+                                <select id="branches" class="form-control" th:field="*{branches}" th:classappend="${#fields.hasErrors('branches')} ? 'is-invalid' : 'is-valid'" multiple>
                                     <option value="" disabled selected>Chose branch</option>
                                     <option th:each="branch: ${branches}"
                                             th:value="${branch.name}"
@@ -144,7 +129,7 @@
                                             th:selected="${#arrays.contains(user.branches, branch.name)}"></option>
                                 </select>
                                 <div class="invalid-feedback">
-                                    Please chose a valid branch.
+                                    <div th:each="err: ${#fields.errors('branches')}" th:text="${err}"></div>
                                 </div>
                             </div>
                         </div>
@@ -152,6 +137,10 @@
                 </div>
                 <hr>
                 <div class="d-flex flex-row pt-2 pb-4 justify-content-end">
+                    <a href="/login"
+                       class="no-decoration btn btn-secondary submit-button d-flex col-2 align-items-center justify-content-center mr-4">
+                        <i class="material-icons">arrow_back</i>&nbsp;Back to login
+                    </a>
                     <button type="submit"
                             class="btn btn-primary submit-button d-flex col-2 justify-content-center mr-4">Register
                     </button>

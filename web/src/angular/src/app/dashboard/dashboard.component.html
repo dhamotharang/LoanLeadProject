@@ -1,5 +1,9 @@
+<ngx-spinner bgColor="#FFFFFF" size="medium" color="#2129BF" type="ball-clip-rotate">
+  <p class="text-light" style="font-size: 20px;">Loading...</p>
+</ngx-spinner>
+
 <ng-container *ngIf="currentUser$ | async as currentUser">
-  <loanlead-user-navigation></loanlead-user-navigation>
+  <loanlead-navigation></loanlead-navigation>
   <div class="border border-secondary m-3 p-3 bg-white rounded animated fadeInUp">
     <fieldset class="border border-yellow rounded px-3">
       <legend class="d-block w-auto ml-3 text-dark-blue">{{ currentUser.roles.join(', ') }}</legend>
@@ -50,7 +54,7 @@
                   <td><a href="#" class="text-dark-blue">{{ forwardedLoan.customer }}</a></td>
                   <td><a href="#" class="text-dark-blue">{{ forwardedLoan.loanProduct.loanProduct }}</a></td>
                   <td><a href="#" class="text-dark-blue">{{ forwardedLoan.tenure }}</a></td>
-                  <td><a href="#" class="text-dark-blue amount">{{ forwardedLoan.amount }}</a></td>
+                  <td><a href="#" class="text-dark-blue amount">{{ modifyAmount(forwardedLoan.amount.toString()) }}</a></td>
                   <td><a href="#" class="text-dark-blue">{{ forwardedLoan.role.displayName }}</a></td>
                   <td><a href="#" class="text-dark-blue">{{ forwardedLoan.status }}</a></td>
                   <td><a href="#" class="text-dark-blue">{{ forwardedLoan.user.fullName }}</a></td>
@@ -117,7 +121,7 @@
                         <i class="material-icons">block</i>Reject
                       </a>
                       <a *ngIf="receivedLoan.role.displayName === 'Application'"
-                         [routerLink]="['../loan_form/' + receivedLoan.id]"
+                         [routerLink]="['/loan_form/' + receivedLoan.id]"
                          class="dropdown-item d-flex text-success align-items-center no-decoration">Edit</a>
                       <a *ngIf="receivedLoan.role.displayName !== 'Disbursement'" href="javascript:void(0);"
                          data-toggle="modal"
@@ -141,7 +145,7 @@
                   <td><a href="#" class="text-dark-blue">{{ receivedLoan.customer }}</a></td>
                   <td><a href="#" class="text-dark-blue">{{ receivedLoan.loanProduct.loanProduct }}</a></td>
                   <td><a href="#" class="text-dark-blue">{{ receivedLoan.tenure }}</a></td>
-                  <td><a href="#" class="text-dark-blue amount">{{ receivedLoan.amount }}</a></td>
+                  <td><a href="#" class="text-dark-blue amount">{{ modifyAmount(receivedLoan.amount.toString()) }}</a></td>
                   <td><a href="#" class="text-dark-blue">{{ receivedLoan.role.displayName }}</a></td>
                   <td><a href="#" class="text-dark-blue">{{ receivedLoan.status }}</a></td>
                   <td><a href="#" class="text-dark-blue">{{ receivedLoan.user.fullName }}</a></td>
@@ -205,7 +209,7 @@
       <div class="modal-body">
         <div class="form-group">
           <label for="actionComment">Comment</label>
-          <textarea name="comment" id="actionComment" class="form-control" rows="5" [formControl]="comment"></textarea>
+          <textarea name="comment" id="actionComment" class="form-control" rows="5" [formControl]="comment">Comment</textarea>
         </div>
       </div>
       <div class="modal-footer">

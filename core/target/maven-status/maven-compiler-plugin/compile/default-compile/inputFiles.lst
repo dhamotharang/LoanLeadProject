@@ -13,7 +13,6 @@ C:\Users\11Born2Die11\IdeaProjects\loanlead\core\src\main\java\com\loanlead\cont
 C:\Users\11Born2Die11\IdeaProjects\loanlead\core\src\main\java\com\loanlead\models\Entity.java
 C:\Users\11Born2Die11\IdeaProjects\loanlead\core\src\main\java\com\loanlead\auth\entities\Role.java
 C:\Users\11Born2Die11\IdeaProjects\loanlead\core\src\main\java\com\loanlead\services\ReportService.java
-C:\Users\11Born2Die11\IdeaProjects\loanlead\core\src\main\java\com\loanlead\excel\RoleExcelManager.java
 C:\Users\11Born2Die11\IdeaProjects\loanlead\core\src\main\java\com\loanlead\auth\ResourceLoader.java
 C:\Users\11Born2Die11\IdeaProjects\loanlead\core\src\main\java\com\loanlead\repositories\BranchRepository.java
 C:\Users\11Born2Die11\IdeaProjects\loanlead\core\src\main\java\com\loanlead\models\Report.java
@@ -50,10 +49,10 @@ C:\Users\11Born2Die11\IdeaProjects\loanlead\core\src\main\java\com\loanlead\mode
 C:\Users\11Born2Die11\IdeaProjects\loanlead\core\src\main\java\com\loanlead\auth\RoleService.java
 C:\Users\11Born2Die11\IdeaProjects\loanlead\core\src\main\java\com\loanlead\StaticResourceConfiguration.java
 C:\Users\11Born2Die11\IdeaProjects\loanlead\core\src\main\java\com\loanlead\auth\CustomLogoutSuccessHandler.java
-C:\Users\11Born2Die11\IdeaProjects\loanlead\core\src\main\java\com\loanlead\auth\LoggedUsersMap.java
 C:\Users\11Born2Die11\IdeaProjects\loanlead\core\src\main\java\com\loanlead\models\LoanProduct.java
 C:\Users\11Born2Die11\IdeaProjects\loanlead\core\src\main\java\com\loanlead\models\ui\ModelEntityMapper.java
 C:\Users\11Born2Die11\IdeaProjects\loanlead\core\src\main\java\com\loanlead\repositories\PhoneNumberRepository.java
+C:\Users\11Born2Die11\IdeaProjects\loanlead\core\src\main\java\com\loanlead\EncryptionService.java
 C:\Users\11Born2Die11\IdeaProjects\loanlead\core\src\main\java\com\loanlead\models\Branch.java
 C:\Users\11Born2Die11\IdeaProjects\loanlead\core\src\main\java\com\loanlead\excel\AuditExcelManager.java
 C:\Users\11Born2Die11\IdeaProjects\loanlead\core\src\main\java\com\loanlead\auth\UserService.java

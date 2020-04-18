@@ -1,5 +1,9 @@
-<loanlead-admin-navigation></loanlead-admin-navigation>
-<ng-container *ngIf="users$ | async as users">
+<ngx-spinner bgColor="#FFFFFF" size="medium" color="#2129BF" type="ball-clip-rotate">
+  <p class="text-light" style="font-size: 20px;">Loading...</p>
+</ngx-spinner>
+
+<loanlead-navigation></loanlead-navigation>
+<ng-container *ngIf="users">
   <div class="border border-secondary m-3 p-3 bg-white rounded animated fadeInUp">
     <div class="py-2 page-body-heading justify-content-between">
       <label class="rounded col-lg-2 col-md-3 col-12 py-2 page-heading d-flex align-items-center justify-content-center">
@@ -16,27 +20,52 @@
           <th>Name</th>
           <th>Contact nr. 1</th>
           <th>Email</th>
-          <th>Branch</th>
+          <th>Branches</th>
           <th>Created at</th>
           <th>Logout user</th>
         </tr>
         </thead>
         <tbody>
         <tr *ngFor="let user of users">
-          <td><a href="javascript:void(0);" class="text-dark-blue">{{ user.id }}</a></td>
-          <td><a href="javascript:void(0);" class="text-dark-blue">{{ user.employeeId }}</a></td>
-          <td><a href="javascript:void(0);" class="text-dark-blue">{{ user.fullName }}</a></td>
-          <td><a href="javascript:void(0);" class="text-dark-blue">{{ user.phoneNumber }}</a></td>
-          <td><a href="javascript:void(0);" class="text-dark-blue">{{ user.email }}</a></td>
-          <td><a href="javascript:void(0);" class="text-dark-blue">{{ user.branches[0] }}</a></td>
-          <td><a href="javascript:void(0);" class="text-dark-blue">{{ format(dateInstance(user.createdAt)) }}</a></td>
+          <td>{{ user.id }}</td>
+          <td>{{ user.employeeId }}</td>
+          <td>{{ user.fullName }}</td>
+          <td>{{ user.phoneNumber }}</td>
+          <td>{{ user.email }}</td>
+          <td><a href="javascript:void(0);" data-toggle="modal" data-target="#branchesTableModal" (click)="setUserBranches(user.branches)">Branches</a></td>
+          <td>{{ format(dateInstance(user.createdAt)) }}</td>
           <td><a href="javascript:void(0);" (click)="logoutUser(user.employeeId)">Logout user</a></td>
         </tr>
         </tbody>
       </table>
     </div>
     <div class="p-2">
-      <a href="/api/reports/logged" class="btn btn-primary">Report</a>
+      <a href="/api/reports/logged" class="btn btn-primary">Export excel</a>
+    </div>
+  </div>
+</ng-container>
+
+<ng-container *ngIf="userBranches">
+  <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" id="branchesTableModal" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Roles</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        </div>
+        <div class="modal-body" style="overflow-x: auto;">
+          <ul *ngIf="userBranches.length">
+            <li *ngFor="let branch of userBranches">{{ branch }}</li>
+          </ul>
+          <div class="empty-list" *ngIf="!userBranches.length">
+            No loans was found.
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close
+          </button>
+        </div>
+      </div>
     </div>
   </div>
 </ng-container>

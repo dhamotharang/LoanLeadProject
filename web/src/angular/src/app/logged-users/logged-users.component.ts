@@ -2,20 +2,27 @@ import {Component, OnInit} from '@angular/core';
 import {Observable} from "rxjs";
 import {User} from "../model/user";
 import {UserService} from "../core/services/user.service";
+import {NgxSpinnerService} from "ngx-spinner";
 
 @Component({
-  selector: 'eim-logged-users',
+  selector: 'loanlead-logged-users',
   templateUrl: './logged-users.component.html',
   styleUrls: ['./logged-users.component.scss']
 })
 export class LoggedUsersComponent implements OnInit {
-  users$: Observable<User[]>;
+  users: User[];
+  userBranches: string[];
 
-  constructor(private userService: UserService) {
+  constructor(private userService: UserService, private spinner: NgxSpinnerService) {
   }
 
   ngOnInit(): void {
-    this.users$ = this.userService.getLoggedUsers();
+    this.spinner.show();
+    this.userService.getLoggedUsers()
+      .subscribe(users => {
+        this.spinner.hide();
+        this.users = users;
+      });
   }
 
   format(date: Date) {
@@ -31,7 +38,18 @@ export class LoggedUsersComponent implements OnInit {
     return new Date(date);
   }
 
-  logoutUser(userId: string) {
+  logoutUser(employeeId: string) {
+    this.userService.logoutUser(employeeId)
+      .subscribe(data => {
+        if (!data.err) {
+          this.users = data.data;
+        } else {
+          alert(data.err.message);
+        }
+      });
+  }
 
+  setUserBranches(branches: string[]) {
+    this.userBranches = branches;
   }
 }

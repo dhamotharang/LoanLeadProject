@@ -1,4 +1,8 @@
-<loanlead-admin-navigation></loanlead-admin-navigation>
+<ngx-spinner bgColor="#FFFFFF" size="medium" color="#2129BF" type="ball-clip-rotate">
+  <p class="text-light" style="font-size: 20px;">Loading...</p>
+</ngx-spinner>
+
+<loanlead-navigation></loanlead-navigation>
 <ng-container *ngIf="loanProducts$ | async as loanProducts">
   <div *ngIf="loanProducts.length" class="border border-secondary m-3 p-3 bg-white rounded animated fadeIn">
     <div class="py-2 page-body-heading justify-content-between">
@@ -43,14 +47,17 @@
           <td>{{ loanProduct.maxAmount }}</td>
           <td>{{ loanProduct.maxTenure }}</td>
           <td>{{ loanProduct.timeThreshold }}</td>
-          <td><a [routerLink]="['../loan_products_form/' + loanProduct.id]">Edit</a></td>
+          <td><a [routerLink]="['/loan_products_form/' + loanProduct.id]">Edit</a></td>
           <td><input type="checkbox" [checked]="selectAll" (click)="check(loanProduct.id)"></td>
         </tr>
         </tbody>
       </table>
     </div>
     <div class="py-2">
-      <button type="button" id="deleteButton" class="btn btn-primary" [disabled]="!anySelected" (click)="delete()">Delete loanProducts</button>
+      <button type="button" id="deleteButton" class="btn btn-primary" [disabled]="!anySelected" (click)="delete()">Delete loan products</button>
+    </div>
+    <div class="p-2">
+      <a href="/api/reports/loan-product" class="btn btn-primary">Export excel</a>
     </div>
   </div>
   <div class="empty-list" *ngIf="!loanProducts.length">

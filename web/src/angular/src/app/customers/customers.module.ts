@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {ReactiveFormsModule} from "@angular/forms";
-import {AdminNavigationModule} from "../ui/admin-navigation/admin-navigation.module";
-import {PaginationModule} from "../common/pagination/pagination.module";
-import {RouterModule} from "@angular/router";
-import {UserNavigationModule} from "../ui/user-navigation/user-navigation.module";
-import {CustomersComponent} from "./customers.component";
-import {CustomerFormComponent} from "./customer-form/customer-form.component";
+import {ReactiveFormsModule} from '@angular/forms';
+import {NavigationModule} from '../ui/navigation/navigation.module';
+import {PaginationModule} from '../common/pagination/pagination.module';
+import {RouterModule} from '@angular/router';
+import {CustomersComponent} from './customers.component';
+import {CustomerFormComponent} from './customer-form/customer-form.component';
+import {NgxSpinnerModule} from "ngx-spinner";
 
 
 
@@ -14,10 +14,11 @@ import {CustomerFormComponent} from "./customer-form/customer-form.component";
   declarations: [CustomersComponent, CustomerFormComponent],
   imports: [
     ReactiveFormsModule,
-    UserNavigationModule,
+    NavigationModule,
     CommonModule,
     PaginationModule,
-    RouterModule
+    RouterModule,
+    NgxSpinnerModule
   ]
 })
 export class CustomersModule { }

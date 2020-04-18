@@ -2,12 +2,10 @@ com\loanlead\controller\RoleController.class
 com\loanlead\controller\MainController.class
 com\loanlead\auth\UserService.class
 com\loanlead\services\LoanService.class
-com\loanlead\excel\RoleExcelManager.class
 com\loanlead\excel\LoggedUserExcelManager.class
 com\loanlead\LoanleadApplication.class
 com\loanlead\models\ui\models\ReportFormModel.class
 com\loanlead\models\ui\ModelEntityMapper$1.class
-com\loanlead\auth\LoggedUsersMap.class
 com\loanlead\models\ui\models\LoanModel.class
 com\loanlead\services\ReportService.class
 com\loanlead\models\ui\ModelEntityMapper$4.class
@@ -68,6 +66,7 @@ com\loanlead\auth\RoleRepository.class
 com\loanlead\auth\UserRepository.class
 com\loanlead\auth\ResourceLoader.class
 com\loanlead\models\ui\ModelEntityMapper$3.class
+com\loanlead\EncryptionService.class
 com\loanlead\controller\LoginController.class
 com\loanlead\auth\entities\User.class
 com\loanlead\services\PhoneNumberService.class

@@ -13,7 +13,7 @@ const toSpaceBetween = (s: string): string => {
 };
 
 @Component({
-  selector: 'eim-loan-product-form',
+  selector: 'loanlead-loan-product-form',
   templateUrl: './loan-product-form.component.html',
   styleUrls: ['./loan-product-form.component.scss']
 })
@@ -179,7 +179,7 @@ export class LoanProductFormComponent implements OnInit {
 
       observable
         .subscribe((data: LoanProduct) => {
-          this.router.navigate(['/admin/loan_products']);
+          this.router.navigate(['/loan_products']);
         }, () => {
           alert('Error while saving loan product');
         });

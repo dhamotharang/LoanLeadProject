@@ -7,9 +7,10 @@ import {Loan} from '../model/loan';
 import {Role} from '../model/role';
 import {RoleService} from '../core/services/role.service';
 import {FormControl} from '@angular/forms';
+import {NgxSpinnerService} from 'ngx-spinner';
 
 @Component({
-  selector: 'eim-dashboard',
+  selector: 'loanlead-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss']
 })
@@ -24,14 +25,40 @@ export class DashboardComponent implements OnInit {
   comment: FormControl = new FormControl('');
   deferStage: FormControl = new FormControl('');
 
-  constructor(private userService: UserService, private loanService: LoanService, private roleService: RoleService) {
+  constructor(
+    private userService: UserService,
+    private loanService: LoanService,
+    private roleService: RoleService,
+    private spinner: NgxSpinnerService) {
   }
 
   ngOnInit(): void {
-    this.currentUser$ = this.userService.getCurrentUser();
-    this.forwardedLoans$ = this.loanService.getForwardedLoans();
-    this.receivedLoans$ = this.loanService.getReceivedLoans();
-    this.roleService.getAllRoles().subscribe((roles: Role[]) => { this.roles = roles; });
+    let loadedEntitiesCount = 0;
+    this.spinner.show();
+    this.currentUser$ = this.userService.getCurrentUser().pipe(user => {
+      loadedEntitiesCount++;
+      return user;
+    });
+
+    this.forwardedLoans$ = this.loanService.getForwardedLoans().pipe(loans => {
+      loadedEntitiesCount++;
+      return loans;
+    });
+
+    this.receivedLoans$ = this.loanService.getReceivedLoans().pipe(loans => {
+      loadedEntitiesCount++;
+      return loans;
+    });
+
+    this.roleService.getAllRoles().subscribe((roles: Role[]) => {
+      this.roles = roles;
+    });
+
+    setInterval(() => {
+      if (loadedEntitiesCount === 3) {
+        this.spinner.hide();
+      }
+    }, 1000);
   }
 
   setLoanToAction(loan: Loan) {
@@ -80,6 +107,10 @@ export class DashboardComponent implements OnInit {
 
   setUserBranches(branches: string[]) {
     this.userBranches = branches;
+  }
+
+  modifyAmount(amount: string): string {
+    return amount.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
   }
 
   stageToForward(loan: Loan) {

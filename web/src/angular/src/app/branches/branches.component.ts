@@ -8,7 +8,7 @@ import * as $ from 'jquery';
 import {ServerResp} from "../model/server-resp";
 
 @Component({
-  selector: 'eim-branches',
+  selector: 'loanlead-branches',
   templateUrl: './branches.component.html',
   styleUrls: ['./branches.component.scss']
 })

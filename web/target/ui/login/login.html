@@ -21,8 +21,8 @@
     <h5 id="login-header" class="pt-4 pb-2 text-secondary">Log in</h5>
     <hr>
     <div id="login-body" class="pb-4">
-        <div th:if="${param.loginError}" class="alert alert-danger">Invalid username or password</div>
-        <div th:if="${param.logout}" class="alert alert-success">You logged out</div>
+        <div th:if="${error}" class="alert alert-danger">Invalid username or password</div>
+        <div th:if="${logout}" class="alert alert-success">You logged out</div>
         <form class="w-100" action="/perform_login" method="POST">
             <div class="form-group">
                 <label for="username">Employee ID</label>

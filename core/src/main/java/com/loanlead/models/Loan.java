@@ -212,10 +212,11 @@ public class Loan extends EntityModel{
     public Report toReport() {
         Report report = new Report();
         report.setLoan(this);
-        report.setRole(this.getRole());
-        report.setActionedBy(this.getUser());
-        report.setComment(this.getComment());
+        report.setRole(getRole());
+        report.setActionedBy(getUser());
+        report.setComment(getComment());
         report.setActionedAt(LocalDateTime.now());
+        report.setStatus(getStatus());
         return report;
     }
 }

@@ -12,10 +12,12 @@ import org.apache.commons.io.IOUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletResponse;
+import java.io.ByteArrayInputStream;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.time.LocalDate;
@@ -23,7 +25,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
-@RestController
+@Controller
 @RequestMapping(ReportController.PREFIX + "/reports")
 public class ReportController {
     static final String PREFIX = "/api";
@@ -32,17 +34,15 @@ public class ReportController {
     private ReportsExcelManager reportsExcelManager;
     private LoggedUserExcelManager loggedUserExcelManager;
     private AuditExcelManager auditExcelManager;
-    private RoleExcelManager roleExcelManager;
     private UserExcelManager userExcelManager;
     private LoanProductExcelManager loanProductExcelManager;
     private ModelEntityMapper mapper;
 
     @Autowired
-    public ReportController(ReportsExcelManager reportsExcelManager, LoggedUserExcelManager loggedUserExcelManager, AuditExcelManager auditExcelManager, RoleExcelManager roleExcelManager, UserExcelManager userExcelManager, LoanProductExcelManager loanProductExcelManager, ModelEntityMapper mapper, ReportService reportService) {
+    public ReportController(ReportsExcelManager reportsExcelManager, LoggedUserExcelManager loggedUserExcelManager, AuditExcelManager auditExcelManager, UserExcelManager userExcelManager, LoanProductExcelManager loanProductExcelManager, ModelEntityMapper mapper, ReportService reportService) {
         this.reportsExcelManager = reportsExcelManager;
         this.loggedUserExcelManager = loggedUserExcelManager;
         this.auditExcelManager = auditExcelManager;
-        this.roleExcelManager = roleExcelManager;
         this.userExcelManager = userExcelManager;
         this.loanProductExcelManager = loanProductExcelManager;
         this.reportService = reportService;
@@ -51,15 +51,11 @@ public class ReportController {
 
     @GetMapping("/logged")
     public void getUserReport(HttpServletResponse response) throws IOException {
-        loggedUserExcelManager.createTable();
-
-        response.setContentType("application/vnd.ms-excel");
+        response.setContentType("application/octet-stream");
         response.setHeader("Content-Disposition", "attachment; filename=loggedUsers.xlsx");
 
-        ServletOutputStream out = response.getOutputStream();
-        out.write(IOUtils.toByteArray(new FileInputStream(loggedUserExcelManager.getFilePath())));
-        out.flush();
-        out.close();
+        ByteArrayInputStream stream = loggedUserExcelManager.createTable();
+        IOUtils.copy(stream, response.getOutputStream());
     }
 
     @GetMapping("/report")
@@ -69,76 +65,45 @@ public class ReportController {
             @RequestParam(value = "itemsPerPage", required = false) Integer itemsPerPage,
             HttpServletResponse response
     ) throws IOException {
+        response.setContentType("application/octet-stream");
+        response.setHeader("Content-Disposition", "attachment; filename=auditing.xlsx");
+
         auditExcelManager.setLoanCode(loanId);
         auditExcelManager.setPage(page);
         auditExcelManager.setItemsPerPage(itemsPerPage);
-        auditExcelManager.createTable();
-
-        response.setContentType("application/vnd.ms-excel");
-        response.setHeader("Content-Disposition", "attachment; filename=auditing.xlsx");
-
-        ServletOutputStream out = response.getOutputStream();
-        out.write(IOUtils.toByteArray(new FileInputStream(auditExcelManager.getFilePath())));
-        out.flush();
-        out.close();
-    }
-
-    @GetMapping("/role")
-    public void getRolesReport(HttpServletResponse response) throws IOException {
-        roleExcelManager.createTable();
-
-        response.setContentType("application/vnd.ms-excel");
-        response.setHeader("Content-Disposition", "attachment; filename=roleDetails.xlsx");
-
-        ServletOutputStream out = response.getOutputStream();
-        out.write(IOUtils.toByteArray(new FileInputStream(roleExcelManager.getFilePath())));
-        out.flush();
-        out.close();
+        ByteArrayInputStream stream = auditExcelManager.createTable();
+        IOUtils.copy(stream, response.getOutputStream());
     }
 
     @GetMapping("/user")
     public void getUsersReport(HttpServletResponse response) throws IOException {
-        userExcelManager.createTable();
-
-        response.setContentType("application/vnd.ms-excel");
+        response.setContentType("application/octet-stream");
         response.setHeader("Content-Disposition", "attachment; filename=userDetails.xlsx");
 
-        ServletOutputStream out = response.getOutputStream();
-        out.write(IOUtils.toByteArray(new FileInputStream(userExcelManager.getFilePath())));
-        out.flush();
-        out.close();
+        ByteArrayInputStream stream = userExcelManager.createTable();
+        IOUtils.copy(stream, response.getOutputStream());
     }
 
     @GetMapping("/loan-product")
     public void getLoanProductReport(HttpServletResponse response) throws IOException {
-        loanProductExcelManager.createTable();
-
-        response.setContentType("application/vnd.ms-excel");
+        response.setContentType("application/octet-stream");
         response.setHeader("Content-Disposition", "attachment; filename=loanProductDetails.xlsx");
 
-        ServletOutputStream out = response.getOutputStream();
-        out.write(IOUtils.toByteArray(new FileInputStream(loanProductExcelManager.getFilePath())));
-        out.flush();
-        out.close();
+        ByteArrayInputStream stream = loanProductExcelManager.createTable();
+        IOUtils.copy(stream, response.getOutputStream());
     }
 
+    @ResponseBody
     @GetMapping("/{loanId}")
     public ResponseEntity<List<ReportModel>> getLoans(@PathVariable Integer loanId,
-                                                      @RequestParam(value = "page", required = false) Integer page,
-                                                      @RequestParam(value = "itemsPerPage", required = false) Integer itemsPerPage
+                                                      @RequestParam("page") Integer page,
+                                                      @RequestParam("itemsPerPage") Integer itemsPerPage
     ) {
-        if (page == null) {
-            page = UserServiceImpl.DEFAULT_PAGE;
-        }
-
-        if (itemsPerPage == null) {
-            itemsPerPage = UserServiceImpl.DEFAULT_ITEMS_PER_PAGE;
-        }
-
         List<Report> reports = reportService.findAllByLoanId(loanId, page, itemsPerPage).getContent();
         return ResponseEntity.of(Optional.of(reports.stream().map(report -> mapper.toModel(report, ReportModel.class)).collect(Collectors.toList())));
     }
 
+    @ResponseBody
     @GetMapping("/{loanId}/count")
     public ResponseEntity<Integer> getLoansCount(@PathVariable Integer loanId) {
         return ResponseEntity.of(Optional.of(reportService.findAllByLoanIdCount(loanId)));
@@ -154,16 +119,12 @@ public class ReportController {
             @RequestParam("page") Integer page,
             HttpServletResponse response
     ) throws IOException {
-        reportsExcelManager.setReportFormModel(toReportModel(startDate, endDate, reportType, entityId, itemsPerPage, page));
-        reportsExcelManager.createTable();
-
-        response.setContentType("application/vnd.ms-excel");
+        response.setContentType("application/octet-stream");
         response.setHeader("Content-Disposition", "attachment; filename=" + reportType + ".xlsx");
 
-        ServletOutputStream out = response.getOutputStream();
-        out.write(IOUtils.toByteArray(new FileInputStream(reportsExcelManager.getFilePath())));
-        out.flush();
-        out.close();
+        reportsExcelManager.setReportFormModel(toReportModel(startDate, endDate, reportType, entityId, itemsPerPage, page));
+        ByteArrayInputStream stream = reportsExcelManager.createTable();
+        IOUtils.copy(stream, response.getOutputStream());
     }
 
     private ReportFormModel toReportModel(LocalDate startDate, LocalDate endDate, String reportType, Integer entityId, Integer itemsPerPage, Integer page) {

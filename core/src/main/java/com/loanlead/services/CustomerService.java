@@ -71,4 +71,15 @@ public class CustomerService {
     private static Specification<Customer> byColumnNameAndValue(String columnName, String value) {
         return (Root<Customer> root, CriteriaQuery<?> query, CriteriaBuilder builder) -> builder.equal(root.<String>get(columnName), value);
     }
+
+    public Customer findCustomerByPhoneNumber(String phoneNumber) {
+        return customerRepository.findCustomerByPhoneNumber(phoneNumber);
+    }
+
+    public Customer findCustomerByOptionalPhoneNumber(String optionalPhoneNumber) {
+        if (optionalPhoneNumber == null || optionalPhoneNumber.equals("")) {
+            return null;
+        }
+        return customerRepository.findCustomerByPhoneNumber(optionalPhoneNumber);
+    }
 }

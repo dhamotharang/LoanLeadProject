@@ -1,5 +1,4 @@
 export const enum Urls {
-  USER = 'user',
   USERS = 'users',
   USER_FORM = 'user_form',
   BRANCHES = 'branches',
@@ -17,5 +16,4 @@ export const enum Urls {
   REPORTS = 'reports',
   LOGGED_USERS = 'logged',
   HOME = 'home',
-  ADMIN = 'admin'
 }

@@ -20,13 +20,7 @@ import java.util.Arrays;
 @Configuration
 public class StaticResourceConfiguration implements WebMvcConfigurer {
 
-    private static final String DEV = "dev";
     private static final String CHARACTER_ENCODING = "UTF-8";
-    private Environment env;
-
-    public StaticResourceConfiguration(Environment env) {
-        this.env = env;
-    }
 
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
@@ -36,7 +30,7 @@ public class StaticResourceConfiguration implements WebMvcConfigurer {
 
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
-        String profilePath = isDev() ? "web/target" : ".";
+        String profilePath = ".";
         registry
                 .addResourceHandler("/login/**")
                 .addResourceLocations("file:" + profilePath + "/ui/login/");
@@ -58,15 +52,9 @@ public class StaticResourceConfiguration implements WebMvcConfigurer {
     }
 
     @Bean
-    @Description("Thymeleaf template resolver serving HTML for EIM app")
     public FileTemplateResolver loanleadAppFileTemplateResolver() {
         FileTemplateResolver templateResolver = new FileTemplateResolver();
-        if(isDev()){
-            ResourceLoader.add(new File("./web/target/ui/"));
-            templateResolver.setPrefix("./web/target/ui/");
-        } else {
-            templateResolver.setPrefix("./ui/");
-        }
+        templateResolver.setPrefix("./ui/");
         templateResolver.setCacheable(false);
         templateResolver.setSuffix(".html");
         templateResolver.setTemplateMode(TemplateMode.HTML);
@@ -76,7 +64,6 @@ public class StaticResourceConfiguration implements WebMvcConfigurer {
     }
 
     @Bean
-    @Description("Thymeleaf template engine with Spring integration")
     public SpringTemplateEngine templateEngine() {
         SpringTemplateEngine templateEngine = new SpringTemplateEngine();
         templateEngine.addTemplateResolver(loanleadAppFileTemplateResolver());
@@ -84,19 +71,10 @@ public class StaticResourceConfiguration implements WebMvcConfigurer {
     }
 
     @Bean
-    @Description("Thymeleaf view resolver")
     public ThymeleafViewResolver viewResolver() {
         ThymeleafViewResolver viewResolver = new ThymeleafViewResolver();
         viewResolver.setTemplateEngine(templateEngine());
         viewResolver.setCharacterEncoding(CHARACTER_ENCODING);
         return viewResolver;
-    }
-
-    private boolean isDev() {
-        if(env.getActiveProfiles().length != 0){
-            return Arrays.stream(env.getActiveProfiles()).anyMatch(profile -> profile.equalsIgnoreCase(DEV));
-        } else {
-            return false;
-        }
     }
 }

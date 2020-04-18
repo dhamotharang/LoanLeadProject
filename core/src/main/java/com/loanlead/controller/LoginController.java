@@ -79,7 +79,7 @@ public class LoginController {
 
     @GetMapping("/login/error")
     public String login(Model model) {
-        model.addAttribute("loginError", true);
+        model.addAttribute("error", true);
         return LOGIN_HTML;
     }
 
@@ -118,7 +118,7 @@ public class LoginController {
             File destination = new File(imagesDirectory.getAbsolutePath() + "/" + file.getOriginalFilename());
             file.transferTo(destination);
             user.setPicturePath("/images/" + file.getOriginalFilename());
-        } else if (user.getPicturePath() == null){
+        } else {
             user.setPicturePath("/images/no_picture.png");
         }
 

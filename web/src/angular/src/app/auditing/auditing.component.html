@@ -1,8 +1,8 @@
-<loanlead-user-navigation></loanlead-user-navigation>
+<loanlead-navigation></loanlead-navigation>
 <ng-container *ngIf="reports$ | async as reports">
   <div class="border border-secondary m-3 p-3 bg-white rounded animated fadeIn">
     <div class="py-2 page-body-heading justify-content-between">
-      <label class="rounded col-lg-2 col-md-3 col-12 py-2 page-heading d-flex align-items-center justify-content-center"><i class="material-icons">group</i>&nbsp;Customers</label>
+      <label class="rounded col-lg-2 col-md-3 col-12 py-2 page-heading d-flex align-items-center justify-content-center"><i class="material-icons">group</i>&nbsp;Auditing</label>
 
       <div class="col-md-3 col-12">
         <div class="form-group">
@@ -43,7 +43,7 @@
           <td>{{ report.customer }}</td>
           <td>{{ report.stage }}</td>
           <td>{{ report.status }}</td>
-          <td>{{ report.actionedAt }}</td>
+          <td>{{ format(dateInstance(report.actionedAt)) }}</td>
           <td>{{ report.user }}</td>
           <td><a href="javascript:void(0);" data-toggle="modal" data-target="#branchesTableModal" (click)="setUserBranches(report.branches)">Branches</a></td>
           <td>{{ report.comment }}</td>
@@ -55,7 +55,7 @@
       </div>
     </div>
     <div class="py-2">
-      <a [href]="reportLink()" class="btn btn-primary">Report</a>
+      <a [href]="reportLink()" class="btn btn-primary">Export excel</a>
     </div>
   </div>
 </ng-container>

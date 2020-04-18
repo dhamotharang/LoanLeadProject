@@ -1,4 +1,8 @@
-<loanlead-admin-navigation></loanlead-admin-navigation>
+<ngx-spinner bgColor="#FFFFFF" size="medium" color="#2129BF" type="ball-clip-rotate">
+  <p class="text-light" style="font-size: 20px;">Loading...</p>
+</ngx-spinner>
+
+<loanlead-navigation></loanlead-navigation>
 <ng-container *ngIf="entities$ | async as entities">
   <div *ngIf="entities.length" class="border border-secondary m-3 p-3 bg-white rounded animated fadeIn">
     <div class="py-2 page-body-heading justify-content-between">
@@ -49,7 +53,7 @@
           <td>{{ entity.branchesNumber}}</td>
           <td>{{ entity.description }}</td>
           <td>{{ format(dateInstance(entity.createdAt)) }}</td>
-          <td><a [routerLink]="['../entity_form/' + entity.id]">Edit</a></td>
+          <td><a [routerLink]="['/entity_form/' + entity.id]">Edit</a></td>
           <td><input type="checkbox" [checked]="selectAll" (click)="check(entity.id)"></td>
         </tr>
         </tbody>

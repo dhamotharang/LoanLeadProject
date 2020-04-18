@@ -2,10 +2,7 @@ package com.loanlead.models.ui.models;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
-import javax.validation.constraints.Email;
-import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
+import javax.validation.constraints.*;
 import java.time.LocalDateTime;
 
 public class UserModel extends UiModel {
@@ -21,14 +18,16 @@ public class UserModel extends UiModel {
 
     @Size(min = 1, message = "Branches count must be more than 0")
     private String[] branches;
-
-    @Size(min = 1, message = "Roles count must be more than 0")
     private String[] roles;
 
     @NotNull(message = "First Phone Number must not be null")
     @NotEmpty(message = "First Phone Number must not be empty")
+    @Pattern(regexp = "07\\d{8}", message = "Invalid phone number format")
     private String phoneNumber;
+
+    @Pattern(regexp = "07\\d{8}", message = "Invalid phone number format")
     private String optionalPhoneNumber;
+    private String status;
 
     @NotNull(message = "Full name must not be null")
     @NotEmpty(message = "Full name must not be empty")
@@ -48,7 +47,7 @@ public class UserModel extends UiModel {
         branches = new String[]{};
     }
 
-    public UserModel(Integer id, @NotNull(message = "Employee id must not be null") @NotEmpty(message = "Employee id must not be empty") String employeeId, @NotNull(message = "Password must not be null") @NotEmpty(message = "Password must not be empty") String password, @Size(min = 1, message = "Branches count must be more than 0") String[] branches, @Size(min = 1, message = "Roles count must be more than 0") String[] roles, @NotNull(message = "First Phone Number must not be null") @NotEmpty(message = "First Phone Number must not be empty") String phoneNumber, String optionalPhoneNumber, @NotNull(message = "Full name must not be null") @NotEmpty(message = "Full name must not be empty") String fullName, @NotNull(message = "Email must not be null") @NotEmpty(message = "Email must not be empty") @Email(message = "Email must be valid") String email, LocalDateTime createdAt, String picturePath) {
+    public UserModel(Integer id, @NotNull(message = "Employee id must not be null") @NotEmpty(message = "Employee id must not be empty") String employeeId, @NotNull(message = "Password must not be null") @NotEmpty(message = "Password must not be empty") String password, @Size(min = 1, message = "Branches count must be more than 0") String[] branches, String[] roles, @NotNull(message = "First Phone Number must not be null") @NotEmpty(message = "First Phone Number must not be empty") String phoneNumber, String optionalPhoneNumber, String status, @NotNull(message = "Full name must not be null") @NotEmpty(message = "Full name must not be empty") String fullName, @NotNull(message = "Email must not be null") @NotEmpty(message = "Email must not be empty") @Email(message = "Email must be valid") String email, LocalDateTime createdAt, String picturePath) {
         this.id = id;
         this.employeeId = employeeId;
         this.password = password;
@@ -56,6 +55,7 @@ public class UserModel extends UiModel {
         this.roles = roles;
         this.phoneNumber = phoneNumber;
         this.optionalPhoneNumber = optionalPhoneNumber;
+        this.status = status;
         this.fullName = fullName;
         this.email = email;
         this.createdAt = createdAt;
@@ -116,6 +116,14 @@ public class UserModel extends UiModel {
 
     public void setOptionalPhoneNumber(String optionalPhoneNumber) {
         this.optionalPhoneNumber = optionalPhoneNumber;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 
     public String getFullName() {

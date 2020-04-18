@@ -6,7 +6,7 @@ import {FormControl, Validators} from "@angular/forms";
 import {ActivatedRoute, ParamMap} from "@angular/router";
 
 @Component({
-  selector: 'eim-auditing',
+  selector: 'loanlead-auditing',
   templateUrl: './auditing.component.html',
   styleUrls: ['./auditing.component.scss']
 })
@@ -93,6 +93,19 @@ export class AuditingComponent implements OnInit {
 
   reportLink() {
     return `/api/reports/report?loanId=${this.loanId}&page=${this.currentPage ? this.currentPage - 1 : 0}&itemsPerPage=${this.itemsCount.value}`;
+  }
+
+  format(date: Date) {
+    return ((date.getDate() < 10) ? '0' + date.getDate() : date.getDate()) +
+      "/" + ((date.getMonth() < 10) ? '0' + (date.getMonth() + 1) : (date.getMonth() + 1)) +
+      "/" + date.getFullYear() +
+      " " + ((date.getHours() < 10) ? '0' + date.getHours() : date.getHours()) +
+      ":" + ((date.getMinutes() < 10) ? '0' + date.getMinutes() : date.getMinutes()) +
+      ":" + ((date.getSeconds() < 10) ? '0' + date.getSeconds() : date.getSeconds());
+  }
+
+  dateInstance(date: string) {
+    return new Date(date);
   }
 
 }

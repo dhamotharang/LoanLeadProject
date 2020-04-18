@@ -14,8 +14,8 @@ import {UsersModule} from './users/users.module';
 import {LoggedUsersModule} from './logged-users/logged-users.module';
 import {ReportsModule} from './reports/reports.module';
 import {EditProfileModule} from './edit-profile/edit-profile.module';
-import {DashboardModule} from "./dashboard/dashboard.module";
-import {AuditingModule} from "./auditing/auditing.module";
+import {DashboardModule} from './dashboard/dashboard.module';
+import {AuditingModule} from './auditing/auditing.module';
 
 @NgModule({
   declarations: [

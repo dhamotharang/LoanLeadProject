@@ -28,8 +28,8 @@ export class UserService {
     return this.dataService.getCurrentUser();
   }
 
-  save(formData: FormData): Observable<User> {
-    return this.dataService.post<User>(`/api/users`, formData).pipe(map((data) => data.data));
+  save(formData: FormData): Observable<ServerResp<User>> {
+    return this.dataService.post<User>(`/api/users`, formData);
   }
 
   getUser(id: number) {
@@ -63,8 +63,8 @@ export class UserService {
     return this.dataService.get<number>(`/api/users/new/count`).pipe(map((data) => data.data));
   }
 
-  approveUser(id: number): Observable<number> {
-    return this.dataService.post<number>(`/api/users/approve/${id}`, null).pipe(map((data) => data.data));
+  approveUser(user: User): Observable<User> {
+    return this.dataService.post<User>(`/api/users/approve`, user).pipe(map((data) => data.data));
   }
 
   getLoggedUsers(): Observable<User[]> {
@@ -85,8 +85,8 @@ export class UserService {
     return this.dataService.post('/api/users/delete', params);
   }
 
-  logoutUser(): Observable<User[]> {
-    return null;
+  logoutUser(employeeId: string): Observable<ServerResp<User[]>> {
+    return this.dataService.post<User[]>(`/api/users/logout/${employeeId}`, {});
   }
 
   private setUser(data: User): void {

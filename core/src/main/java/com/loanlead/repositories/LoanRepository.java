@@ -28,10 +28,10 @@ public interface LoanRepository extends JpaRepository<Loan, Integer>, JpaSpecifi
     @Query(nativeQuery = true, value = "SELECT * FROM loans WHERE loans.customer_id = :customerId")
     public List<Loan> findLoansByCustomerId(@Param("customerId") Integer customerId);
 
-    @Query(nativeQuery = true, value = "SELECT * FROM loans AS l WHERE l.status NOT IN ('Rejected', 'Disbursed') ORDER BY l.created_at ASC")
+    @Query(nativeQuery = true, value = "SELECT * FROM loans AS l WHERE l.status NOT IN ('Rejected', 'Disbursed') ORDER BY l.created_at DESC")
     public Page<Loan> mainPageLoans(Pageable pageable);
 
-    @Query(nativeQuery = true, value = "SELECT COUNT(*) FROM loans AS l WHERE l.status NOT IN ('Rejected', 'Disbursed') ORDER BY l.created_at ASC")
+    @Query(nativeQuery = true, value = "SELECT COUNT(*) FROM loans AS l WHERE l.status NOT IN ('Rejected', 'Disbursed') ORDER BY l.created_at DESC")
     public Integer mainPageLoansCount();
 
     @Query(value = "SELECT * FROM loans AS l WHERE l.status = :status AND l.created_at BETWEEN :minDate AND :maxDate", nativeQuery = true)

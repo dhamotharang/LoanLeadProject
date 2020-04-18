@@ -2,521 +2,174 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a7078996-457e-4480-82b3-5c06cf623e30" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/4/04a17e730140081a8de2473d4408a5a6e0577ab8" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/9/09986abc402707479f6b33841fbdc3bae2a6817d" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/d/0dd9ca40ce2493412bf1d20874eb2884e0e70947" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/f/2fc88f342e108b93cb7fe5cf623471a9d05135f2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/e/4ed2379850448ab731d2293fa566c39600806cfa" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/5/556f858018edb695bdce0079bf39c3eaed41edd1" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/e/8e2bf16c5e8c36132c25e69ebe8827c0888bf187" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/9/99d442e7244c90d893868a65e4f5607c748314ad" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/a/9aca624e64b553ba9096d478185d0d8e7d582076" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/6/a64539a8a8f3ba05ef3d289181289b3dbfc797ec" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/9/c905c1b8967397ec4380e97296282594405be39b" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/a/da19f2ffa505be4afa9ad884d570b79ed5d628c8" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/3/f3d295a5e7185e802239a50e425b794aad35d90e" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/main/java/com/loanlead/models/ui/models/ReportFormModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/angular/src/app/dashboard/loan-form/loan-form.component.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/angular/src/app/home/home.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/angular/src/app/home/home.component.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/angular/src/app/home/home.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/angular/src/app/home/home.module.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/angular/src/app/loan-products/loan-product-form/loan-product-form.component.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/angular/src/app/users/user-form/user-form.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/9e2292a0-120a-4d83-80c4-6f1e0561f77a.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/9e2292a0-120a-4d83-80c4-6f1e0561f77a.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/b/1badb2f1d9b07bd6952fe35412a776e91ae401fe" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/b/1badb2f1d9b07bd6952fe35412a776e91ae401fe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/d/1da2bd96c163f924955e2fdc2c5611658bcf49eb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/d/1da2bd96c163f924955e2fdc2c5611658bcf49eb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/0/201737ea5430bcf9b630eb7bfb19edc27130911a" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/5/256bd4c01f030ac9616ca46e680a927eca7566b3" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/5/256bd4c01f030ac9616ca46e680a927eca7566b3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/9/29a9050cf91d417ada757e0b022e8b683936a9ea" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/9/29a9050cf91d417ada757e0b022e8b683936a9ea" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/d/2ddc83a11eb4a21ed14f25be7207ec13179411cb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/d/2ddc83a11eb4a21ed14f25be7207ec13179411cb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/0/309e7b964f881b5c62004ad0036fce2052ccd1de" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/0/309e7b964f881b5c62004ad0036fce2052ccd1de" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/2/320c50192b2b1f11028e890fe19058b209e19d12" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/2/320c50192b2b1f11028e890fe19058b209e19d12" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/3/3342e276449181e2a35d49784aa54c88a314896f" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/3/3342e276449181e2a35d49784aa54c88a314896f" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/c/3cd4d1e973651f9314663403ab1cc136e10f89d1" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/c/3cd4d1e973651f9314663403ab1cc136e10f89d1" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/8/481dfd514bca775230715f4e253f75eaec0da97f" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/8/481dfd514bca775230715f4e253f75eaec0da97f" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/5/5522046c5fc16fc32b511717f5be8d589df20ecc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/9/59b8b8127edf412e79762c27e0e3478656e683f4" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/9/59b8b8127edf412e79762c27e0e3478656e683f4" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/e/6ed6d23e5a3ec080fe42dc4caa0044fc56a51ece" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/e/6ed6d23e5a3ec080fe42dc4caa0044fc56a51ece" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/2/72ec5d053f0601f327d014bcb71d9196f4adf975" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/2/72ec5d053f0601f327d014bcb71d9196f4adf975" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/3/830d173cf4b82ca034914316814f3c1820bd5bab" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/3/830d173cf4b82ca034914316814f3c1820bd5bab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/a/8ac24fbe0eb32c58735e5876bf3e37f2855a50e2" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/a/8ac24fbe0eb32c58735e5876bf3e37f2855a50e2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/f/8ff6277fe09828cc5478902cc0d321aa2fcce5ce" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/f/8ff6277fe09828cc5478902cc0d321aa2fcce5ce" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/6/96aeeacf4a9a8edf1c190b9e3516a7cff4dc6b11" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/6/96aeeacf4a9a8edf1c190b9e3516a7cff4dc6b11" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/f/9f1212ccc9149ed5f59b853950654f87ca65a193" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/f/9f1212ccc9149ed5f59b853950654f87ca65a193" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/f/9f304f7d162076af50b44bb5ca5a320c83b62f0e" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/f/9f304f7d162076af50b44bb5ca5a320c83b62f0e" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/4/b4d9cabedb20a8d843bc8e7f7dc4e64d386d5339" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/4/b4d9cabedb20a8d843bc8e7f7dc4e64d386d5339" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/2/c278fe593aeab998aec3313257fbf0015687ca52" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/2/c278fe593aeab998aec3313257fbf0015687ca52" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/a/ca0990a614ca80412b941d044f59de93ac789bb6" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/a/ca0990a614ca80412b941d044f59de93ac789bb6" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/d/cd51078f92c1df5beba26b1960dcb1fda635ccf6" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/d/cd51078f92c1df5beba26b1960dcb1fda635ccf6" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/1/d19c36a107b102c3befd1ebcbfbd3b898ab75ccf" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/1/d19c36a107b102c3befd1ebcbfbd3b898ab75ccf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/1/d1c1d1735fcba0c92e123e9b403e6fe5400145c3" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/1/d1c1d1735fcba0c92e123e9b403e6fe5400145c3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/8/d8fc4995750cbf7aee617d71743f6eb81890f89c" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/8/d8fc4995750cbf7aee617d71743f6eb81890f89c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/9/d93487874d9a79a84704feea7bce6d8789228e15" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/a/da80738d2582dc50ea149cb1aeaf1456a278940f" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/a/da80738d2582dc50ea149cb1aeaf1456a278940f" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/b/db910a01cb3b23d2528b54cfd0c3f9f9bcdba63b" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/b/db910a01cb3b23d2528b54cfd0c3f9f9bcdba63b" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/a/eaabc7a67cbb7fd4360a0447efc136321de10621" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/6/f6f80a794fb3a6cae57249c6f1d9d1ca3972bd9c" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/6/f6f80a794fb3a6cae57249c6f1d9d1ca3972bd9c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/e/fe510c56e5a1e3396bcc5b855c8ee74fa09b8dbf" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/e/fe510c56e5a1e3396bcc5b855c8ee74fa09b8dbf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/core/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/assembly/assembly-core.xml" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/assembly/assembly-core.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/src/main/java/com/loanlead/LoanleadApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/com/loanlead/LoanleadApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/src/main/java/com/loanlead/StaticResourceConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/com/loanlead/StaticResourceConfiguration.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/src/main/java/com/loanlead/UrlAuthenticationSuccessHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/com/loanlead/UrlAuthenticationSuccessHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/src/main/java/com/loanlead/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/com/loanlead/WebSecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/loanlead/auth/SecurityService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/loanlead/auth/CustomHttpSessionBindingListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/com/loanlead/auth/CustomHttpSessionBindingListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/loanlead/auth/CustomLogoutSuccessHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/loanlead/auth/CustomUserDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/com/loanlead/auth/CustomUserDetails.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/loanlead/auth/LoggedUsersMap.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/loanlead/auth/RoleRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/com/loanlead/auth/RoleRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/loanlead/auth/RoleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/com/loanlead/auth/RoleService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/src/main/java/com/loanlead/auth/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/com/loanlead/auth/UserRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/src/main/java/com/loanlead/auth/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/com/loanlead/auth/UserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/src/main/java/com/loanlead/auth/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/com/loanlead/auth/UserServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/src/main/java/com/loanlead/auth/entities/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/com/loanlead/auth/entities/Role.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/loanlead/auth/entities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/com/loanlead/auth/entities/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/loanlead/controller/BranchController.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/com/loanlead/controller/BranchController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/src/main/java/com/loanlead/controller/CustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/com/loanlead/controller/CustomerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/loanlead/controller/EntityController.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/com/loanlead/controller/EntityController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/src/main/java/com/loanlead/controller/LoanController.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/com/loanlead/controller/LoanController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/src/main/java/com/loanlead/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/com/loanlead/controller/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/loanlead/controller/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/com/loanlead/controller/MainController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/src/main/java/com/loanlead/controller/ReportController.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/com/loanlead/controller/ReportController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/loanlead/controller/RoleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/com/loanlead/controller/RoleController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/src/main/java/com/loanlead/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/com/loanlead/controller/UserController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/src/main/java/com/loanlead/excel/AuditExcelManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/com/loanlead/excel/AuditExcelManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/src/main/java/com/loanlead/excel/LoanProductExcelManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/com/loanlead/excel/LoanProductExcelManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/src/main/java/com/loanlead/excel/LoggedUserExcelManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/com/loanlead/excel/LoggedUserExcelManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/src/main/java/com/loanlead/excel/ReportsExcelManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/com/loanlead/excel/ReportsExcelManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/loanlead/models/Branch.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/com/loanlead/models/Branch.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/loanlead/models/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/com/loanlead/models/Customer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/loanlead/models/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/com/loanlead/models/Entity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/loanlead/excel/RoleExcelManager.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/loanlead/excel/UserExcelManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/com/loanlead/excel/UserExcelManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/src/main/java/com/loanlead/models/Loan.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/com/loanlead/models/Loan.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/loanlead/models/LoanProduct.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/com/loanlead/models/LoanProduct.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/loanlead/models/LoanType.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/loanlead/models/PhoneNumber.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/com/loanlead/models/PhoneNumber.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/loanlead/models/Report.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/com/loanlead/models/Report.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/loanlead/models/SecurityType.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/com/loanlead/models/SecurityType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/loanlead/models/ui/ReportModel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/loanlead/models/ui/UserModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/com/loanlead/models/ui/models/UserModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/loanlead/repositories/BranchRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/com/loanlead/repositories/BranchRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/loanlead/models/ui/ModelEntityMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/com/loanlead/models/ui/ModelEntityMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/loanlead/models/ui/models/UserModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/com/loanlead/models/ui/models/UserModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/src/main/java/com/loanlead/repositories/CustomerRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/com/loanlead/repositories/CustomerRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/loanlead/repositories/EntityRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/com/loanlead/repositories/EntityRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/loanlead/repositories/LoanProductRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/com/loanlead/repositories/LoanProductRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/src/main/java/com/loanlead/repositories/LoanRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/com/loanlead/repositories/LoanRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/loanlead/repositories/PhoneNumberRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/com/loanlead/repositories/PhoneNumberRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/loanlead/repositories/ReportRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/com/loanlead/repositories/ReportRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/loanlead/services/BranchService.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/com/loanlead/services/BranchService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/src/main/java/com/loanlead/services/CustomerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/com/loanlead/services/CustomerService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/loanlead/services/EntityService.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/com/loanlead/services/EntityService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/loanlead/services/LoanProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/com/loanlead/services/LoanProductService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/src/main/java/com/loanlead/services/LoanService.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/com/loanlead/services/LoanService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/loanlead/services/PhoneNumberService.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/com/loanlead/services/PhoneNumberService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/loanlead/services/ReportService.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/com/loanlead/services/ReportService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/scripts/start.bat" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/scripts/start.bat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/src/test/groovy/com/loanlead/auth/AuthenticationIntegrationTest.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/test/groovy/com/loanlead/auth/AuthenticationIntegrationTest.groovy" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/target/classes/com/loanlead/LoanleadApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/classes/com/loanlead/LoanleadApplication.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/target/classes/com/loanlead/StaticResourceConfiguration.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/classes/com/loanlead/StaticResourceConfiguration.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/target/classes/com/loanlead/UrlAuthenticationSuccessHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/classes/com/loanlead/UrlAuthenticationSuccessHandler.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/target/classes/com/loanlead/WebSecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/classes/com/loanlead/WebSecurityConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/classes/com/loanlead/auth/SecurityService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/classes/com/loanlead/auth/CustomHttpSessionBindingListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/classes/com/loanlead/auth/CustomHttpSessionBindingListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/classes/com/loanlead/auth/CustomLogoutSuccessHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/classes/com/loanlead/auth/CustomLogoutSuccessHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/classes/com/loanlead/auth/CustomUserDetails.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/classes/com/loanlead/auth/CustomUserDetails.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/classes/com/loanlead/auth/LoggedUsersMap.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/classes/com/loanlead/auth/RoleRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/classes/com/loanlead/auth/RoleRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/classes/com/loanlead/auth/RoleService.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/classes/com/loanlead/auth/RoleService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/target/classes/com/loanlead/auth/UserRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/classes/com/loanlead/auth/UserRepository.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/target/classes/com/loanlead/auth/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/classes/com/loanlead/auth/UserService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/target/classes/com/loanlead/auth/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/classes/com/loanlead/auth/UserServiceImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/target/classes/com/loanlead/auth/entities/Role.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/classes/com/loanlead/auth/entities/Role.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/classes/com/loanlead/auth/entities/User$UserBuilder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/classes/com/loanlead/auth/entities/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/classes/com/loanlead/auth/entities/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/classes/com/loanlead/controller/BranchController.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/classes/com/loanlead/controller/BranchController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/target/classes/com/loanlead/controller/CustomerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/classes/com/loanlead/controller/CustomerController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/classes/com/loanlead/controller/EntityController.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/classes/com/loanlead/controller/EntityController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/target/classes/com/loanlead/controller/LoanController.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/classes/com/loanlead/controller/LoanController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/target/classes/com/loanlead/controller/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/classes/com/loanlead/controller/LoginController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/classes/com/loanlead/controller/MainController.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/classes/com/loanlead/controller/MainController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/target/classes/com/loanlead/controller/ReportController.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/classes/com/loanlead/controller/ReportController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/classes/com/loanlead/controller/RoleController.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/classes/com/loanlead/controller/RoleController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/target/classes/com/loanlead/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/classes/com/loanlead/controller/UserController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/target/classes/com/loanlead/excel/AuditExcelManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/classes/com/loanlead/excel/AuditExcelManager.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/target/classes/com/loanlead/excel/LoanProductExcelManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/classes/com/loanlead/excel/LoanProductExcelManager.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/target/classes/com/loanlead/excel/LoggedUserExcelManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/classes/com/loanlead/excel/LoggedUserExcelManager.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/target/classes/com/loanlead/excel/ReportsExcelManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/classes/com/loanlead/excel/ReportsExcelManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/classes/com/loanlead/models/Branch.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/classes/com/loanlead/models/Branch.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/classes/com/loanlead/models/Customer.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/classes/com/loanlead/models/Customer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/classes/com/loanlead/models/Entity.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/classes/com/loanlead/models/Entity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/classes/com/loanlead/excel/RoleExcelManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/classes/com/loanlead/excel/UserExcelManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/classes/com/loanlead/excel/UserExcelManager.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/target/classes/com/loanlead/models/Loan.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/classes/com/loanlead/models/Loan.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/classes/com/loanlead/models/LoanProduct.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/classes/com/loanlead/models/LoanProduct.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/classes/com/loanlead/models/LoanType.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/classes/com/loanlead/models/PhoneNumber.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/classes/com/loanlead/models/PhoneNumber.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/classes/com/loanlead/models/Report.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/classes/com/loanlead/models/Report.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/classes/com/loanlead/models/SecurityType.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/classes/com/loanlead/models/SecurityType.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/classes/com/loanlead/models/ui/ReportModel.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/classes/com/loanlead/models/ui/UserModel.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/classes/com/loanlead/repositories/BranchRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/classes/com/loanlead/repositories/BranchRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/classes/com/loanlead/models/ui/ModelEntityMapper$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/classes/com/loanlead/models/ui/ModelEntityMapper$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/classes/com/loanlead/models/ui/models/UserModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/classes/com/loanlead/models/ui/models/UserModel.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/target/classes/com/loanlead/repositories/CustomerRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/classes/com/loanlead/repositories/CustomerRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/classes/com/loanlead/repositories/EntityRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/classes/com/loanlead/repositories/EntityRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/classes/com/loanlead/repositories/LoanProductRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/classes/com/loanlead/repositories/LoanProductRepository.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/target/classes/com/loanlead/repositories/LoanRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/classes/com/loanlead/repositories/LoanRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/classes/com/loanlead/repositories/PhoneNumberRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/classes/com/loanlead/repositories/PhoneNumberRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/classes/com/loanlead/repositories/ReportRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/classes/com/loanlead/repositories/ReportRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/classes/com/loanlead/services/BranchService.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/classes/com/loanlead/services/BranchService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/target/classes/com/loanlead/services/CustomerService.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/classes/com/loanlead/services/CustomerService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/classes/com/loanlead/services/EntityService.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/classes/com/loanlead/services/EntityService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/classes/com/loanlead/services/LoanProductService.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/classes/com/loanlead/services/LoanProductService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/target/classes/com/loanlead/services/LoanService.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/classes/com/loanlead/services/LoanService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/classes/com/loanlead/services/PhoneNumberService.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/classes/com/loanlead/services/PhoneNumberService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/classes/com/loanlead/services/ReportService.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/classes/com/loanlead/services/ReportService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/generated-sources/groovy-stubs/test/com/loanlead/auth/AuthenticationIntegrationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/generated-sources/groovy-stubs/test/com/loanlead/auth/AuthenticationIntegrationTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT.zip" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT.zip" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/config/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/FastInfoset-1.2.15.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/HikariCP-3.4.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/ant-1.9.13.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/ant-antlr-1.9.13.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/ant-launcher-1.9.13.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/antlr-2.7.7.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/aspectjweaver-1.9.5.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/attoparser-2.0.5.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/byte-buddy-1.10.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/classmate-1.5.1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/commons-cli-1.4.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/commons-codec-1.10.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/commons-collections4-4.1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/commons-fileupload-1.3.1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/commons-io-2.4.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/curvesapi-1.04.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/dom4j-2.1.1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/groovy-2.5.9.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/groovy-all-2.5.9.pom" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/groovy-ant-2.5.9.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/groovy-cli-commons-2.5.9.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/groovy-cli-picocli-2.5.9.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/groovy-console-2.5.9.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/groovy-datetime-2.5.9.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/groovy-docgenerator-2.5.9.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/groovy-groovydoc-2.5.9.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/groovy-groovysh-2.5.9.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/groovy-jmx-2.5.9.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/groovy-json-2.5.9.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/groovy-jsr223-2.5.9.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/groovy-macro-2.5.9.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/groovy-nio-2.5.9.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/groovy-servlet-2.5.9.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/groovy-sql-2.5.9.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/groovy-swing-2.5.9.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/groovy-templates-2.5.9.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/groovy-test-2.5.4.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/groovy-xml-2.5.9.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/gson-2.8.5.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/hamcrest-core-1.3.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/hibernate-commons-annotations-5.1.0.Final.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/hibernate-core-5.4.10.Final.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/hibernate-validator-6.0.18.Final.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/istack-commons-runtime-3.0.7.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/jackson-annotations-2.10.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/jackson-core-2.10.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/jackson-databind-2.10.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/jackson-datatype-jdk8-2.10.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/jackson-datatype-jsr310-2.10.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/jackson-module-parameter-names-2.10.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/jakarta.activation-api-1.2.1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/jakarta.annotation-api-1.3.5.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/jakarta.persistence-api-2.2.3.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/jakarta.transaction-api-1.3.3.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/jakarta.validation-api-2.0.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/jandex-2.1.1.Final.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/javassist-3.24.0-GA.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/jaxb-runtime-2.3.1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/jboss-logging-3.3.2.Final.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/jline-2.14.6.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/json-20180813.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/jul-to-slf4j-1.7.30.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/junit-4.12.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/loanlead-core-1.0-SNAPSHOT.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/loanlead-web-1.0-SNAPSHOT.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/log4j-api-2.12.1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/log4j-core-2.12.1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/log4j-jul-2.12.1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/log4j-slf4j-impl-2.12.1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/mysql-connector-java-5.1.6.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/picocli-4.0.1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/poi-3.15.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/poi-ooxml-3.15.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/poi-ooxml-schemas-3.15.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/qdox-1.12.1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/slf4j-api-1.7.25.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/snakeyaml-1.25.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/spock-core-1.3-groovy-2.5.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/spring-aop-5.2.3.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/spring-aspects-5.2.3.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/spring-beans-5.2.3.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/spring-boot-2.2.4.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/spring-boot-autoconfigure-2.2.4.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/spring-boot-devtools-2.2.4.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/spring-boot-starter-2.2.4.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/spring-boot-starter-aop-2.2.4.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/spring-boot-starter-data-jpa-2.2.4.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/spring-boot-starter-jdbc-2.2.4.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/spring-boot-starter-json-2.2.4.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/spring-boot-starter-log4j2-2.2.4.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/spring-boot-starter-security-2.2.4.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/spring-boot-starter-thymeleaf-2.2.4.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/spring-boot-starter-tomcat-2.2.4.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/spring-boot-starter-validation-2.2.4.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/spring-boot-starter-web-2.2.4.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/spring-boot-test-2.2.4.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/spring-boot-test-autoconfigure-2.2.4.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/spring-context-5.2.3.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/spring-core-5.2.3.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/spring-data-commons-2.2.4.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/spring-data-jpa-2.2.4.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/spring-expression-5.2.3.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/spring-jcl-5.2.3.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/spring-jdbc-5.2.3.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/spring-orm-5.2.3.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/spring-security-config-5.2.1.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/spring-security-core-5.2.2.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/spring-security-test-5.2.2.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/spring-security-web-5.2.1.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/spring-test-5.2.3.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/spring-tx-5.2.3.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/spring-web-5.2.3.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/spring-webmvc-5.2.3.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/stax-api-1.0.1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/stax-ex-1.8.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/staxon-1.3.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/thymeleaf-3.0.11.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/thymeleaf-extras-java8time-3.0.4.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/thymeleaf-extras-springsecurity5-3.0.4.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/thymeleaf-spring5-3.0.11.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/tomcat-embed-core-9.0.30.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/tomcat-embed-el-9.0.30.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/tomcat-embed-websocket-9.0.30.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/txw2-2.3.1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/unbescape-1.1.6.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/lib/xmlbeans-2.6.0.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/start.bat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/start.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/assets/images/config.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/assets/images/content_packs.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/assets/images/database.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/assets/images/email.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/assets/images/env.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/assets/images/file_domains.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/assets/images/jms.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/assets/images/license.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/assets/images/logout.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/assets/images/resource.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/assets/images/server.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/assets/images/user.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/assets/mock/resources.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/assets/mock/workspace.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/color.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/fa-brands-400.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/fa-brands-400.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/fa-brands-400.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/fa-brands-400.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/fa-brands-400.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/fa-regular-400.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/fa-regular-400.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/fa-regular-400.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/fa-regular-400.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/fa-regular-400.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/fa-solid-900.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/fa-solid-900.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/fa-solid-900.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/fa-solid-900.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/fa-solid-900.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/hue.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/line.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/loading.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/main-es2015.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/main-es2015.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/main-es5.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/main-es5.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/open-sans-v15-latin-300.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/open-sans-v15-latin-300.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/open-sans-v15-latin-300.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/open-sans-v15-latin-300.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/open-sans-v15-latin-300.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/open-sans-v15-latin-700.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/open-sans-v15-latin-700.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/open-sans-v15-latin-700.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/open-sans-v15-latin-700.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/open-sans-v15-latin-700.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/open-sans-v15-latin-regular.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/open-sans-v15-latin-regular.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/open-sans-v15-latin-regular.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/open-sans-v15-latin-regular.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/open-sans-v15-latin-regular.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/password-meter.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/polyfills-es2015.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/polyfills-es2015.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/polyfills-es5.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/polyfills-es5.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/primeicons.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/primeicons.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/primeicons.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/primeicons.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/runtime-es2015.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/runtime-es2015.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/runtime-es5.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/runtime-es5.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/scripts.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/scripts.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/styles-es2015.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/styles-es2015.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/styles-es5.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/styles-es5.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/vendor-es2015.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/vendor-es2015.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/vendor-es5.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/angular/vendor-es5.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/bootstrap-4.1.1/css/bootstrap-grid.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/bootstrap-4.1.1/css/bootstrap-grid.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/bootstrap-4.1.1/css/bootstrap-grid.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/bootstrap-4.1.1/css/bootstrap-grid.min.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/bootstrap-4.1.1/css/bootstrap-reboot.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/bootstrap-4.1.1/css/bootstrap-reboot.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/bootstrap-4.1.1/css/bootstrap-reboot.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/bootstrap-4.1.1/css/bootstrap-reboot.min.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/bootstrap-4.1.1/css/bootstrap.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/bootstrap-4.1.1/css/bootstrap.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/bootstrap-4.1.1/css/bootstrap.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/bootstrap-4.1.1/css/bootstrap.min.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/bootstrap-4.1.1/js/bootstrap.bundle.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/bootstrap-4.1.1/js/bootstrap.bundle.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/bootstrap-4.1.1/js/bootstrap.bundle.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/bootstrap-4.1.1/js/bootstrap.bundle.min.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/bootstrap-4.1.1/js/bootstrap.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/bootstrap-4.1.1/js/bootstrap.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/bootstrap-4.1.1/js/bootstrap.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/bootstrap-4.1.1/js/bootstrap.min.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/css/animate.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/css/blade-pagination.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/css/chat.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/css/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/images/3szBftMD1AA.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/images/Sms integration.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/images/attachment.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/images/file.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/images/no_logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/images/no_picture.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/images/sms integration2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/images/sms.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/js/chat.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/js/items-per-page.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/js/jquery-3.3.1.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/js/jquery.blade-pagination.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/js/loan-form.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/js/popper.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/js/reports.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/login/login.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/login/styles/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/loanlead-core-1.0-SNAPSHOT/ui/sign-up/sign_up.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/core/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/maven-archiver/pom.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/target/test-classes/com/loanlead/auth/AuthenticationIntegrationTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/test-classes/com/loanlead/auth/AuthenticationIntegrationTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/angular/node/node_modules/npm/node_modules/make-fetch-happen/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/angular/node/node_modules/npm/node_modules/make-fetch-happen/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/angular/node/node_modules/npm/node_modules/npm-registry-fetch/node_modules/make-fetch-happen/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/angular/node/node_modules/npm/node_modules/npm-registry-fetch/node_modules/make-fetch-happen/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/angular/angular.json" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/angular/angular.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/angular/e2e/src/app.po.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/angular/e2e/src/app.po.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/src/angular/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/angular/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/src/angular/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/angular/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/admin-home/admin-home.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/admin-home/admin-home.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/9/094f29d662b28ba37874bb4300bc36e0b19dc326" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/admin-home/admin-home.component.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/admin-home/admin-home.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/admin-home/admin-home.module.ts" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/angular/src/app/app-routing.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/angular/src/app/app.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/auditing/auditing.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/angular/src/app/auditing/auditing.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/auditing/auditing.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/angular/src/app/auditing/auditing.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/branch-form/branch-form.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/branch-form/branch-form.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/c/1cd2a7bb17c6a61960a340919619f3050b623eed" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/branch-form/branch-form.component.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/branch-form/branch-form.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/auditing/auditing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/angular/src/app/auditing/auditing.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/branches/branch-form/branch-form.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/angular/src/app/branches/branch-form/branch-form.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/branches/branch-form/branch-form.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/angular/src/app/branches/branch-form/branch-form.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/branches/branches.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/angular/src/app/branches/branches.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/branches/branches.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/angular/src/app/branches/branches.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/branches/branches.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/angular/src/app/branches/branches.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/config/routes/constants.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/angular/src/app/config/routes/constants.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/core/services/data.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/angular/src/app/core/services/data.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/core/services/entities.service.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/angular/src/app/core/services/entities.service.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/core/services/entities.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/angular/src/app/core/services/entity.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/core/services/environment.service.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/core/services/environment.service.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/core/services/products.service.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/core/services/products.service.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/core/services/servers.service.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/core/services/servers.service.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/core/services/loan.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/angular/src/app/core/services/loan.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/core/services/user.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/angular/src/app/core/services/user.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/customer-form/customer-form.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/angular/src/app/customers/customer-form/customer-form.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/customer-form/customer-form.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/4/442d32084e94b3a833841a87ecac8a80b0e8bac4" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/customer-form/customer-form.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/angular/src/app/customers/customer-form/customer-form.component.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/customer-form/customer-form.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/angular/src/app/customers/customer-form/customer-form.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/customers/customer-form/customer-form.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/angular/src/app/customers/customer-form/customer-form.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/customers/customer-form/customer-form.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/angular/src/app/customers/customer-form/customer-form.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/customers/customers.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/angular/src/app/customers/customers.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/customers/customers.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/angular/src/app/customers/customers.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/customers/customers.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/angular/src/app/customers/customers.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/dashboard/dashboard.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/angular/src/app/dashboard/dashboard.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/dashboard/dashboard.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/angular/src/app/dashboard/dashboard.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/dashboard/dashboard.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/angular/src/app/dashboard/dashboard.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/dashboard/loan-form/loan-form.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/angular/src/app/dashboard/loan-form/loan-form.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/dashboard/loan-form/loan-form.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/angular/src/app/dashboard/loan-form/loan-form.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/edit-profile/edit-profile.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/angular/src/app/edit-profile/edit-profile.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/edit-profile/edit-profile.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/angular/src/app/edit-profile/edit-profile.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/edit-profile/edit-profile.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/angular/src/app/edit-profile/edit-profile.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/entities/entities.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/angular/src/app/entities/entities.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/entities/entities.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/angular/src/app/entities/entities.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/entity-form/entity-form.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/entity-form/entity-form.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/a/4a30316906fbcbd0a392d9f7bfdf6ede818cb280" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/entity-form/entity-form.component.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/entity-form/entity-form.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/loan-form/loan-form.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/angular/src/app/dashboard/loan-form/loan-form.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/loan-form/loan-form.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/b/6b8dcb03f6b89685cf8316b20c6455d09970ff88" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/loan-form/loan-form.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/angular/src/app/dashboard/loan-form/loan-form.component.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/loan-form/loan-form.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/angular/src/app/dashboard/loan-form/loan-form.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/loan-product-form/loan-product-form.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/angular/src/app/loan-products/loan-product-form/loan-product-form.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/loan-product-form/loan-product-form.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/c/7c5b9d6d3369ef8908276b8e2c7ebe8ad92fa88d" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/loan-product-form/loan-product-form.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/angular/src/app/loan-products/loan-product-form/loan-product-form.component.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/loan-product-form/loan-product-form.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/angular/src/app/loan-products/loan-product-form/loan-product-form.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/entities/entities.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/angular/src/app/entities/entities.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/entities/entity-form/entity-form.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/angular/src/app/entities/entity-form/entity-form.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/entities/entity-form/entity-form.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/angular/src/app/entities/entity-form/entity-form.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/home/home.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/angular/src/app/home/home.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/home/home.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/angular/src/app/home/home.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/home/home.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/angular/src/app/home/home.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/loan-products/loan-product-form/loan-product-form.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/angular/src/app/loan-products/loan-product-form/loan-product-form.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/loan-products/loan-product-form/loan-product-form.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/angular/src/app/loan-products/loan-product-form/loan-product-form.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/loan-products/loan-products.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/angular/src/app/loan-products/loan-products.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/loan-products/loan-products.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/angular/src/app/loan-products/loan-products.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/model/branch.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/angular/src/app/model/branch.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/model/entity.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/angular/src/app/model/entity.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/model/environment/environment.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/model/servers/server-model.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/model/ui/components/footer.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/loan-products/loan-products.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/angular/src/app/loan-products/loan-products.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/logged-users/logged-users.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/angular/src/app/logged-users/logged-users.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/logged-users/logged-users.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/angular/src/app/logged-users/logged-users.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/logged-users/logged-users.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/angular/src/app/logged-users/logged-users.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/model/component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/angular/src/app/model/component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/model/user.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/angular/src/app/model/user.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/reports/reports.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/angular/src/app/reports/reports.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/reports/reports.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/angular/src/app/reports/reports.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/ui/admin-navigation/admin-navigation.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/angular/src/app/ui/admin-navigation/admin-navigation.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/ui/admin-navigation/admin-navigation.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/angular/src/app/ui/admin-navigation/admin-navigation.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/ui/navigable/navbar/navbar.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/ui/navigable/navbar/navbar.component.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/ui/navigable/navbar/navbar.component.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/ui/navigable/navbar/navbar.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/ui/navigable/navigable.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/ui/navigable/navigable.component.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/ui/navigable/navigable.component.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/ui/navigable/navigable.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/ui/ui.module.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/ui/user-navigation/user-navigation.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/angular/src/app/ui/user-navigation/user-navigation.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/ui/user-navigation/user-navigation.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/angular/src/app/ui/user-navigation/user-navigation.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/user-form/user-form.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/angular/src/app/users/user-form/user-form.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/user-form/user-form.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/b/9bb3ff9df2d8417c882c17babe04052740ab5ba3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/user-form/user-form.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/angular/src/app/users/user-form/user-form.component.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/user-form/user-form.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/angular/src/app/users/user-form/user-form.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/user-home/user-home.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/user-home/user-home.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/angular/src/app/customers/customer-form/customer-form.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/user-home/user-home.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/angular/src/app/home/home.component.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/user-home/user-home.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/user-home/user-home.module.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/reports/reports.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/angular/src/app/reports/reports.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/ui/admin-navigation/admin-navigation.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/angular/src/app/ui/navigation/navigation.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/ui/admin-navigation/admin-navigation.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/angular/src/app/ui/navigation/navigation.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/ui/admin-navigation/admin-navigation.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/angular/src/app/ui/navigation/navigation.component.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/ui/admin-navigation/admin-navigation.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/angular/src/app/ui/navigation/navigation.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/ui/admin-navigation/admin-navigation.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/angular/src/app/ui/navigation/navigation.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/ui/user-navigation/user-navigation.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/ui/user-navigation/user-navigation.component.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/ui/user-navigation/user-navigation.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/ui/user-navigation/user-navigation.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/ui/user-navigation/user-navigation.module.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/users/user-form/user-form.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/angular/src/app/users/user-form/user-form.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/users/user-form/user-form.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/angular/src/app/users/user-form/user-form.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/users/users.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/angular/src/app/users/users.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/users/users.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/angular/src/app/users/users.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/angular/src/styles.scss" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/angular/src/styles.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/static/bootstrap-4.1.1/css/bootstrap-grid.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/static/bootstrap-4.1.1/css/bootstrap-grid.min.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/static/bootstrap-4.1.1/css/bootstrap-reboot.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/static/bootstrap-4.1.1/css/bootstrap-reboot.min.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/static/bootstrap-4.1.1/css/bootstrap.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/static/bootstrap-4.1.1/css/bootstrap.min.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/angular/src/app/users/users.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/angular/src/app/users/users.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/angular/src/assets/mock/workspace.json" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/angular/src/assets/mock/workspace.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/src/static/login/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/static/login/login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/src/static/sign-up/sign_up.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/static/sign-up/sign_up.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/target/loanlead-web-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/web/target/loanlead-web-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/target/loanlead-web-1.0-SNAPSHOT.zip" beforeDir="false" afterPath="$PROJECT_DIR$/web/target/loanlead-web-1.0-SNAPSHOT.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/web/target/maven-archiver/pom.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/target/resources/dist/angular/assets/mock/workspace.json" beforeDir="false" afterPath="$PROJECT_DIR$/web/target/resources/dist/angular/assets/mock/workspace.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/target/resources/dist/angular/main-es2015.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/target/resources/dist/angular/main-es2015.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/target/resources/dist/angular/main-es2015.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/web/target/resources/dist/angular/main-es2015.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/target/resources/dist/angular/main-es5.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/target/resources/dist/angular/main-es5.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/target/resources/dist/angular/main-es5.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/web/target/resources/dist/angular/main-es5.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/target/resources/dist/angular/vendor-es2015.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/target/resources/dist/angular/vendor-es2015.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/target/resources/dist/angular/vendor-es2015.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/web/target/resources/dist/angular/vendor-es2015.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/target/resources/dist/angular/vendor-es5.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/target/resources/dist/angular/vendor-es5.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/target/resources/dist/angular/vendor-es5.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/web/target/resources/dist/angular/vendor-es5.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/target/ui/angular/assets/mock/workspace.json" beforeDir="false" afterPath="$PROJECT_DIR$/web/target/ui/angular/assets/mock/workspace.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/target/ui/angular/main-es2015.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/target/ui/angular/main-es2015.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/target/ui/angular/main-es2015.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/web/target/ui/angular/main-es2015.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/target/ui/angular/main-es5.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/target/ui/angular/main-es5.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/target/ui/angular/main-es5.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/web/target/ui/angular/main-es5.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/target/ui/angular/vendor-es2015.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/target/ui/angular/vendor-es2015.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/target/ui/angular/vendor-es2015.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/web/target/ui/angular/vendor-es2015.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/target/ui/angular/vendor-es5.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/target/ui/angular/vendor-es5.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/target/ui/angular/vendor-es5.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/web/target/ui/angular/vendor-es5.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/target/ui/login/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/target/ui/login/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/target/ui/sign-up/sign_up.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/target/ui/sign-up/sign_up.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -778,7 +431,7 @@
       <workItem from="1584058841845" duration="64744000" />
       <workItem from="1584428255699" duration="100797000" />
       <workItem from="1584850974711" duration="53878000" />
-      <workItem from="1585068703836" duration="84693000" />
+      <workItem from="1585068703836" duration="170858000" />
     </task>
     <servers />
   </component>
@@ -790,38 +443,42 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="872" y="358" key="#Auto_Import/0.0.2560.1400@0.0.2560.1400" timestamp="1584938843322" />
-    <state x="1085" y="416" key="#com.intellij.ide.util.MemberChooser" timestamp="1585298596441">
+    <state x="1085" y="416" key="#com.intellij.ide.util.MemberChooser" timestamp="1585809275378">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="1085" y="416" key="#com.intellij.ide.util.MemberChooser/0.0.2560.1400@0.0.2560.1400" timestamp="1585298596441" />
+    <state x="1085" y="416" key="#com.intellij.ide.util.MemberChooser/0.0.2560.1400@0.0.2560.1400" timestamp="1585809275378" />
+    <state x="1076" y="559" width="420" height="288" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1585552692834">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1076" y="559" width="420" height="288" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.2560.1400@0.0.2560.1400" timestamp="1585552692834" />
     <state x="544" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1584923841620">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="544" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1584923841620" />
-    <state x="1010" y="447" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1585210097934">
+    <state x="1010" y="447" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1585811084185">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="1010" y="447" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1585210097934" />
+    <state x="1010" y="447" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1585811084185" />
     <state x="1035" y="403" key="#xdebugger.evaluate" timestamp="1584934578845">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1035" y="403" key="#xdebugger.evaluate/0.0.2560.1400@0.0.2560.1400" timestamp="1584934578845" />
-    <state width="2517" height="310" key="GridCell.Tab.0.bottom" timestamp="1585299355131">
+    <state width="2517" height="310" key="GridCell.Tab.0.bottom" timestamp="1586268288206">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="310" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1585299355131" />
-    <state width="2517" height="310" key="GridCell.Tab.0.center" timestamp="1585299355131">
+    <state width="2517" height="310" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1586268288206" />
+    <state width="2517" height="310" key="GridCell.Tab.0.center" timestamp="1586268288206">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="310" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1585299355131" />
-    <state width="2517" height="310" key="GridCell.Tab.0.left" timestamp="1585299355131">
+    <state width="2517" height="310" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1586268288206" />
+    <state width="2517" height="310" key="GridCell.Tab.0.left" timestamp="1586268288206">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="310" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1585299355131" />
-    <state width="2517" height="310" key="GridCell.Tab.0.right" timestamp="1585299355131">
+    <state width="2517" height="310" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1586268288206" />
+    <state width="2517" height="310" key="GridCell.Tab.0.right" timestamp="1586268288206">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="310" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1585299355131" />
+    <state width="2517" height="310" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1586268288206" />
     <state width="2517" height="492" key="GridCell.Tab.1.bottom" timestamp="1584934638788">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -838,14 +495,14 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="2517" height="492" key="GridCell.Tab.1.right/0.0.2560.1400@0.0.2560.1400" timestamp="1584934638788" />
-    <state x="810" y="355" key="Maven.ArtifactSearchDialog" timestamp="1585298190911">
+    <state x="810" y="355" key="Maven.ArtifactSearchDialog" timestamp="1585862311299">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="810" y="355" key="Maven.ArtifactSearchDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1585298190911" />
-    <state x="92" y="92" width="2376" height="1216" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1584939025649">
+    <state x="810" y="355" key="Maven.ArtifactSearchDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1585862311299" />
+    <state x="92" y="92" width="2376" height="1216" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1585379764342">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="92" y="92" width="2376" height="1216" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1584939025649" />
+    <state x="92" y="92" width="2376" height="1216" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1585379764342" />
     <state x="924" y="315" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1585274240176">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -854,22 +511,22 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1089" y="617" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.2560.1400@0.0.2560.1400" timestamp="1584934990170" />
-    <state x="976" y="298" width="1221" height="804" key="find.popup" timestamp="1585297449045">
+    <state x="935" y="293" width="1221" height="804" key="find.popup" timestamp="1586157182507">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="976" y="298" width="1221" height="804" key="find.popup/0.0.2560.1400@0.0.2560.1400" timestamp="1585297449045" />
+    <state x="935" y="293" width="1221" height="804" key="find.popup/0.0.2560.1400@0.0.2560.1400" timestamp="1586157182507" />
     <state x="1143" y="626" width="348" height="298" key="org.angular.cli.generate" timestamp="1585275371847">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1143" y="626" width="348" height="298" key="org.angular.cli.generate/0.0.2560.1400@0.0.2560.1400" timestamp="1585275371847" />
-    <state x="936" y="330" key="run.anything.popup" timestamp="1585278761392">
+    <state x="936" y="330" width="672" height="677" key="run.anything.popup" timestamp="1586069504917">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="936" y="330" key="run.anything.popup/0.0.2560.1400@0.0.2560.1400" timestamp="1585278761392" />
-    <state x="943" y="315" width="672" height="678" key="search.everywhere.popup" timestamp="1584925931714">
+    <state x="936" y="330" width="672" height="677" key="run.anything.popup/0.0.2560.1400@0.0.2560.1400" timestamp="1586069504917" />
+    <state x="943" y="315" width="672" height="678" key="search.everywhere.popup" timestamp="1586154568769">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="943" y="315" width="672" height="678" key="search.everywhere.popup/0.0.2560.1400@0.0.2560.1400" timestamp="1584925931714" />
+    <state x="943" y="315" width="672" height="678" key="search.everywhere.popup/0.0.2560.1400@0.0.2560.1400" timestamp="1586154568769" />
   </component>
   <component name="masterDetails">
     <states>

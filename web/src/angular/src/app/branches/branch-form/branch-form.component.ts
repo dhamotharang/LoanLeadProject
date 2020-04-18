@@ -16,7 +16,7 @@ const toSpaceBetween = (s: string): string => {
 };
 
 @Component({
-  selector: 'eim-branch-form',
+  selector: 'loanlead-branch-form',
   templateUrl: './branch-form.component.html',
   styleUrls: ['./branch-form.component.scss']
 })
@@ -190,7 +190,7 @@ export class BranchFormComponent implements OnInit {
       const observable: Observable<Branch> = this.branchService.save(branch);
       observable
         .subscribe((data: Branch) => {
-          this.router.navigate(['/admin/branches']);
+          this.router.navigate(['/branches']);
         }, () => {
           alert("Error while saving branch");
         });

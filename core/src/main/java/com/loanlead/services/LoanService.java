@@ -48,12 +48,6 @@ public class LoanService {
 
     public Loan save(Loan loan) {
         loan = this.loanRepository.save(loan);
-
-        Report report = loan.toReport();
-        report.setStatus(loan.getId() != null ? "Edited" : "Created");
-        report.setComment("Loan created");
-        reportRepository.save(report);
-
         return loan;
     }
 

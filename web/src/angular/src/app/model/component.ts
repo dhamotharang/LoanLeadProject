@@ -1,4 +1,4 @@
-import {EimUiConfigModel} from "./eim-ui-config";
+import {EimUiConfigModel} from "./loanlead-ui-config";
 
 export interface EimComponentModel {
   id?: string;

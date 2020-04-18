@@ -70,10 +70,6 @@ export class LoanService {
     return this.dataService.get<number>(`/api/loans/comprehensive/report/count`, params).pipe(map((data) => data.data));
   }
 
-  reportSpecific(reportForm: ReportForm) {
-    this.dataService.post(`/api/reports/specific`, reportForm).pipe(map((data) => data.data));
-  }
-
   getForwardedLoans(): Observable<Loan[]> {
     return this.dataService.get<Loan[]>(`/api/loans/forwarded`).pipe(map((data) => data.data));
   }

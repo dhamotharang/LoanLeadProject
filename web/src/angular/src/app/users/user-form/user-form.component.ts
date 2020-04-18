@@ -8,6 +8,7 @@ import {UserService} from '../../core/services/user.service';
 import {RoleService} from '../../core/services/role.service';
 import {BranchService} from '../../core/services/branch.service';
 import {Branch} from '../../model/branch';
+import {ServerResp} from "../../model/server-resp";
 
 const toSpaceBetween = (s: string): string => {
   return s.replace(
@@ -17,7 +18,7 @@ const toSpaceBetween = (s: string): string => {
 };
 
 @Component({
-  selector: 'eim-user-form',
+  selector: 'loanlead-user-form',
   templateUrl: './user-form.component.html',
   styleUrls: ['./user-form.component.scss']
 })
@@ -33,8 +34,8 @@ export class UserFormComponent implements OnInit {
     password: new FormControl('', Validators.required),
     fullName: new FormControl('', Validators.required),
     email: new FormControl('', [Validators.required, Validators.email]),
-    phoneNumber: new FormControl('', Validators.required),
-    optionalPhoneNumber: new FormControl(''),
+    phoneNumber: new FormControl('', [Validators.required, Validators.pattern('07[0-9]{8}')]),
+    optionalPhoneNumber: new FormControl('', Validators.pattern('07[0-9]{8}')),
     roles: new FormControl([''], Validators.required),
     branches: new FormControl([''], Validators.required)
   });
@@ -105,6 +106,9 @@ export class UserFormComponent implements OnInit {
           case 'notUnique':
             textContent = `This ${toSpaceBetween(controlName)} already exists`;
             break;
+          case 'pattern':
+            textContent = `Invalid ${toSpaceBetween(controlName)} format`;
+            break;
           default:
             textContent = '';
             break;
@@ -148,28 +152,28 @@ export class UserFormComponent implements OnInit {
     if (this.validate()) {
       const formData = new FormData();
       formData.append('file', this.file);
+      formData.append('id', this.user.id.toString());
       formData.append('employeeId', this.formGroup.get('employeeId').value);
       formData.append('password', this.formGroup.get('password').value);
       formData.append('fullName', this.formGroup.get('fullName').value);
+      formData.append('status', this.user.status);
       formData.append('email', this.formGroup.get('email').value);
       formData.append('phoneNumber', this.formGroup.get('phoneNumber').value);
       formData.append('optionalPhoneNumber', this.formGroup.get('optionalPhoneNumber').value);
       this.formGroup.get('roles').value.forEach((role) => formData.append('roles', role));
       this.formGroup.get('branches').value.forEach((branch) => formData.append('branches', branch));
 
-      if (this.userId) {
-        formData.append('id', this.user.id.toString());
-      }
       if (!this.file) {
         formData.append('picturePath', this.user.picturePath);
       }
 
-      const observable: Observable<User> = this.userService.save(formData);
-      observable
-        .subscribe((data: User) => {
-          this.router.navigate(['/admin/users']);
-        }, () => {
-          alert('Error while saving user');
+      this.userService.save(formData)
+        .subscribe((data: ServerResp<User>) => {
+          if (!data.err) {
+            this.router.navigate(['/users']);
+          } else {
+            alert('Error while saving user');
+          }
         });
     }
   }

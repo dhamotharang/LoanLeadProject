@@ -7,6 +7,7 @@ import com.loanlead.models.ui.ModelEntityMapper;
 import com.loanlead.models.ui.models.CustomerModel;
 import com.loanlead.services.CustomerService;
 import com.loanlead.services.LoanService;
+import com.loanlead.services.PhoneNumberService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
@@ -25,12 +26,14 @@ import java.util.stream.Collectors;
 @RequestMapping(ReportController.PREFIX + "/customers")
 public class CustomerController {
     private CustomerService customerService;
+    private PhoneNumberService phoneNumberService;
     private LoanService loanService;
     private ModelEntityMapper mapper;
 
     @Autowired
-    public CustomerController(CustomerService customerService, LoanService loanService, ModelEntityMapper mapper) {
+    public CustomerController(CustomerService customerService, PhoneNumberService phoneNumberService, LoanService loanService, ModelEntityMapper mapper) {
         this.customerService = customerService;
+        this.phoneNumberService = phoneNumberService;
         this.loanService = loanService;
         this.mapper = mapper;
     }
@@ -57,7 +60,15 @@ public class CustomerController {
 
     @GetMapping("/unique")
     public ResponseEntity<Customer> isUnique(@RequestParam("fieldName") String name, @RequestParam("value") String value) {
-        return ResponseEntity.of(Optional.ofNullable(customerService.findByFieldName(name, value)));
+        Customer customer;
+        if (name.equals("phoneNumber")) {
+            customer = customerService.findCustomerByPhoneNumber(value);
+        } else if (name.equals("optionalPhoneNumber")) {
+            customer = customerService.findCustomerByOptionalPhoneNumber(value);
+        } else {
+            customer = customerService.findByFieldName(name, value);
+        }
+        return ResponseEntity.of(Optional.ofNullable(customer));
     }
 
     @GetMapping("/all")
@@ -68,6 +79,7 @@ public class CustomerController {
     @PostMapping
     public ResponseEntity<CustomerModel> save(@RequestBody CustomerModel customerModel) {
         Customer customer = mapper.toEntity(customerModel, Customer.class);
+        customer.setPhoneNumber(phoneNumberService.save(customer.getPhoneNumber()));
         return ResponseEntity.of(Optional.of(mapper.toModel(this.customerService.save(customer), CustomerModel.class)));
     }
 

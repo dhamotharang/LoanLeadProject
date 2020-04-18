@@ -14,31 +14,26 @@ public interface UserService {
     Page<User> findAll(Integer page, Integer itemsPerPage);
     Integer findCount();
 
-    Page<User> findNewAll();
     Page<User> findNewAll(Integer page, Integer itemsPerPage);
     Integer findNewCount();
 
-    Integer approveUser(Integer id);
+    User approveUser(User user);
 
     User find(Integer id);
     User save(User user);
-    User update(User user);
     void delete(User user);
-    void deleteById(Integer id);
     void deleteAllByIds(Integer[] ids);
 
     void userLoggedIn(String username);
     void userLoggedOut(String username);
 
-    Page<User> getOnlineUsers();
     Page<User> getOnlineUsers(Integer page, Integer itemsPerPage);
-
-    boolean isEmployeeIdUnique(String employeeId);
-    boolean isAlreadyLoggedIn(String s);
-    boolean isUniquePhoneNumber(String phoneNumber);
 
     Page<User> findForwardedUsers();
     Page<User> findForwardedUsers(Integer page, Integer pageable);
     User findByFieldName(String fieldName, String value);
     List<User> findByRoleIdAndBranchIds(Integer roleId, List<Integer> branchIds);
+
+    User findUserByPhoneNumber(String phoneNumber);
+    User findUserByOptionalPhoneNumber(String optionalPhoneNumber);
 }
