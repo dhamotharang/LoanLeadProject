@@ -146,7 +146,7 @@ public class ReportsExcelManager {
 
     private String formatDateTime(LocalDateTime dateTime) {
         return ((dateTime.getDayOfMonth() < 10) ? '0' + String.valueOf(dateTime.getDayOfMonth()) : String.valueOf(dateTime.getDayOfMonth())) +
-                '/' + ((dateTime.getMonth().getValue() < 10) ? '0' + (dateTime.getMonth().getValue() + 1) : (dateTime.getMonth().getValue() + 1)) +
+                '/' + ((dateTime.getMonth().getValue() < 10) ? '0' + String.valueOf(dateTime.getMonth().getValue()) : String.valueOf(dateTime.getMonth().getValue())) +
                 '/' + dateTime.getYear() +
                 ' ' + ((dateTime.getHour() < 10) ? '0' + dateTime.getHour() : dateTime.getHour()) +
                 ':' + ((dateTime.getMinute() < 10) ? '0' + dateTime.getMinute() : dateTime.getMinute()) +
